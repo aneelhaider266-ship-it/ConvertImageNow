@@ -7,11 +7,7 @@ export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata({ params }: { params: any }) {
   const resolvedParams = await params;
   const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
   if (!post) return {};
@@ -28,11 +24,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function BlogPostPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function BlogPostPage({ params }: { params: any }) {
   const resolvedParams = await params;
   const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
   if (!post) notFound();
