@@ -1,20 +1,19 @@
-import type { Metadata } from "next";
-import { notFound } from "next/navigation";
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { BLOG_POSTS } from "@/lib/blog";
+import { notFound } from 'next/navigation';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
+import { BLOG_POSTS } from '@/lib/blog';
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({ slug: post.slug }));
 }
 
-export function generateMetadata({
+export async function generateMetadata({
   params,
-
-k}: {
-  params: { slug: string };
-}): Metadata {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const resolvedParams = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
   if (!post) return {};
   return {
     title: post.title,
@@ -23,27 +22,28 @@ k}: {
     openGraph: {
       title: post.title,
       description: post.excerpt,
-      type: "article",
+      type: 'article',
       publishedTime: post.date,
     },
   };
 }
 
-export default function BlogPostPage({
+export default async function BlogPostPage({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const post = BLOG_POSTS.find((p) => p.slug === params.slug);
+  const resolvedParams = await params;
+  const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
   if (!post) notFound();
 
   const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
+    '@context': 'https://schema.org',
+    '@type': 'Article',
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    author: { "@type": "Organization", name: "ConvertImageNow" },
+    author: { '@type': 'Organization', name: 'ConvertImageNow' },
   };
 
   return (
@@ -54,16 +54,16 @@ export default function BlogPostPage({
       />
       <Link
         href="/blog"
-        className="inline-flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-brand-primary dark:text-slate-400"
+        className="inline-flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-brand-primary"
       >
         <ArrowLeft size={14} /> Back to blog
       </Link>
 
       <p className="mt-6 text-xs text-slate-500 dark:text-slate-400">
-        {new Date(post.date).toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
+        {new Date(post.date).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
         })}
       </p>
       <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -80,7 +80,7 @@ export default function BlogPostPage({
         <p className="font-semibold">Ready to convert your images?</p>
         <Link
           href="/converter"
-          className="mt-3 inline-block rounded-full bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white"
+          className="mt-3 inline-block rounded-full bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-95"
         >
           Open the Image Converter
         </Link>
@@ -88,24 +88,4 @@ export default function BlogPostPage({
     </article>
   );
 }
-=======
-import { notFound } from 'next/navigation';
 
-interface PageProps {
-  params: Promise<{
-    slug: string;
-  }>;
-}
-
-export default async function BlogPost({ params }: PageProps) {
-  const { slug } = await params;
-
-  return (
-    <div className="max-w-4xl mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-4">Blog Post: {slug}</h1>
-      <p className="text-gray-600">Blog content for {slug}</p>
-    </div>
-  );
-}
-O
->>>>>>> 07b1cd4 (Fix Next.js 15 async params in blog slug page)
