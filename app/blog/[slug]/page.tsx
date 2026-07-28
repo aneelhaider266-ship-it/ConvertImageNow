@@ -10,7 +10,8 @@ export function generateStaticParams() {
 
 export function generateMetadata({
   params,
-}: {
+
+k}: {
   params: { slug: string };
 }): Metadata {
   const post = BLOG_POSTS.find((p) => p.slug === params.slug);
@@ -87,3 +88,24 @@ export default function BlogPostPage({
     </article>
   );
 }
+=======
+import { notFound } from 'next/navigation';
+
+interface PageProps {
+  params: Promise<{
+    slug: string;
+  }>;
+}
+
+export default async function BlogPost({ params }: PageProps) {
+  const { slug } = await params;
+
+  return (
+    <div className="max-w-4xl mx-auto px-4 py-12">
+      <h1 className="text-3xl font-bold mb-4">Blog Post: {slug}</h1>
+      <p className="text-gray-600">Blog content for {slug}</p>
+    </div>
+  );
+}
+O
+>>>>>>> 07b1cd4 (Fix Next.js 15 async params in blog slug page)
