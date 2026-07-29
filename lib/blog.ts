@@ -66,5 +66,17 @@ export const BLOG_POSTS: BlogPost[] = [
       "Start by choosing the right format for the content — photos usually compress better as JPG or WebP, while flat graphics compress better as PNG. From there, use a quality slider rather than the maximum setting; quality around 70-85% is often visually indistinguishable from 100% but noticeably smaller in file size.",
       "It also helps to resize images to the dimensions they'll actually be displayed at, rather than uploading a much larger original. Between choosing the right format, a sensible quality setting, and appropriate dimensions, most images can be reduced by 50% or more with no visible loss in quality.",
     ],
+  }, {
+    slug: "heic-to-jpg-guide",
+    title: "How to Convert HEIC to JPG (and Why Your iPhone Photos Won't Open)",
+    excerpt:
+      "HEIC is Apple's default photo format since iOS 11, but it won't open on many devices and websites. Here's how to convert it to JPG.",
+    date: "2026-02-16",
+    content: [
+      "HEIC (High Efficiency Image Container) is the format iPhones have used by default since iOS 11. It stores photos at roughly half the file size of an equivalent JPG, which is great for saving space on your phone and in iCloud — but the trade-off is compatibility. Many Windows PCs, older browsers, some Android phones, and plenty of websites still can't open HEIC files directly.",
+      "JPG, on the other hand, is supported everywhere. That's why converting HEIC to JPG is usually the fastest fix when a photo won't open, won't upload, or shows up as a broken thumbnail after you've sent it to someone.",
+      "The simplest way to convert is directly in your browser: drop your HEIC file into a converter, choose JPG as the output, and download the result. Because the conversion runs locally using the Canvas API, your photos never get uploaded to a server — which matters if the photos are personal, and also means there's no waiting on an upload or download round-trip.",
+      "If you only need to share a photo once, iPhones will often convert HEIC to JPG automatically when you send it via Mail or Messages, depending on your Camera settings under Settings → Camera → Formats. For a permanent converted copy, or for converting many photos at once, a batch converter is faster than converting one at a time.",
+    ],
   },
 ];
