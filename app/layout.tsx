@@ -43,8 +43,11 @@ export const metadata: Metadata = {
     description:
       "Free online image converter. Fast, secure, browser-based — no uploads, no limits.",
   },
-  alternates: {
-    canonical: SITE_URL,
+  alternates: { canonical: SITE_URL },
+  verification: {
+    other: {
+      "msvalidate.01": "60CAA555BAE22AFA89B6DFDFCB1E8BB8",
+    },
   },
 };
 
