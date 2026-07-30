@@ -78,5 +78,18 @@ export const BLOG_POSTS: BlogPost[] = [
       "The simplest way to convert is directly in your browser: drop your HEIC file into a converter, choose JPG as the output, and download the result. Because the conversion runs locally using the Canvas API, your photos never get uploaded to a server — which matters if the photos are personal, and also means there's no waiting on an upload or download round-trip.",
       "If you only need to share a photo once, iPhones will often convert HEIC to JPG automatically when you send it via Mail or Messages, depending on your Camera settings under Settings → Camera → Formats. For a permanent converted copy, or for converting many photos at once, a batch converter is faster than converting one at a time.",
     ],
+  },  {
+    slug: "convert-images-without-losing-quality",
+    title: "How to Convert Images Without Losing Quality",
+    excerpt:
+      "Losing quality during conversion almost always comes down to three fixable mistakes. Here's how to avoid them.",
+    date: "2026-07-30",
+    image: "/convert-quality.jpg",
+    content: [
+      "Losing quality during conversion almost always comes down to three things: starting from a low-resolution or already-compressed file, picking the wrong format for the image type, and compressing too aggressively. Fix those three and most quality problems disappear before you even open a converter.",
+      "Match the format to the image. Photos with lots of color and gradients compress well as JPG or WebP without visible loss at a high quality setting. Screenshots, logos, and anything with sharp edges or text should stay in PNG or lossless WebP — JPG's compression blurs fine edges and creates visible artifacts around text.",
+      "Always convert from the original file, not from a copy that's already been compressed. Every time you re-save a JPG, it loses a little more detail, so repeated conversions compound the damage even if each individual step looked fine. Keep an untouched original and create new versions from it whenever you need a different format.",
+      "Avoid resizing up. Making a small image bigger doesn't recover detail that isn't there — it just stretches existing pixels and makes the loss more visible. When quality genuinely matters, check the converted result at 100% zoom before you use it; small artifacts are easy to miss at a glance but show up clearly once the image is actually in use.",
+    ],
   },
 ];
