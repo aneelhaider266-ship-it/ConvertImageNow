@@ -4,8 +4,8 @@ export type BlogPost = {
   excerpt: string;
   date: string;
   content: string[];
-}; image?: string;
-
+  image?: string;
+}; 
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "best-image-formats-explained",
