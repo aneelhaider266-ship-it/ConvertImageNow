@@ -3,7 +3,7 @@ export type BlogPost = {
   title: string;
   excerpt: string;
   date: string;
-  content: string[];
+  content: string[];image?: string;
 };
 
 export const BLOG_POSTS: BlogPost[] = [
