@@ -21,14 +21,7 @@ export const metadata: Metadata = {
   },
   description:
     "Convert JPG, PNG, WebP and AVIF images online in seconds. 100% free, no sign-up, and everything runs securely in your browser — nothing is ever uploaded.",
-  keywords: [
-    "image converter",
-    "convert jpg to png",
-    "convert png to jpg",
-    "convert webp to jpg",
-    "online image converter",
-    "free image converter",
-  ],
+
   openGraph: {
     type: "website",
     url: SITE_URL,
