@@ -43,7 +43,38 @@ export default function ConverterPage() {
       <div className="mx-auto mt-10 max-w-3xl">
         <ImageConverter />
       </div>
+       <div className="mx-auto mt-12 max-w-4xl space-y-6 text-left text-slate-700 dark:text-slate-300">
+  <h2 className="text-2xl font-bold">
+    Free Online Image Converter
+  </h2>
 
+  <p>
+    Convert JPG, PNG, WebP, and AVIF images online without installing any software.
+    ConvertImageNow processes your files directly in your browser, so your images
+    stay private and are never uploaded to any server. Whether you need to reduce
+    file size, change image format, or prepare images for websites and social media,
+    our tool makes the process quick and simple.
+  </p>
+
+  <p>
+    The converter supports batch image conversion, adjustable quality settings,
+    and ZIP download for multiple files. It works on desktop, tablet, and mobile
+    devices, allowing you to convert images anywhere. No registration, watermarks,
+    or hidden fees are required.
+  </p>
+
+  <h2 className="text-2xl font-bold">
+    Why Choose ConvertImageNow?
+  </h2>
+
+  <p>
+    Our image converter is designed for speed, privacy, and ease of use. Since
+    everything runs locally in your browser, your images remain secure while
+    conversion is completed in seconds. Simply upload your images, choose the
+    desired output format, adjust quality if needed, and download the converted
+    files instantly.
+  </p>
+</div>
       <div className="mx-auto mt-16 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-3">
         {POINTS.map((p) => (
           <div
