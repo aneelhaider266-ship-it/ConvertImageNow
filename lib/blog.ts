@@ -78,7 +78,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   }, {
     slug: "heic-to-jpg-guide",
-    title: "How to Convert HEIC to JPG (and Why Your iPhone Photos Won't Open)",
+    title: "How to Convert HEIC to JPG",
     excerpt:
       "HEIC is Apple's default photo format since iOS 11, but it won't open on many devices and websites. Here's how to convert it to JPG.",
     date: "2026-02-16",
