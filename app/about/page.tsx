@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "About Us",
@@ -29,6 +30,20 @@ export default function AboutPage() {
         <p>
           Our goal is to keep building the fastest, most private set of
           image tools on the web, all free, all without registration.
+        </p>
+        <p>
+          There&apos;s no company behind this beyond the person building it,
+          no venture funding to chase, and no plan to add ads or a paywall.
+          The tool exists because it was useful to build, and it stays free
+          because that was the point from the start.
+        </p>
+        <p>
+          If you run into a bug, have an idea for a feature, or just want to
+          say the tool saved you time, the{" "}
+          <Link href="/contact" className="text-brand-primary hover:underline">
+            contact page
+          </Link>{" "}
+          reaches a real person.
         </p>
       </div>
     </div>
