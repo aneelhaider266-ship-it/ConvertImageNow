@@ -1,0 +1,19 @@
+# ConvertImageNow
+
+> Free, browser-based image converter. Convert JPG, PNG, WebP, and AVIF images instantly — no uploads, no sign-up, no watermarks. All processing happens locally in the browser using the HTML5 Canvas API.
+
+ConvertImageNow lets anyone convert images between common web formats without installing software or uploading files to a server. It is free, has no usage limits, and supports batch conversion.
+
+## Key pages
+
+- [Image Converter](https://www.convertimagenow.com/converter): The main tool. Convert JPG, PNG, WebP, and AVIF images with adjustable quality and batch support.
+- [Features](https://www.convertimagenow.com/features): Details on speed, privacy, and how the browser-based conversion works.
+- [Tools](https://www.convertimagenow.com/tools): Current and upcoming free image tools.
+- [Blog](https://www.convertimagenow.com/blog): Guides on image formats, compression, and file size optimization.
+- [FAQ](https://www.convertimagenow.com/faq): Answers to common questions about privacy, formats, and usage limits.
+- [About](https://www.convertimagenow.com/about): Why ConvertImageNow was built.
+
+## Notes
+
+- All image conversion happens client-side in the user's browser. No images are ever uploaded to or stored on a server.
+- The tool is free with no account, sign-up, or payment required.
