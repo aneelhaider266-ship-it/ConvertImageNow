@@ -5,7 +5,7 @@ export type BlogPost = {
   date: string;
   content: string[];
   image?: string;
-}; 
+};
 export const BLOG_POSTS: BlogPost[] = [
   {
     slug: "best-image-formats-explained",
@@ -17,6 +17,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "Every image format makes a different trade-off between file size, quality, and compatibility. Understanding those trade-offs makes it much easier to pick the right one for a given job, instead of defaulting to whatever your camera or design tool happened to save.",
       "JPG remains the default choice for photographs because it compresses smoothly and is supported everywhere. PNG is the better pick when you need transparency or crisp edges, such as logos and screenshots. WebP tends to beat both for web use, often producing smaller files at similar visual quality. AVIF pushes compression even further, though browser and tool support is still catching up.",
       "In practice, the fastest way to decide is to try a couple of formats on your actual image and compare the resulting file size and quality side by side — which is exactly what the ConvertImageNow converter is built for.",
+      "WebP and AVIF are newer formats built specifically for the web, and both can beat JPG and PNG on file size at similar visual quality. WebP has near-universal browser support today, while AVIF compresses even further but is still catching up in tooling and encoder speed. For most websites, WebP is the safer default right now, with AVIF worth using where you can confirm your audience's browsers support it.",
+      "If your image needs a transparent background — a logo, an icon, or an overlay — PNG or WebP are your only real options, since standard JPG can't preserve transparency. For everything else, the simplest approach is to try converting the same image to two or three formats and compare the resulting file sizes side by side; the difference is often more noticeable than any written rule of thumb.",
     ],
   },
   {
@@ -29,6 +31,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "PNG and JPG are the two most recognizable image formats, but they aren't interchangeable. JPG uses lossy compression tuned for photographic detail, which keeps file sizes small at the cost of some fine detail. PNG uses lossless compression, which preserves every pixel exactly but usually produces a larger file.",
       "A simple rule of thumb: if your image is a photo with lots of color gradients, JPG will usually give you a much smaller file with barely noticeable quality loss. If your image has flat colors, text, or needs a transparent background — like a logo or an icon — PNG will look sharper and cleaner.",
       "If you're not sure, convert the same image to both and compare the file size and appearance directly. That side-by-side comparison usually makes the right choice obvious.",
+      "There are a few edge cases worth knowing. Screenshots of text or user interfaces almost always look better as PNG, since JPG's compression tends to blur small text and create visible halos around sharp edges. On the other hand, a high-resolution photo saved as PNG can easily be five to ten times larger than the same photo saved as JPG, with no visible difference in quality for most viewers.",
+      "If you're preparing images for a website, file size usually matters more than it seems — a page full of oversized PNGs where JPGs would have worked just fine can noticeably slow down load times. When in doubt, default to JPG for photographs and PNG for anything with text, logos, or transparency, and only switch if a side-by-side comparison shows a clear reason to.",
     ],
   },
   {
@@ -41,6 +45,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "WebP is an image format developed to improve on JPG and PNG for web use specifically. It supports both lossy and lossless compression, along with transparency, in a single format — something JPG and PNG can't do on their own.",
       "The main advantage is file size: WebP images are often 25-35% smaller than an equivalent JPG at a similar visual quality, which directly improves page load times. Faster pages tend to rank better in search results and keep visitors from bouncing while they wait.",
       "Browser support for WebP is now very strong across modern browsers, which is why it has become a common target format when optimizing a website's images for performance.",
+      "WebP isn't just for photographs, either. It supports animation similar to GIF, but with far better compression, and it handles transparency the way PNG does — meaning a single WebP file can often replace a JPG, a PNG, and a GIF depending on what the image needs.",
+      "The main reason to convert existing images to WebP is page speed. Since search engines factor loading time into rankings, and visitors tend to leave slow pages before they finish loading, switching a site's images to WebP is one of the easier performance wins available — often requiring no other changes to the page itself.",
     ],
   },
   {
@@ -53,6 +59,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "AVIF is a newer image format based on the AV1 video codec, designed to compress images even further than WebP while maintaining strong visual quality. In many comparisons, AVIF files come in noticeably smaller than equivalent WebP or JPG files.",
       "The trade-off today is support and tooling: encoding AVIF can be slower, and while most modern browsers can display AVIF images, broader support for creating and editing them is still catching up compared to older formats.",
       "For most sites, a practical approach is to use AVIF where support allows and fall back to WebP or JPG otherwise — which is why ConvertImageNow accepts AVIF as an input format today, with output support planned as browser tooling matures.",
+      "AVIF also supports HDR (high dynamic range) and a wider color gamut than JPG, which can make a real difference for photography with strong contrast between bright and dark areas — a sunset, for example, or a scene with both deep shadows and bright highlights.",
+      "If you're deciding whether to use AVIF today, the safest approach is progressive: keep a JPG or WebP version available as a fallback, and serve AVIF to browsers that support it. Most modern image tools and content delivery setups can handle this automatically, so visitors on older browsers still see a working image while everyone else gets the smaller file.",
     ],
   },
   {
@@ -65,6 +73,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "Large images are one of the most common reasons a website feels slow. The good news is that you can usually shrink an image significantly before most people would notice any difference in quality.",
       "Start by choosing the right format for the content — photos usually compress better as JPG or WebP, while flat graphics compress better as PNG. From there, use a quality slider rather than the maximum setting; quality around 70-85% is often visually indistinguishable from 100% but noticeably smaller in file size.",
       "It also helps to resize images to the dimensions they'll actually be displayed at, rather than uploading a much larger original. Between choosing the right format, a sensible quality setting, and appropriate dimensions, most images can be reduced by 50% or more with no visible loss in quality.",
+      "Metadata is another easy win that's often overlooked. Photos straight from a phone or camera can carry a surprising amount of hidden data — camera settings, GPS location, timestamps — that adds to file size without affecting how the image looks. Stripping this metadata during conversion shaves off extra kilobytes for free.",
+      "If you're preparing images specifically for a website, batch processing saves time on top of file size. Rather than resizing and compressing each photo individually, converting an entire folder at once with consistent settings keeps every image predictable in size and quality, which makes it much easier to spot the one file that didn't compress the way you expected.",
     ],
   }, {
     slug: "heic-to-jpg-guide",
