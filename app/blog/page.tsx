@@ -23,6 +23,17 @@ export default function BlogIndexPage() {
         </p>
       </div>
 
+      <div className="mx-auto mt-8 max-w-3xl text-center text-sm text-slate-600 dark:text-slate-400">
+        <p>
+          Most of these questions come up the same way: an image looks wrong
+          after converting, a file is bigger than expected, or a format
+          doesn&apos;t work where you thought it would. These posts cover the
+          practical side of that — what each format is actually good for, and
+          how to avoid the mistakes that quietly cost you file size or
+          quality.
+        </p>
+      </div>
+
       <div className="mx-auto mt-14 grid max-w-3xl grid-cols-1 gap-6">
         {BLOG_POSTS.map((post) => (
           <Link
