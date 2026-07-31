@@ -5,7 +5,7 @@ import { CheckCircle2, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Tools",
   description:
-    "Explore ConvertImageNow's image conversion tool, plus a growing roadmap of upcoming free tools including compression, resizing, cropping, and more.",
+    "Explore ConvertImageNow's image conversion tool, plus a growing roadmap of upcoming free tools including compression, resizing, and more.",
   alternates: { canonical: "/tools" },
 };
 
@@ -37,7 +37,7 @@ export default function ToolsPage() {
       </div>
 
       <div className="mx-auto mt-12 max-w-3xl">
-        <div className="flex items-center justify-between rounded-2xl border border-brand-accent/30 bg-brand-accent/5 p-6">
+        <div className="flex items-center justify-between rounded-2xl border border-brand-accent/30 bg-brand-accent/5 p-5">
           <div className="flex items-center gap-3">
             <CheckCircle2 className="text-brand-accent" size={22} />
             <div>
@@ -67,6 +67,23 @@ export default function ToolsPage() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-14 space-y-6 text-left text-slate-700 dark:text-slate-300">
+          <h2 className="text-2xl font-bold">One converter, built to grow</h2>
+          <p>
+            The image converter above is the foundation of ConvertImageNow, and it already handles the most common conversion needs — swapping between JPG, PNG, WebP, and AVIF with full control over output quality and batch processing. Everything on this page runs the same way: locally in your browser, with nothing uploaded to a server.
+          </p>
+          <p>
+            The tools listed under &quot;Coming soon&quot; are the next things we&apos;re building, based on what people actually ask for after converting an image — resizing it for a specific use, compressing it further without a second converter, or making a quick crop or rotation before downloading. Each one will follow the same rule as the converter: free, no sign-up, no file ever leaving your device.
+          </p>
+          <p>
+            If there&apos;s a specific tool you&apos;d like to see prioritized, you&apos;re welcome to{" "}
+            <Link href="/contact" className="text-brand-primary hover:underline">
+              reach out
+            </Link>{" "}
+            and let us know what you&apos;re trying to do.
+          </p>
+        </div>
       </div>
     </div>
   );
