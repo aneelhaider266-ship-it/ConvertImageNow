@@ -102,4 +102,18 @@ export const BLOG_POSTS: BlogPost[] = [
       "Avoid resizing up. Making a small image bigger doesn't recover detail that isn't there — it just stretches existing pixels and makes the loss more visible. When quality genuinely matters, check the converted result at 100% zoom before you use it; small artifacts are easy to miss at a glance but show up clearly once the image is actually in use.",
     ],
   },
+  {
+    slug: "why-i-built-convertimagenow",
+    title: "Why I Stopped Uploading My Photos Just to Convert Them",
+    excerpt:
+      "Most online converters make you upload your files to a server before they'll do anything. That step was never actually necessary.",
+    date: "2026-08-01",
+    content: [
+      "A while back I needed to convert a batch of product photos from PNG to WebP — a routine task, nothing complicated. The first free converter I found asked me to create an account before it would let me download anything. The second one worked without an account, but buried the download button under banner ads and added a faint watermark to every image, something it hadn't mentioned before I uploaded my files.",
+      "By the time I tried a few different sites, I had a folder of photos sitting on servers I knew nothing about, run by companies I'd never heard of. For a task that takes five seconds, that felt like a lot to hand over.",
+      "What struck me afterward is that none of it needed a server in the first place. Modern browsers can already decode an image, redraw it in a different format, and hand back a file — entirely on your own device. It's the same Canvas API that's been built into browsers for over a decade. The upload step that most converter sites make you go through isn't a technical requirement; it's just easier to attach ads, accounts, and watermarks to something running on a server than to something running in someone else's browser.",
+      "That's the whole idea behind ConvertImageNow: conversion happens locally, using that same browser API. Nothing gets uploaded, because there's nothing to upload to. No account, because there's no server-side usage to meter. No watermark, because there was never a plan to charge for a 'clean' version later.",
+      "I don't think image conversion is a special case. A lot of small, everyday web tools default to uploading your file to a server mostly out of habit, not necessity — and that habit quietly costs people privacy or speed for tasks that never needed a round trip to someone else's infrastructure at all.",
+    ],
+  },
 ];
