@@ -61,7 +61,13 @@ export default async function BlogPostPage({ params }: { params: any }) {
       <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
         {post.title}
       </h1>
-
+      {post.image && (
+          <img
+            src={post.image}
+            alt={post.title}
+            className="mt-6 w-full rounded-2xl object-cover"
+          />
+        )}
       <div className="mt-8 space-y-5 text-slate-700 dark:text-slate-300">
         {post.content.map((paragraph, i) => (
           <p key={i}>{paragraph}</p>
