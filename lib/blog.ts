@@ -123,7 +123,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Image file size, format, and naming all affect search rankings. Here's what actually moves the needle.",
     date: "2026-08-02",
 image: "/image-seo-guide.png",
-    content: 
+    content: content: [
       "Images affect SEO in two ways most people don't think about: page speed and image search. A page loaded down with oversized, unoptimized images loads slower, and slow pages tend to rank lower and lose visitors before the content even finishes loading. On top of that, correctly labeled images can show up in Google Image Search itself, which is a real source of traffic on its own.",
       "File size is the biggest lever. A photo straight from a phone camera can easily be 3-5MB — far more than a web page needs. Converting it to WebP or a well-compressed JPG, and resizing it to the dimensions it will actually display at, routinely cuts that down by 80% or more with no visible quality loss. Do this before uploading, not after; resizing in a website builder usually just hides a large file behind smaller display dimensions, without actually shrinking the file itself.",
       "Filenames and alt text matter more than they get credit for. A file named `IMG_4821.jpg` tells search engines nothing. Renaming it to something like `blue-canvas-sneakers.jpg` and writing alt text that describes the image plainly — not stuffed with keywords — helps both accessibility and image search visibility.",
