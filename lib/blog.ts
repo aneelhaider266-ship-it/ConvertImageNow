@@ -152,7 +152,7 @@ image: "/image-seo-guide.png",
     "Learn how to convert HEIC to JPG on iPhone, Android, Windows, and Mac without losing quality using ConvertImageNow. A complete beginner-friendly guide.",
   date: "2026-08-08",
   image: "/heic-to-jpg.jpg",
-  content: 
+  content: ]
     "HEIC has become the default image format on Apple devices because it stores high-quality photos while using less storage than JPG. Although this helps save space on your iPhone and iCloud account, HEIC files can create compatibility problems when you try to open them on Windows, upload them to certain websites, or share them with people using older devices. If you've ever received an error while opening an HEIC image, you're not alone. Millions of users search every month for ways to convert HEIC to JPG because JPG is still the most widely supported image format in the world.",
     "The good news is that converting HEIC to JPG is quick and easy. Using ConvertImageNow, you can convert one or multiple HEIC images directly from your browser without installing software or creating an account. Your files remain private, the conversion is fast, and the output quality stays high.",
     "## What Is HEIC?",
