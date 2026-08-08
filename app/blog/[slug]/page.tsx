@@ -28,7 +28,10 @@ export default async function BlogPostPage({ params }: { params: any }) {
   const resolvedParams = await params;
   const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
   if (!post) notFound();
-
+const currentIndex = BLOG_POSTS.findIndex((p) => p.slug === post.slug);
+const relatedPosts = [1, 2, 3].map(
+  (offset) => BLOG_POSTS[(currentIndex + offset) % BLOG_POSTS.length]
+);
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
