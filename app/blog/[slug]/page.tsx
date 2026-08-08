@@ -69,10 +69,16 @@ export default async function BlogPostPage({ params }: { params: any }) {
           />
         )}
       <div className="mt-8 space-y-5 text-slate-700 dark:text-slate-300">
-        {post.content.map((paragraph, i) => (
-          <p key={i}>{paragraph}</p>
-        ))}
-      </div>
+  {post.content.map((paragraph, i) =>
+    paragraph.startsWith('## ') ? (
+      <h2 key={i} className="mt-8 text-2xl font-bold tracking-tight">
+        {paragraph.replace('## ', '')}
+      </h2>
+    ) : (
+      <p key={i}>{paragraph}</p>
+    )
+  )}
+</div>
 
       <div className="mt-12 rounded-2xl bg-slate-50 p-6 text-center dark:bg-slate-900">
         <p className="font-semibold">Ready to convert your images?</p>
