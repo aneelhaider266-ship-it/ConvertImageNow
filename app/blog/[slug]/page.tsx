@@ -82,7 +82,23 @@ const relatedPosts = [1, 2, 3].map(
     )
   )}
 </div>
-
+<div className="mt-12">
+  <h2 className="text-xl font-bold mb-4">Related Articles</h2>
+  <div className="grid gap-4 sm:grid-cols-3">
+    {relatedPosts.map((rp) => (
+      <Link
+        key={rp.slug}
+        href={`/blog/${rp.slug}`}
+        className="block rounded-xl border border-slate-200 dark:border-slate-800 p-4 hover:border-brand-primary transition-colors"
+      >
+        <p className="font-semibold text-sm">{rp.title}</p>
+        <p className="mt-1 text-xs text-slate-500 dark:text-slate-400 line-clamp-2">
+          {rp.excerpt}
+        </p>
+      </Link>
+    ))}
+  </div>
+</div>
       <div className="mt-12 rounded-2xl bg-slate-50 p-6 text-center dark:bg-slate-900">
         <p className="font-semibold">Ready to convert your images?</p>
         <Link
