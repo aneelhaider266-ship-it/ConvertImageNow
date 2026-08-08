@@ -184,6 +184,7 @@ image: "/image-seo-guide.png",
     excerpt:
       "WebP images load faster and rank better. Here's a complete guide to converting JPG to WebP for free, without installing anything or uploading your files anywhere.",
     date: "2026-02-23",
+      image: "/jpg-to-webp-guide.png",
     content: [
       "If your website still relies on JPG images, you're leaving real performance on the table. WebP images are typically 25-50% smaller than JPG at the same visual quality, which translates directly into faster page loads, lower bandwidth costs, and better Core Web Vitals scores. For anyone running a website, blog, or online store, converting existing images to WebP is one of the highest-leverage, lowest-effort changes you can make.",
       "WebP is a modern image format developed by Google specifically to improve on the limitations of JPG and PNG for web use. It supports both lossy and lossless compression in a single format, which means it can replace JPG for photographs and PNG for graphics with transparency. WebP also supports animation, similar to GIF, but with dramatically better compression, so even that use case doesn't require a separate format anymore.",
