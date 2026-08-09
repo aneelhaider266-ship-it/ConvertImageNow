@@ -1,8 +1,7 @@
 import { MetadataRoute } from "next";
 import { BLOG_POSTS } from "@/lib/blog";
 
-const SITE_URL = "https://convertimagenow.com";
-
+const SITE_URL = "https://www.convertimagenow.com";
 const STATIC_ROUTES = [
   "",
   "/converter",
