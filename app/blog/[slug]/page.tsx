@@ -10,11 +10,15 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: { params: any }) {
   const resolvedParams = await params;
   const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
+
   if (!post) return {};
+
   return {
     title: post.title,
     description: post.excerpt,
-    alternates: { canonical: `/blog/${post.slug}` },
+    alternates: {
+      canonical: `/blog/${post.slug}`,
+    },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -24,34 +28,57 @@ export async function generateMetadata({ params }: { params: any }) {
   };
 }
 
-export default async function BlogPostPage({ params }: { params: any }) {
+export default async function BlogPostPage({
+  params,
+}: {
+  params: any;
+}) {
   const resolvedParams = await params;
-  const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
+
+  const post = BLOG_POSTS.find(
+    (p) => p.slug === resolvedParams.slug
+  );
+
   if (!post) notFound();
-const currentIndex = BLOG_POSTS.findIndex((p) => p.slug === post.slug);
-const relatedPosts = [1, 2, 3].map(
-  (offset) => BLOG_POSTS[(currentIndex + offset) % BLOG_POSTS.length]
-);
+
+  const currentIndex = BLOG_POSTS.findIndex(
+    (p) => p.slug === post.slug
+  );
+
+  const relatedPosts = [1, 2, 3].map(
+    (offset) =>
+      BLOG_POSTS[
+        (currentIndex + offset) % BLOG_POSTS.length
+      ]
+  );
+
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    author: { '@type': 'Organization', name: 'ConvertImageNow' },
+    author: {
+      '@type': 'Organization',
+      name: 'ConvertImageNow',
+    },
   };
 
   return (
     <article className="container-page max-w-2xl py-14 sm:py-20">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema),
+        }}
       />
+
       <Link
         href="/blog"
         className="inline-flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-brand-primary"
       >
-        <ArrowLeft size={14} /> Back to blog
+        <ArrowLeft size={14} />
+        Back to blog
       </Link>
 
       <p className="mt-6 text-xs text-slate-500 dark:text-slate-400">
@@ -61,63 +88,106 @@ const relatedPosts = [1, 2, 3].map(
           day: 'numeric',
         })}
       </p>
+
       <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
         {post.title}
       </h1>
+
       {post.image && (
-          <img
-            src={post.image}
-            alt={post.title}
-            className="mt-6 w-full rounded-2xl object-cover"
-          />
-        )}
+        <img
+          src={post.image}
+          alt={post.title}
+          className="mt-6 w-full rounded-2xl object-cover"
+        />
+      )}
+
       <div className="mt-8 space-y-5 text-slate-700 dark:text-slate-300">
-  {post.content.map((paragraph, i) => {
-    if (paragraph.startsWith('## ')) {
-      return (
-        <h2 key={i} className="mt-8 text-2xl font-bold tracking-tight">
-          {paragraph.replace(/^## /, '')}
-        </h2>
-      );
-    }
-
-    if (paragraph.startsWith('### ')) {
-      return (
-        <h3 key={i} className="mt-6 text-xl font-semibold tracking-tight">
-          {paragraph.replace(/^### /, '')}
-        </h3>
-      );
-    }
-
-    const parts = paragraph.split(/(\[[^\]]+\]\([^)]+\))/g);
-
-    return (
-      <p key={i}>
-        {parts.map((part, index) => {
-          const match = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
-
-          if (match) {
-            const [, text, href] = match;
-
+        {post.content.map((paragraph, i) => {
+          if (paragraph.startsWith('## ')) {
             return (
-              <Link
-                key={index}
-                href={href}
-                className="font-medium text-brand-primary hover:underline"
+              <h2
+                key={i}
+                className="mt-8 text-2xl font-bold tracking-tight"
               >
-                {text}
-              </Link>
+                {paragraph.replace(/^## /, '')}
+              </h2>
             );
           }
 
-          return <span key={index}>{part}</span>;
+          if (paragraph.startsWith('### ')) {
+            return (
+              <h3
+                key={i}
+                className="mt-6 text-xl font-semibold tracking-tight"
+              >
+                {paragraph.replace(/^### /, '')}
+              </h3>
+            );
+          }
+
+          const parts = paragraph.split(
+            /(\[[^\]]+\]\([^)]+\))/g
+          );
+
+          return (
+            <p key={i}>
+              {parts.map((part, index) => {
+                const match = part.match(
+                  /^\[([^\]]+)\]\(([^)]+)\)$/
+                );
+
+                if (match) {
+                  const [, text, href] = match;
+
+                  return (
+                    <Link
+                      key={index}
+                      href={href}
+                      className="font-medium text-brand-primary hover:underline"
+                    >
+                      {text}
+                    </Link>
+                  );
+                }
+
+                return <span key={index}>{part}</span>;
+              })}
+            </p>
+          );
         })}
-      </p>
-    );
-  })}
-</div>
+      </div>
+
+      {/* Related Articles */}
+      <div className="mt-12">
+        <h2 className="mb-4 text-xl font-bold">
+          Related Articles
+        </h2>
+
+        <div className="grid gap-4 sm:grid-cols-3">
+          {relatedPosts.map((rp) => (
+            <Link
+              key={rp.slug}
+              href={`/blog/${rp.slug}`}
+              className="block rounded-xl border border-slate-200 p-4 transition-colors hover:border-brand-primary dark:border-slate-800"
+            >
+              <p className="text-sm font-semibold">
+                {rp.title}
+              </p>
+
+              <p className="mt-1 line-clamp-2 text-xs text-slate-500 dark:text-slate-400">
+                {rp.excerpt}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA */}
       <div className="mt-12 rounded-2xl bg-slate-50 p-6 text-center dark:bg-slate-900">
-        <p className="font-semibold">Ready to convert your images?</p>
+        <p className="font-semibold">
+          Ready to convert your images?
+        </p>
+
         <Link
           href="/converter"
           className="mt-3 inline-block rounded-full bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-95"
@@ -128,4 +198,3 @@ const relatedPosts = [1, 2, 3].map(
     </article>
   );
 }
-
