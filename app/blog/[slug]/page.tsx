@@ -1,289 +1,88 @@
-import { notFound } from 'next/navigation';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
-import { BLOG_POSTS } from '@/lib/blog';
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import Script from "next/script";
+import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
-export async function generateStaticParams() {
-  return BLOG_POSTS.map((post) => ({ slug: post.slug }));
-}
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
-export async function generateMetadata({ params }: { params: any }) {
-  const resolvedParams = await params;
-  const post = BLOG_POSTS.find((p) => p.slug === resolvedParams.slug);
+const SITE_URL = "https://www.convertimagenow.com";
 
-  if (!post) return {};
+export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "ConvertImageNow — Convert Images Instantly, Fast & Secure",
+    template: "%s | ConvertImageNow",
+  },
+  description:
+    "Convert JPG, PNG, WebP and AVIF images online in seconds. 100% free, no sign-up, and everything runs securely in your browser — nothing is ever uploaded.",
 
-  const url = `/blog/${post.slug}`;
-
-  return {
-    title: post.title,
-    description: post.excerpt,
-    alternates: {
-      canonical: url,
+  openGraph: {
+    type: "website",
+    url: SITE_URL,
+    siteName: "ConvertImageNow",
+    title: "ConvertImageNow — Convert Images Instantly, Fast & Secure",
+    description:
+      "Convert JPG, PNG, WebP and AVIF images online in seconds. Free, secure, and processed entirely in your browser.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ConvertImageNow — Convert Images Instantly",
+    description:
+      "Free online image converter. Fast, secure, browser-based — no uploads, no limits.",
+  },
+  alternates: { canonical: SITE_URL },
+  verification: {
+    other: {
+      "msvalidate.01": "60CAA555BAE22AFA89B6DFDFCB1E8BB8",
     },
-    openGraph: {
-      title: post.title,
-      description: post.excerpt,
-      type: 'article',
-      publishedTime: post.date,
-      url,
-      images: post.image ? [{ url: post.image }] : undefined,
-    },
-    twitter: {
-      card: 'summary_large_image',
-      title: post.title,
-      description: post.excerpt,
-      images: post.image ? [post.image] : undefined,
-    },
-  };
-}
+  },
+};
 
-export default async function BlogPostPage({
-  params,
+export default function RootLayout({
+  children,
 }: {
-  params: any;
+  children: React.ReactNode;
 }) {
-  const resolvedParams = await params;
-
-  const post = BLOG_POSTS.find(
-    (p) => p.slug === resolvedParams.slug
-  );
-
-  if (!post) notFound();
-
-  const currentIndex = BLOG_POSTS.findIndex(
-    (p) => p.slug === post.slug
-  );
-
-  const relatedPosts = [1, 2, 3].map(
-    (offset) =>
-      BLOG_POSTS[
-        (currentIndex + offset) % BLOG_POSTS.length
-      ]
-  );
-
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    description: post.excerpt,
-    datePublished: post.date,
-    author: {
-      '@type': 'Organization',
-      name: 'ConvertImageNow',
-    },
+  const orgSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "ConvertImageNow",
+    url: SITE_URL,
+    email: "contact@convertimagenow.com",
+    logo: `${SITE_URL}/logo.png`,
   };
 
   return (
-    <article className="container-page max-w-2xl py-14 sm:py-20">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(articleSchema),
-        }}
-      />
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+        /> <Script
+  src="https://www.googletagmanager.com/gtag/js?id=G-HNPJHT8NMN"
+  strategy="afterInteractive"
+/>
 
-      <Link
-        href="/blog"
-        className="inline-flex items-center gap-1 text-sm font-medium text-slate-500 hover:text-brand-primary"
-      >
-        <ArrowLeft size={14} />
-        Back to blog
-      </Link>
-
-      <p className="mt-6 text-xs text-slate-500 dark:text-slate-400">
-        {new Date(post.date).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        })}
-      </p>
-
-      <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
-        {post.title}
-      </h1>
-
-      {post.image && (
-        <img
-          src={post.image}
-          alt={post.title}
-          className="mt-6 w-full rounded-2xl object-cover"
-        />
-      )}
-
-      <div className="mt-8 space-y-5 text-slate-700 dark:text-slate-300">
-        {post.content.map((paragraph, i) => {
-          if (paragraph.startsWith('## ')) {
-            return (
-              <h2
-                key={i}
-                className="mt-8 text-2xl font-bold tracking-tight"
-              >
-                {paragraph.replace(/^## /, '')}
-              </h2>
-            );
-          }
-
-          if (paragraph.startsWith('### ')) {
-            return (
-              <h3
-                key={i}
-                className="mt-6 text-xl font-semibold tracking-tight"
-              >
-                {paragraph.replace(/^### /, '')}
-              </h3>
-            );
-          }
-
-          const parts = paragraph.split(
-            /(\[[^\]]+\]\([^)]+\))/g
-          );
-
-          return (
-            <p key={i}>
-              {parts.map((part, index) => {
-                const match = part.match(
-                  /^\[([^\]]+)\]\(([^)]+)\)$/
-                );
-
-                if (match) {
-                  const [, text, href] = match;
-
-                  return (
-                    <Link
-                      key={index}
-                      href={href}
-                      className="font-medium text-brand-primary hover:underline"
-                    >
-                      {text}
-                    </Link>
-                  );
-                }
-
-                return <span key={index}>{part}</span>;
-              })}
-            </p>
-          );
-        })}
-      </div>
-
-      {/* Related Articles */}
-      <div className="mt-12">
-        <h2 className="mb-4 text-xl font-bold">
-          Related Articles
-        </h2>
-
-        <div className="grid gap-4 sm:grid-cols-3">
-          {relatedPosts.map((rp) => (
-            <Link
-              key={rp.slug}
-              href={`/blog/${rp.slug}`}
-              className="block rounded-xl border border-slate-200 p-4 transition-colors hover:border-brand-primary dark:border-slate-800"
-            >
-              <p className="text-sm font-semibold">
-                {rp.title}
-              </p>
-
-              <p className="mt-1 line-clamp-2 text-xs text-slate-500 dark:text-slate-400">
-                {rp.excerpt}
-              </p>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* CTA */}
-      <div className="mt-12 rounded-2xl bg-slate-50 p-6 text-center dark:bg-slate-900">
-        <p className="font-semibold">
-          Ready to convert your images?
-        </p>
-
-        <Link
-          href="/converter"
-          className="mt-3 inline-block rounded-full bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-95"
-        >
-          Open the Image Converter
-        </Link>
-      </div>
-    </article>
-  );
-}
-              >
-                {paragraph.replace(/^### /, '')}
-              </h3>
-            );
-          }
-
-          const parts = paragraph.split(
-            /(\[[^\]]+\]\([^)]+\))/g
-          );
-
-          return (
-            <p key={i}>
-              {parts.map((part, index) => {
-                const match = part.match(
-                  /^\[([^\]]+)\]\(([^)]+)\)$/
-                );
-
-                if (match) {
-                  const [, text, href] = match;
-
-                  return (
-                    <Link
-                      key={index}
-                      href={href}
-                      className="font-medium text-brand-primary hover:underline"
-                    >
-                      {text}
-                    </Link>
-                  );
-                }
-
-                return <span key={index}>{part}</span>;
-              })}
-            </p>
-          );
-        })}
-      </div>
-
-      {/* Related Articles */}
-      <div className="mt-12">
-        <h2 className="mb-4 text-xl font-bold">
-          Related Articles
-        </h2>
-
-        <div className="grid gap-4 sm:grid-cols-3">
-          {relatedPosts.map((rp) => (
-            <Link
-              key={rp.slug}
-              href={`/blog/${rp.slug}`}
-              className="block rounded-xl border border-slate-200 p-4 transition-colors hover:border-brand-primary dark:border-slate-800"
-            >
-              <p className="text-sm font-semibold">
-                {rp.title}
-              </p>
-
-              <p className="mt-1 line-clamp-2 text-xs text-slate-500 dark:text-slate-400">
-                {rp.excerpt}
-              </p>
-            </Link>
-          ))}
-        </div>
-      </div>
-
-      {/* CTA */}
-      <div className="mt-12 rounded-2xl bg-slate-50 p-6 text-center dark:bg-slate-900">
-        <p className="font-semibold">
-          Ready to convert your images?
-        </p>
-
-        <Link
-          href="/converter"
-          className="mt-3 inline-block rounded-full bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-95"
-        >
-          Open the Image Converter
-        </Link>
-      </div>
-    </article>
+<Script id="google-analytics" strategy="afterInteractive">
+  {`
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HNPJHT8NMN');
+  `}
+</Script>
+      </head>
+      <body className="flex min-h-screen flex-col font-sans antialiased">
+        <Header />
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
+    </html>
   );
 }
