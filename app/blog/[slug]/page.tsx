@@ -13,17 +13,27 @@ export async function generateMetadata({ params }: { params: any }) {
 
   if (!post) return {};
 
+  const url = `/blog/${post.slug}`;
+
   return {
     title: post.title,
     description: post.excerpt,
     alternates: {
-      canonical: `/blog/${post.slug}`,
+      canonical: url,
     },
     openGraph: {
       title: post.title,
       description: post.excerpt,
       type: 'article',
       publishedTime: post.date,
+      url,
+      images: post.image ? [{ url: post.image }] : undefined,
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.excerpt,
+      images: post.image ? [post.image] : undefined,
     },
   };
 }
@@ -119,6 +129,85 @@ export default async function BlogPostPage({
               <h3
                 key={i}
                 className="mt-6 text-xl font-semibold tracking-tight"
+              >
+                {paragraph.replace(/^### /, '')}
+              </h3>
+            );
+          }
+
+          const parts = paragraph.split(
+            /(\[[^\]]+\]\([^)]+\))/g
+          );
+
+          return (
+            <p key={i}>
+              {parts.map((part, index) => {
+                const match = part.match(
+                  /^\[([^\]]+)\]\(([^)]+)\)$/
+                );
+
+                if (match) {
+                  const [, text, href] = match;
+
+                  return (
+                    <Link
+                      key={index}
+                      href={href}
+                      className="font-medium text-brand-primary hover:underline"
+                    >
+                      {text}
+                    </Link>
+                  );
+                }
+
+                return <span key={index}>{part}</span>;
+              })}
+            </p>
+          );
+        })}
+      </div>
+
+      {/* Related Articles */}
+      <div className="mt-12">
+        <h2 className="mb-4 text-xl font-bold">
+          Related Articles
+        </h2>
+
+        <div className="grid gap-4 sm:grid-cols-3">
+          {relatedPosts.map((rp) => (
+            <Link
+              key={rp.slug}
+              href={`/blog/${rp.slug}`}
+              className="block rounded-xl border border-slate-200 p-4 transition-colors hover:border-brand-primary dark:border-slate-800"
+            >
+              <p className="text-sm font-semibold">
+                {rp.title}
+              </p>
+
+              <p className="mt-1 line-clamp-2 text-xs text-slate-500 dark:text-slate-400">
+                {rp.excerpt}
+              </p>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="mt-12 rounded-2xl bg-slate-50 p-6 text-center dark:bg-slate-900">
+        <p className="font-semibold">
+          Ready to convert your images?
+        </p>
+
+        <Link
+          href="/converter"
+          className="mt-3 inline-block rounded-full bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:opacity-95"
+        >
+          Open the Image Converter
+        </Link>
+      </div>
+    </article>
+  );
+}
               >
                 {paragraph.replace(/^### /, '')}
               </h3>
