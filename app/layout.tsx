@@ -58,25 +58,44 @@ export default function RootLayout({
     logo: `${SITE_URL}/logo.png`,
   };
 
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "ConvertImageNow",
+    url: SITE_URL,
+    description:
+      "Convert JPG, PNG, WebP and AVIF images online in seconds. 100% free, no sign-up, and everything runs securely in your browser — nothing is ever uploaded.",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: `${SITE_URL}/converter`,
+      "query-input": "required name=search_term_string",
+    },
+  };
+
   return (
     <html lang="en" className={inter.variable} suppressHydrationWarning>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
-        /> <Script
-  src="https://www.googletagmanager.com/gtag/js?id=G-HNPJHT8NMN"
-  strategy="afterInteractive"
-/>
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-HNPJHT8NMN"
+          strategy="afterInteractive"
+        />
 
-<Script id="google-analytics" strategy="afterInteractive">
-  {`
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HNPJHT8NMN');
-  `}
-</Script>
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-HNPJHT8NMN');
+          `}
+        </Script>
       </head>
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <Header />
