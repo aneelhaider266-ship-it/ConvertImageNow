@@ -171,13 +171,16 @@ export default function ImageConverter() {
         }`}
       >
         <input
-          ref={inputRef}
-          type="file"
-          multiple
-          accept={ACCEPTED_INPUT_TYPES.join(",")}
-          className="hidden"
-          onChange={(e) => e.target.files && addFiles(e.target.files)}
-        />
+  ref={inputRef}
+  id="image-upload"
+  name="image-upload"
+  type="file"
+  multiple
+  accept={ACCEPTED_INPUT_TYPES.join(",")}
+  className="hidden"
+  onChange={(e) => e.target.files && addFiles(e.target.files)}
+  aria-label="Upload images to convert"
+/>
         <span className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand-primary/10 text-brand-primary">
           <UploadCloud size={28} />
         </span>
