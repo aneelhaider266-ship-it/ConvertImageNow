@@ -27,9 +27,36 @@ const POINTS = [
   },
 ];
 
+const SERVICE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  serviceType: "Online Image Format Conversion",
+  provider: {
+    "@type": "Organization",
+    name: "ConvertImageNow",
+    url: "https://www.convertimagenow.com",
+  },
+  areaServed: "Worldwide",
+  audience: {
+    "@type": "Audience",
+    audienceType: "Anyone converting image files",
+  },
+  offers: {
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
+  },
+  description:
+    "Convert JPG, PNG, WebP and AVIF images instantly and securely in-browser, with no uploads, no sign-up, and no cost.",
+};
+
 export default function ConverterPage() {
   return (
     <div className="container-page py-14 sm:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }}
+      />
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Image Converter
