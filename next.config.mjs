@@ -16,6 +16,11 @@ const nextConfig = {
         destination: 'https://www.convertimagenow.com/:path*',
         permanent: true,
       },
+      {
+          source: '/blog/heic-to-jpg-guide',
+          destination: '/blog/how-to-convert-heic-to-jpg',
+          permanent: true,
+        },
     ];
   },
 };
