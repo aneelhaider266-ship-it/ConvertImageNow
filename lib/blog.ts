@@ -606,7 +606,7 @@ export const BLOG_POSTS: BlogPost[] = [
       
       "## How to Convert HEIC to JPG with ConvertImageNow",
       "Step 1: Open ConvertImageNow in your browser. Step 2: Upload one or multiple HEIC images. Step 3: Select JPG as the output format. Step 4: Start the conversion. Step 5: Download the converted JPG files.",
-      
+      "Prefer to skip straight to converting? Use the [HEIC to JPG Converter](/heic-to-jpg) — the same tool, built specifically for this conversion.",
       "## Does Converting HEIC to JPG Reduce Quality?",
       "HEIC uses modern compression while JPG uses lossy compression. Choosing a high-quality JPG setting can help keep the visual difference small.",
       
