@@ -5,7 +5,7 @@ import { ShieldCheck, WifiOff, Infinity as InfinityIcon } from "lucide-react";
 export const metadata: Metadata = {
   title: "HEIC to JPG Converter — Free, Online & Private",
   description:
-    "Convert HEIC to JPG online for free. No uploads, no signup, no file limits — everything happens instantly in your browser. Works even offline.",
+    "Convert HEIC to JPG online for free. Learn how to convert HEIC photos to JPG on iPhone, Windows, and Mac with no signup, uploads, or watermark.",
   alternates: { canonical: "/heic-to-jpg" },
 };
 
@@ -13,52 +13,52 @@ const POINTS = [
   {
     icon: ShieldCheck,
     title: "Truly private",
-    desc: "Your photos never touch a server — there's nothing to delete later because nothing was ever uploaded.",
+    desc: "Your photos never touch a server. Conversion happens directly in your browser.",
   },
   {
     icon: WifiOff,
     title: "Works offline",
-    desc: "Once the page has loaded, conversion happens entirely on your device — no live connection needed.",
+    desc: "Once the page has loaded, conversion happens entirely on your device.",
   },
   {
     icon: InfinityIcon,
     title: "No artificial limits",
-    desc: "No cap on how many images you convert, no daily quota, and no watermark on the output.",
+    desc: "No daily quota, no watermark, and no server upload limit.",
   },
 ];
 
 const FAQS = [
   {
     q: "Is this HEIC to JPG converter really free?",
-    a: "Yes, completely. There's no premium tier, no daily limit, and no watermark on converted images.",
+    a: "Yes. ConvertImageNow lets you convert HEIC images to JPG for free without a signup or watermark.",
   },
   {
     q: "How do I convert HEIC to JPG on iPhone?",
-    a: "Open this page directly in Safari on your iPhone and convert your photos the same way as on desktop — no app needed. iPhones can also auto-convert HEIC to JPG when sharing via Mail or Messages, depending on your Camera settings under Settings → Camera → Formats.",
+    a: "Open ConvertImageNow in Safari, select your HEIC photo, choose JPG as the output format, and download the converted image.",
   },
   {
     q: "How do I convert HEIC to JPG on Windows?",
-    a: "Open this converter in any browser (Chrome, Edge, Firefox) on your PC. No software installation is needed — the conversion happens directly in the browser tab.",
+    a: "Open ConvertImageNow in Chrome, Edge, Firefox, or another modern browser. Select your HEIC file, choose JPG, and download the converted image.",
   },
   {
     q: "How do I convert HEIC to JPG on Mac?",
-    a: "Open this page in Safari or Chrome on your Mac and convert directly — no software install needed. Mac's built-in Preview app can also convert HEIC to JPG via File → Export, if you prefer not to use a browser tool.",
+    a: "Open ConvertImageNow in Safari or Chrome, select your HEIC image, choose JPG, and download the result. You can also use the Preview app on Mac.",
   },
   {
-    q: "Can I batch convert multiple HEIC files at once?",
-    a: "Yes — drag and drop several HEIC files together, convert them all in one pass, and download them as a single ZIP file.",
+    q: "Can I batch convert multiple HEIC files?",
+    a: "Yes. Select or drag multiple HEIC files into the converter, convert them together, and download the results as a ZIP file.",
   },
   {
-    q: "Can I convert HEIC to PNG instead of JPG?",
-    a: "Yes, this tool also supports PNG and WebP as output formats. Just select PNG from the format options instead of JPG.",
+    q: "Can I convert HEIC to PNG or WebP?",
+    a: "Yes. ConvertImageNow also supports PNG and WebP output formats.",
   },
   {
     q: "Does converting HEIC to JPG reduce image quality?",
-    a: "JPG uses lossy compression, so there's a technical difference, but at a high quality setting (80–95) the visual difference is generally not noticeable. Adjust the quality slider to balance file size and quality.",
+    a: "JPG uses lossy compression, but you can adjust the quality setting to balance image quality and file size.",
   },
   {
     q: "Is there a file size limit?",
-    a: "No artificial limit is imposed by this tool. Since conversion happens on your own device, the practical limit depends on your device's available memory rather than a server-imposed cap.",
+    a: "There is no artificial server-imposed file size limit. Because conversion happens in your browser, the practical limit depends on your device's available memory.",
   },
 ];
 
@@ -68,7 +68,10 @@ const FAQ_SCHEMA = {
   mainEntity: FAQS.map((f) => ({
     "@type": "Question",
     name: f.q,
-    acceptedAnswer: { "@type": "Answer", text: f.a },
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: f.a,
+    },
   })),
 };
 
@@ -77,17 +80,20 @@ export default function HeicToJpgPage() {
     <div className="container-page py-14 sm:py-20">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(FAQ_SCHEMA),
+        }}
       />
 
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           HEIC to JPG Converter
         </h1>
+
         <p className="mt-3 text-slate-600 dark:text-slate-300">
           Convert your HEIC photos to JPG instantly — no uploads, no signup,
-          no waiting. Drop your file below and it converts right in your
-          browser in seconds.
+          and no waiting. Drop your files below and convert them directly in
+          your browser.
         </p>
       </div>
 
@@ -96,53 +102,270 @@ export default function HeicToJpgPage() {
       </div>
 
       <div className="mx-auto mt-12 max-w-4xl space-y-6 text-left text-slate-700 dark:text-slate-300">
-        <h2 className="text-2xl font-bold">Why Convert HEIC to JPG?</h2>
+
+        <h2 className="text-2xl font-bold">
+          Why Convert HEIC to JPG?
+        </h2>
+
         <p>
-          HEIC (High Efficiency Image Container) is the default photo format
-          on iPhones since iOS 11. It saves storage space, but it doesn&apos;t
-          open properly on many Windows PCs, older Android phones, some
-          websites, and older software. Converting to JPG fixes that
-          instantly — JPG opens everywhere, on every device, browser, and
-          platform, without exception.
+          HEIC (High Efficiency Image Container) is widely used by modern
+          iPhones because it can store high-quality photos using less storage
+          space than many older image formats. However, HEIC is not supported
+          equally by every website, application, or device.
         </p>
 
-        <h2 className="text-2xl font-bold">Why ConvertImageNow Is Different</h2>
         <p>
-          Most HEIC to JPG converters ask you to upload your file to their
-          servers first, wait for processing, then download the result. That
-          upload step means your photos briefly leave your device and sit on
-          someone else&apos;s storage, even if they say they delete it later.
-          ConvertImageNow skips that step entirely — your file is converted
-          locally, using your browser&apos;s own Canvas API.
+          Converting HEIC to JPG makes your photos easier to open, share,
+          edit, email, and upload. JPG is widely supported across devices,
+          browsers, apps, and websites, making it a convenient format when
+          compatibility is important.
+        </p>
+
+        <h2 className="text-2xl font-bold">
+          Why ConvertImageNow Is Different
+        </h2>
+
+        <p>
+          Many online image converters require you to upload your photos to a
+          remote server for processing. ConvertImageNow takes a different
+          approach. Your HEIC image can be processed directly in your browser
+          using your device's local resources.
+        </p>
+
+        <p>
+          This means you can convert personal photos without sending them to a
+          remote conversion server. There is also no account registration
+          required and no watermark added to your converted images.
         </p>
 
         <div className="grid gap-6 sm:grid-cols-3">
           {POINTS.map(({ icon: Icon, title, desc }) => (
             <div key={title}>
               <Icon className="h-6 w-6" />
-              <h3 className="mt-2 font-semibold">{title}</h3>
-              <p className="mt-1 text-sm">{desc}</p>
+
+              <h3 className="mt-2 font-semibold">
+                {title}
+              </h3>
+
+              <p className="mt-1 text-sm">
+                {desc}
+              </p>
             </div>
           ))}
         </div>
 
-        <h2 className="text-2xl font-bold">How to Convert HEIC to JPG</h2>
+        <h2 className="text-2xl font-bold">
+          How to Convert HEIC to JPG
+        </h2>
+
+        <p>
+          Converting a HEIC image to JPG only takes a few steps:
+        </p>
+
         <ol className="list-decimal space-y-2 pl-5">
-          <li>Drop your HEIC file (or several) into the box above, or click to browse.</li>
-          <li>Choose JPG as the output format.</li>
-          <li>Adjust the quality slider if you want a smaller file size.</li>
-          <li>Download your converted image, or grab all of them at once as a ZIP.</li>
+          <li>
+            Select or drag your HEIC file into the converter above.
+          </li>
+
+          <li>
+            Choose JPG as the output format.
+          </li>
+
+          <li>
+            Adjust the quality setting if you want to control the file size.
+          </li>
+
+          <li>
+            Start the conversion.
+          </li>
+
+          <li>
+            Download your JPG image or download multiple converted images as a
+            ZIP file.
+          </li>
         </ol>
 
-        <h2 className="text-2xl font-bold">Frequently Asked Questions</h2>
+        <h2 className="text-2xl font-bold">
+          How to Convert HEIC to JPG on iPhone
+        </h2>
+
+        <p>
+          iPhones commonly save photos in the HEIC format because it helps
+          reduce storage usage while maintaining good image quality. If you
+          need a JPG version for a website, email, app, or another device,
+          you can convert the photo directly in your browser.
+        </p>
+
+        <ol className="list-decimal space-y-2 pl-5">
+          <li>
+            Open ConvertImageNow in Safari on your iPhone.
+          </li>
+
+          <li>
+            Select the HEIC photo you want to convert.
+          </li>
+
+          <li>
+            Choose JPG as the output format.
+          </li>
+
+          <li>
+            Start the conversion.
+          </li>
+
+          <li>
+            Download the converted JPG image.
+          </li>
+        </ol>
+
+        <p>
+          No additional conversion app is required when using the browser
+          converter.
+        </p>
+
+        <h2 className="text-2xl font-bold">
+          How to Convert HEIC to JPG on Windows
+        </h2>
+
+        <p>
+          HEIC files may not work with every Windows application or website.
+          Converting them to JPG can make the images easier to open, edit,
+          share, and upload.
+        </p>
+
+        <ol className="list-decimal space-y-2 pl-5">
+          <li>
+            Open ConvertImageNow in Chrome, Edge, Firefox, or another modern
+            browser.
+          </li>
+
+          <li>
+            Drag your HEIC image into the converter or select it from your
+            computer.
+          </li>
+
+          <li>
+            Select JPG as the output format.
+          </li>
+
+          <li>
+            Adjust the quality setting if needed.
+          </li>
+
+          <li>
+            Download your converted JPG image.
+          </li>
+        </ol>
+
+        <p>
+          The browser-based converter does not require you to install separate
+          conversion software.
+        </p>
+
+        <h2 className="text-2xl font-bold">
+          How to Convert HEIC to JPG on Mac
+        </h2>
+
+        <p>
+          Mac users can convert HEIC images to JPG using built-in macOS tools
+          or a browser-based converter. ConvertImageNow provides a quick
+          option when you want to convert one or multiple HEIC files.
+        </p>
+
+        <ol className="list-decimal space-y-2 pl-5">
+          <li>
+            Open ConvertImageNow in Safari or Chrome.
+          </li>
+
+          <li>
+            Select one or more HEIC images.
+          </li>
+
+          <li>
+            Choose JPG as the output format.
+          </li>
+
+          <li>
+            Select your preferred quality.
+          </li>
+
+          <li>
+            Download the converted JPG files.
+          </li>
+        </ol>
+
+        <p>
+          If you prefer a built-in Mac solution, you can also use Preview to
+          export a HEIC image as JPG.
+        </p>
+
+        <h2 className="text-2xl font-bold">
+          Convert HEIC to JPG Free Online
+        </h2>
+
+        <p>
+          ConvertImageNow is a free HEIC to JPG converter designed to keep the
+          conversion process simple. You do not need to create an account, and
+          converted images do not contain a watermark.
+        </p>
+
+        <p>
+          You can convert individual HEIC images or process multiple files at
+          once. This is useful when you have several iPhone photos that need
+          to be converted before uploading or sharing them.
+        </p>
+
+        <h2 className="text-2xl font-bold">
+          Convert HEIC to JPG Without Uploading Photos
+        </h2>
+
+        <p>
+          Privacy can be important when converting personal photos. With
+          ConvertImageNow, image conversion is performed directly in your
+          browser rather than requiring your photos to be uploaded to a
+          remote conversion server.
+        </p>
+
+        <p>
+          Once the page has loaded, your device can perform the conversion
+          locally. This approach can be useful when working with private
+          photos or images that you do not want to send to an online service.
+        </p>
+
+        <h2 className="text-2xl font-bold">
+          HEIC vs JPG: What's the Difference?
+        </h2>
+
+        <p>
+          HEIC is designed to provide efficient storage while maintaining high
+          image quality. JPG is an older and extremely common image format
+          supported by a wide range of devices, applications, and websites.
+        </p>
+
+        <p>
+          The main reason to convert HEIC to JPG is usually compatibility. If
+          a website, application, or device does not accept HEIC files, JPG
+          can be a practical alternative.
+        </p>
+
+        <h2 className="text-2xl font-bold">
+          Frequently Asked Questions
+        </h2>
+
         <div className="space-y-5">
           {FAQS.map(({ q, a }) => (
             <div key={q}>
-              <h3 className="font-semibold">{q}</h3>
-              <p className="mt-1 text-sm">{a}</p>
+              <h3 className="font-semibold">
+                {q}
+              </h3>
+
+              <p className="mt-1 text-sm">
+                {a}
+              </p>
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );
