@@ -1,0 +1,4 @@
+EnterContact: mailto:contact@convertimagenow.com
+Expires: 2027-08-18T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://www.convertimagenow.com/.well-known/security.txt
