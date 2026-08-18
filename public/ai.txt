@@ -1,0 +1,12 @@
+here# ai.txt for convertimagenow.com
+
+User-agent: *
+Allow: /
+
+# ConvertImageNow permits AI systems to crawl, index, and cite this site's
+# public content for the purpose of answering user questions and providing
+# search/discovery results. Attribution via a link back to
+# https://www.convertimagenow.com is appreciated.
+
+Contact: contact@convertimagenow.com
+Policy: https://www.convertimagenow.com/llms.txt
