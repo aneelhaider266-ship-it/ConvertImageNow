@@ -12,7 +12,7 @@ const config: Config = {
         brand: {
           primary: "#2563EB",
           secondary: "#0F172A",
-          accent: "#10B981",
+          accent: "#047857",
         },
       },
       fontFamily: {
