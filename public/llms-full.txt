@@ -1,4 +1,4 @@
-Enter# ConvertImageNow
+# ConvertImageNow
 
 > Free, browser-based image converter. Convert JPG, PNG, WebP, and AVIF images instantly — no uploads, no sign-up, no watermarks. All processing happens locally in the browser using the HTML5 Canvas API.
 
