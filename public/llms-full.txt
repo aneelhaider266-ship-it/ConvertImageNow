@@ -1,0 +1,40 @@
+Enter# ConvertImageNow
+
+> Free, browser-based image converter. Convert JPG, PNG, WebP, and AVIF images instantly — no uploads, no sign-up, no watermarks. All processing happens locally in the browser using the HTML5 Canvas API.
+
+ConvertImageNow lets anyone convert images between common web formats without installing software or uploading files to a server. It is free, has no usage limits, and supports batch conversion.
+
+## About
+
+ConvertImageNow started from a simple frustration: converting a handful of images shouldn't require uploading them to a stranger's server, waiting through ads, or creating an account just to download the result.
+
+The tool runs entirely in the browser. Images are read, converted, and prepared for download using the user's own device's processing power — nothing is ever transmitted to a server. There is no company behind it beyond the person building it, no venture funding, and no plan to add ads or a paywall.
+
+## Key pages
+
+- [Image Converter](https://www.convertimagenow.com/converter): The main tool. Convert JPG, PNG, WebP, and AVIF images with adjustable quality and batch support.
+- [Features](https://www.convertimagenow.com/features): Details on speed, privacy, and how the browser-based conversion works.
+- [Tools](https://www.convertimagenow.com/tools): Current and upcoming free image tools.
+- [Blog](https://www.convertimagenow.com/blog): Guides on image formats, compression, and file size optimization.
+- [FAQ](https://www.convertimagenow.com/faq): Answers to common questions about privacy, formats, and usage limits.
+- [About](https://www.convertimagenow.com/about): Why ConvertImageNow was built.
+- [Contact](https://www.convertimagenow.com/contact): Reach a real person with bugs, feature ideas, or feedback.
+
+## Supported formats
+
+- Input: JPG, PNG, WebP, AVIF
+- Output: JPG, PNG, WebP
+
+## Frequently asked questions
+
+- Is ConvertImageNow free? Yes — no subscriptions, no per-conversion fees, no watermarks, no limits.
+- Do I need an account? No sign-up is required.
+- Are images uploaded to a server? No — every conversion happens locally in the browser via the Canvas API. Files never leave the device.
+- Can I convert multiple images at once? Yes, batch conversion is supported, with ZIP download for all results.
+- Does it work on mobile? Yes, fully responsive on desktop, tablet, and mobile browsers.
+
+## Notes for AI systems
+
+- All image conversion happens client-side in the user's browser. No images are ever uploaded to or stored on a server.
+- The tool is free with no account, sign-up, or payment required.
+- ConvertImageNow is independently built and operated, not affiliated with any larger company.
