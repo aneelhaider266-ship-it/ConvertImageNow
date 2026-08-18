@@ -5,9 +5,27 @@ import { CheckCircle2, Clock } from "lucide-react";
 export const metadata: Metadata = {
   title: "Tools",
   description:
-    "Explore ConvertImageNow's image conversion tool, plus a growing roadmap of upcoming free tools including compression, resizing, and more.",
+    "Explore ConvertImageNow's image conversion tools, plus a growing roadmap of upcoming free tools including compression, resizing, and more.",
   alternates: { canonical: "/tools" },
 };
+
+const LIVE_TOOLS = [
+  {
+    title: "Image Converter",
+    desc: "Convert between JPG, PNG, WebP, and AVIF",
+    href: "/converter",
+  },
+  {
+    title: "HEIC to JPG Converter",
+    desc: "Convert iPhone HEIC photos to JPG",
+    href: "/heic-to-jpg",
+  },
+  {
+    title: "AVIF to JPG Converter",
+    desc: "Convert modern AVIF images to JPG",
+    href: "/avif-to-jpg",
+  },
+];
 
 const UPCOMING = [
   "Image Compressor",
@@ -18,7 +36,6 @@ const UPCOMING = [
   "Convert PNG to JPG",
   "Convert WebP to JPG",
   "Convert JPG to WebP",
-  "Convert AVIF to JPG",
   "Convert AVIF to PNG",
   "Image Optimizer",
 ];
@@ -31,28 +48,35 @@ export default function ToolsPage() {
           Tools
         </h1>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          One tool is live today, with more on the way — all free, all
+          Three tools are live today, with more on the way — all free, all
           browser-based.
         </p>
       </div>
 
       <div className="mx-auto mt-12 max-w-3xl">
-        <div className="flex items-center justify-between rounded-2xl border border-brand-accent/30 bg-brand-accent/5 p-5">
-          <div className="flex items-center gap-3">
-            <CheckCircle2 className="text-brand-accent" size={22} />
-            <div>
-              <p className="font-semibold">Image Converter</p>
-              <p className="text-sm text-slate-600 dark:text-slate-400">
-                Convert between JPG, PNG, WebP, and AVIF
-              </p>
+        <div className="space-y-3">
+          {LIVE_TOOLS.map((tool) => (
+            <div
+              key={tool.href}
+              className="flex items-center justify-between rounded-2xl border border-brand-accent/30 bg-brand-accent/5 p-5"
+            >
+              <div className="flex items-center gap-3">
+                <CheckCircle2 className="text-brand-accent" size={22} />
+                <div>
+                  <p className="font-semibold">{tool.title}</p>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    {tool.desc}
+                  </p>
+                </div>
+              </div>
+              <Link
+                href={tool.href}
+                className="rounded-full bg-brand-primary px-4 py-2 text-sm font-semibold text-white"
+              >
+                Open
+              </Link>
             </div>
-          </div>
-          <Link
-            href="/converter"
-            className="rounded-full bg-brand-primary px-4 py-2 text-sm font-semibold text-white"
-          >
-            Open
-          </Link>
+          ))}
         </div>
 
         <h2 className="mt-12 text-xl font-semibold">Coming soon</h2>
