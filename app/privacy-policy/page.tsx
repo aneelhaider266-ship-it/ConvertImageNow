@@ -13,7 +13,7 @@ export default function PrivacyPolicyPage() {
         Privacy Policy
       </h1>
       <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-        Last updated: January 2026
+        Last updated: August 2026
       </p>
 
       <div className="mt-8 space-y-6 text-slate-700 dark:text-slate-300">
@@ -58,13 +58,55 @@ export default function PrivacyPolicyPage() {
 
         <section>
           <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+            Advertising
+          </h2>
+          <p className="mt-2">
+            We may use third-party advertising companies, including Google,
+            to serve ads when you visit this site. These companies may use
+            cookies or similar technologies (such as the DoubleClick DART
+            cookie) to serve ads based on your prior visits to this site or
+            other websites. Google&apos;s use of advertising cookies enables
+            it and its partners to serve ads to you based on your visit to
+            this site and/or other sites on the Internet.
+          </p>
+          <p className="mt-2">
+            You may opt out of personalized advertising by visiting{" "}
+            <a
+              href="https://www.google.com/settings/ads"
+              className="text-brand-primary hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google Ads Settings
+            </a>
+            . You can also learn more about how Google uses information from
+            sites that use its services at{" "}
+            <a
+              href="https://policies.google.com/technologies/partner-sites"
+              className="text-brand-primary hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              policies.google.com/technologies/partner-sites
+            </a>
+            .
+          </p>
+          <p className="mt-2">
+            This site is not directed at children under 13, and we do not
+            knowingly collect personal information from children under 13.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
             Third-party services
           </h2>
           <p className="mt-2">
-            We may use third-party services such as analytics or hosting
-            providers that process limited technical data (like IP address)
-            as part of operating the site. These providers do not receive
-            your images, since conversion never leaves your browser.
+            We may use third-party services such as analytics, advertising,
+            or hosting providers that process limited technical data (like
+            IP address) as part of operating the site. These providers do
+            not receive your images, since conversion never leaves your
+            browser.
           </p>
         </section>
 
