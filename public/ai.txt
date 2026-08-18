@@ -1,4 +1,4 @@
-here# ai.txt for convertimagenow.com
+# ai.txt for convertimagenow.com
 
 User-agent: *
 Allow: /
