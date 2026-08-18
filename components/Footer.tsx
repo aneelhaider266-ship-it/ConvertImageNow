@@ -6,6 +6,8 @@ const COLUMNS = [
     title: "Tools",
     links: [
       { href: "/converter", label: "Image Converter" },
+      { href: "/heic-to-jpg", label: "HEIC to JPG" },
+      { href: "/avif-to-jpg", label: "AVIF to JPG" },
       { href: "/tools", label: "All Tools" },
       { href: "/features", label: "Features" },
     ],
