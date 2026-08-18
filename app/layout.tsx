@@ -56,8 +56,11 @@ export default function RootLayout({
     url: SITE_URL,
     email: "contact@convertimagenow.com",
     logo: `${SITE_URL}/logo.png`,
+    sameAs: [
+      "https://www.linkedin.com/in/aneel-haider-539460307",
+      "https://x.com/Aneel7157791",
+    ],
   };
-
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
