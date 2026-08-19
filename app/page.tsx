@@ -79,29 +79,35 @@ export default function HomePage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(SERVICE_SCHEMA) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(SERVICE_SCHEMA),
+        }}
       />
 
       {/* Hero */}
       <section className="relative overflow-hidden border-b border-slate-200 dark:border-slate-800">
-        <div className="container-page py-16 sm:py-24">
+        <div className="container-page py-14 sm:py-20">
           <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center gap-1.5 rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-600 dark:border-slate-700 dark:text-slate-300">
-              <Lock size={12} className="text-brand-accent" />
-              100% private — runs entirely in your browser
+            <span className="inline-flex min-h-7 items-center gap-1.5 rounded-full border border-slate-200 px-3 py-1 text-xs font-medium leading-5 text-slate-600 dark:border-slate-700 dark:text-slate-300">
+              <Lock
+                size={12}
+                className="shrink-0 text-brand-accent"
+                aria-hidden="true"
+              />
+              <span>100% private — runs entirely in your browser</span>
             </span>
 
-            <h1 className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
               Convert Images Online in Seconds
             </h1>
 
-            <p className="mt-5 text-lg text-slate-600 dark:text-slate-300">
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
               Convert JPG, PNG, WebP and AVIF images instantly. Free, secure,
               and processed completely inside your browser.
             </p>
           </div>
 
-          <div className="mx-auto mt-10 max-w-3xl">
+          <div className="mx-auto mt-9 min-h-[320px] max-w-3xl sm:min-h-[300px]">
             <ImageConverter />
           </div>
         </div>
@@ -120,36 +126,40 @@ export default function HomePage() {
         </div>
 
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((f) => (
-            <div
-              key={f.title}
-              className="rounded-2xl border border-slate-200 p-6 transition-shadow hover:shadow-md dark:border-slate-800"
-            >
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
-                <f.icon size={20} />
-              </span>
+          {FEATURES.map((feature) => {
+            const Icon = feature.icon;
 
-              <h3 className="mt-4 font-semibold">{f.title}</h3>
+            return (
+              <div
+                key={feature.title}
+                className="rounded-2xl border border-slate-200 p-6 transition-shadow hover:shadow-md dark:border-slate-800"
+              >
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
+                  <Icon size={20} aria-hidden="true" />
+                </span>
 
-              <p className="mt-1.5 text-sm text-slate-600 dark:text-slate-400">
-                {f.desc}
-              </p>
-            </div>
-          ))}
+                <h3 className="mt-4 font-semibold">{feature.title}</h3>
+
+                <p className="mt-1.5 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                  {feature.desc}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </section>
 
       {/* Stats */}
       <section className="border-y border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
         <div className="container-page grid grid-cols-2 gap-8 py-14 sm:grid-cols-4">
-          {STATS.map((s) => (
-            <div key={s.label} className="text-center">
-              <p className="text-3xl font-bold text-brand-primary sm:text-4xl">
-                {s.value}
+          {STATS.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <p className="text-3xl font-bold leading-tight text-brand-primary sm:text-4xl">
+                {stat.value}
               </p>
 
               <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
-                {s.label}
+                {stat.label}
               </p>
             </div>
           ))}
@@ -213,41 +223,35 @@ export default function HomePage() {
             </p>
 
             <div className="mt-8 grid gap-5 sm:grid-cols-2">
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
-                <h3 className="font-semibold">JPG</h3>
+              {[
+                {
+                  title: "JPG",
+                  desc: "JPG is widely supported and works well for photographs and everyday images where smaller file sizes are useful.",
+                },
+                {
+                  title: "PNG",
+                  desc: "PNG is useful for graphics, screenshots, logos, and images where lossless quality or transparency is important.",
+                },
+                {
+                  title: "WebP",
+                  desc: "WebP is a modern web-friendly format that can provide smaller files while maintaining good visual quality.",
+                },
+                {
+                  title: "AVIF",
+                  desc: "AVIF is a modern image format designed to provide efficient compression while maintaining strong image quality.",
+                },
+              ].map((format) => (
+                <div
+                  key={format.title}
+                  className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-950"
+                >
+                  <h3 className="font-semibold">{format.title}</h3>
 
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                  JPG is widely supported and works well for photographs and
-                  everyday images where smaller file sizes are useful.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
-                <h3 className="font-semibold">PNG</h3>
-
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                  PNG is useful for graphics, screenshots, logos, and images
-                  where lossless quality or transparency is important.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
-                <h3 className="font-semibold">WebP</h3>
-
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                  WebP is a modern web-friendly format that can provide
-                  smaller files while maintaining good visual quality.
-                </p>
-              </div>
-
-              <div className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-950">
-                <h3 className="font-semibold">AVIF</h3>
-
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                  AVIF is a modern image format designed to provide efficient
-                  compression while maintaining strong image quality.
-                </p>
-              </div>
+                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                    {format.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -267,40 +271,38 @@ export default function HomePage() {
         </div>
 
         <div className="mx-auto mt-12 grid max-w-5xl gap-6 md:grid-cols-3">
-          <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
-            <span className="text-sm font-bold text-brand-primary">01</span>
+          {[
+            {
+              number: "01",
+              title: "Choose your images",
+              desc: "Select or drag and drop the JPG, PNG, WebP, or AVIF images you want to convert.",
+            },
+            {
+              number: "02",
+              title: "Select the output format",
+              desc: "Choose the image format you need and adjust the available quality setting when supported.",
+            },
+            {
+              number: "03",
+              title: "Download your images",
+              desc: "Download your converted files individually or use the batch download option when working with multiple images.",
+            },
+          ].map((step) => (
+            <div
+              key={step.number}
+              className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800"
+            >
+              <span className="text-sm font-bold text-brand-primary">
+                {step.number}
+              </span>
 
-            <h3 className="mt-3 font-semibold">Choose your images</h3>
+              <h3 className="mt-3 font-semibold">{step.title}</h3>
 
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-              Select or drag and drop the JPG, PNG, WebP, or AVIF images you
-              want to convert.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
-            <span className="text-sm font-bold text-brand-primary">02</span>
-
-            <h3 className="mt-3 font-semibold">
-              Select the output format
-            </h3>
-
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-              Choose the image format you need and adjust the available quality
-              setting when supported.
-            </p>
-          </div>
-
-          <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
-            <span className="text-sm font-bold text-brand-primary">03</span>
-
-            <h3 className="mt-3 font-semibold">Download your images</h3>
-
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-              Download your converted files individually or use the batch
-              download option when working with multiple images.
-            </p>
-          </div>
+              <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                {step.desc}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
@@ -319,38 +321,32 @@ export default function HomePage() {
             </p>
 
             <div className="mt-8 space-y-5">
-              <div>
-                <h3 className="font-semibold">Website images</h3>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                  Convert images into web-friendly formats such as WebP or
-                  other supported formats when preparing images for a website.
-                </p>
-              </div>
+              {[
+                {
+                  title: "Website images",
+                  desc: "Convert images into web-friendly formats such as WebP or other supported formats when preparing images for a website.",
+                },
+                {
+                  title: "E-commerce product photos",
+                  desc: "Convert product photos into a format that works with your store, marketplace, or content management system.",
+                },
+                {
+                  title: "Design and creative work",
+                  desc: "Designers can quickly convert images between supported formats when preparing assets for different projects.",
+                },
+                {
+                  title: "Batch image conversion",
+                  desc: "When you have multiple images to convert, batch processing can save time by allowing several files to be handled in one session.",
+                },
+              ].map((item) => (
+                <div key={item.title}>
+                  <h3 className="font-semibold">{item.title}</h3>
 
-              <div>
-                <h3 className="font-semibold">E-commerce product photos</h3>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                  Convert product photos into a format that works with your
-                  store, marketplace, or content management system.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold">Design and creative work</h3>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                  Designers can quickly convert images between supported
-                  formats when preparing assets for different projects.
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-semibold">Batch image conversion</h3>
-                <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                  When you have multiple images to convert, batch processing
-                  can save time by allowing several files to be handled in one
-                  session.
-                </p>
-              </div>
+                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -359,8 +355,8 @@ export default function HomePage() {
       {/* Privacy */}
       <section className="container-page py-16 sm:py-24">
         <div className="mx-auto max-w-3xl rounded-3xl border border-slate-200 p-8 dark:border-slate-800 sm:p-10">
-          <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
-            <Lock size={22} />
+          <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
+            <Lock size={22} aria-hidden="true" />
           </div>
 
           <h2 className="mt-6 text-3xl font-bold tracking-tight sm:text-4xl">
@@ -407,15 +403,18 @@ export default function HomePage() {
         <div className="mx-auto mt-10 max-w-2xl divide-y divide-slate-200 dark:divide-slate-800">
           {FAQ_ITEMS.slice(0, 5).map((item) => (
             <details key={item.question} className="group py-4">
-              <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
-                {item.question}
+              <summary className="flex min-h-6 cursor-pointer list-none items-center justify-between font-medium">
+                <span>{item.question}</span>
 
-                <span className="ml-4 text-slate-400 group-open:rotate-45">
+                <span
+                  aria-hidden="true"
+                  className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center text-lg leading-none text-slate-400 group-open:rotate-45"
+                >
                   +
                 </span>
               </summary>
 
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+              <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
                 {item.answer}
               </p>
             </details>
@@ -425,9 +424,10 @@ export default function HomePage() {
         <div className="mt-8 text-center">
           <Link
             href="/faq"
-            className="inline-flex items-center gap-1 text-sm font-semibold text-brand-primary hover:underline"
+            className="inline-flex min-h-6 items-center gap-1 text-sm font-semibold text-brand-primary hover:underline"
           >
-            View all FAQs <ArrowRight size={14} />
+            View all FAQs
+            <ArrowRight size={14} aria-hidden="true" />
           </Link>
         </div>
       </section>
@@ -446,9 +446,10 @@ export default function HomePage() {
 
           <Link
             href="/converter"
-            className="mt-8 inline-flex items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
+            className="mt-8 inline-flex min-h-11 items-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5"
           >
-            Start Converting Free <ArrowRight size={16} />
+            Start Converting Free
+            <ArrowRight size={16} aria-hidden="true" />
           </Link>
         </div>
       </section>
