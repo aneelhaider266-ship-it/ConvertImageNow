@@ -6,9 +6,7 @@ export const metadata: Metadata = {
   title: "AVIF to JPG Converter — Free, Online & Private",
   description:
     "Convert AVIF to JPG online for free. Learn how to convert AVIF images to JPG on Windows, Mac, and Android with no signup, uploads, or watermark.",
-  alternates: {
-    canonical: "/avif-to-jpg",
-  },
+  alternates: { canonical: "/avif-to-jpg" },
 };
 
 const POINTS = [
@@ -44,7 +42,7 @@ const FAQS = [
   },
   {
     q: "How do I convert AVIF to JPG on Android?",
-    a: "Open ConvertImageNow in Chrome or another mobile browser, select your AVIF image, choose JPG, and download the converted file to your device.",
+    a: "Open ConvertImageNow in Chrome or another mobile browser, select or drag your AVIF image, choose JPG, and download the converted file to your device.",
   },
   {
     q: "Why won't my AVIF image open in some apps?",
@@ -71,12 +69,12 @@ const FAQS = [
 const FAQ_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  mainEntity: FAQS.map((faq) => ({
+  mainEntity: FAQS.map((f) => ({
     "@type": "Question",
-    name: faq.q,
+    name: f.q,
     acceptedAnswer: {
       "@type": "Answer",
-      text: faq.a,
+      text: f.a,
     },
   })),
 };
@@ -91,7 +89,6 @@ export default function AvifToJpgPage() {
         }}
       />
 
-      {/* Hero */}
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           AVIF to JPG Converter
@@ -104,14 +101,15 @@ export default function AvifToJpgPage() {
         </p>
       </div>
 
-      {/* Converter */}
-      <div className="mx-auto mt-10 min-h-[400px] max-w-3xl">
+      <div className="mx-auto mt-10 max-w-3xl">
         <ImageConverter />
       </div>
 
-      {/* SEO Content */}
       <div className="mx-auto mt-12 max-w-4xl space-y-6 text-left text-slate-700 dark:text-slate-300">
-        <h2 className="text-2xl font-bold">Why Convert AVIF to JPG?</h2>
+
+        <h2 className="text-2xl font-bold">
+          Why Convert AVIF to JPG?
+        </h2>
 
         <p>
           AVIF (AV1 Image File Format) is a modern image format built on the
@@ -144,18 +142,18 @@ export default function AvifToJpgPage() {
           and no watermark added to your converted images.
         </p>
 
-        {/* Benefits */}
         <div className="grid gap-6 sm:grid-cols-3">
           {POINTS.map(({ icon: Icon, title, desc }) => (
             <div key={title}>
-              <Icon
-                className="h-6 w-6"
-                aria-hidden="true"
-              />
+              <Icon className="h-6 w-6" />
 
-              <h3 className="mt-2 font-semibold">{title}</h3>
+              <h3 className="mt-2 font-semibold">
+                {title}
+              </h3>
 
-              <p className="mt-1 text-sm">{desc}</p>
+              <p className="mt-1 text-sm">
+                {desc}
+              </p>
             </div>
           ))}
         </div>
@@ -164,15 +162,27 @@ export default function AvifToJpgPage() {
           How to Convert AVIF to JPG
         </h2>
 
-        <p>Converting an AVIF image to JPG only takes a few steps:</p>
+        <p>
+          Converting an AVIF image to JPG only takes a few steps:
+        </p>
 
         <ol className="list-decimal space-y-2 pl-5">
-          <li>Select or drag your AVIF file into the converter above.</li>
-          <li>Choose JPG as the output format.</li>
+          <li>
+            Select or drag your AVIF file into the converter above.
+          </li>
+
+          <li>
+            Choose JPG as the output format.
+          </li>
+
           <li>
             Adjust the quality setting if you want to control the file size.
           </li>
-          <li>Start the conversion.</li>
+
+          <li>
+            Start the conversion.
+          </li>
+
           <li>
             Download your JPG image or download multiple converted images as a
             ZIP file.
@@ -194,13 +204,23 @@ export default function AvifToJpgPage() {
             Open ConvertImageNow in Chrome, Edge, Firefox, or another modern
             browser.
           </li>
+
           <li>
             Drag your AVIF image into the converter or select it from your
             computer.
           </li>
-          <li>Select JPG as the output format.</li>
-          <li>Adjust the quality setting if needed.</li>
-          <li>Download your converted JPG image.</li>
+
+          <li>
+            Select JPG as the output format.
+          </li>
+
+          <li>
+            Adjust the quality setting if needed.
+          </li>
+
+          <li>
+            Download your converted JPG image.
+          </li>
         </ol>
 
         <p>
@@ -218,11 +238,25 @@ export default function AvifToJpgPage() {
         </p>
 
         <ol className="list-decimal space-y-2 pl-5">
-          <li>Open ConvertImageNow in Safari or Chrome.</li>
-          <li>Select one or more AVIF images.</li>
-          <li>Choose JPG as the output format.</li>
-          <li>Select your preferred quality.</li>
-          <li>Download the converted JPG files.</li>
+          <li>
+            Open ConvertImageNow in Safari or Chrome.
+          </li>
+
+          <li>
+            Select one or more AVIF images.
+          </li>
+
+          <li>
+            Choose JPG as the output format.
+          </li>
+
+          <li>
+            Select your preferred quality.
+          </li>
+
+          <li>
+            Download the converted JPG files.
+          </li>
         </ol>
 
         <h2 className="text-2xl font-bold">
@@ -240,10 +274,15 @@ export default function AvifToJpgPage() {
             Open ConvertImageNow in Chrome or another mobile browser on your
             Android device.
           </li>
+
           <li>
             Select or drag your AVIF image into the converter.
           </li>
-          <li>Choose JPG as the output format.</li>
+
+          <li>
+            Choose JPG as the output format.
+          </li>
+
           <li>
             Start the conversion and download the JPG file to your device.
           </li>
@@ -255,8 +294,8 @@ export default function AvifToJpgPage() {
 
         <p>
           ConvertImageNow is a free AVIF to JPG converter designed to keep the
-          conversion process simple. You do not need to create an account, and
-          converted images do not contain a watermark.
+          conversion process simple. You do not need to create an account,
+          and converted images do not contain a watermark.
         </p>
 
         <p>
@@ -272,15 +311,15 @@ export default function AvifToJpgPage() {
 
         <p>
           Privacy can be important when converting personal or work-related
-          images. With ConvertImageNow, image conversion is performed directly
-          in your browser rather than requiring your files to be uploaded to a
-          remote conversion server.
+          images. With ConvertImageNow, image conversion is performed
+          directly in your browser rather than requiring your files to be
+          uploaded to a remote conversion server.
         </p>
 
         <p>
           Once the page has loaded, your device can perform the conversion
-          locally. This approach can be useful when working with images you do
-          not want to send to an online service.
+          locally. This approach can be useful when working with images you
+          do not want to send to an online service.
         </p>
 
         <h2 className="text-2xl font-bold">
@@ -308,13 +347,18 @@ export default function AvifToJpgPage() {
         <div className="space-y-5">
           {FAQS.map(({ q, a }) => (
             <div key={q}>
-              <h3 className="font-semibold">{q}</h3>
+              <h3 className="font-semibold">
+                {q}
+              </h3>
 
-              <p className="mt-1 text-sm">{a}</p>
+              <p className="mt-1 text-sm">
+                {a}
+              </p>
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );
-}
+            }
