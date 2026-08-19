@@ -1,17 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-  preload: true,
-});
-
 const SITE_URL = "https://www.convertimagenow.com";
 
 export const metadata: Metadata = {
