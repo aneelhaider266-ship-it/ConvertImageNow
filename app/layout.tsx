@@ -91,10 +91,11 @@ export default function RootLayout({
         />
 
         {/* Google AdSense */}
-        <script
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5442747651786672"
           crossOrigin="anonymous"
+          strategy="lazyOnload"
         />
 
         {/* Google Analytics */}
