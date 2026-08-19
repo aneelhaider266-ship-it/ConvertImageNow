@@ -3,6 +3,7 @@ import Script from "next/script";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
 const SITE_URL = "https://www.convertimagenow.com";
 
 export const metadata: Metadata = {
@@ -15,10 +16,6 @@ export const metadata: Metadata = {
 
   description:
     "Convert JPG, PNG, WebP and AVIF images online in seconds. 100% free, no sign-up, and everything runs securely in your browser — nothing is ever uploaded.",
-
-  alternates: {
-    canonical: SITE_URL,
-  },
 
   openGraph: {
     type: "website",
@@ -36,6 +33,10 @@ export const metadata: Metadata = {
       "Free online image converter. Fast, secure, browser-based — no uploads, no limits.",
   },
 
+  alternates: {
+    canonical: SITE_URL,
+  },
+
   verification: {
     other: {
       "msvalidate.01": "60CAA555BAE22AFA89B6DFDFCB1E8BB8",
@@ -45,9 +46,9 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   const orgSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -71,13 +72,9 @@ export default function RootLayout({
   };
 
   return (
-    <html
-      lang="en"
-      className={inter.variable}
-      suppressHydrationWarning
-    >
+    <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Organization structured data */}
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -85,7 +82,7 @@ export default function RootLayout({
           }}
         />
 
-        {/* Website structured data */}
+        {/* Website Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -93,24 +90,14 @@ export default function RootLayout({
           }}
         />
 
-        {/* AdSense - loaded asynchronously */}
+        {/* Google AdSense */}
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5442747651786672"
           crossOrigin="anonymous"
         />
-      </head>
 
-      <body className="flex min-h-screen flex-col font-sans antialiased">
-        <Header />
-
-        <main className="flex-1">
-          {children}
-        </main>
-
-        <Footer />
-
-        {/* Google Analytics - load after page is idle */}
+        {/* Google Analytics */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HNPJHT8NMN"
           strategy="lazyOnload"
@@ -119,11 +106,21 @@ export default function RootLayout({
         <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
-            function gtag(){window.dataLayer.push(arguments);}
+            function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'G-HNPJHT8NMN');
           `}
         </Script>
+      </head>
+
+      <body className="flex min-h-screen flex-col antialiased">
+        <Header />
+
+        <main className="flex-1">
+          {children}
+        </main>
+
+        <Footer />
       </body>
     </html>
   );
