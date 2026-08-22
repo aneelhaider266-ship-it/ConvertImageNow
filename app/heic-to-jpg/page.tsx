@@ -99,7 +99,7 @@ export default function HeicToJpgPage() {
 
       <div className="mx-auto mt-10 max-w-3xl">
         <ImageConverter initialFormat="jpg" />
-       
+       </div>
       <div className="mx-auto mt-12 max-w-4xl space-y-6 text-left text-slate-700 dark:text-slate-300">
 
         <h2 className="text-2xl font-bold">
