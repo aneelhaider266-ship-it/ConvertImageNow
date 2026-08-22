@@ -413,6 +413,8 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "Use the original image, select an appropriate format, avoid unnecessary resizing, and use a reasonable quality setting. These steps can preserve excellent visual quality while keeping files manageable."
     ],
+  },
+  
     {
     slug: "why-i-built-convertimagenow",
     title: "Why I Built ConvertImageNow: A Simple Private Image Converter",
