@@ -412,5 +412,282 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "Use the original image, select an appropriate format, avoid unnecessary resizing, and use a reasonable quality setting. These steps can preserve excellent visual quality while keeping files manageable."
     ],
+    {
+    slug: "why-i-built-convertimagenow",
+    title: "Why I Built ConvertImageNow: A Simple Private Image Converter",
+    excerpt:
+      "Learn why ConvertImageNow was built as a simple, private, browser-based image converter for everyday image tasks.",
+    date: "2026-03-02",
+    canonical:
+      "https://www.convertimagenow.com/blog/why-i-built-convertimagenow",
+    keywords: [
+      "ConvertImageNow",
+      "private image converter",
+      "browser image converter",
+      "client-side image conversion",
+    ],
+    author: "ConvertImageNow",
+    content: [
+      "Image conversion should be simple, fast, and understandable. ConvertImageNow was built to make common image-conversion tasks easier without requiring complicated desktop software.",
+
+      "## A Simple Image Conversion Tool",
+
+      "Many people only need to convert an image occasionally. They may need JPG for a website, PNG for transparency, WebP for a faster page, or another format for sharing.",
+
+      "ConvertImageNow focuses on the most common formats and a straightforward browser-based workflow.",
+
+      "## Privacy Matters",
+
+      "ConvertImageNow is designed so image conversion happens in the browser. This means supported image files can be processed on the user's device rather than uploaded to a conversion server.",
+
+      "Users should still review the privacy policy and browser permissions before using any online tool with sensitive files.",
+
+      "## Supporting Common Formats",
+
+      "The converter supports common formats such as PNG, JPG, WebP, and AVIF. The best output format depends on the image type, transparency requirements, compatibility, and intended use.",
+
+      "Read [Best Image Formats Explained](/blog/best-image-formats-explained) to compare the main formats.",
+
+      "## Built for Everyday Tasks",
+
+      "The tool can be useful for preparing images for websites, emails, social media, documents, and general file sharing.",
+
+      "For reducing file size, read [How to Make an Image File Smaller](/blog/how-to-make-image-file-smaller).",
+
+      "## Final Thoughts",
+
+      "ConvertImageNow is built around a simple idea: image conversion should be accessible, clear, and useful for everyday work. Open the converter, choose your output format, adjust the settings, and download the result."
+    ],
   },
+
+  {
+    slug: "image-seo-guide",
+    title: "Image SEO Best Practices: Optimize Images for Google and Users",
+    excerpt:
+      "Learn how to optimize image filenames, alt text, dimensions, formats, and loading performance for better user experience and image SEO.",
+    date: "2026-03-09",
+    canonical: "https://www.convertimagenow.com/blog/image-seo-guide",
+    keywords: [
+      "image SEO",
+      "image optimization",
+      "image alt text",
+      "Google image SEO",
+      "website image optimization",
+    ],
+    author: "ConvertImageNow",
+    image: "/image-seo-guide.jpg",
+    content: [
+      "Optimized images can improve usability, page performance, accessibility, and visibility in image search. Image SEO is not just about reducing file size; it also includes context, filenames, alt text, dimensions, and technical delivery.",
+
+      "## Use Descriptive File Names",
+
+      "Use a short, descriptive filename that explains the image. For example, `png-vs-jpg-comparison.jpg` is more useful than a generic filename such as `IMG_1234.jpg`.",
+
+      "Use lowercase words separated by hyphens and avoid unnecessary numbers or keyword stuffing.",
+
+      "## Write Helpful Alt Text",
+
+      "Alt text should describe the meaningful content or purpose of an image. Keep it accurate and concise, and do not add keywords that do not describe the image.",
+
+      "Decorative images can use an empty alt attribute when appropriate. The correct choice depends on how the image contributes to the page.",
+
+      "## Choose the Right Format",
+
+      "Use JPG or WebP for many photographs, PNG for transparency and sharp graphics, and AVIF when it fits your workflow and browser-support requirements.",
+
+      "Read [Best Image Formats Explained](/blog/best-image-formats-explained) for a format comparison.",
+
+      "## Resize Images Before Uploading",
+
+      "Do not upload a very large image when the page only displays a small version. Resize the image to a practical maximum dimension before publishing.",
+
+      "For a complete resizing workflow, read [How to Make an Image File Smaller](/blog/how-to-make-image-file-smaller).",
+
+      "## Compress Images Carefully",
+
+      "Compress images enough to reduce unnecessary data while preserving the visual quality users need. Always compare the compressed version with the original.",
+
+      "## Use Responsive Images",
+
+      "Responsive image techniques can help browsers choose a suitable image size for different screens and connection speeds. Your implementation should provide appropriate dimensions and avoid forcing mobile users to download unnecessarily large files.",
+
+      "## Add Context Around Images",
+
+      "Search engines use surrounding text, page titles, captions, filenames, and alt text to understand an image. Place images near relevant content and use captions when they help explain the image.",
+
+      "## Improve Loading Performance",
+
+      "Use correctly sized images, modern formats where suitable, lazy loading for below-the-fold images, and priority loading only for important above-the-fold content.",
+
+      "## Final Thoughts",
+
+      "Good image SEO combines useful context, descriptive filenames, accurate alt text, suitable dimensions, efficient formats, and fast delivery. These improvements help both search engines and real visitors."
+    ],
   },
+
+  {
+    slug: "batch-convert-images",
+    title: "How to Batch Convert Images Online",
+    excerpt:
+      "Learn how to convert multiple JPG, PNG, WebP, AVIF, and other supported image files efficiently in one workflow.",
+    date: "2026-03-16",
+    canonical:
+      "https://www.convertimagenow.com/blog/batch-convert-images",
+    keywords: [
+      "batch convert images",
+      "convert multiple images",
+      "bulk image conversion",
+      "image converter online",
+    ],
+    author: "ConvertImageNow",
+    content: [
+      "Converting images one at a time can become repetitive when you have a full folder of photos or website assets. Batch conversion can make the process faster and help keep output settings consistent.",
+
+      "## What Is Batch Image Conversion?",
+
+      "Batch image conversion means processing multiple image files in one session. Instead of opening and converting each file separately, you select several files and apply the same output format or quality settings.",
+
+      "## Prepare Your Files",
+
+      "Before starting, organize the source files and decide which output format you need. Keep the original files in a separate folder so they are not accidentally overwritten.",
+
+      "## Choose an Output Format",
+
+      "Choose JPG for many photographs, PNG when transparency or lossless graphics matter, WebP for efficient web delivery, or AVIF when it fits your technical workflow.",
+
+      "Read [Best Image Formats Explained](/blog/best-image-formats-explained) before choosing a format.",
+
+      "## Use Consistent Settings",
+
+      "Applying the same quality and output settings can make a group of images easier to manage. However, inspect the results because different images may respond differently to the same settings.",
+
+      "## Review the Converted Files",
+
+      "Check file names, dimensions, file sizes, transparency, and visual quality after conversion. Open a sample from the beginning, middle, and end of the batch when processing many files.",
+
+      "## Batch Conversion for Websites",
+
+      "Batch conversion can help prepare blog images, product photos, thumbnails, and other website assets. Combine conversion with resizing, descriptive filenames, and accurate alt text.",
+
+      "For more website image advice, read [How to Optimize Images for SEO](/blog/image-seo-guide).",
+
+      "## Protect Your Originals",
+
+      "Do not delete the original files until you have checked the converted versions and confirmed that the new files work as expected.",
+
+      "## Final Thoughts",
+
+      "Batch conversion is useful when you need to process multiple images efficiently. Plan the output format, use consistent settings, review the results, and keep a backup of the originals."
+    ],
+  },
+
+  {
+    slug: "how-to-convert-heic-to-jpg",
+    title: "How to Convert HEIC to JPG on iPhone, Android, and Windows",
+    excerpt:
+      "Learn how to convert HEIC photos to JPG for easier sharing, uploading, and compatibility across phones, computers, and websites.",
+    date: "2026-03-23",
+    canonical:
+      "https://www.convertimagenow.com/blog/how-to-convert-heic-to-jpg",
+    keywords: [
+      "how to convert HEIC to JPG",
+      "HEIC to JPG online",
+      "convert iPhone photos to JPG",
+      "open HEIC files",
+    ],
+    author: "ConvertImageNow",
+    content: [
+      "HEIC photos can save storage space on Apple devices, but some websites, apps, and computers may not support them as conveniently as JPG. Converting HEIC to JPG creates a broadly compatible copy for sharing and uploading.",
+
+      "## Why iPhones Use HEIC",
+
+      "HEIC is an efficient image container that can store high-quality photos using less space than some older formats. It became a common default format on newer Apple devices.",
+
+      "## Convert HEIC to JPG Online",
+
+      "Open a browser-based image converter, select the HEIC file, choose JPG as the output format, adjust the quality if available, and download the converted image.",
+
+      "You can use the [ConvertImageNow converter](/converter) for supported browser-based image conversions.",
+
+      "## Convert HEIC on iPhone",
+
+      "You can change the camera capture setting on an iPhone to use a more compatible format, or convert existing HEIC files when you need to share them with a service that prefers JPG.",
+
+      "## Convert HEIC on Windows",
+
+      "If a Windows application does not open HEIC files easily, converting the image to JPG can provide a simpler file for viewing, editing, uploading, and sharing.",
+
+      "## Does Conversion Reduce Quality?",
+
+      "JPG uses lossy compression, so conversion can change some image data. Use a suitable quality setting and compare the output with the original before deleting the source file.",
+
+      "## Keep the Original HEIC File",
+
+      "Keep the original HEIC image as a backup. The JPG copy can be used for compatibility while the original preserves the source file for future use.",
+
+      "For a shorter overview, read [How to Convert HEIC to JPG](/blog/heic-to-jpg-guide).",
+
+      "## Final Thoughts",
+
+      "HEIC is efficient, but JPG is easier to use across many platforms. Converting only when compatibility requires it lets you keep the benefits of the original format while creating convenient copies."
+    ],
+  },
+
+  {
+    slug: "jpg-to-webp-guide",
+    title: "How to Convert JPG to WebP for Smaller Website Images",
+    excerpt:
+      "Learn how to convert JPG images to WebP, choose quality settings, compare file sizes, and prepare images for faster websites.",
+    date: "2026-04-06",
+    canonical:
+      "https://www.convertimagenow.com/blog/jpg-to-webp-guide",
+    keywords: [
+      "JPG to WebP",
+      "convert JPG to WebP",
+      "WebP converter",
+      "smaller website images",
+    ],
+    author: "ConvertImageNow",
+    content: [
+      "WebP can be a practical format for website images because it supports efficient lossy and lossless compression. Converting JPG images to WebP may reduce file size while preserving good visual quality.",
+
+      "## Why Convert JPG to WebP?",
+
+      "JPG is widely compatible, but WebP can often provide a smaller file at a similar visual quality. Smaller images can reduce the amount of data a page needs to load.",
+
+      "## How to Convert JPG to WebP",
+
+      "Open the [ConvertImageNow converter](/converter), select one or more JPG files, choose WebP as the output format, adjust the quality setting, and download the converted files.",
+
+      "## Choose a Quality Setting",
+
+      "Start with a moderate-to-high quality setting for photographs and compare the WebP output with the JPG original. The best setting depends on the image detail and its intended display size.",
+
+      "## Check the File Size",
+
+      "After conversion, compare the file size and visual quality. A smaller file is not automatically better if it becomes visibly blurry or develops compression artifacts.",
+
+      "## WebP for Website SEO",
+
+      "Image format is only one part of image SEO. Also use descriptive filenames, accurate alt text, suitable dimensions, captions where useful, and responsive image delivery.",
+
+      "Read [How to Optimize Images for SEO](/blog/image-seo-guide).",
+
+      "## JPG vs WebP Compatibility",
+
+      "WebP is supported by modern browsers, but check your target platforms and applications before replacing every JPG file. Keeping the original JPG files provides a useful fallback.",
+
+      "For a broader explanation, read [What Is WebP, and Why Does It Matter?](/blog/what-is-webp).",
+
+      "## Batch JPG to WebP Conversion",
+
+      "If you have many JPG images, batch conversion can save time. Review the output files after processing and keep the original images in a separate location.",
+
+      "See [How to Batch Convert Images](/blog/batch-convert-images).",
+
+      "## Final Thoughts",
+
+      "JPG to WebP conversion can help modernize a website image library. Use sensible quality settings, compare the results, preserve your originals, and test the final images on the pages where they will appear."
+    ],
+  },
+];
