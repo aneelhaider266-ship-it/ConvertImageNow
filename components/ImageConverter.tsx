@@ -43,9 +43,15 @@ let idCounter = 0;
 
 const nextId = () => `img-${Date.now()}-${idCounter++}`;
 
-export default function ImageConverter() {
+type ImageConverterProps = {
+  initialFormat?: OutputFormat;
+};
+
+export default function ImageConverter({
+  initialFormat = "webp",
+}: ImageConverterProps) {
   const [queue, setQueue] = useState<QueueItem[]>([]);
-  const [format, setFormat] = useState<OutputFormat>("webp");
+  const [format, setFormat] = useState<OutputFormat>(initialFormat);
   const [quality, setQuality] = useState(80);
   const [isDragging, setIsDragging] = useState(false);
   const [isConverting, setIsConverting] = useState(false);
