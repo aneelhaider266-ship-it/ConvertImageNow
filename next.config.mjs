@@ -22,11 +22,6 @@ const nextConfig = {
         destination: "/blog/how-to-make-image-file-smaller",
         permanent: true,
       },
-      {
-        source: "/blog/heic-to-jpg-guide",
-        destination: "/blog/how-to-convert-heic-to-jpg",
-        permanent: true,
-      },
     ];
   },
 };
