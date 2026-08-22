@@ -60,6 +60,10 @@ const FAQS = [
     q: "Is there a file size limit?",
     a: "There is no artificial server-imposed file size limit. Because conversion happens in your browser, the practical limit depends on your device's available memory.",
   },
+  {
+    q: "Is HEIF the same as HEIC?",
+    a: "HEIF is the general image container format, and HEIC is Apple's specific implementation of it. Most photos with a .heic extension are HEIF files, and both can be converted to JPG the same way.",
+  },
 ];
 
 const FAQ_SCHEMA = {
@@ -345,6 +349,24 @@ export default function HeicToJpgPage() {
           The main reason to convert HEIC to JPG is usually compatibility. If
           a website, application, or device does not accept HEIC files, JPG
           can be a practical alternative.
+        </p>
+
+        <h2 className="text-2xl font-bold">
+          Is HEIF the Same as HEIC?
+        </h2>
+
+        <p>
+          HEIF (High Efficiency Image Format) is the container format, and
+          HEIC is the specific way Apple devices store photos using that
+          container with HEVC compression. In practice, most HEIF photos from
+          an iPhone or iPad use the .heic file extension, so the terms are
+          often used interchangeably.
+        </p>
+
+        <p>
+          If your files show a .heif or .heic extension and will not open on
+          Windows, a website, or an older app, the conversion process to JPG
+          is the same. You can use the converter above for both file types.
         </p>
 
         <h2 className="text-2xl font-bold">
