@@ -99,6 +99,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "The best results usually come from combining suitable dimensions, moderate compression, and the right image format. Keep your original file and compare the optimized version before publishing or sharing it."
     ],
+    },
       {
     slug: "best-image-formats-explained",
     title: "Best Image Formats Explained: JPG, PNG, WebP, and AVIF",
