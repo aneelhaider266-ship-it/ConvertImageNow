@@ -4,9 +4,9 @@ import ImageConverter from "@/components/ImageConverter";
 import { ShieldCheck, WifiOff, Infinity as InfinityIcon } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AVIF to JPG Converter | Free, Private & Online",
+  title: "AVIF to JPG Converter – Convert .AVIF to JPG Online Free",
   description:
-    "Convert AVIF to JPG online for free. Process images privately in your browser with no signup, watermark, or server upload.",
+    "Free online AVIF to JPG converter. Convert .AVIF files to JPG in your browser — no upload, no signup, no watermark. Works on Windows, Mac, Android and iOS.",
   alternates: {
     canonical: "https://www.convertimagenow.com/avif-to-jpg",
   },
@@ -45,19 +45,19 @@ const FAQS = [
   },
   {
     q: "How do I convert AVIF to JPG?",
-    a: "Upload an AVIF image, choose JPG as the output format, adjust quality if needed, click convert, and download the resulting JPG file.",
+    a: "Open this online AVIF to JPG converter, select your .AVIF image, choose JPG as the output format, adjust quality if needed, click convert, and download the resulting JPG file.",
   },
   {
     q: "Can I convert AVIF to JPG on Windows?",
-    a: "Yes. Open ConvertImageNow in a modern browser such as Chrome, Edge, or Firefox, upload your AVIF file, select JPG, and download the result.",
+    a: "Yes. Open ConvertImageNow in a modern browser such as Chrome, Edge, or Firefox, upload your .AVIF file, select JPG, and download the result. This free AVIF to JPG converter runs entirely in your browser.",
   },
   {
     q: "Can I convert AVIF to JPG on Mac?",
-    a: "Yes. Open ConvertImageNow in Safari or Chrome, upload your AVIF image, choose JPG, and download the converted file.",
+    a: "Yes. Open ConvertImageNow in Safari or Chrome, select one or more .AVIF images from your Mac, choose JPG as the output format, adjust quality if needed, and download the converted JPG files.",
   },
   {
     q: "Can I convert AVIF to JPG on Android?",
-    a: "Yes. Open ConvertImageNow in Chrome or another modern mobile browser, select your AVIF image, choose JPG, and download the converted file.",
+    a: "Yes. Open ConvertImageNow in Chrome or another modern mobile browser, select a .AVIF image from your Android device, choose JPG as the output format, start the conversion, and download the JPG file to your device.",
   },
   {
     q: "Can I convert multiple AVIF files?",
@@ -65,11 +65,11 @@ const FAQS = [
   },
   {
     q: "Does AVIF to JPG conversion reduce quality?",
-    a: "JPG uses lossy compression, so some quality may be lost. You can adjust the quality setting to balance visual quality and file size.",
+    a: "JPG uses lossy compression, so some quality may be lost when converting AVIF to JPG. You can adjust the quality setting in this converter to balance visual quality and file size.",
   },
   {
     q: "Why convert AVIF to JPG?",
-    a: "JPG is supported by almost every device, website, image editor, and printing tool, while AVIF support is not available everywhere.",
+    a: "JPG is supported by almost every device, website, image editor, and printing tool, while AVIF support is not available everywhere. Converting AVIF to JPG improves compatibility for sharing and editing.",
   },
   {
     q: "Is there a file size limit?",
@@ -130,13 +130,11 @@ export default function AvifToJpgPage() {
 
       <section className="mx-auto max-w-3xl text-center">
         <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
-          AVIF to JPG Converter
+          AVIF to JPG Converter – Convert .AVIF to JPG Online Free
         </h1>
 
         <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-          Convert AVIF images to JPG online for free. Process your images
-          directly in your browser without registration, watermarks, or
-          unnecessary uploads.
+          Free online AVIF to JPG converter. Convert .AVIF files to JPG directly in your browser — no upload, no signup, no watermark. Works on Windows, Mac, Android and iOS.
         </p>
       </section>
 
@@ -153,15 +151,11 @@ export default function AvifToJpgPage() {
         </h2>
 
         <p className="leading-7">
-          AVIF is a modern image format that can provide efficient compression
-          and good visual quality. However, some older apps, image editors,
-          websites, printing tools, and devices may not support AVIF files.
+          AVIF is a modern image format with efficient compression and good visual quality. However, many older apps, image editors, websites, printing tools, and devices still do not fully support AVIF files.
         </p>
 
         <p className="leading-7">
-          JPG is one of the most widely supported image formats. Converting AVIF
-          to JPG can make an image easier to open, edit, print, email, upload,
-          and share across different devices and applications.
+          JPG is one of the most widely supported image formats. Converting AVIF to JPG makes your images easier to open, edit, print, email, upload, and share across different devices and applications — especially when you need maximum compatibility.
         </p>
 
         <h2 className="text-2xl font-bold">
@@ -169,11 +163,11 @@ export default function AvifToJpgPage() {
         </h2>
 
         <ol className="list-decimal space-y-3 pl-6 leading-7">
-          <li>Select or drag one or more AVIF images into the converter.</li>
+          <li>Select or drag one or more .AVIF images into the converter.</li>
           <li>Choose JPG as the output format.</li>
-          <li>Adjust the quality setting if you want to control file size.</li>
-          <li>Start the conversion.</li>
-          <li>Download the JPG file or download multiple files as a ZIP archive.</li>
+          <li>Adjust the quality setting if you want to control file size and visual quality.</li>
+          <li>Start the conversion to convert AVIF to JPG in your browser.</li>
+          <li>Download the JPG file, or download multiple converted files as a ZIP archive.</li>
         </ol>
 
         <h2 className="text-2xl font-bold">
@@ -183,7 +177,7 @@ export default function AvifToJpgPage() {
         <p className="leading-7">
           ConvertImageNow is designed for browser-based image conversion.
           Supported image processing takes place locally in your browser, so
-          your files do not need to be sent to our conversion server.
+          your files do not need to be sent to our conversion server. This makes it a private option when you want to convert AVIF to JPG without uploading your images.
         </p>
 
         <p className="leading-7">
@@ -199,10 +193,10 @@ export default function AvifToJpgPage() {
 
         <ol className="list-decimal space-y-3 pl-6 leading-7">
           <li>Open this page in Chrome, Edge, Firefox, or another modern browser.</li>
-          <li>Select an AVIF image from your computer.</li>
+          <li>Select a .AVIF image from your computer.</li>
           <li>Choose JPG as the output format.</li>
-          <li>Adjust quality if needed.</li>
-          <li>Download the converted JPG file.</li>
+          <li>Adjust quality if needed, then start the conversion.</li>
+          <li>Download the converted JPG file to your Windows device.</li>
         </ol>
 
         <h2 className="text-2xl font-bold">
@@ -211,10 +205,10 @@ export default function AvifToJpgPage() {
 
         <ol className="list-decimal space-y-3 pl-6 leading-7">
           <li>Open this page in Safari or Chrome.</li>
-          <li>Select one or more AVIF images.</li>
+          <li>Select one or more .AVIF images from your Mac.</li>
           <li>Choose JPG as the output format.</li>
-          <li>Adjust the quality setting if required.</li>
-          <li>Download the converted JPG files.</li>
+          <li>Adjust the quality setting if required, then convert.</li>
+          <li>Download the converted JPG files to your Mac.</li>
         </ol>
 
         <h2 className="text-2xl font-bold">
@@ -223,7 +217,7 @@ export default function AvifToJpgPage() {
 
         <ol className="list-decimal space-y-3 pl-6 leading-7">
           <li>Open this page in Chrome or another modern mobile browser.</li>
-          <li>Select an AVIF image from your device.</li>
+          <li>Select a .AVIF image from your Android device.</li>
           <li>Choose JPG as the output format.</li>
           <li>Start the conversion.</li>
           <li>Download the JPG file to your device.</li>
