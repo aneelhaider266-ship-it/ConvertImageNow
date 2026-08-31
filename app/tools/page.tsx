@@ -25,6 +25,11 @@ const LIVE_TOOLS = [
     desc: "Convert modern AVIF images to JPG",
     href: "/avif-to-jpg",
   },
+  {
+    title: "PNG to JPG Converter",
+    desc: "Convert PNG images to JPG",
+    href: "/png-to-jpg",
+  },
 ];
 
 const UPCOMING = [
@@ -33,7 +38,6 @@ const UPCOMING = [
   "Crop Image",
   "Rotate Image",
   "Convert JPG to PNG",
-  "Convert PNG to JPG",
   "Convert WebP to JPG",
   "Convert JPG to WebP",
   "Convert AVIF to PNG",
