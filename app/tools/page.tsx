@@ -30,6 +30,11 @@ const LIVE_TOOLS = [
     desc: "Convert PNG images to JPG",
     href: "/png-to-jpg",
   },
+  {
+  title: "JPG to PNG Converter",
+  desc: "Convert JPG images to PNG",
+  href: "/jpg-to-png",
+},
 ];
 
 const UPCOMING = [
@@ -37,7 +42,6 @@ const UPCOMING = [
   "Image Resizer",
   "Crop Image",
   "Rotate Image",
-  "Convert JPG to PNG",
   "Convert WebP to JPG",
   "Convert JPG to WebP",
   "Convert AVIF to PNG",
