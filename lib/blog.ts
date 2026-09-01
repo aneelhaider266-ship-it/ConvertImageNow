@@ -10,9 +10,8 @@ export type BlogPost = {
   author?: string;
   updatedDate?: string;
 };
-
 export const BLOG_POSTS: BlogPost[] = [
-  {
+{
     slug: "how-to-make-image-file-smaller",
     title: "How to Make an Image File Smaller Without Losing Quality",
     excerpt:
@@ -59,7 +58,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## Convert the Image to a Different Format",
 
-      "Changing an image format can sometimes make a large difference in file size. Common conversions include JPG to WebP, WebP to JPG, PNG to JPG, PNG to WebP, and HEIC to JPG.",
+      "Changing an image format can sometimes make a large difference in file size. Common conversions include JPG to WebP, WebP to JPG, [PNG to JPG](/png-to-jpg), PNG to WebP, and HEIC to JPG.",
 
       "Converting an image does not automatically guarantee a smaller file. The final size depends on the original image, dimensions, format, compression method, and quality settings.",
 
