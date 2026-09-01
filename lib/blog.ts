@@ -131,13 +131,15 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "PNG is useful for logos, icons, screenshots, illustrations, text-heavy graphics, and images that require transparent backgrounds. PNG preserves image data accurately but may create larger files than JPG for photographs.",
 
+      "Convert between the two directly with our [PNG to JPG](/png-to-jpg) or [JPG to PNG](/jpg-to-png) converters.",
+
       "## When Should You Use WebP?",
 
       "WebP is a strong choice for modern websites because it supports lossy compression, lossless compression, transparency, and animation.",
 
       "Learn more in [What Is WebP, and Why Does It Matter?](/blog/what-is-webp).",
 
-      "If you already have JPG images, read [How to Convert JPG to WebP for Free](/blog/jpg-to-webp-guide).",
+      "If you already have JPG images, use our [JPG to WebP converter](/jpg-to-webp) or read the [full guide](/blog/jpg-to-webp-guide).",
 
       "## When Should You Use AVIF?",
 
