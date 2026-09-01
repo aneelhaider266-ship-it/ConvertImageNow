@@ -636,8 +636,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "HEIC is efficient, but JPG is easier to use across many platforms. Converting only when compatibility requires it lets you keep the benefits of the original format while creating convenient copies."
     ],
   },
-
-  {
+{
     slug: "jpg-to-webp-guide",
     title: "How to Convert JPG to WebP for Smaller Website Images",
     excerpt:
@@ -661,7 +660,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## How to Convert JPG to WebP",
 
-      "Open the [ConvertImageNow converter](/converter), select one or more JPG files, choose WebP as the output format, adjust the quality setting, and download the converted files.",
+      "Open our [JPG to WebP converter](/jpg-to-webp), select one or more JPG files, choose WebP as the output format, adjust the quality setting, and download the converted files.",
 
       "## Choose a Quality Setting",
 
@@ -691,7 +690,9 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## Final Thoughts",
 
-      "JPG to WebP conversion can help modernize a website image library. Use sensible quality settings, compare the results, preserve your originals, and test the final images on the pages where they will appear."
+      "JPG to WebP conversion can help modernize a website image library. Use sensible quality settings, compare the results, preserve your originals, and test the final images on the pages where they will appear.",
+
+      "Try our [free JPG to WebP converter](/jpg-to-webp): no signup, no watermark, everything runs in your browser."
     ],
   },
 
