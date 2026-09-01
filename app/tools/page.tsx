@@ -35,6 +35,11 @@ const LIVE_TOOLS = [
   desc: "Convert JPG images to PNG",
   href: "/jpg-to-png",
 },
+  {
+  title: "JPG to WebP Converter",
+  desc: "Convert JPG images to WebP",
+  href: "/jpg-to-webp",
+},
 ];
 
 const UPCOMING = [
@@ -43,7 +48,6 @@ const UPCOMING = [
   "Crop Image",
   "Rotate Image",
   "Convert WebP to JPG",
-  "Convert JPG to WebP",
   "Convert AVIF to PNG",
   "Image Optimizer",
 ];
