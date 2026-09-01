@@ -67,7 +67,7 @@ export default async function BlogPostPage({
     '@type': 'Article',
     headline: post.title,
     description: post.excerpt,
-    datePublished: post.date,
+    datePublished: post.updatedDate || post.date,
     author: {
       '@type': 'Organization',
       name: 'ConvertImageNow',
@@ -92,12 +92,23 @@ export default async function BlogPostPage({
       </Link>
 
       <p className="mt-6 text-xs text-slate-500 dark:text-slate-400">
-        {new Date(post.date).toLocaleDateString('en-US', {
-          year: 'numeric',
-          month: 'long',
-          day: 'numeric',
-        })}
-      </p>
+  {post.updatedDate ? (
+    <>
+      Updated{' '}
+      {new Date(post.updatedDate).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })}
+    </>
+  ) : (
+    new Date(post.date).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    })
+  )}
+</p>
 
       <h1 className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl">
         {post.title}
