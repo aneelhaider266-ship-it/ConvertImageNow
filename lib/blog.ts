@@ -212,7 +212,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
-  {
+{
     slug: "what-is-webp",
     title: "What Is WebP? Benefits, Quality, and Website Uses",
     excerpt:
@@ -237,7 +237,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "WebP images can often be smaller than equivalent JPG or PNG images. Smaller files require less data to download and can help reduce page weight.",
 
-      "If your existing images are JPG, read [How to Convert JPG to WebP for Free](/blog/jpg-to-webp-guide).",
+      "If your existing images are JPG, use our [JPG to WebP converter](/jpg-to-webp) or read [How to Convert JPG to WebP for Free](/blog/jpg-to-webp-guide).",
 
       "## WebP vs JPG",
 
@@ -268,7 +268,6 @@ export const BLOG_POSTS: BlogPost[] = [
       "See [How to Batch Convert Images](/blog/batch-convert-images)."
     ],
   },
-
   {
     slug: "what-is-avif",
     title: "What Is AVIF? Image Compression, Quality, and Browser Support",
