@@ -157,7 +157,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
 
-  {
+ {
     slug: "png-vs-jpg",
     title: "PNG vs JPG: Which Image Format Should You Use?",
     excerpt:
@@ -201,6 +201,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "Use JPG for most website photographs. Use PNG for logos, screenshots, icons, and graphics where sharp edges or transparency matter.",
 
       "For modern websites, WebP is another option worth considering. Read [What Is WebP, and Why Does It Matter?](/blog/what-is-webp).",
+
+      "Ready to convert? Use our [PNG to JPG converter](/png-to-jpg) or [JPG to PNG converter](/jpg-to-png) — both run directly in your browser with no upload required.",
 
       "## Final Recommendation",
 
