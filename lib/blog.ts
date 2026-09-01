@@ -612,7 +612,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "Open a browser-based image converter, select the HEIC file, choose JPG as the output format, adjust the quality if available, and download the converted image.",
 
-      "You can use the [ConvertImageNow converter](/converter) for supported browser-based image conversions.",
+      "You can use our [HEIC to JPG converter](/heic-to-jpg) for supported browser-based image conversions.",
 
       "## Convert HEIC on iPhone",
 
