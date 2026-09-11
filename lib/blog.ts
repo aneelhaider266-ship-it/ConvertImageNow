@@ -694,7 +694,7 @@ export const BLOG_POSTS: BlogPost[] = [
   canonical: "https://www.convertimagenow.com/blog/online-image-converter-jpeg-to-jpg",
   keywords: ["convert JPEG to JPG", "JPEG to JPG converter", "online image converter", "free JPEG converter", "batch convert images"],
   author: "ConvertImageNow",
-  image: "/blog/jpeg-to-jpg/old-computer-laptop.jpg",
+  image: "/blog/jpeg-to-jpg/old-computer-laptop.webp",
   content: [
     "You downloaded a photo, exported a design, or received a file from a client, and now some website or upload form is rejecting it because it's labeled JPEG instead of JPG. Technically they're the same format, just different file extensions, but plenty of tools and of platforms still get picky about what they'll accept. It doesn't always work. That's where an online image converter jpeg to jpg actually earns its keep.",
     
