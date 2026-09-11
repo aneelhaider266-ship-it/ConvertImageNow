@@ -710,7 +710,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "Older versions of Windows, running on MS-DOS, only allowed file extensions with three characters. Mac and Unix systems never had that restriction, so files saved on those platforms often kept the full four-letter \"jpeg\" tag. When Windows caught up and dropped the limit, both extensions stuck around, and now you'll bump into either one depending on where a file was created, exported, or resaved.",
     
-    "![Old computer vs modern laptop](/blog/jpeg-to-jpg/old-computer-laptop.webp)",
+    "![Old computer vs modern laptop](/blog/jpeg-to-jpg/old-computer-laptop.jpg)",
     
     "JPEG and JPG are the same file format wearing two different name tags.",
     
