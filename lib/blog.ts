@@ -731,7 +731,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "Start by opening ConvertImageNow's image converter in any modern browser, whether you're on a laptop, a Chromebook, or a phone. There's no install, no account creation, and no email confirmation standing between you and your file. You just need the JPEG sitting on your device or in whatever folder your phone dumped it into.",
     
-    "![Uploading an image via browser](/blog/jpeg-to-jpg/upload-screenshot.webp)",
+    "![Uploading an image via browser](/blog/jpeg-to-jpg/upload-screenshot.jpg)",
     
     "### Drag, drop, or browse",
     
@@ -749,7 +749,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "Once your JPEG loads into the preview, you'll see a format selector sitting right next to it. Pick JPG from the dropdown, and the tool sets up the export without touching your original file. This is the exact moment where an online jpeg to jpg image converter does its actual job: re-encoding the image data under a clean, widely accepted extension instead of just slapping a new label on the same broken file.",
     
-    "![Quality settings chart showing 85-90%, 60-70%, and 95-100% options](/blog/jpeg-to-jpg/quality-chart.webp)",
+    "![Quality settings chart showing 85-90%, 60-70%, and 95-100% options](/blog/jpeg-to-jpg/quality-chart.jpg)",
     
     "80% is the balanced default for most everyday images.",
     
