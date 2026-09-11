@@ -731,7 +731,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "Start by opening ConvertImageNow's image converter in any modern browser, whether you're on a laptop, a Chromebook, or a phone. There's no install, no account creation, and no email confirmation standing between you and your file. You just need the JPEG sitting on your device or in whatever folder your phone dumped it into.",
     
-    "![Uploading an image via browser](/blog/jpeg-to-jpg/upload-screenshot.jpg)",
+    "![Uploading an image via browser](/blog/jpeg-to-jpg/upload-screenshot.webp)",
     
     "### Drag, drop, or browse",
     
