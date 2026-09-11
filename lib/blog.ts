@@ -749,7 +749,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "Once your JPEG loads into the preview, you'll see a format selector sitting right next to it. Pick JPG from the dropdown, and the tool sets up the export without touching your original file. This is the exact moment where an online jpeg to jpg image converter does its actual job: re-encoding the image data under a clean, widely accepted extension instead of just slapping a new label on the same broken file.",
     
-    "![Quality settings chart showing 85-90%, 60-70%, and 95-100% options](/blog/jpeg-to-jpg/quality-chart.jpg)",
+    "![Quality settings chart showing 85-90%, 60-70%, and 95-100% options](/blog/jpeg-to-jpg/quality-chart.webp)",
     
     "80% is the balanced default for most everyday images.",
     
