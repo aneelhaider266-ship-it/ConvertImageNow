@@ -808,7 +808,7 @@ export const BLOG_POSTS: BlogPost[] = [
     "Next time a marketplace or CMS bounces your file over a mismatched extension, skip the renaming guesswork. Drop your images into the free online image converter, pick JPG, and grab your properly labeled files in seconds, no account, no upload to a stranger's server, no watermark stamped on your work."
   ]
   }, 
-{
+  {
   slug: "jpg-vs-webp",
   title: "JPG vs WebP: Which Format Wins for Size, Quality, and Speed",
   excerpt: "You are picking images for a website, an online store, or just trying to shrink a folder of photos, and you keep hitting the same question: jpg vs webp, which one actually wins?",
@@ -841,11 +841,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "Run the same photo through both formats and the numbers tell a clear story. WebP vs JPG file size tests consistently show WebP producing files 25 to 35 percent smaller than JPG at a visually similar quality level. That gap holds across product photos, screenshots, and full-bleed hero images, which is why so many site owners switch once they see it firsthand.",
     
-    "
-
-![WebP vs JPG File Size at 80% Quality](/blog/jpg-vs-webp/webp-vs-jpg-file-size.webp)
-
-",
+    "![WebP vs JPG File Size at 80% Quality](/blog/jpg-vs-webp/webp-vs-jpg-file-size.webp)",
     
     "At matched quality, WebP almost always beats JPG on file size, sometimes by a third or more.",
     
@@ -855,11 +851,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "Converting a batch of images sounds like it should be simple, but most online tools either compress too aggressively or force you to upload personal photos to a stranger's server. ConvertImageNow handles the whole process in your browser, so nothing leaves your device and you keep full control over the output quality.",
     
-    "
-
-![Convert Images Without Losing Quality](/blog/jpg-vs-webp/convert-images-without-losing-quality.webp)
-
-",
+    "![Convert Images Without Losing Quality](/blog/jpg-vs-webp/convert-images-without-losing-quality.webp)",
     
     "The fastest conversion is one that never leaves your own browser.",
     
@@ -875,17 +867,12 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "## Picking the right format for your images",
     
-    "
-
-![Which Format Fits Your Content](/blog/jpg-vs-webp/which-format-fits-your-content.webp)
-
-",
+    "![Which Format Fits Your Content](/blog/jpg-vs-webp/which-format-fits-your-content.webp)",
     
-    "WebP wins the jpg vs webp comparison for most modern websites. It delivers smaller files, holds up better under compression, and works in nearly every browser your visitors use. JPG still earns its place for legacy software, certain email clients, or workflows where compatibility matters more than shaving kilobytes. The right call depends on where the image lives, not on picking a single \"best\" format for everything you shoot or design.",
+    "WebP wins the jpg vs webp comparison for most modern websites. It delivers smaller files, holds up better under compression, and works in nearly every browser your visitors use. JPG still earns its place for legacy software, certain email clients, or workflows where compatibility matters more than shaving kilobytes. The right call depends on where the image lives, not on picking a single "best" format for everything you shoot or design.",
     
     "Rather than guessing which format serves your site best, test both on your own images. Compare file size, sharpness, and load time on the actual pages where visitors will see them. That five-minute test tells you more than any benchmark chart ever will.",
     
     "When you're ready to convert your library, skip the uploads and the compression guesswork. Convert JPG to WebP online free with ConvertImageNow and keep every file, and every byte of quality, right where it belongs: on your own device."
   ]
 }
-];
