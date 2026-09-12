@@ -38,6 +38,39 @@ export async function generateMetadata({ params }: { params: any }) {
   };
 }
 
+// Renders inline markdown-style formatting: **bold** and [text](href) links.
+// Works for paragraphs, list items, table cells, and blockquotes alike.
+function renderInline(text: string) {
+  const parts = text.split(/(\[[^\]]+\]\([^)]+\)|\*\*[^*]+\*\*)/g);
+
+  return parts.map((part, index) => {
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      const [, linkText, href] = linkMatch;
+      return (
+        <Link
+          key={index}
+          href={href}
+          className="font-medium text-brand-primary hover:underline"
+        >
+          {linkText}
+        </Link>
+      );
+    }
+
+    const boldMatch = part.match(/^\*\*([^*]+)\*\*$/);
+    if (boldMatch) {
+      return (
+        <strong key={index} className="font-semibold">
+          {boldMatch[1]}
+        </strong>
+      );
+    }
+
+    return <span key={index}>{part}</span>;
+  });
+}
+
 export default async function BlogPostPage({
   params,
 }: {
@@ -123,58 +156,131 @@ export default async function BlogPostPage({
       )}
 
       <div className="mt-8 space-y-5 text-slate-700 dark:text-slate-300">
-        {post.content.map((paragraph, i) => {
-          if (paragraph.startsWith('## ')) {
+        {post.content.map((block, i) => {
+          // H2 heading: "## Heading"
+          if (block.startsWith('## ')) {
             return (
               <h2
                 key={i}
                 className="mt-8 text-2xl font-bold tracking-tight"
               >
-                {paragraph.replace(/^## /, '')}
+                {block.replace(/^## /, '')}
               </h2>
             );
           }
 
-          if (paragraph.startsWith('### ')) {
+          // H3 heading: "### Heading"
+          if (block.startsWith('### ')) {
             return (
               <h3
                 key={i}
                 className="mt-6 text-xl font-semibold tracking-tight"
               >
-                {paragraph.replace(/^### /, '')}
+                {block.replace(/^### /, '')}
               </h3>
             );
           }
 
-          const parts = paragraph.split(
-            /(\[[^\]]+\]\([^)]+\))/g
+          // Image: "![alt text](/path/to/image.webp)"
+          const imageMatch = block.match(
+            /^!\[([^\]]*)\]\(([^)]+)\)$/
           );
+          if (imageMatch) {
+            const [, alt, src] = imageMatch;
+            return (
+              <img
+                key={i}
+                src={src}
+                alt={alt}
+                className="w-full rounded-2xl object-cover"
+              />
+            );
+          }
 
-          return (
-            <p key={i}>
-              {parts.map((part, index) => {
-                const match = part.match(
-                  /^\[([^\]]+)\]\(([^)]+)\)$/
-                );
+          // Blockquote / callout: "> Some quote"
+          if (block.startsWith('> ')) {
+            return (
+              <blockquote
+                key={i}
+                className="border-l-4 border-brand-primary bg-slate-50 px-4 py-3 italic text-slate-600 dark:bg-slate-900 dark:text-slate-300"
+              >
+                {renderInline(block.replace(/^> /, ''))}
+              </blockquote>
+            );
+          }
 
-                if (match) {
-                  const [, text, href] = match;
+          // Table: a multi-line string of "| ... | ... |" rows, with a
+          // "|---|---|" separator as the second line.
+          if (block.trim().startsWith('|')) {
+            const rows = block
+              .split('\n')
+              .map((row) => row.trim())
+              .filter(Boolean);
 
-                  return (
-                    <Link
-                      key={index}
-                      href={href}
-                      className="font-medium text-brand-primary hover:underline"
-                    >
-                      {text}
-                    </Link>
-                  );
-                }
+            const parseRow = (row: string) =>
+              row
+                .split('|')
+                .slice(1, -1)
+                .map((cell) => cell.trim());
 
-                return <span key={index}>{part}</span>;
-              })}
-            </p>
-          );
+            const headerCells = parseRow(rows[0]);
+            const bodyRows = rows
+              .slice(2)
+              .map((row) => parseRow(row));
+
+            return (
+              <div key={i} className="overflow-x-auto">
+                <table className="w-full border-collapse text-sm">
+                  <thead>
+                    <tr className="border-b border-slate-200 dark:border-slate-700">
+                      {headerCells.map((cell, ci) => (
+                        <th
+                          key={ci}
+                          className="px-3 py-2 text-left font-semibold"
+                        >
+                          {renderInline(cell)}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {bodyRows.map((row, ri) => (
+                      <tr
+                        key={ri}
+                        className="border-b border-slate-100 dark:border-slate-800"
+                      >
+                        {row.map((cell, ci) => (
+                          <td key={ci} className="px-3 py-2">
+                            {renderInline(cell)}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            );
+          }
+
+          // Bullet list: a multi-line string of "- item" lines
+          if (block.trim().startsWith('- ')) {
+            const items = block
+              .split('\n')
+              .map((line) => line.trim())
+              .filter((line) => line.startsWith('- '))
+              .map((line) => line.replace(/^- /, ''));
+
+            return (
+              <ul key={i} className="list-disc space-y-1 pl-5">
+                {items.map((item, ii) => (
+                  <li key={ii}>{renderInline(item)}</li>
+                ))}
+              </ul>
+            );
+          }
+
+          // Default: plain paragraph with inline bold/link parsing
+          return <p key={i}>{renderInline(block)}</p>;
         })}
       </div>
 
