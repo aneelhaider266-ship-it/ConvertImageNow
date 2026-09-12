@@ -806,7 +806,7 @@ export const BLOG_POSTS: BlogPost[] = [
     "Swapping JPEG for JPG isn't really about fixing a broken image, it's about matching the label a form or platform expects. Now you know both extensions point to the exact same format, why some upload tools still reject one over the other, and how a proper re-encode beats a manual rename every time. The online image converter jpeg to jpg workflow you just walked through handles whole photos and full batches with the same three steps: upload, set your format and quality, then download.",
     
     "Next time a marketplace or CMS bounces your file over a mismatched extension, skip the renaming guesswork. Drop your images into the free online image converter, pick JPG, and grab your properly labeled files in seconds, no account, no upload to a stranger's server, no watermark stamped on your work."
-  ]
+  ], 
   }, 
   {
   slug: "jpg-vs-webp",
