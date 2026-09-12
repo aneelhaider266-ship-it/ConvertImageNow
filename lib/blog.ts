@@ -875,4 +875,4 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "When you're ready to convert your library, skip the uploads and the compression guesswork. Convert JPG to WebP online free with ConvertImageNow and keep every file, and every byte of quality, right where it belongs: on your own device."
   ], 
-}, 
+  }
