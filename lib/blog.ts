@@ -874,5 +874,5 @@ export const BLOG_POSTS: BlogPost[] = [
     "Rather than guessing which format serves your site best, test both on your own images. Compare file size, sharpness, and load time on the actual pages where visitors will see them. That five-minute test tells you more than any benchmark chart ever will.",
     
     "When you're ready to convert your library, skip the uploads and the compression guesswork. Convert JPG to WebP online free with ConvertImageNow and keep every file, and every byte of quality, right where it belongs: on your own device."
-  ]
-}
+  ], 
+}, 
