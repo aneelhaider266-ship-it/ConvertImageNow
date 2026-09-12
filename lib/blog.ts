@@ -807,7 +807,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "Next time a marketplace or CMS bounces your file over a mismatched extension, skip the renaming guesswork. Drop your images into the free online image converter, pick JPG, and grab your properly labeled files in seconds, no account, no upload to a stranger's server, no watermark stamped on your work."
   ]
-  },
+  }, 
 {
   slug: "jpg-vs-webp",
   title: "JPG vs WebP: Which Format Wins for Size, Quality, and Speed",
