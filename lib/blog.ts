@@ -912,11 +912,7 @@ export const BLOG_POSTS: BlogPost[] = [
   image: "/blog/convert-png-to-jpg-online/png-to-jpg-hero.webp",
   content: [
     "You've got a PNG file that's too big for your website, too heavy for an email attachment, or just not accepted by a form that wants a JPG. Whatever the reason, you need to convert png into jpg online without downloading yet another program to your laptop. That's a completely normal ask, and it's faster to solve than most people expect.",
-    "
-
-![Convert PNG to JPG online](/blog/convert-png-to-jpg-online/png-to-jpg-hero.webp)
-
-",
+    "![Convert PNG to JPG online](/blog/convert-png-to-jpg-online/png-to-jpg-hero.webp)",
     "You can do this in your browser, right now, for free. ConvertImageNow lets you convert png to jpeg by dropping your file into the page, adjusting the quality if you want smaller output, and downloading the result in seconds. Nothing gets uploaded to a server, since the conversion runs locally using your device's own processing power, so your images stay private the whole time.",
     "Below, you'll find a step by step walkthrough for converting a single PNG or a whole batch of them, notes on when JPG actually makes sense over PNG, and tips for keeping quality high while file size stays low. No sign-up, no watermark, no catch, just a quick conversion so you can get back to your actual work.",
     "## PNG vs JPG: why convert your images",
@@ -961,3 +957,4 @@ export const BLOG_POSTS: BlogPost[] = [
     "Grab your files, drop them into the converter, and see the size difference for yourself. Head over to the free PNG to JPG converter and turn your next batch of PNGs into web-ready JPGs in seconds, right from your browser."
   ]
 }
+];
