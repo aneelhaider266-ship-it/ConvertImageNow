@@ -900,7 +900,7 @@ export const BLOG_POSTS: BlogPost[] = [
     "When you're ready to convert your library, skip the uploads and the compression guesswork. Convert JPG to WebP online free with ConvertImageNow and keep every file, and every byte of quality, right where it belongs: on your own device."
   ]
 },
-  {
+{
   slug: "convert-png-to-jpg-online",
   title: "How to Convert PNG into JPG Online for Free",
   excerpt: "You've got a PNG file that's too big for your website, too heavy for an email attachment, or just not accepted by a form that wants a JPG. Here's how to convert it online, for free, in seconds.",
