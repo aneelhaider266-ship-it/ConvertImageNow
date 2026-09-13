@@ -4,11 +4,30 @@ import type { Metadata } from "next";
 import ImageConverter from "@/components/ImageConverter";
 import { ShieldCheck, WifiOff, Infinity as InfinityIcon } from "lucide-react";
 
+const SITE_URL = "https://www.convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/png-to-jpg`;
+const OG_IMAGE = `${SITE_URL}/png-to-jpg/og-image.webp`;
+
 export const metadata: Metadata = {
   title: "PNG to JPG Converter – Convert PNG to JPG Online Free",
   description:
     "Convert PNG to JPG (JPEG) online for free. Private, browser-based conversion — no upload, no signup, no watermark. Batch convert multiple PNG files at once.",
-  alternates: { canonical: "/png-to-jpg" },
+  alternates: { canonical: PAGE_URL },
+  openGraph: {
+    title: "PNG to JPG Converter – Convert PNG to JPG Online Free",
+    description:
+      "Convert PNG to JPG (JPEG) online for free. Private, browser-based conversion — no upload, no signup, no watermark.",
+    type: "website",
+    url: PAGE_URL,
+    images: [{ url: OG_IMAGE }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PNG to JPG Converter – Convert PNG to JPG Online Free",
+    description:
+      "Convert PNG to JPG (JPEG) online for free. Private, browser-based conversion — no upload, no signup, no watermark.",
+    images: [OG_IMAGE],
+  },
 };
 
 const POINTS = [
@@ -36,7 +55,7 @@ const FAQS = [
   },
   {
     q: "Is JPG the same as JPEG?",
-    a: "Yes. JPG and JPEG refer to the same image format. JPG is simply the shortened file extension used on some systems, while JPEG is the full name of the format.",
+    a: "Yes. JPG and JPEG refer to the same image format. JPG is simply the shortened file extension used on some systems, while JPEG is the full name of the format. Whether you search for a way to convert png to jpeg or png to jpg, you'll end up with the same result here.",
   },
   {
     q: "Will converting PNG to JPG lose the transparent background?",
@@ -57,6 +76,10 @@ const FAQS = [
   {
     q: "Why is my JPG file so much smaller than the original PNG?",
     a: "PNG uses lossless compression, which keeps files large, especially for photos — often 4 to 10 times larger than an equivalent JPG. JPG's lossy compression reduces file size significantly while remaining visually similar at a good quality setting.",
+  },
+  {
+    q: "Can I change PNG to JPG on my phone or tablet?",
+    a: "Yes. This PNG to JPG converter online runs entirely in your browser, so you can convert PNG into JPG on any device — phone, tablet, or desktop — without installing an app.",
   },
 ];
 
