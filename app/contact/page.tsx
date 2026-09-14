@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MapPin } from "lucide-react";
+import { Mail, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -45,13 +45,12 @@ export default function ContactPage() {
 
           <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
             <h2 className="flex items-center gap-2 font-semibold">
-              <MapPin size={18} className="text-brand-primary" />
-              Company
+              <Clock size={18} className="text-brand-primary" />
+              Response time
             </h2>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-              ConvertImageNow
-              <br />
-              convertimagenow.com
+              We typically respond within 24–48 hours. For urgent issues,
+              email is the fastest way to reach us.
             </p>
           </div>
         </div>
