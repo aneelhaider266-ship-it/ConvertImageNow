@@ -956,7 +956,7 @@ export const BLOG_POSTS: BlogPost[] = [
     "Zero cost, zero sign-up, and zero risk to your original files means there's no reason to keep a PNG around just because converting it felt like a chore before. Batch conversion handles the tedious cases, and the quality slider gives you control that built-in apps rarely offer without extra clicks.",
     "Grab your files, drop them into the converter, and see the size difference for yourself. Head over to the free PNG to JPG converter and turn your next batch of PNGs into web-ready JPGs in seconds, right from your browser."
   ]
-}
+},
  {
   slug: "how-to-use-free-online-image-converter",
   title: "How to Use a Free Online Image Converter (Step by Step)",
