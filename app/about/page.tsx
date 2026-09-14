@@ -76,9 +76,9 @@ export default function AboutPage() {
 
           <div className="mt-8 grid gap-8 sm:grid-cols-2">
             <div>
-              <p className="text-4xl font-bold text-brand-primary">15+</p>
+              <p className="text-4xl font-bold text-brand-primary">3+</p>
               <p className="mt-2 text-slate-600 dark:text-slate-400">
-                In-depth guides on image formats, optimization, and conversion best practices.
+                In-depth guides on image formats, optimization, and conversion best practices — with more being added regularly.
               </p>
             </div>
 
@@ -90,9 +90,9 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <p className="text-4xl font-bold text-brand-primary">6</p>
+              <p className="text-4xl font-bold text-brand-primary">4</p>
               <p className="mt-2 text-slate-600 dark:text-slate-400">
-                Supported conversion paths (JPG, PNG, WebP, AVIF, HEIC) for maximum flexibility.
+                Supported image formats (JPG, PNG, WebP, AVIF) for maximum flexibility.
               </p>
             </div>
 
@@ -134,7 +134,7 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-4">
             <p>
-              A tool is only useful if people understand when to use it. That's why we've built out a comprehensive library of guides covering:
+              A tool is only useful if people understand when to use it. That's why we've built out a growing library of guides covering:
             </p>
 
             <ul className="space-y-3 pl-5">
