@@ -1077,5 +1077,5 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "That's the whole point of a genuinely free tool. Whether you're prepping a single logo or converting fifty images for an online store, the process stays the same and takes about as long as it took you to read this guide. Next time a file lands in the wrong format, skip the downloads and the sign-up forms. Open the [free online image converter](/converter) and convert it right in your browser, free, private, and done in seconds."
   ]
-},
+}
 ];
