@@ -13,7 +13,7 @@ export default function TermsPage() {
         Terms of Service
       </h1>
       <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-        Last updated: January 2026
+        Last updated: August 2026
       </p>
 
       <div className="mt-8 space-y-6 text-slate-700 dark:text-slate-300">
@@ -35,6 +35,19 @@ export default function TermsPage() {
             ConvertImageNow provides free, browser-based image conversion
             tools. You are responsible for the images you convert and for
             ensuring you have the right to use and process them.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+            Prohibited use
+          </h2>
+          <p className="mt-2">
+            You agree not to use ConvertImageNow to process images you do
+            not have the legal right to use, or for any unlawful purpose.
+            You also agree not to attempt to disrupt, reverse-engineer, or
+            abuse the service in a way that impairs its availability for
+            other users.
           </p>
         </section>
 
