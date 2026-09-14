@@ -166,6 +166,65 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Featured Articles - NEW SECTION */}
+      <section className="container-page py-16 sm:py-24">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Learn Image Formats & Optimization
+          </h2>
+
+          <p className="mt-3 text-slate-600 dark:text-slate-300">
+            Expert guides to help you choose the right format and reduce file sizes.
+          </p>
+        </div>
+
+        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+          {[
+            {
+              title: "JPG vs WebP: Which Format Wins for Size, Quality, and Speed",
+              excerpt: "WebP vs JPG file size tests show WebP producing files 25-35% smaller at similar quality. Here's how to choose the best format for your website.",
+              href: "/blog/jpg-vs-webp",
+              category: "Image Formats",
+            },
+            {
+              title: "How to Make an Image File Smaller Without Losing Quality",
+              excerpt: "Learn compression, resizing, and format selection techniques to reduce image file size by 50-80% while keeping visual quality intact.",
+              href: "/blog/how-to-make-image-file-smaller",
+              category: "Optimization",
+            },
+            {
+              title: "PNG vs JPG: Which Image Format Should You Use?",
+              excerpt: "PNG excels for graphics and transparency, JPG for photos. Learn when to use each format and why it matters for your website and projects.",
+              href: "/blog/png-vs-jpg",
+              category: "Image Formats",
+            },
+          ].map((post) => (
+            <Link
+              key={post.href}
+              href={post.href}
+              className="group rounded-2xl border border-slate-200 p-6 transition-all hover:border-brand-primary hover:shadow-md dark:border-slate-800 dark:hover:border-brand-primary"
+            >
+              <span className="inline-flex items-center rounded-full bg-brand-primary/10 px-3 py-1 text-xs font-medium text-brand-primary">
+                {post.category}
+              </span>
+
+              <h3 className="mt-4 text-lg font-semibold leading-tight group-hover:text-brand-primary">
+                {post.title}
+              </h3>
+
+              <p className="mt-3 line-clamp-2 text-sm text-slate-600 dark:text-slate-400">
+                {post.excerpt}
+              </p>
+
+              <div className="mt-4 flex items-center gap-2 text-sm font-medium text-brand-primary">
+                Read Article
+                <ArrowRight size={14} aria-hidden="true" />
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Free Online Image Converter */}
       <section className="container-page py-16 sm:py-24">
         <div className="mx-auto max-w-3xl">
