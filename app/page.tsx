@@ -51,6 +51,25 @@ const STATS = [
   { value: "24/7", label: "Available, no sign-up needed" },
 ];
 
+const WHEN_TO_CONVERT = [
+  {
+    title: "Your website is loading slowly",
+    desc: "Large PNG or JPG files are one of the most common causes of slow page load times. Converting to WebP or AVIF can shrink file sizes by 25-50% without a visible quality loss, which directly helps page speed and Core Web Vitals scores.",
+  },
+  {
+    title: "You're uploading to a platform with format restrictions",
+    desc: "Some marketplaces, CMSs, and ad platforms only accept specific formats. If you have a HEIC photo from an iPhone or an AVIF file that a tool won't accept, converting to JPG or PNG first avoids upload errors.",
+  },
+  {
+    title: "You need transparency or you don't",
+    desc: "PNG supports transparent backgrounds, which matters for logos, icons, and overlays. If your image has a solid background and doesn't need transparency, converting to JPG usually gives a much smaller file for the same visual quality.",
+  },
+  {
+    title: "You're archiving vs. publishing",
+    desc: "For long-term storage or print, a higher-quality format with less compression makes sense. For anything going on the web — product photos, blog images, social posts — a compressed, web-friendly format like WebP keeps pages fast without hurting how the image looks on screen.",
+  },
+];
+
 const SERVICE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "Service",
@@ -84,10 +103,10 @@ export default function HomePage() {
         }}
       />
 
-      {/* Hero - REDUCED SIZE */}
+      {/* Hero - FURTHER REDUCED */}
       <section className="relative overflow-hidden border-b border-slate-200 dark:border-slate-800">
-        <div className="container-page py-10 sm:py-14">
-          <div className="mx-auto max-w-3xl text-center">
+        <div className="container-page py-8 sm:py-10">
+          <div className="mx-auto max-w-2xl text-center">
             <span className="inline-flex min-h-7 items-center gap-1.5 rounded-full border border-slate-200 px-3 py-1 text-xs font-medium leading-5 text-slate-600 dark:border-slate-700 dark:text-slate-300">
               <Lock
                 size={12}
@@ -97,77 +116,24 @@ export default function HomePage() {
               <span>100% private — runs entirely in your browser</span>
             </span>
 
-            <h1 className="mt-5 text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight sm:text-4xl lg:text-5xl">
               Convert Images Online in Seconds
             </h1>
 
-            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-              Convert JPG, PNG, WebP and AVIF images instantly. Free, secure,
-              and processed completely inside your browser.
+            <p className="mx-auto mt-3 max-w-xl text-base leading-7 text-slate-600 dark:text-slate-300">
+              Convert JPG, PNG, WebP and AVIF images instantly — free and
+              private, right in your browser.
             </p>
           </div>
 
-          <div className="mx-auto mt-8 max-w-3xl sm:mt-8">
+          <div className="mx-auto mt-6 max-w-3xl">
             <ImageConverter />
           </div>
         </div>
       </section>
 
-      {/* Features */}
-      <section className="container-page py-16 sm:py-24">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Everything you need, nothing you don&apos;t
-          </h2>
-
-          <p className="mt-3 text-slate-600 dark:text-slate-300">
-            Built to be the fastest, most private image converter on the web.
-          </p>
-        </div>
-
-        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((feature) => {
-            const Icon = feature.icon;
-
-            return (
-              <div
-                key={feature.title}
-                className="rounded-2xl border border-slate-200 p-6 transition-shadow hover:shadow-md dark:border-slate-800"
-              >
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
-                  <Icon size={20} aria-hidden="true" />
-                </span>
-
-                <h3 className="mt-4 font-semibold">{feature.title}</h3>
-
-                <p className="mt-1.5 text-sm leading-6 text-slate-600 dark:text-slate-400">
-                  {feature.desc}
-                </p>
-              </div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="border-y border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
-        <div className="container-page grid grid-cols-2 gap-8 py-14 sm:grid-cols-4">
-          {STATS.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-3xl font-bold leading-tight text-brand-primary sm:text-4xl">
-                {stat.value}
-              </p>
-
-              <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
-                {stat.label}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Featured Articles - NEW SECTION */}
-      <section className="container-page py-16 sm:py-24">
+      {/* Featured Articles - MOVED UP, right after Hero */}
+      <section className="container-page py-16 sm:py-20">
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Learn Image Formats & Optimization
@@ -221,6 +187,91 @@ export default function HomePage() {
                 <ArrowRight size={14} aria-hidden="true" />
               </div>
             </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* When to Convert & Why - NEW SECTION */}
+      <section className="border-y border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
+        <div className="container-page py-16 sm:py-24">
+          <div className="mx-auto max-w-3xl">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              When to Convert & Why
+            </h2>
+
+            <p className="mt-5 text-slate-600 dark:text-slate-300">
+              Choosing the right image format isn&apos;t just a technical
+              detail — it affects how fast your site loads, how images look,
+              and whether files are even accepted where you&apos;re uploading
+              them. Here are the situations where conversion actually matters.
+            </p>
+
+            <div className="mt-8 space-y-6">
+              {WHEN_TO_CONVERT.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-950"
+                >
+                  <h3 className="font-semibold">{item.title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section className="container-page py-16 sm:py-24">
+        <div className="mx-auto max-w-2xl text-center">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+            Everything you need, nothing you don&apos;t
+          </h2>
+
+          <p className="mt-3 text-slate-600 dark:text-slate-300">
+            Built to be the fastest, most private image converter on the web.
+          </p>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {FEATURES.map((feature) => {
+            const Icon = feature.icon;
+
+            return (
+              <div
+                key={feature.title}
+                className="rounded-2xl border border-slate-200 p-6 transition-shadow hover:shadow-md dark:border-slate-800"
+              >
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
+                  <Icon size={20} aria-hidden="true" />
+                </span>
+
+                <h3 className="mt-4 font-semibold">{feature.title}</h3>
+
+                <p className="mt-1.5 text-sm leading-6 text-slate-600 dark:text-slate-400">
+                  {feature.desc}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="border-y border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-900">
+        <div className="container-page grid grid-cols-2 gap-8 py-14 sm:grid-cols-4">
+          {STATS.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <p className="text-3xl font-bold leading-tight text-brand-primary sm:text-4xl">
+                {stat.value}
+              </p>
+
+              <p className="mt-1 text-sm text-slate-600 dark:text-slate-400">
+                {stat.label}
+              </p>
+            </div>
           ))}
         </div>
       </section>
