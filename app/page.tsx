@@ -84,9 +84,9 @@ export default function HomePage() {
         }}
       />
 
-      {/* Hero */}
+      {/* Hero - REDUCED SIZE */}
       <section className="relative overflow-hidden border-b border-slate-200 dark:border-slate-800">
-        <div className="container-page py-14 sm:py-20">
+        <div className="container-page py-10 sm:py-14">
           <div className="mx-auto max-w-3xl text-center">
             <span className="inline-flex min-h-7 items-center gap-1.5 rounded-full border border-slate-200 px-3 py-1 text-xs font-medium leading-5 text-slate-600 dark:border-slate-700 dark:text-slate-300">
               <Lock
@@ -107,7 +107,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mx-auto mt-9 min-h-[320px] max-w-3xl sm:min-h-[300px]">
+          <div className="mx-auto mt-8 max-w-3xl sm:mt-8">
             <ImageConverter />
           </div>
         </div>
