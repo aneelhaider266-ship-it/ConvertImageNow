@@ -1000,7 +1000,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "Open ConvertImageNow in any modern browser and you'll land straight on the upload area, no login screen, no forced tour. This is where the actual work of an image converter begins, and it takes seconds regardless of how many files you're handling.",
 
-    "
+        "
 
 ![Three simple steps: upload files, choose format and quality, convert and download](/blog/how-to-use-free-online-image-converter/three-steps.jpg)
 
@@ -1044,7 +1044,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "With your format and quality settings locked in, hit the convert button and watch the process finish in seconds. This is where an image converter proves its worth: there's no upload progress bar crawling along, because your files never leave your device in the first place.",
 
-    "
+        "
 
 ![Laptop showing converted product photos on a desk with plants](/blog/how-to-use-free-online-image-converter/laptop-plants.jpg)
 
