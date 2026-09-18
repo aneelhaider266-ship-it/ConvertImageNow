@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import ImageConverter from "@/components/ImageConverter";
+import ImageResizer from "@/components/ImageResizer";
 import { ShieldCheck, WifiOff, Infinity as InfinityIcon } from "lucide-react";
 
 export const metadata: Metadata = {
