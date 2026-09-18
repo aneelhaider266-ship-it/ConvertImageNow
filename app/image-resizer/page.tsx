@@ -101,7 +101,7 @@ export default function ImageResizerPage() {
 
       {/* Tool Component */}
       <div className="mx-auto mt-10 max-w-4xl">
-        <ImageConverter />
+        <ImageResizer />
       </div>
 
       {/* TRUST POINTS */}
