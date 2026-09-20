@@ -149,6 +149,16 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "Ready to convert? Use our [PNG to JPG converter](/png-to-jpg) or [JPG to PNG converter](/jpg-to-png) — both run directly in your browser with no upload required.",
 
+      "## PNG vs JPG for Social Media",
+
+      "Most social platforms automatically compress images you upload, regardless of the format you started with. Uploading a PNG doesn't guarantee your image stays lossless once it's on the platform. For most social posts, JPG is a practical starting choice unless your image specifically needs a transparent background, such as a logo overlay.",
+
+      "## Converting Between PNG and JPG",
+
+      "Converting from PNG to JPG will discard transparency, so any transparent areas become a solid background color, usually white. Check your converted image before publishing to make sure this doesn't cause unexpected results.",
+
+      "Converting from JPG to PNG doesn't add transparency or improve quality, it simply changes the file format. If you need transparency and your image is currently a JPG, transparency will need to be added separately using image editing software, since the conversion itself cannot recreate detail that isn't already there.",
+
       "## Final Recommendation",
 
       "Use JPG for photographs and PNG for graphics, text, logos, and transparency. If website performance matters, compare the image with WebP or AVIF before publishing.",
@@ -324,6 +334,16 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "Read [What Is AVIF? The Next Step in Image Compression](/blog/what-is-avif).",
 
+      "## Animated WebP",
+
+      "WebP also supports animation, similar to GIF but with significantly better compression. An animated WebP file can be a fraction of the size of the same animation saved as a GIF, while supporting more colors and smoother transitions. This makes WebP a practical replacement for GIFs on websites where load time matters.",
+
+      "## Converting Existing Images to WebP",
+
+      "If you have an existing library of JPG or PNG images, converting them to WebP is usually straightforward. Most images convert with no visible quality difference at a moderate-to-high quality setting, though it's worth spot-checking a few converted files before replacing your entire library.",
+
+      "Keep your original files after converting. If a particular image doesn't compress well as WebP, having the source file lets you try a different quality setting or fall back to the original format for that specific image.",
+
       "## Final Thoughts",
 
       "WebP is a strong general-purpose format for modern websites. If you want to optimize multiple JPG images, batch conversion can make the process faster.",
@@ -377,6 +397,16 @@ export const BLOG_POSTS: BlogPost[] = [
       "Keep the original HEIC image as a backup. The JPG copy can be used for compatibility while the original preserves the source file for future use.",
 
       "For a shorter overview, read [How to Convert HEIC to JPG](/blog/heic-to-jpg-guide).",
+
+      "## Converting HEIC on Android",
+
+      "Android devices generally don't create HEIC files by default, since most Android cameras save photos as JPG already. If you receive a HEIC file from an iPhone user, most modern Android phones can open it directly. If yours can't, a browser-based converter works the same way on Android as it does on any other device.",
+
+      "## Common Issues When Converting HEIC",
+
+      "Some HEIC files include multiple images in a single file, such as Live Photos, which combine a still image with a short video clip. When converting this type of file to JPG, only the still image portion carries over. If you need the video part preserved, keep the original HEIC file rather than deleting it after conversion.",
+
+      "Occasionally a HEIC file won't open at all in an older tool. This usually means the software hasn't been updated to support the format. Using a browser-based converter sidesteps this issue since it doesn't depend on your operating system's built-in HEIC support.",
 
       "## Final Thoughts",
 
@@ -478,6 +508,16 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "HEIC files are typically smaller than JPG files of the same photo. When you convert to JPG, the file may become larger unless you adjust compression settings during conversion.",
 
+      "## HEIC vs JPG: Quality and Compression",
+
+      "HEIC uses a more modern compression algorithm than JPG, which is why it can store the same photo in roughly half the file size. However, this efficiency comes from patented technology that not every platform has licensed to support. JPG remains the more universally compatible choice even though it typically produces larger files for the same visual quality.",
+
+      "## Common Tools for Converting HEIC Files",
+
+      "Besides browser-based converters, you have a few other options depending on your device. On iPhone, changing Settings > Camera > Formats to 'Most Compatible' will save new photos as JPG automatically going forward, though it won't convert photos you already have. On a Mac, Preview can open and export HEIC files. On Windows, you may need to install the HEIF extension from the Microsoft Store before File Explorer can even preview HEIC thumbnails.",
+
+      "For one-off conversions or when you're on a device without native HEIC support, a browser-based converter remains the fastest option since it works the same way regardless of your operating system.",
+
       "## Final Thoughts",
 
       "HEIC is an efficient format, but JPG is more widely compatible. Converting when necessary provides a practical solution for sharing iPhone photos across different devices and platforms.",
@@ -527,6 +567,18 @@ export const BLOG_POSTS: BlogPost[] = [
       "## When to Use AVIF",
 
       "Use AVIF when your audience uses modern browsers and you want the smallest possible file sizes. For broad compatibility, JPG or WebP is still a practical choice.",
+
+      "## How AVIF Compression Works",
+
+      "AVIF gets its efficiency from being built on video compression technology rather than older image-specific methods. Video codecs like AV1 are designed to eliminate redundant data across frames, and AVIF applies similar techniques to a single image, which is part of why it can achieve smaller file sizes than formats built specifically for still images.",
+
+      "This also means AVIF encoding tends to be more computationally intensive than JPG or WebP. Creating an AVIF file can take noticeably longer than creating a JPG of the same image, which is a practical consideration if you're processing large batches of images regularly.",
+
+      "## Converting to and from AVIF",
+
+      "If you're experimenting with AVIF, keep your original images in JPG or PNG as a fallback. Not every image editing tool supports opening or re-editing AVIF files yet, so converting from a widely supported format to AVIF, rather than the other way around, tends to cause fewer compatibility headaches.",
+
+      "Test AVIF output on the actual devices and browsers your audience uses before switching entirely. A quick side-by-side comparison of file size and visual quality will tell you whether the switch is worth it for your specific images.",
 
       "## Final Thoughts",
 
