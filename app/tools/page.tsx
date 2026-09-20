@@ -31,20 +31,28 @@ const LIVE_TOOLS = [
     href: "/png-to-jpg",
   },
   {
-  title: "JPG to PNG Converter",
-  desc: "Convert JPG images to PNG",
-  href: "/jpg-to-png",
-},
+    title: "JPG to PNG Converter",
+    desc: "Convert JPG images to PNG",
+    href: "/jpg-to-png",
+  },
   {
-  title: "JPG to WebP Converter",
-  desc: "Convert JPG images to WebP",
-  href: "/jpg-to-webp",
-},
+    title: "JPG to WebP Converter",
+    desc: "Convert JPG images to WebP",
+    href: "/jpg-to-webp",
+  },
+  {
+    title: "Image Compressor",
+    desc: "Compress JPG, PNG, and WebP without losing quality",
+    href: "/image-compressor",
+  },
+  {
+    title: "Image Resizer",
+    desc: "Resize images by exact pixels or percentage",
+    href: "/image-resizer",
+  },
 ];
 
 const UPCOMING = [
-  "Image Compressor",
-  "Image Resizer",
   "Crop Image",
   "Rotate Image",
   "Convert WebP to JPG",
@@ -60,7 +68,7 @@ export default function ToolsPage() {
           Tools
         </h1>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Three tools are live today, with more on the way — all free, all
+          Eight tools are live today, with more on the way — all free, all
           browser-based.
         </p>
       </div>
@@ -107,13 +115,23 @@ export default function ToolsPage() {
         <div className="mt-14 space-y-6 text-left text-slate-700 dark:text-slate-300">
           <h2 className="text-2xl font-bold">One converter, built to grow</h2>
           <p>
-            The image converter above is the foundation of ConvertImageNow, and it already handles the most common conversion needs — swapping between JPG, PNG, WebP, and AVIF with full control over output quality and batch processing. Everything on this page runs the same way: locally in your browser, with nothing uploaded to a server.
+            The image converter above is the foundation of ConvertImageNow, and it
+            already handles the most common conversion needs — swapping between
+            JPG, PNG, WebP, and AVIF with full control over output quality and
+            batch processing. Everything on this page runs the same way: locally
+            in your browser, with nothing uploaded to a server.
           </p>
           <p>
-            The tools listed under &quot;Coming soon&quot; are the next things we&apos;re building, based on what people actually ask for after converting an image — resizing it for a specific use, compressing it further without a second converter, or making a quick crop or rotation before downloading. Each one will follow the same rule as the converter: free, no sign-up, no file ever leaving your device.
+            The tools listed under &quot;Coming soon&quot; are the next things
+            we&apos;re building, based on what people actually ask for after
+            converting an image — cropping it for a specific use, optimizing it
+            further without a second converter, or making a quick rotation before
+            downloading. Each one will follow the same rule as the converter:
+            free, no sign-up, no file ever leaving your device.
           </p>
           <p>
-            If there&apos;s a specific tool you&apos;d like to see prioritized, you&apos;re welcome to{" "}
+            If there&apos;s a specific tool you&apos;d like to see prioritized,
+            you&apos;re welcome to{" "}
             <Link href="/contact" className="text-brand-primary hover:underline">
               reach out
             </Link>{" "}
