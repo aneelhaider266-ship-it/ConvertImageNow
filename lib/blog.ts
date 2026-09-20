@@ -16,7 +16,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "how-to-make-image-file-smaller",
     title: "How to Make an Image File Smaller Without Losing Quality",
     excerpt:
-      "Learn how to reduce image file size by compressing, resizing, and converting JPG, PNG, WebP, and other image formats.",
+      "Learn how to reduce image file size by compressing, resizing, and converting JPG, PNG, WebP, and other formats, without losing any visible quality at all.",
     date: "2026-08-11",
     updatedDate: "2026-09-01",
     canonical:
@@ -105,7 +105,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "png-vs-jpg",
     title: "PNG vs JPG: Which Image Format Should You Use?",
     excerpt:
-      "PNG and JPG are designed for different jobs. Learn which format is better for photos, logos, screenshots, transparency, and websites.",
+      "PNG and JPG are designed for different jobs. Learn which format is better for photos, logos, screenshots, transparency, and websites, with real examples.",
     date: "2026-01-19",
     updatedDate: "2026-09-01",
     canonical: "https://www.convertimagenow.com/blog/png-vs-jpg",
@@ -158,7 +158,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "jpg-to-webp-guide",
     title: "How to Convert JPG to WebP for Smaller Website Images",
     excerpt:
-      "Learn how to convert JPG images to WebP, choose quality settings, compare file sizes, and prepare images for faster websites.",
+      "Learn how to convert JPG images to WebP, choose the right quality settings, compare file sizes, and prepare your images for faster, lighter websites.",
     date: "2026-04-06",
     updatedDate: "2026-09-01",
     canonical:
@@ -218,7 +218,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "best-image-formats-explained",
     title: "Best Image Formats Explained: JPG, PNG, WebP, and AVIF",
     excerpt:
-      "Learn which image format to use for photos, logos, screenshots, transparency, and fast-loading websites.",
+      "Learn which image format to use for photos, logos, screenshots, transparency, and fast-loading websites: JPG, PNG, WebP, and AVIF compared.",
     date: "2026-01-12",
     updatedDate: "2026-09-01",
     canonical:
@@ -278,7 +278,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "what-is-webp",
     title: "What Is WebP? Benefits, Quality, and Website Uses",
     excerpt:
-      "Learn what WebP is, how it compares with JPG and PNG, and why it is useful for faster-loading websites.",
+      "Learn what WebP is, how it compares with JPG and PNG, why it matters, and why it is useful for faster-loading, better-performing websites today.",
     date: "2026-01-26",
     updatedDate: "2026-09-01",
     canonical: "https://www.convertimagenow.com/blog/what-is-webp",
@@ -335,7 +335,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "how-to-convert-heic-to-jpg",
     title: "How to Convert HEIC to JPG on iPhone, Android, and Windows",
     excerpt:
-      "Learn how to convert HEIC photos to JPG for easier sharing, uploading, and compatibility across phones, computers, and websites.",
+      "Learn how to convert HEIC photos to JPG for easier sharing, uploading, and compatibility across iPhone, Android, and Windows devices today.",
     date: "2026-03-23",
     updatedDate: "2026-09-01",
     canonical:
@@ -387,7 +387,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "image-seo-guide",
     title: "How to Optimize Images for SEO",
     excerpt:
-      "Learn how to optimize images for search engines with alt text, file names, compression, and responsive delivery.",
+      "Learn how to optimize images for search engines with alt text, file names, compression, dimensions, captions, and responsive image delivery.",
     date: "2026-02-14",
     canonical: "https://www.convertimagenow.com/blog/image-seo-guide",
     keywords: [
@@ -441,7 +441,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "heic-to-jpg-guide",
     title: "HEIC to JPG: Why You Might Need to Convert iPhone Photos",
     excerpt:
-      "Learn when and why you should convert HEIC photos to JPG, and the easiest ways to do it online.",
+      "Learn when and why you should convert HEIC photos to JPG, and the easiest, fastest ways to do it online for free, right in your browser.",
     date: "2026-05-03",
     canonical: "https://www.convertimagenow.com/blog/heic-to-jpg-guide",
     keywords: [
@@ -487,7 +487,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "what-is-avif",
     title: "What Is AVIF? The Next Step in Image Compression",
     excerpt:
-      "Learn what AVIF is, how it compares with JPG and WebP, and when to use it for images and websites.",
+      "Learn what AVIF is, how it compares with JPG and WebP for compression and quality, and when it makes sense to use it for your website.",
     date: "2026-03-01",
     canonical: "https://www.convertimagenow.com/blog/what-is-avif",
     keywords: [
@@ -537,7 +537,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "best-image-formats-compared",
     title: "AVIF, WebP, PNG, and JPG: A Head-to-Head Comparison",
     excerpt:
-      "Compare AVIF, WebP, PNG, and JPG side-by-side for file size, quality, and browser support.",
+      "Compare AVIF, WebP, PNG, and JPG side by side for file size, image quality, and browser support before choosing a format for your site.",
     date: "2026-02-28",
     canonical:
       "https://www.convertimagenow.com/blog/best-image-formats-compared",
@@ -592,7 +592,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "batch-convert-images",
     title: "How to Batch Convert Images: Save Time on Multiple Files",
     excerpt:
-      "Learn how to convert multiple images at once using online batch conversion tools.",
+      "Learn how to convert multiple images at once using free online batch conversion tools, saving time with no software install or signup required.",
     date: "2026-06-10",
     canonical: "https://www.convertimagenow.com/blog/batch-convert-images",
     keywords: [
@@ -638,7 +638,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "convert-images-without-losing-quality",
     title: "How to Convert Images Without Losing Quality",
     excerpt:
-      "Learn how to convert and resize images while preserving quality and avoiding compression artifacts.",
+      "Learn how to convert and resize images while preserving visual quality, avoiding compression artifacts, and keeping your file sizes small.",
     date: "2026-07-15",
     canonical:
       "https://www.convertimagenow.com/blog/convert-images-without-losing-quality",
@@ -688,7 +688,7 @@ export const BLOG_POSTS: BlogPost[] = [
   {
   slug: "online-image-converter-jpeg-to-jpg",
   title: "How to Convert JPEG to JPG with a Free Online Image Converter",
-  excerpt: "Fix upload rejections fast with a free online image converter JPEG to JPG, batch process locally, no uploads, no account, no watermarks.",
+  excerpt: "Fix upload rejections fast with a free online JPEG to JPG converter. Batch process locally in your browser, no uploads, no account, no watermarks.",
   date: "2026-09-11",
   updatedDate: "2026-09-11",
   canonical: "https://www.convertimagenow.com/blog/online-image-converter-jpeg-to-jpg",
@@ -811,7 +811,7 @@ export const BLOG_POSTS: BlogPost[] = [
 {
   slug: "jpg-vs-webp",
   title: "JPG vs WebP: Which Format Wins for Size, Quality, and Speed",
-  excerpt: "You are picking images for a website, an online store, or just trying to shrink a folder of photos, and you keep hitting the same question: jpg vs webp, which one actually wins?",
+  excerpt: "Comparing JPG vs WebP for your website or online store? See which format wins on file size, image quality, and page load speed for you.",
   date: "2026-09-11",
   updatedDate: "2026-09-11",
   canonical: "https://www.convertimagenow.com/blog/jpg-vs-webp",
@@ -903,7 +903,7 @@ export const BLOG_POSTS: BlogPost[] = [
 {
   slug: "convert-png-to-jpg-online",
   title: "How to Convert PNG into JPG Online for Free",
-  excerpt: "You've got a PNG file that's too big for your website, too heavy for an email attachment, or just not accepted by a form that wants a JPG. Here's how to convert it online, for free, in seconds.",
+  excerpt: "Convert PNG to JPG online for free, shrink files for your website, email, or upload forms in seconds. No signup, no software required at all.",
   date: "2026-09-13",
   updatedDate: "2026-09-13",
   canonical: "https://www.convertimagenow.com/blog/convert-png-to-jpg-online",
@@ -961,7 +961,7 @@ export const BLOG_POSTS: BlogPost[] = [
   slug: "how-to-use-free-online-image-converter",
   title: "How to Use a Free Online Image Converter",
   excerpt:
-    "Learn how to convert JPG, PNG, WebP, and AVIF images online for free, privately, and directly in your browser.",
+    "Learn how to convert JPG, PNG, WebP, and AVIF images online for free, privately, and directly in your browser, with no uploads or signup.",
   date: "2026-09-15",
   updatedDate: "2026-09-15",
   canonical:
