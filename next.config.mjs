@@ -22,6 +22,16 @@ const nextConfig = {
         destination: "/blog/how-to-make-image-file-smaller",
         permanent: true,
       },
+      {
+        source: "/blog/avif-vs-webp",
+        destination: "/blog/best-image-formats-compared",
+        permanent: true,
+      },
+      {
+        source: "/blog/batch-image-conversion",
+        destination: "/blog/batch-convert-images",
+        permanent: true,
+      },
     ];
   },
 };
