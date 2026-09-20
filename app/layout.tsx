@@ -56,6 +56,15 @@ export default function RootLayout({
     url: SITE_URL,
     email: "contact@convertimagenow.com",
     logo: `${SITE_URL}/logo.png`,
+    telephone: "+1-458-531-1441",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "6103 Third St, Apt 842",
+      addressLocality: "Philadelphia",
+      addressRegion: "CA",
+      postalCode: "63823",
+      addressCountry: "US",
+    },
     sameAs: [
       "https://www.linkedin.com/in/aneel-haider-539460307",
       "https://x.com/Aneel7157791",
