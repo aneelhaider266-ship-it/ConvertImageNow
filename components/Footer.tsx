@@ -56,6 +56,18 @@ export default function Footer() {
             Convert images instantly, right in your browser. Fast, free, and
             always private.
           </p>
+          <address className="mt-3 max-w-xs text-sm not-italic text-slate-500 dark:text-slate-400">
+            6103 Third St, Apt 842
+            <br />
+            Philadelphia, CA 63823
+            <br />
+            <a
+              href="tel:+14585311441"
+              className="transition-colors hover:text-brand-primary"
+            >
+              +1 (458) 531-1441
+            </a>
+          </address>
         </div>
 
         {COLUMNS.map((col) => (
