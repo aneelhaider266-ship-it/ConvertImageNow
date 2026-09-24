@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import type { Metadata } from "next";
 import ImageResizer from "@/components/ImageResizer";
 import { ShieldCheck, WifiOff, Infinity as InfinityIcon } from "lucide-react";
