@@ -4,11 +4,6 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
-  experimental: {
-    workerThreads: false,
-    cpus: 1,
-  },
-
   async redirects() {
     return [
       {
