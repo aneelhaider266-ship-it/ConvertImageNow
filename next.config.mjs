@@ -4,6 +4,12 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
 
+  serverExternalPackages: ["sharp"],
+
+  experimental: {
+    staticGenerationMinPagesPerWorker: 10,
+  },
+
   async redirects() {
     return [
       {
