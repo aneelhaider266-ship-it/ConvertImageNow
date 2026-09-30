@@ -1,43 +1,72 @@
-import { MetadataRoute } from "next";
-import { BLOG_POSTS } from "@/lib/blog";
-
-const SITE_URL = "https://www.convertimagenow.com";
-const STATIC_ROUTES = [
-  "",
-  "/converter",
-  "/features",
-  "/tools",
-  "/heic-to-jpg",
-  "/avif-to-jpg",
-  "/png-to-jpg",
-  "/jpg-to-png",
-  "/jpg-to-webp",
-  "/faq",
-  "/blog",
-  "/contact",
-  "/about",
-  "/privacy-policy",
-  "/terms",
-  "/cookie-policy",
-  "/disclaimer",
-  "/dmca",
-  "/accessibility",
-];
+import { MetadataRoute } from 'next';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticEntries = STATIC_ROUTES.map((route) => ({
-    url: `${SITE_URL}${route}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: route === "" ? 1 : 0.7,
-  }));
+  const baseUrl = 'https://convertimagenow.com';
+  const currentDate = new Date().toISOString();
 
-  const blogEntries = BLOG_POSTS.map((post) => ({
-    url: `${SITE_URL}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: "monthly" as const,
-    priority: 0.6,
-  }));
+  // Saare active tool routes
+  const tools = [
+    '',
+    '/converter',
+    '/tools',
+    '/features',
+    '/png-to-jpg',
+    '/jpg-to-png',
+    '/jpg-to-webp',
+    '/heic-to-jpg',
+    '/avif-to-jpg',
+    '/image-compressor',
+    '/image-resizer',
+  ];
 
-  return [...staticEntries, ...blogEntries];
+  // Saare active blog post slugs
+  const blogs = [
+    '/blog',
+    '/blog/avif-vs-webp',
+    '/blog/jpg-vs-webp',
+    '/blog/png-vs-jpg',
+    '/blog/what-is-avif',
+    '/blog/what-is-webp',
+    '/blog/heic-to-jpg-guide',
+    '/blog/jpg-to-webp-guide',
+    '/blog/image-seo-guide',
+    '/blog/batch-convert-images',
+    '/blog/how-to-make-image-file-smaller',
+  ];
+
+  // Company / Legal pages
+  const companyPages = [
+    '/about',
+    '/contact',
+    '/faq',
+    '/privacy-policy',
+    '/terms',
+    '/cookie-policy',
+    '/disclaimer',
+    '/dmca',
+    '/accessibility',
+  ];
+
+  const allRoutes = [
+    ...tools.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly' as const,
+      priority: route === '' ? 1.0 : 0.9,
+    })),
+    ...blogs.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly' as const,
+      priority: route === '/blog' ? 0.7 : 0.8,
+    })),
+    ...companyPages.map((route) => ({
+      url: `${baseUrl}${route}`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly' as const,
+      priority: 0.3,
+    })),
+  ];
+
+  return allRoutes;
 }
