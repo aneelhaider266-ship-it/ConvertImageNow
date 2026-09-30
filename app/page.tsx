@@ -4,38 +4,30 @@ import {
   Zap,
   Lock,
   Gift,
-  UploadCloud,
   Infinity as InfinityIcon,
   Layers,
   ArrowRight,
   ShieldCheck,
   Cpu,
-  FileCheck2,
-  Sparkles,
   SlidersHorizontal,
-  FolderArchive,
   CheckCircle2,
-  ArrowRightLeft,
-  Minimize2,
-  Maximize2,
-  FileCode2,
-  HelpCircle,
-  BookOpen,
 } from "lucide-react";
 import ImageConverter from "@/components/ImageConverter";
 
+const SITE_URL = "https://convertimagenow.com";
+
 export const metadata: Metadata = {
-  title: "Free Online Image Converter – Convert JPG, PNG, WebP, AVIF & HEIC",
+  title: "Free Online Image Converter – Convert JPG, PNG & WebP",
   description:
-    "Convert images online directly in your browser. 100% private client-side processing with zero server uploads. Batch convert PNG, JPG, WebP, AVIF, and HEIC instantly.",
+    "Convert images online directly in your browser. 100% private client-side processing, zero server uploads, and instant batch conversion for JPG, PNG, and WebP.",
   alternates: {
-    canonical: "https://www.convertimagenow.com/",
+    canonical: `${SITE_URL}/`,
   },
   openGraph: {
     title: "Free Online Image Converter – Private In-Browser Image Conversion",
     description:
       "Batch convert JPG, PNG, WebP, AVIF, and HEIC files locally in your browser. Fast, private, watermark-free, and 100% free.",
-    url: "https://www.convertimagenow.com/",
+    url: `${SITE_URL}/`,
     siteName: "ConvertImageNow",
     locale: "en_US",
     type: "website",
@@ -59,7 +51,6 @@ export const metadata: Metadata = {
   },
 };
 
-// Tool Directory Data: Hub linking directly to every specific converter & utility
 const CONVERTER_TOOLS = [
   {
     category: "Popular Conversions",
@@ -321,14 +312,13 @@ const HOMEPAGE_FAQS = [
 ];
 
 export default function HomePage() {
-  // Comprehensive Structured Data Graph
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebSite",
-        "@id": "https://www.convertimagenow.com/#website",
-        url: "https://www.convertimagenow.com/",
+        "@id": `${SITE_URL}/#website`,
+        url: `${SITE_URL}/`,
         name: "ConvertImageNow",
         description:
           "Free online image converter providing private, browser-based batch conversion across JPG, PNG, WebP, AVIF, and HEIC formats.",
@@ -336,9 +326,9 @@ export default function HomePage() {
       },
       {
         "@type": "WebApplication",
-        "@id": "https://www.convertimagenow.com/#webapp",
+        "@id": `${SITE_URL}/#webapp`,
         name: "ConvertImageNow Universal Image Converter",
-        url: "https://www.convertimagenow.com/",
+        url: `${SITE_URL}/`,
         applicationCategory: "MultimediaApplication",
         operatingSystem: "All (Web Browser)",
         browserRequirements: "Requires HTML5 Canvas and JavaScript support",
@@ -358,7 +348,7 @@ export default function HomePage() {
       },
       {
         "@type": "ItemList",
-        "@id": "https://www.convertimagenow.com/#tool-directory",
+        "@id": `${SITE_URL}/#tool-directory`,
         name: "ConvertImageNow Image Conversion Suite",
         description:
           "Directory of specialized image conversion tools and utilities available on ConvertImageNow.",
@@ -367,67 +357,67 @@ export default function HomePage() {
             "@type": "ListItem",
             position: 1,
             name: "PNG to JPG Converter",
-            url: "https://www.convertimagenow.com/png-to-jpg",
+            url: `${SITE_URL}/png-to-jpg`,
           },
           {
             "@type": "ListItem",
             position: 2,
             name: "JPG to PNG Converter",
-            url: "https://www.convertimagenow.com/jpg-to-png",
+            url: `${SITE_URL}/jpg-to-png`,
           },
           {
             "@type": "ListItem",
             position: 3,
             name: "JPG to WebP Converter",
-            url: "https://www.convertimagenow.com/jpg-to-webp",
+            url: `${SITE_URL}/jpg-to-webp`,
           },
           {
             "@type": "ListItem",
             position: 4,
             name: "PNG to WebP Converter",
-            url: "https://www.convertimagenow.com/png-to-webp",
+            url: `${SITE_URL}/png-to-webp`,
           },
           {
             "@type": "ListItem",
             position: 5,
             name: "HEIC to JPG Converter",
-            url: "https://www.convertimagenow.com/heic-to-jpg",
+            url: `${SITE_URL}/heic-to-jpg`,
           },
           {
             "@type": "ListItem",
             position: 6,
             name: "AVIF to JPG Converter",
-            url: "https://www.convertimagenow.com/avif-to-jpg",
+            url: `${SITE_URL}/avif-to-jpg`,
           },
           {
             "@type": "ListItem",
             position: 7,
             name: "WebP to JPG Converter",
-            url: "https://www.convertimagenow.com/webp-to-jpg",
+            url: `${SITE_URL}/webp-to-jpg`,
           },
           {
             "@type": "ListItem",
             position: 8,
             name: "WebP to PNG Converter",
-            url: "https://www.convertimagenow.com/webp-to-png",
+            url: `${SITE_URL}/webp-to-png`,
           },
           {
             "@type": "ListItem",
             position: 9,
             name: "Online Image Compressor",
-            url: "https://www.convertimagenow.com/image-compressor",
+            url: `${SITE_URL}/image-compressor`,
           },
           {
             "@type": "ListItem",
             position: 10,
             name: "Online Image Resizer",
-            url: "https://www.convertimagenow.com/image-resizer",
+            url: `${SITE_URL}/image-resizer`,
           },
         ],
       },
       {
         "@type": "FAQPage",
-        "@id": "https://www.convertimagenow.com/#faq",
+        "@id": `${SITE_URL}/#faq`,
         mainEntity: HOMEPAGE_FAQS.map((faq) => ({
           "@type": "Question",
           name: faq.q,
@@ -449,11 +439,7 @@ export default function HomePage() {
         }}
       />
 
-      {/* ─────────────────────────────────────────────────────────────
-          HERO & UNIVERSAL TOOL WIDGET
-          Visual Upgrade: Subtle ambient radial glow, tight typography scale,
-          Linear-style badge, and focused converter workspace.
-      ───────────────────────────────────────────────────────────── */}
+      {/* Hero Section */}
       <section className="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-b from-slate-50/60 via-white to-white py-12 dark:border-slate-800/80 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900 sm:py-16 lg:py-20">
         <div
           aria-hidden="true"
@@ -464,25 +450,21 @@ export default function HomePage() {
 
         <div className="container-page">
           <div className="mx-auto max-w-3xl text-center">
-            {/* Trust Chip */}
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3.5 py-1 text-xs font-medium tracking-wide text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300">
               <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
               <span>100% Private Client-Side Engine • Zero Cloud Uploads</span>
             </div>
 
-            {/* Category H1 */}
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
               Free Online Image Converter
             </h1>
 
-            {/* Hub Value Proposition */}
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
               Convert JPG, PNG, WebP, AVIF, and HEIC files instantly in your
               browser. Clean batch conversions with zero file size limits, no
               watermarks, and complete data privacy.
             </p>
 
-            {/* Quick Feature Tickers */}
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 text-brand-primary" />
@@ -499,18 +481,13 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Primary Universal Interactive Converter Component */}
           <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/80 p-2 shadow-2xl shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80 sm:p-4">
             <ImageConverter />
           </div>
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          TOOL DIRECTORY & CONVERTER CLUSTER (PRIMARY HUB FUNCTION)
-          Provides search engines and users with a clear path to every
-          specific converter page with rich contextual anchors.
-      ───────────────────────────────────────────────────────────── */}
+      {/* Tool Directory */}
       <section
         id="converters"
         className="container-page py-16 sm:py-24"
@@ -557,7 +534,6 @@ export default function HomePage() {
                     className="group relative flex flex-col justify-between rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/60 hover:shadow-lg hover:shadow-brand-primary/5 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-brand-primary/60"
                   >
                     <div>
-                      {/* Format Badge Bar */}
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700 dark:text-slate-200">
                           <span className="rounded bg-slate-100 px-1.5 py-0.5 dark:bg-slate-800">
@@ -573,12 +549,10 @@ export default function HomePage() {
                         </span>
                       </div>
 
-                      {/* Tool Title */}
                       <h4 className="mt-4 text-base font-semibold text-slate-900 transition-colors group-hover:text-brand-primary dark:text-white dark:group-hover:text-brand-primary">
                         {tool.name}
                       </h4>
 
-                      {/* Tool Purpose */}
                       <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
                         {tool.desc}
                       </p>
@@ -596,9 +570,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          CORE SYSTEM ADVANTAGES & CAPABILITIES
-      ───────────────────────────────────────────────────────────── */}
+      {/* Benefits Section */}
       <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
@@ -645,9 +617,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          HOW IT WORKS (AEO & FEATURED SNIPPET TARGET)
-      ───────────────────────────────────────────────────────────── */}
+      {/* How it works */}
       <section className="container-page py-16 sm:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -684,9 +654,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          SUPPORTED FORMAT MATRIX (ENTITY & COMPARISON SEO)
-      ───────────────────────────────────────────────────────────── */}
+      {/* Format Comparison Table */}
       <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl text-center">
@@ -757,9 +725,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          WHEN TO CONVERT & WHY (SEARCH INTENT & PROBLEM SOLVING)
-      ───────────────────────────────────────────────────────────── */}
+      {/* Practical Use Cases */}
       <section className="container-page py-16 sm:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -794,9 +760,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          E-E-A-T & TRUST ARCHITECTURE (IN-BROWSER CANVAS DEEP DIVE)
-      ───────────────────────────────────────────────────────────── */}
+      {/* In-Browser Security Deep Dive */}
       <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200/90 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-950 sm:p-12">
@@ -865,9 +829,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          FREQUENTLY ASKED QUESTIONS (AEO & SCHEMA-ALIGNED)
-      ───────────────────────────────────────────────────────────── */}
+      {/* FAQ Section */}
       <section
         id="faq"
         className="container-page py-16 sm:py-24"
@@ -922,9 +884,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          FEATURED OPTIMIZATION GUIDES & ARTICLES (TOPICAL CLUSTER)
-      ───────────────────────────────────────────────────────────── */}
+      {/* Featured Articles Section */}
       <section className="border-t border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
@@ -992,9 +952,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          HIGH-CONVERSION CALL-TO-ACTION BANNER
-      ───────────────────────────────────────────────────────────── */}
+      {/* CTA Banner */}
       <section className="container-page py-16 sm:py-20">
         <div className="relative overflow-hidden rounded-3xl bg-slate-900 px-8 py-14 text-center text-white shadow-2xl dark:border dark:border-slate-800 sm:px-16">
           <div
