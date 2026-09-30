@@ -13,20 +13,29 @@ import {
   Layers,
 } from "lucide-react";
 
+const SITE_URL = "https://convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/avif-to-jpg`;
+
 export const metadata: Metadata = {
   title: "AVIF to JPG Converter – Convert .AVIF to JPG Online Free",
   description:
     "Free online AVIF to JPG converter. Convert .AVIF files to JPG in your browser — no upload, no signup, no watermark. Works on Windows, Mac, Android and iOS.",
   alternates: {
-    canonical: "https://www.convertimagenow.com/avif-to-jpg",
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "AVIF to JPG Converter | ConvertImageNow",
     description:
       "Convert AVIF images to JPG privately in your browser with no signup or watermark.",
-    url: "https://www.convertimagenow.com/avif-to-jpg",
+    url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AVIF to JPG Converter | ConvertImageNow",
+    description:
+      "Convert AVIF images to JPG privately in your browser with no signup or watermark.",
   },
 };
 
@@ -127,18 +136,14 @@ const FAQS = [
   },
 ];
 
-const SERVICE_SCHEMA = {
+const WEB_APP_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "Service",
+  "@type": "WebApplication",
   name: "AVIF to JPG Converter",
-  serviceType: "AVIF to JPG Image Conversion",
-  url: "https://www.convertimagenow.com/avif-to-jpg",
-  provider: {
-    "@type": "Organization",
-    name: "ConvertImageNow",
-    url: "https://www.convertimagenow.com",
-  },
-  areaServed: "Worldwide",
+  url: PAGE_URL,
+  applicationCategory: "MultimediaApplication",
+  operatingSystem: "All",
+  browserRequirements: "Requires a modern web browser with HTML5 Canvas support.",
   offers: {
     "@type": "Offer",
     price: "0",
@@ -164,9 +169,15 @@ const FAQ_SCHEMA = {
 export default function AvifToJpgPage() {
   return (
     <main className="container-page relative overflow-hidden pb-24 pt-16 sm:pb-32 sm:pt-24">
-      {/* Premium Background Decorators (SaaS Aesthetic) */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]" aria-hidden="true" />
-      <div className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+      {/* Background Decorators */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+        aria-hidden="true"
+      >
         <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-brand-primary/20 to-purple-500/20 opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] dark:from-brand-primary/30 dark:to-purple-500/30" />
       </div>
 
@@ -174,7 +185,7 @@ export default function AvifToJpgPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(SERVICE_SCHEMA),
+          __html: JSON.stringify(WEB_APP_SCHEMA),
         }}
       />
       <script
@@ -194,11 +205,13 @@ export default function AvifToJpgPage() {
         </div>
 
         <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
-          AVIF to JPG Converter – Convert .AVIF to JPG Online Free
+          AVIF to JPG Converter
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 sm:text-xl">
-          Free online AVIF to JPG converter. Convert .AVIF files to JPG directly in your browser — no upload, no signup, no watermark. Works on Windows, Mac, Android and iOS.
+          Free online AVIF to JPG converter. Convert .AVIF files to JPG directly
+          in your browser — no upload, no signup, no watermark. Works on Windows,
+          Mac, Android and iOS.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-5 text-sm font-medium text-slate-600 dark:text-slate-400">
@@ -227,8 +240,7 @@ export default function AvifToJpgPage() {
 
       {/* Main Content Layout */}
       <section className="mx-auto mt-24 max-w-4xl px-4 sm:mt-32 sm:px-6 lg:px-8">
-        
-        {/* Bento Grid: Value Propositions (POINTS) */}
+        {/* Bento Grid */}
         <div className="mb-24 grid gap-6 sm:grid-cols-3">
           {POINTS.map(({ icon: Icon, title, desc }) => (
             <article
@@ -236,7 +248,7 @@ export default function AvifToJpgPage() {
               className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/70 p-7 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60"
             >
               <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-slate-800/30" aria-hidden="true" />
-              
+
               <div className="relative mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-primary/10 text-brand-primary ring-1 ring-brand-primary/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 dark:bg-brand-primary/20 dark:ring-brand-primary/30">
                 <Icon className="h-6 w-6" aria-hidden="true" />
               </div>
@@ -253,28 +265,39 @@ export default function AvifToJpgPage() {
         </div>
 
         <div className="prose prose-slate prose-lg max-w-none text-slate-700 dark:prose-invert dark:text-slate-300">
-          
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
             Why Convert AVIF to JPG?
           </h2>
           <p>
-            AVIF is a modern image format with efficient compression and good visual quality. However, many older apps, image editors, websites, printing tools, and devices still do not fully support AVIF files.
+            AVIF is a modern image format with efficient compression and good
+            visual quality. However, many older apps, image editors, websites,
+            printing tools, and devices still do not fully support AVIF files.
           </p>
           <p>
-            JPG is one of the most widely supported image formats. Converting AVIF to JPG makes your images easier to open, edit, print, email, upload, and share across different devices and applications — especially when you need maximum compatibility.
+            JPG is one of the most widely supported image formats. Converting
+            AVIF to JPG makes your images easier to open, edit, print, email,
+            upload, and share across different devices and applications — especially
+            when you need maximum compatibility.
           </p>
 
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
             Private AVIF to JPG Conversion
           </h2>
           <p>
-            ConvertImageNow is designed for browser-based image conversion. Supported image processing takes place locally in your browser, so your files do not need to be sent to our conversion server. This makes it a private option when you want to convert AVIF to JPG without uploading your images.
+            ConvertImageNow is designed for browser-based image conversion.
+            Supported image processing takes place locally in your browser, so
+            your files do not need to be sent to our conversion server. This makes
+            it a private option when you want to convert AVIF to JPG without
+            uploading your images.
           </p>
           <p>
-            You can verify this yourself: open your browser&apos;s developer tools (Network tab) while converting, and you&apos;ll see no image data being sent anywhere. Please review the privacy policy for complete information about data handling.
+            You can verify this yourself: open your browser&apos;s developer tools
+            (Network tab) while converting, and you&apos;ll see no image data being
+            sent anywhere. Please review the privacy policy for complete
+            information about data handling.
           </p>
 
-          {/* Common Mistake Transparency Callout */}
+          {/* Transparency Callout */}
           <div className="not-prose my-10 flex flex-col gap-4 rounded-2xl border border-amber-500/20 bg-amber-50/50 p-6 shadow-sm backdrop-blur-sm sm:flex-row sm:items-start dark:border-amber-500/20 dark:bg-amber-950/30">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/50">
               <FileWarning className="h-6 w-6 text-amber-600 dark:text-amber-400" aria-hidden="true" />
@@ -284,7 +307,10 @@ export default function AvifToJpgPage() {
                 Common Mistake: Transparent Backgrounds
               </h3>
               <p className="mt-2 text-base leading-relaxed text-amber-900 dark:text-amber-200/90">
-                If your AVIF image has a transparent background, converting it to JPG will fill that area with a solid color, since JPG does not support transparency. Convert to <strong>PNG</strong> instead if you need to preserve the background.
+                If your AVIF image has a transparent background, converting it to
+                JPG will fill that area with a solid color, since JPG does not
+                support transparency. Convert to <strong>PNG</strong> instead if you
+                need to preserve the background.
               </p>
             </div>
           </div>
@@ -298,7 +324,7 @@ export default function AvifToJpgPage() {
               "Choose JPG as the output format.",
               "Adjust the quality setting if you want to control file size and visual quality.",
               "Start the conversion to convert AVIF to JPG in your browser.",
-              "Download the JPG file, or download multiple converted files as a ZIP archive."
+              "Download the JPG file, or download multiple converted files as a ZIP archive.",
             ].map((step, idx) => (
               <li key={idx} className="flex gap-3">
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
@@ -337,7 +363,6 @@ export default function AvifToJpgPage() {
             AVIF vs JPG
           </h2>
 
-          {/* Semantic Comparison Table */}
           <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900/50">
             <table className="w-full text-left text-sm sm:text-base">
               <thead className="border-b border-slate-200 bg-slate-50/80 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/80">
@@ -393,7 +418,7 @@ export default function AvifToJpgPage() {
           <h2 className="mt-16 text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
             Frequently Asked Questions
           </h2>
-          
+
           <div className="not-prose mt-8 space-y-4">
             {FAQS.map((faq) => (
               <details
@@ -418,7 +443,6 @@ export default function AvifToJpgPage() {
           <p className="mt-12 text-sm font-medium text-slate-500 dark:text-slate-400">
             Last updated: September 2026.
           </p>
-
         </div>
       </section>
     </main>
