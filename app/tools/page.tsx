@@ -2,11 +2,30 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, Clock } from "lucide-react";
 
+const SITE_URL = "https://convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/tools`;
+
 export const metadata: Metadata = {
-  title: "Tools",
+  title: "Free Online Image Tools | ConvertImageNow Tool Suite",
   description:
-    "Explore ConvertImageNow's image conversion tools, plus a growing roadmap of upcoming free tools including compression, resizing, and more.",
-  alternates: { canonical: "/tools" },
+    "Explore ConvertImageNow free online image tools. Fast, private browser-based utilities to convert, compress, and resize JPG, PNG, WebP, and AVIF photos.",
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "Free Online Image Tools | ConvertImageNow Tool Suite",
+    description:
+      "Explore our complete suite of browser-based image converters, compressors, and resizers.",
+    url: PAGE_URL,
+    siteName: "ConvertImageNow",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Online Image Tools | ConvertImageNow",
+    description:
+      "Convert, compress, and resize images locally in your browser with zero server uploads.",
+  },
 };
 
 const LIVE_TOOLS = [
@@ -60,12 +79,38 @@ const UPCOMING = [
   "Image Optimizer",
 ];
 
+const TOOLS_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  name: "ConvertImageNow Image Tools Suite",
+  url: PAGE_URL,
+  description:
+    "Directory of free online image utilities including converters, compressors, and resizers.",
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: LIVE_TOOLS.map((tool, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: tool.title,
+      url: `${SITE_URL}${tool.href}`,
+      description: tool.desc,
+    })),
+  },
+};
+
 export default function ToolsPage() {
   return (
     <div className="container-page py-14 sm:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(TOOLS_SCHEMA),
+        }}
+      />
+
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Tools
+          Free Online Image Tools
         </h1>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
           Eight tools are live today, with more on the way — all free, all
@@ -91,7 +136,7 @@ export default function ToolsPage() {
               </div>
               <Link
                 href={tool.href}
-                className="rounded-full bg-brand-primary px-4 py-2 text-sm font-semibold text-white"
+                className="rounded-full bg-brand-primary px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
               >
                 Open
               </Link>
