@@ -1,9 +1,12 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "The terms that govern your use of ConvertImageNow.",
-  alternates: { canonical: "/terms" },
+  title: 'Terms of Service | ConvertImageNow Free Image Converter',
+  description:
+    'Read the terms of service for ConvertImageNow. Free, unlimited, browser-based image conversion with zero server storage and complete data privacy for users.',
+  alternates: {
+    canonical: 'https://convertimagenow.com/terms',
+  },
 };
 
 export default function TermsPage() {
