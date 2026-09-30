@@ -21,7 +21,13 @@ body {
   @apply bg-brand-primary/20;
 }
 
-/* Visible keyboard focus ring for accessibility */
+/* Core Web Vitals: Prevent layout shifts from responsive images */
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Visible keyboard focus ring for accessibility (WCAG compliant) */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -32,6 +38,7 @@ select:focus-visible {
   border-radius: 4px;
 }
 
+/* Accessibility: Respect user motion preferences */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
