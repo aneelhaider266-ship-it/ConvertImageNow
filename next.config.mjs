@@ -1,82 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  poweredByHeader: false,
-  compress: true,
-
-  serverExternalPackages: ["sharp"],
-
-  experimental: {
-    staticGenerationMinPagesPerWorker: 10,
-  },
-
+  // Trailing slashes consistently remove karo duplicate URLs rokne ke liye
+  trailingSlash: false,
   async redirects() {
     return [
+      // 1. WWW se non-WWW 301 permanent redirect
       {
-        source: "/:path*",
-        has: [
-          {
-            type: "host",
-            value: "convertimagenow.com",
-          },
-        ],
-        destination: "https://www.convertimagenow.com/:path*",
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.convertimagenow.com' }],
+        destination: 'https://convertimagenow.com/:path*',
         permanent: true,
       },
+      // 2. Broken page `/online-image-converter` ko live converter par redirect
       {
-        source: "/blog/how-to-reduce-image-size",
-        destination: "/blog/how-to-make-image-file-smaller",
+        source: '/online-image-converter',
+        destination: '/converter',
         permanent: true,
       },
+      // 3. Agar batch conversion page ka URL change hua tha to use sahi page par bhejo
       {
-        source: "/blog/avif-vs-webp",
-        destination: "/blog/best-image-formats-compared",
+        source: '/batch-image-conversion',
+        destination: '/tools',
         permanent: true,
-      },
-      {
-        source: "/blog/batch-image-conversion",
-        destination: "/blog/batch-convert-images",
-        permanent: true,
-      },
-    ];
-  },
-
-  async headers() {
-    return [
-      {
-        source: "/:path*",
-        headers: [
-          {
-            key: "X-Frame-Options",
-            value: "SAMEORIGIN",
-          },
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
-          },
-          {
-            key: "Referrer-Policy",
-            value: "strict-origin-when-cross-origin",
-          },
-          {
-            key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
-          },
-          {
-            key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://www.googletagmanager.com https://googleads.g.doubleclick.net",
-              "style-src 'self' 'unsafe-inline'",
-              "img-src 'self' data: blob: https:",
-              "font-src 'self' data:",
-              "connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com",
-              "frame-src 'self' https://googleads.g.doubleclick.net",
-              "object-src 'none'",
-              "base-uri 'self'",
-            ].join("; "),
-          },
-        ],
       },
     ];
   },
