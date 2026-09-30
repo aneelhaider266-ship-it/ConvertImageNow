@@ -8,13 +8,6 @@ export const metadata: Metadata = {
     canonical: 'https://convertimagenow.com/privacy-policy',
   },
 };
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "How ConvertImageNow handles your data and privacy.",
-  alternates: { canonical: "/privacy-policy" },
-};
 
 export default function PrivacyPolicyPage() {
   return (
