@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Accessibility",
-  description: "ConvertImageNow's commitment to web accessibility.",
-  alternates: { canonical: "/accessibility" },
+  title: "Accessibility Statement | ConvertImageNow Web Converter",
+  description:
+    "ConvertImageNow accessibility standards: WCAG compliance, screen reader support, keyboard navigation, and high-contrast color choices for all visitors.",
+  alternates: {
+    canonical: "https://convertimagenow.com/accessibility",
+  },
 };
 
 export default function AccessibilityPage() {
@@ -21,7 +24,7 @@ export default function AccessibilityPage() {
         </p>
         <section>
           <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-            What we've done
+            What we&apos;ve done
           </h2>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             <li>Visible keyboard focus states on all interactive elements</li>
