@@ -7,8 +7,6 @@ import {
   Infinity as InfinityIcon,
   CheckCircle2,
   ArrowRight,
-  FileImage,
-  Layers,
   Lock,
   Zap,
   HelpCircle,
@@ -16,23 +14,24 @@ import {
   Monitor,
   Smartphone,
   Sparkles,
-  ArrowLeftRight,
   ChevronRight,
-  SlidersHorizontal,
 } from "lucide-react";
 
+const SITE_URL = "https://convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/jpg-to-png`;
+
 export const metadata: Metadata = {
-  title: "Convert JPG to PNG Online Free – Instant Browser-Based Converter",
+  title: "Convert JPG to PNG Online Free – Instant Browser Tool",
   description:
-    "Convert JPG to PNG online for free without uploading files to any server. Fast, high-quality JPEG to PNG conversion right in your browser with batch processing.",
+    "Convert JPG to PNG online for free without uploading files to servers. Fast, lossless JPEG to PNG conversion right in your browser with batch processing.",
   alternates: {
-    canonical: "https://www.convertimagenow.com/jpg-to-png",
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "Convert JPG to PNG Online Free – Private & Browser-Based",
     description:
       "Transform JPG images into lossless PNG files directly in your browser. No file uploads, zero wait times, no watermarks, and complete privacy.",
-    url: "https://www.convertimagenow.com/jpg-to-png",
+    url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
   },
@@ -52,19 +51,19 @@ const BREADCRUMB_SCHEMA = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.convertimagenow.com",
+      item: `${SITE_URL}/`,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Tools",
-      item: "https://www.convertimagenow.com/tools",
+      item: `${SITE_URL}/tools`,
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "JPG to PNG Converter",
-      item: "https://www.convertimagenow.com/jpg-to-png",
+      item: PAGE_URL,
     },
   ],
 };
@@ -73,7 +72,7 @@ const SOFTWARE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "ConvertImageNow JPG to PNG Converter",
-  url: "https://www.convertimagenow.com/jpg-to-png",
+  url: PAGE_URL,
   applicationCategory: "MultimediaApplication",
   operatingSystem: "All (Browser-based: Windows, macOS, Linux, iOS, Android)",
   browserRequirements: "Requires HTML5 Canvas support",
@@ -246,7 +245,7 @@ export default function JpgToPngPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
       />
 
-      {/* Background Decorative Ambient Gradient */}
+      {/* Decorative Ambient Gradient */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[560px] overflow-hidden"
@@ -282,7 +281,7 @@ export default function JpgToPngPage() {
           </span>
         </nav>
 
-        {/* Hero & Intro Section */}
+        {/* Hero Section */}
         <header className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/80 px-3.5 py-1 text-xs font-medium tracking-wide text-indigo-700 shadow-sm backdrop-blur dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
             <Sparkles className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
@@ -300,7 +299,6 @@ export default function JpgToPngPage() {
             processing.
           </p>
 
-          {/* Quick Credibility Badges */}
           <div className="mt-5 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs font-medium text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" /> No server
@@ -427,7 +425,7 @@ export default function JpgToPngPage() {
           </div>
         </section>
 
-        {/* Educational Content & Transparency Reality Check */}
+        {/* Educational Content Section */}
         <section className="mx-auto mt-16 max-w-4xl space-y-12">
           {/* Transparency Callout */}
           <div className="rounded-2xl border border-amber-200/90 bg-amber-50/50 p-6 shadow-sm dark:border-amber-900/60 dark:bg-amber-950/20 sm:p-7">
@@ -505,7 +503,7 @@ export default function JpgToPngPage() {
             </article>
           </div>
 
-          {/* Technical Comparison Table: JPG vs PNG */}
+          {/* Technical Comparison Table */}
           <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
             <div className="border-b border-slate-200/90 bg-slate-100/60 px-6 py-4 dark:border-slate-800 dark:bg-slate-800/50">
               <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
@@ -553,7 +551,7 @@ export default function JpgToPngPage() {
             </div>
           </div>
 
-          {/* Platform Specific Conversion Guides */}
+          {/* Device Specific Guides */}
           <div>
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-slate-900 dark:text-slate-100">
               Converting JPG to PNG Across Devices
@@ -642,7 +640,7 @@ export default function JpgToPngPage() {
             </div>
           </div>
 
-          {/* Frequently Asked Questions Accordion / List */}
+          {/* Frequently Asked Questions */}
           <div className="space-y-6">
             <div className="text-center sm:text-left">
               <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
