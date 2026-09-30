@@ -12,7 +12,6 @@ import {
   Layers,
 } from "lucide-react";
 
-// Canonical without www
 const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/png-to-jpg`;
 const OG_IMAGE = `${SITE_URL}/png-to-jpg/og-image.webp`;
@@ -161,7 +160,6 @@ const SOFTWARE_SCHEMA = {
 export default function PngToJpgPage() {
   return (
     <main className="container-page relative overflow-hidden pb-20 pt-16 sm:pb-32 sm:pt-24">
-      {/* Background Decorators */}
       <div
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]"
         aria-hidden="true"
@@ -173,7 +171,6 @@ export default function PngToJpgPage() {
         <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-brand-primary/20 to-blue-500/20 opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] dark:from-brand-primary/30 dark:to-blue-500/30" />
       </div>
 
-      {/* Structured Data */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(FAQ_SCHEMA) }}
@@ -183,7 +180,6 @@ export default function PngToJpgPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(SOFTWARE_SCHEMA) }}
       />
 
-      {/* Hero Section */}
       <section className="mx-auto max-w-4xl px-4 text-center sm:px-6 lg:px-8">
         <div className="mb-6 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-primary/5 px-4 py-1.5 text-sm font-medium text-brand-primary backdrop-blur-sm dark:border-brand-primary/30 dark:bg-brand-primary/10 dark:text-brand-primary/90">
@@ -217,7 +213,6 @@ export default function PngToJpgPage() {
         </div>
       </section>
 
-      {/* Converter Component */}
       <section
         className="relative z-10 mx-auto mt-12 max-w-4xl px-4 sm:mt-16 sm:px-6 lg:px-8"
         aria-label="Image Converter Tool"
@@ -229,9 +224,7 @@ export default function PngToJpgPage() {
         <ImageConverter initialFormat="jpg" />
       </section>
 
-      {/* Core Content Layout */}
       <section className="mx-auto mt-24 max-w-4xl px-4 sm:mt-32 sm:px-6 lg:px-8">
-        {/* Value Props Grid */}
         <div className="mb-24 grid gap-6 sm:grid-cols-3">
           {POINTS.map(({ icon: Icon, title, desc }) => (
             <article
@@ -286,7 +279,6 @@ export default function PngToJpgPage() {
             your converted images.
           </p>
 
-          {/* Transparency Callout */}
           <div className="not-prose my-10 flex gap-4 rounded-2xl border border-amber-500/20 bg-amber-50/50 p-6 shadow-sm backdrop-blur-sm dark:border-amber-500/20 dark:bg-amber-950/30">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/50">
               <FileWarning
@@ -315,7 +307,6 @@ export default function PngToJpgPage() {
             Because our tool runs entirely in your browser, the process is identical whether you are on a desktop, phone, or tablet. No app installation is required.
           </p>
 
-          {/* Device Instructions Grid */}
           <div className="not-prose my-10 grid gap-6 sm:grid-cols-3">
             {DEVICES.map(({ icon: Icon, name, steps }) => (
               <div
@@ -359,7 +350,6 @@ export default function PngToJpgPage() {
             matters more than pixel-perfect transparency.
           </p>
 
-          {/* Format Comparison Table */}
           <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900/50">
             <table className="w-full border-collapse text-left text-sm sm:text-base">
               <thead className="bg-slate-50/80 backdrop-blur-sm dark:bg-slate-900/80">
@@ -411,3 +401,34 @@ export default function PngToJpgPage() {
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <h2 className="mt-16 text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
+            Frequently Asked Questions
+          </h2>
+
+          <div className="not-prose mt-8 space-y-4">
+            {FAQS.map(({ q, a }) => (
+              <details
+                key={q}
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900/40 dark:hover:border-slate-700"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-5 text-lg font-semibold text-slate-900 outline-none dark:text-slate-100 [&::-webkit-details-marker]:hidden">
+                  {q}
+                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-slate-800 dark:text-slate-400">
+                    +
+                  </span>
+                </summary>
+                <div className="px-6 pb-6 pt-1">
+                  <p className="text-base leading-relaxed text-slate-600 dark:text-slate-400">
+                    {a}
+                  </p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
+  );
+}
