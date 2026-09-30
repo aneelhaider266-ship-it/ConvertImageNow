@@ -1,138 +1,40 @@
-import type { Metadata } from "next";
-import Script from "next/script";
-import "./globals.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
-const SITE_URL = "https://www.convertimagenow.com";
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-
+  metadataBase: new URL('https://convertimagenow.com'),
   title: {
-    default: "ConvertImageNow — Convert Images Instantly, Fast & Secure",
-    template: "%s | ConvertImageNow",
+    default: 'ConvertImageNow — Free Online Image Converter & Compressor',
+    template: '%s | ConvertImageNow',
   },
-
   description:
-    "Convert JPG, PNG, WebP and AVIF images online in seconds. 100% free, no sign-up, and everything runs securely in your browser — nothing is ever uploaded.",
-
-  openGraph: {
-    type: "website",
-    url: SITE_URL,
-    siteName: "ConvertImageNow",
-    title: "ConvertImageNow — Convert Images Instantly, Fast & Secure",
-    description:
-      "Convert JPG, PNG, WebP and AVIF images online in seconds. Free, secure, and processed entirely in your browser.",
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: "ConvertImageNow — Convert Images Instantly",
-    description:
-      "Free online image converter. Fast, secure, browser-based — no uploads, no limits.",
-  },
-
+    'Convert JPG, PNG, WebP, and AVIF images instantly in your browser. 100% private, free batch processing, no file uploads to servers.',
   alternates: {
-    canonical: SITE_URL,
+    canonical: './',
   },
-
-  verification: {
-    other: {
-      "msvalidate.01": "60CAA555BAE22AFA89B6DFDFCB1E8BB8",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
     },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://convertimagenow.com',
+    siteName: 'ConvertImageNow',
+    title: 'ConvertImageNow — Free Online Image Converter & Compressor',
+    description:
+      'Convert JPG, PNG, WebP, and AVIF directly in your browser. Fast, free, and completely private.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ConvertImageNow — Free Online Image Converter',
+    description:
+      'Private in-browser image conversion for JPG, PNG, WebP, and AVIF.',
   },
 };
-
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  const orgSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    name: "ConvertImageNow",
-    url: SITE_URL,
-    email: "contact@convertimagenow.com",
-    logo: `${SITE_URL}/logo.png`,
-    telephone: "+1-458-531-1441",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "6103 Third St, Apt 842",
-      addressLocality: "Philadelphia",
-      addressRegion: "CA",
-      postalCode: "63823",
-      addressCountry: "US",
-    },
-    sameAs: [
-      "https://www.linkedin.com/in/aneel-haider-539460307",
-      "https://x.com/Aneel7157791",
-    ],
-  };
-
-  const websiteSchema = {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    name: "ConvertImageNow",
-    url: SITE_URL,
-    description:
-      "Convert JPG, PNG, WebP and AVIF images online in seconds. 100% free, no sign-up, and everything runs securely in your browser — nothing is ever uploaded.",
-  };
-
-  return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Organization Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(orgSchema),
-          }}
-        />
-
-        {/* Website Schema */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(websiteSchema),
-          }}
-        />
-
-        {/* Google AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5442747651786672"
-          crossOrigin="anonymous"
-          strategy="lazyOnload"
-        />
-
-        {/* Google Analytics */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=G-HZ0NXP679X"
-          strategy="afterInteractive"
-        />
-
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-HZ0NXP679X');
-          `}
-        </Script>
-      </head>
-
-      <body className="flex min-h-screen flex-col antialiased">
-        <Header />
-
-        <main className="flex-1">
-          {children}
-        </main>
-
-        <Footer />
-      </body>
-    </html>
-  );
-}
