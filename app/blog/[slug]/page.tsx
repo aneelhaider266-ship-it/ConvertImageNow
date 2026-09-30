@@ -1,9 +1,15 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { BLOG_POSTS } from '@/lib/posts'; // Apne actual path ke mutabiq import check karna
+import { BLOG_POSTS } from '@/lib/posts';
 
 interface Props {
   params: Promise<{ slug: string }>;
+}
+
+export async function generateStaticParams() {
+  return BLOG_POSTS.map((post) => ({
+    slug: post.slug,
+  }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -33,7 +39,6 @@ export default async function BlogPostPage({ params }: Props) {
   const post = BLOG_POSTS.find((p) => p.slug === slug);
   if (!post) notFound();
 
-  // Article Schema for Google Rich Snippets
   const articleSchema = {
     '@context': 'https://schema.org',
     '@type': 'Article',
