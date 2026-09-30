@@ -12,28 +12,25 @@ import {
   Smartphone,
   Laptop,
   Monitor,
-  FolderArchive,
   RefreshCw,
-  FileCheck2,
-  FileQuestion,
-  Sparkles,
-  HelpCircle,
-  BookOpen,
 } from "lucide-react";
 import ImageConverter from "@/components/ImageConverter";
 
+const SITE_URL = "https://convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/heic-to-jpg`;
+
 export const metadata: Metadata = {
-  title: "HEIC to JPG Converter – Free, Private & In-Browser Batch Convert",
+  title: "Convert HEIC to JPG Online – Free, Private Batch Tool",
   description:
-    "Convert iPhone HEIC and HEIF photos to high-quality JPG online in your browser. 100% private client-side processing with zero server uploads, batch ZIP export, and no watermarks.",
+    "Convert iPhone HEIC photos to high-quality JPG online in your browser. 100% private client-side processing, zero server uploads, and free batch ZIP export.",
   alternates: {
-    canonical: "https://www.convertimagenow.com/heic-to-jpg",
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "Convert HEIC to JPG Online – 100% Private In-Browser Tool",
     description:
       "Batch convert Apple HEIC photos to universal JPG format directly on your device. Fast, client-side, watermark-free, and completely free.",
-    url: "https://www.convertimagenow.com/heic-to-jpg",
+    url: PAGE_URL,
     siteName: "ConvertImageNow",
     locale: "en_US",
     type: "website",
@@ -244,27 +241,27 @@ const SCHEMA_GRAPH = {
   "@graph": [
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.convertimagenow.com/heic-to-jpg/#breadcrumb",
+      "@id": `${PAGE_URL}/#breadcrumb`,
       itemListElement: [
         {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: "https://www.convertimagenow.com/",
+          item: `${SITE_URL}/`,
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "HEIC to JPG Converter",
-          item: "https://www.convertimagenow.com/heic-to-jpg",
+          item: PAGE_URL,
         },
       ],
     },
     {
       "@type": "WebApplication",
-      "@id": "https://www.convertimagenow.com/heic-to-jpg/#webapp",
+      "@id": `${PAGE_URL}/#webapp`,
       name: "ConvertImageNow HEIC to JPG Converter",
-      url: "https://www.convertimagenow.com/heic-to-jpg",
+      url: PAGE_URL,
       applicationCategory: "MultimediaApplication",
       operatingSystem: "All (Web Browser)",
       browserRequirements: "Requires HTML5 Canvas and JavaScript support",
@@ -284,7 +281,7 @@ const SCHEMA_GRAPH = {
     },
     {
       "@type": "HowTo",
-      "@id": "https://www.convertimagenow.com/heic-to-jpg/#howto",
+      "@id": `${PAGE_URL}/#howto`,
       name: "How to Convert HEIC to JPG Online",
       description:
         "Step-by-step instructions to convert iPhone HEIC and HEIF photos to universal JPG format online in your web browser.",
@@ -295,34 +292,34 @@ const SCHEMA_GRAPH = {
           position: 1,
           name: "Select HEIC Images",
           text: "Drag and drop your HEIC or HEIF images into the converter box or select them from your local device storage.",
-          url: "https://www.convertimagenow.com/heic-to-jpg#converter",
+          url: `${PAGE_URL}#converter`,
         },
         {
           "@type": "HowToStep",
           position: 2,
           name: "Set Output Quality",
           text: "Select JPG as the target format and adjust the compression slider between 1% and 100% depending on your file size needs.",
-          url: "https://www.convertimagenow.com/heic-to-jpg#converter",
+          url: `${PAGE_URL}#converter`,
         },
         {
           "@type": "HowToStep",
           position: 3,
           name: "Convert Locally",
           text: "Your browser decodes the HEIC container in local memory and renders the image into standard JPG format.",
-          url: "https://www.convertimagenow.com/heic-to-jpg#converter",
+          url: `${PAGE_URL}#converter`,
         },
         {
           "@type": "HowToStep",
           position: 4,
           name: "Download JPG Files",
           text: "Save your converted JPG files individually or download the entire batch as an organized ZIP archive.",
-          url: "https://www.convertimagenow.com/heic-to-jpg#converter",
+          url: `${PAGE_URL}#converter`,
         },
       ],
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.convertimagenow.com/heic-to-jpg/#faq",
+      "@id": `${PAGE_URL}/#faq`,
       mainEntity: FAQS.map((faq) => ({
         "@type": "Question",
         name: faq.q,
@@ -345,9 +342,7 @@ export default function HeicToJpgPage() {
         }}
       />
 
-      {/* ─────────────────────────────────────────────────────────────
-          HERO SECTION & UNIVERSAL CONVERTER WORKSPACE
-      ───────────────────────────────────────────────────────────── */}
+      {/* Hero Section */}
       <section className="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-b from-slate-50/70 via-white to-white py-12 dark:border-slate-800/80 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900 sm:py-16 lg:py-20">
         <div
           aria-hidden="true"
@@ -380,25 +375,21 @@ export default function HeicToJpgPage() {
           </nav>
 
           <div className="mx-auto max-w-3xl text-center">
-            {/* Trust Pill */}
             <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3.5 py-1 text-xs font-medium tracking-wide text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300">
               <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
               <span>100% Private In-Browser Conversion • Zero Cloud Uploads</span>
             </div>
 
-            {/* Target H1 */}
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
               HEIC to JPG Converter
             </h1>
 
-            {/* Intent-focused Subheadline */}
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
               Convert Apple iPhone HEIC and HEIF photos to universally compatible
               JPGs instantly. Process single files or massive batches right in
               your browser with no file uploads, no watermarks, and no sign-up.
             </p>
 
-            {/* Fast Feature Checklist */}
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 text-brand-primary" />
@@ -415,7 +406,6 @@ export default function HeicToJpgPage() {
             </div>
           </div>
 
-          {/* Interactive Tool Component */}
           <div
             id="converter"
             className="mx-auto mt-10 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/80 p-2 shadow-2xl shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80 sm:p-4"
@@ -425,9 +415,7 @@ export default function HeicToJpgPage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          CORE VALUE PROPOSITION & TECHNICAL ADVANTAGES
-      ───────────────────────────────────────────────────────────── */}
+      {/* Value Propositions */}
       <section className="container-page py-16 sm:py-24">
         <div className="mx-auto max-w-2xl text-center">
           <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -468,9 +456,7 @@ export default function HeicToJpgPage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          OS-SPECIFIC CONVERSION GUIDES (TARGETING USER QUERIES)
-      ───────────────────────────────────────────────────────────── */}
+      {/* OS-Specific Guides */}
       <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl text-center">
@@ -527,9 +513,7 @@ export default function HeicToJpgPage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          FORMAT COMPARISON MATRIX (HEIC VS JPG ENTITY DEEP DIVE)
-      ───────────────────────────────────────────────────────────── */}
+      {/* Comparison Matrix */}
       <section className="container-page py-16 sm:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -587,9 +571,7 @@ export default function HeicToJpgPage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          E-E-A-T TRUST & DATA SECURITY ARCHITECTURE
-      ───────────────────────────────────────────────────────────── */}
+      {/* Tech Architecture Section */}
       <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200/90 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-950 sm:p-12">
@@ -677,9 +659,7 @@ export default function HeicToJpgPage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          FREQUENTLY ASKED QUESTIONS (AEO & SCHEMA ALIGNED)
-      ───────────────────────────────────────────────────────────── */}
+      {/* FAQ Section */}
       <section
         id="faq"
         className="container-page py-16 sm:py-24"
@@ -724,9 +704,7 @@ export default function HeicToJpgPage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          RELATED IMAGE CONVERTERS (TOPICAL CLUSTER INTERNAL LINKS)
-      ───────────────────────────────────────────────────────────── */}
+      {/* Related Converters */}
       <section className="border-t border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
@@ -777,7 +755,6 @@ export default function HeicToJpgPage() {
             ))}
           </div>
 
-          {/* Hub Link Anchor */}
           <div className="mt-12 text-center">
             <Link
               href="/"
@@ -790,9 +767,7 @@ export default function HeicToJpgPage() {
         </div>
       </section>
 
-      {/* ─────────────────────────────────────────────────────────────
-          HIGH-CONVERSION CALL TO ACTION BANNER
-      ───────────────────────────────────────────────────────────── */}
+      {/* CTA Banner */}
       <section className="container-page py-16 sm:py-20">
         <div className="relative overflow-hidden rounded-3xl bg-slate-900 px-8 py-14 text-center text-white shadow-2xl dark:border dark:border-slate-800 sm:px-16">
           <div
