@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "DMCA Policy",
-  description: "ConvertImageNow's policy on copyright and DMCA takedown requests.",
-  alternates: { canonical: "/dmca" },
+  title: "DMCA Notice & Takedown Policy | ConvertImageNow",
+  description:
+    "ConvertImageNow DMCA copyright policies. All conversions execute client-side; no copyrighted media or photos are ever hosted or stored on our web servers.",
+  alternates: {
+    canonical: "https://convertimagenow.com/dmca",
+  },
 };
 
 export default function DmcaPage() {
