@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import ImageConverter from "@/components/ImageConverter";
 import {
   ShieldCheck,
@@ -10,11 +9,11 @@ import {
   Apple,
   Smartphone,
   Zap,
-  Image as ImageIcon,
   Layers,
 } from "lucide-react";
 
-const SITE_URL = "https://www.convertimagenow.com";
+// Canonical without www
+const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/png-to-jpg`;
 const OG_IMAGE = `${SITE_URL}/png-to-jpg/og-image.webp`;
 
@@ -144,26 +143,33 @@ const FAQ_SCHEMA = {
 
 const SOFTWARE_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
+  "@type": "WebApplication",
   name: "PNG to JPG Converter",
-  operatingSystem: "Any",
-  applicationCategory: "UtilitiesApplication",
-  browserRequirements: "Requires a modern web browser with HTML5 Canvas support.",
+  operatingSystem: "All",
+  applicationCategory: "MultimediaApplication",
+  browserRequirements: "Requires a modern web browser with HTML5 Canvas and JavaScript support.",
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
   },
-  description: "Free, browser-based utility to convert PNG images to JPG format locally without server uploads.",
+  description:
+    "Free, browser-based utility to convert PNG images to JPG format locally without server uploads.",
   url: PAGE_URL,
 };
 
 export default function PngToJpgPage() {
   return (
     <main className="container-page relative overflow-hidden pb-20 pt-16 sm:pb-32 sm:pt-24">
-      {/* Background Decorators for Premium SaaS Feel */}
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]" aria-hidden="true" />
-      <div className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80" aria-hidden="true">
+      {/* Background Decorators */}
+      <div
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]"
+        aria-hidden="true"
+      />
+      <div
+        className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+        aria-hidden="true"
+      >
         <div className="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-brand-primary/20 to-blue-500/20 opacity-40 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem] dark:from-brand-primary/30 dark:to-blue-500/30" />
       </div>
 
@@ -185,7 +191,7 @@ export default function PngToJpgPage() {
             100% Free & Browser-Based
           </span>
         </div>
-        
+
         <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
           PNG to JPG Converter
         </h1>
@@ -212,17 +218,19 @@ export default function PngToJpgPage() {
       </section>
 
       {/* Converter Component */}
-      <section 
+      <section
         className="relative z-10 mx-auto mt-12 max-w-4xl px-4 sm:mt-16 sm:px-6 lg:px-8"
         aria-label="Image Converter Tool"
       >
-        <div className="absolute inset-0 -z-10 rounded-[2.5rem] bg-gradient-to-b from-brand-primary/5 to-transparent blur-2xl dark:from-brand-primary/10" aria-hidden="true" />
+        <div
+          className="absolute inset-0 -z-10 rounded-[2.5rem] bg-gradient-to-b from-brand-primary/5 to-transparent blur-2xl dark:from-brand-primary/10"
+          aria-hidden="true"
+        />
         <ImageConverter initialFormat="jpg" />
       </section>
 
       {/* Core Content Layout */}
       <section className="mx-auto mt-24 max-w-4xl px-4 sm:mt-32 sm:px-6 lg:px-8">
-        
         {/* Value Props Grid */}
         <div className="mb-24 grid gap-6 sm:grid-cols-3">
           {POINTS.map(({ icon: Icon, title, desc }) => (
@@ -230,8 +238,11 @@ export default function PngToJpgPage() {
               key={title}
               className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/60 p-6 shadow-sm backdrop-blur-xl transition-all hover:-translate-y-1 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50"
             >
-              <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-slate-800/30" aria-hidden="true" />
-              
+              <div
+                className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-slate-800/30"
+                aria-hidden="true"
+              />
+
               <div className="relative mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-primary/10 text-brand-primary ring-1 ring-brand-primary/20 transition-transform group-hover:scale-110 group-hover:rotate-3 dark:bg-brand-primary/20 dark:ring-brand-primary/30">
                 <Icon className="h-6 w-6" aria-hidden="true" />
               </div>
@@ -248,7 +259,6 @@ export default function PngToJpgPage() {
         </div>
 
         <div className="prose prose-slate prose-lg max-w-none text-slate-700 dark:prose-invert dark:text-slate-300">
-          
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
             Why Convert PNG to JPG?
           </h2>
@@ -257,7 +267,7 @@ export default function PngToJpgPage() {
             detail, which makes files larger — often 4 to 10 times bigger than
             an equivalent JPG. Converting PNG to JPEG is useful when you need
             smaller files for email attachments, faster website loading, or
-            uploading to platforms that don't accept PNG.
+            uploading to platforms that don&apos;t accept PNG.
           </p>
 
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
@@ -267,7 +277,7 @@ export default function PngToJpgPage() {
             Many online image converters require you to upload your files to a
             remote server for processing. ConvertImageNow takes a different
             approach. Your PNG image can be processed directly in your browser
-            using your device's local resources.
+            using your device&apos;s local resources.
           </p>
           <p>
             This means you can convert personal photos, screenshots, or work
@@ -279,7 +289,10 @@ export default function PngToJpgPage() {
           {/* Transparency Callout */}
           <div className="not-prose my-10 flex gap-4 rounded-2xl border border-amber-500/20 bg-amber-50/50 p-6 shadow-sm backdrop-blur-sm dark:border-amber-500/20 dark:bg-amber-950/30">
             <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-amber-100 dark:bg-amber-900/50">
-              <FileWarning className="h-6 w-6 text-amber-600 dark:text-amber-400" aria-hidden="true" />
+              <FileWarning
+                className="h-6 w-6 text-amber-600 dark:text-amber-400"
+                aria-hidden="true"
+              />
             </div>
             <div>
               <h3 className="text-lg font-semibold text-amber-950 dark:text-amber-100">
@@ -313,7 +326,9 @@ export default function PngToJpgPage() {
                   <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{name}</h3>
+                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
+                    {name}
+                  </h3>
                 </div>
                 <ol className="relative flex-1 list-decimal space-y-3 pl-5 text-sm leading-relaxed text-slate-600 marker:text-slate-400 dark:text-slate-400 dark:marker:text-slate-500">
                   {steps.map((step, i) => (
@@ -330,7 +345,7 @@ export default function PngToJpgPage() {
           <p>
             Need to convert several screenshots or images at once? Select
             multiple PNG files, batch convert them together in one go, and
-            download the results as a single ZIP file. There is no artificial batch limit—it relies entirely on your device's memory.
+            download the results as a single ZIP file. There is no artificial batch limit—it relies entirely on your device&apos;s memory.
           </p>
 
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
@@ -349,58 +364,50 @@ export default function PngToJpgPage() {
             <table className="w-full border-collapse text-left text-sm sm:text-base">
               <thead className="bg-slate-50/80 backdrop-blur-sm dark:bg-slate-900/80">
                 <tr>
-                  <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">Feature</th>
-                  <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">PNG</th>
-                  <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">JPG / JPEG</th>
+                  <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">
+                    Feature
+                  </th>
+                  <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">
+                    PNG
+                  </th>
+                  <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">
+                    JPG / JPEG
+                  </th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
                 <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                  <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">Compression</td>
-                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Lossless (larger files)</td>
-                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Lossy (smaller files)</td>
+                  <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
+                    Compression
+                  </td>
+                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                    Lossless (larger files)
+                  </td>
+                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                    Lossy (smaller files)
+                  </td>
                 </tr>
                 <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                  <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">Transparency</td>
-                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Supported</td>
-                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Not supported</td>
+                  <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
+                    Transparency
+                  </td>
+                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                    Supported
+                  </td>
+                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                    Not supported
+                  </td>
                 </tr>
                 <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
-                  <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">Best used for</td>
-                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Logos, text, graphics, icons</td>
-                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Photographs, web images</td>
+                  <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
+                    Best used for
+                  </td>
+                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                    Logos, text, graphics, icons
+                  </td>
+                  <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                    Photographs, web images
+                  </td>
                 </tr>
               </tbody>
             </table>
-          </div>
-
-          <h2 className="mt-16 text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
-            Frequently Asked Questions
-          </h2>
-          
-          <div className="not-prose mt-8 space-y-4">
-            {FAQS.map(({ q, a }) => (
-              <details
-                key={q}
-                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900/40 dark:hover:border-slate-700"
-              >
-                <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-5 text-lg font-semibold text-slate-900 outline-none dark:text-slate-100 [&::-webkit-details-marker]:hidden">
-                  {q}
-                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-slate-800 dark:text-slate-400">
-                    +
-                  </span>
-                </summary>
-                <div className="px-6 pb-6 pt-1">
-                  <p className="text-base leading-relaxed text-slate-600 dark:text-slate-400">
-                    {a}
-                  </p>
-                </div>
-              </details>
-            ))}
-          </div>
-
-        </div>
-      </section>
-    </main>
-  );
-}
