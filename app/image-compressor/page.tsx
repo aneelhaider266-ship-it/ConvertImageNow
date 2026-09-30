@@ -2,30 +2,27 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ImageConverter from "@/components/ImageConverter";
 import {
-  ShieldCheck,
   WifiOff,
-  Infinity as InfinityIcon,
   CheckCircle2,
   ArrowRight,
-  Zap,
   Lock,
   Cpu,
-  Layers,
   Sparkles,
-  SlidersHorizontal,
   ChevronRight,
   TrendingDown,
   Monitor,
   Smartphone,
   Gauge,
-  HelpCircle,
   FileCheck,
 } from "lucide-react";
 
+const SITE_URL = "https://convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/image-compressor`;
+
 export const metadata: Metadata = {
-  title: "Free Online Image Compressor – Reduce Image Size in KB Online",
+  title: "Free Online Image Compressor – Reduce Image Size in KB",
   description:
-    "Compress JPG, PNG, WebP, and AVIF images online for free without uploading files to any server. Reduce image file size by up to 80% without losing visual clarity.",
+    "Compress JPG, PNG, WebP, and AVIF images online for free without server uploads. Reduce image file sizes by up to 80% without visible loss in quality.",
   keywords: [
     "image compressor",
     "compress image online",
@@ -36,13 +33,13 @@ export const metadata: Metadata = {
     "photo compressor free",
   ],
   alternates: {
-    canonical: "https://www.convertimagenow.com/image-compressor",
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "Free Online Image Compressor – Reduce Image Size Instantly",
     description:
       "Compress JPEG, PNG, WebP, and AVIF images directly in your browser. 100% private, zero server uploads, no file size limits, and instant ZIP downloads.",
-    url: "https://www.convertimagenow.com/image-compressor",
+    url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
   },
@@ -62,19 +59,19 @@ const BREADCRUMB_SCHEMA = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.convertimagenow.com",
+      item: `${SITE_URL}/`,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Tools",
-      item: "https://www.convertimagenow.com/tools",
+      item: `${SITE_URL}/tools`,
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Image Compressor",
-      item: "https://www.convertimagenow.com/image-compressor",
+      item: PAGE_URL,
     },
   ],
 };
@@ -83,7 +80,7 @@ const SOFTWARE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "ConvertImageNow Free Online Image Compressor",
-  url: "https://www.convertimagenow.com/image-compressor",
+  url: PAGE_URL,
   applicationCategory: "MultimediaApplication",
   operatingSystem: "All (Browser-based: Windows, macOS, Linux, iOS, Android)",
   browserRequirements: "Requires modern web browser with HTML5 Canvas API support",
@@ -470,7 +467,7 @@ export default function ImageCompressorPage() {
           </div>
         </section>
 
-        {/* Use Cases: Specific File Size Targets (e.g. 50KB, 100KB, Web Performance) */}
+        {/* Use Cases: Specific File Size Targets */}
         <section
           aria-labelledby="usecases-heading"
           className="mx-auto mt-16 max-w-5xl"
