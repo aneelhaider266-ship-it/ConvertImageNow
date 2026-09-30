@@ -1,3 +1,13 @@
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Privacy Policy | 100% In-Browser Local Image Conversion',
+  description:
+    'Learn how ConvertImageNow protects your privacy. All image conversions happen locally in your browser. We never upload, view, or store your personal photos.',
+  alternates: {
+    canonical: 'https://convertimagenow.com/privacy-policy',
+  },
+};
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
