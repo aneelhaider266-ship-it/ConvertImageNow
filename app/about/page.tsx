@@ -1,18 +1,59 @@
-// app/about/page.tsx
-
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Lock, Zap, BookOpen, ArrowRight } from "lucide-react";
+import { Zap, BookOpen, ArrowRight } from "lucide-react";
+
+const SITE_URL = "https://convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/about`;
 
 export const metadata: Metadata = {
   title: "About ConvertImageNow – Privacy-First Image Conversion",
   description:
-    "Learn why we built ConvertImageNow, our approach to privacy-first design, and how we're helping designers, developers, and photographers optimize images without sacrificing privacy.",
+    "Learn why we built ConvertImageNow. Discover our privacy-first in-browser design helping designers and developers optimize images without cloud uploads.",
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "About ConvertImageNow – Privacy-First Image Conversion",
+    description:
+      "Learn why we built ConvertImageNow and how our client-side architecture keeps your files 100% private.",
+    url: PAGE_URL,
+    siteName: "ConvertImageNow",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About ConvertImageNow | Privacy-First Image Converter",
+    description:
+      "100% client-side in-browser image conversion with zero server uploads.",
+  },
+};
+
+const ABOUT_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  name: "About ConvertImageNow",
+  url: PAGE_URL,
+  description:
+    "Background, core privacy philosophy, and architecture of ConvertImageNow client-side tools.",
+  mainEntity: {
+    "@type": "Organization",
+    name: "ConvertImageNow",
+    url: SITE_URL,
+    logo: `${SITE_URL}/logo.png`,
+    description: "Free in-browser client-side image converter and compressor.",
+  },
 };
 
 export default function AboutPage() {
   return (
     <article className="container-page py-14 sm:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(ABOUT_SCHEMA),
+        }}
+      />
+
       {/* Header */}
       <div className="mx-auto max-w-3xl text-center">
         <h1 className="text-4xl font-bold tracking-tight sm:text-5xl">
@@ -20,12 +61,11 @@ export default function AboutPage() {
         </h1>
 
         <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-          Why we built a privacy-first image converter and what we're doing to help people optimize images smarter.
+          Why we built a privacy-first image converter and what we&apos;re doing to help people optimize images smarter.
         </p>
       </div>
 
       <div className="mx-auto mt-12 max-w-3xl space-y-12 text-slate-700 dark:text-slate-300">
-
         {/* The Problem */}
         <section>
           <h2 className="text-3xl font-bold tracking-tight">
@@ -34,11 +74,11 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-4">
             <p>
-              Most online image converters require you to upload your files to a server before they'll do anything. That step was never actually necessary.
+              Most online image converters require you to upload your files to a server before they&apos;ll do anything. That step was never actually necessary.
             </p>
 
             <p>
-              If you're a designer working with client files under NDA, a photographer dealing with personal photos, or a developer optimizing images for a website, uploading to a remote server introduces unnecessary privacy risk and adds complexity to a simple task.
+              If you&apos;re a designer working with client files under NDA, a photographer dealing with personal photos, or a developer optimizing images for a website, uploading to a remote server introduces unnecessary privacy risk and adds complexity to a simple task.
             </p>
 
             <p>
@@ -55,7 +95,7 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-4">
             <p>
-              ConvertImageNow was built around a simple principle: conversions should happen on your device, using your browser's built-in capabilities, with your files never leaving your control.
+              ConvertImageNow was built around a simple principle: conversions should happen on your device, using your browser&apos;s built-in capabilities, with your files never leaving your control.
             </p>
 
             <p>
@@ -63,7 +103,7 @@ export default function AboutPage() {
             </p>
 
             <p>
-              This approach has a side benefit: it's faster. Your images don't have to travel to a server and back. Conversions start immediately, batch processing happens in seconds, and the results download directly from your device.
+              This approach has a side benefit: it&apos;s faster. Your images don&apos;t have to travel to a server and back. Conversions start immediately, batch processing happens in seconds, and the results download directly from your device.
             </p>
           </div>
         </section>
@@ -76,7 +116,7 @@ export default function AboutPage() {
 
           <div className="mt-8 grid gap-8 sm:grid-cols-2">
             <div>
-              <p className="text-4xl font-bold text-brand-primary">3+</p>
+              <p className="text-4xl font-bold text-brand-primary">16+</p>
               <p className="mt-2 text-slate-600 dark:text-slate-400">
                 In-depth guides on image formats, optimization, and conversion best practices — with more being added regularly.
               </p>
@@ -90,16 +130,16 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <p className="text-4xl font-bold text-brand-primary">4</p>
+              <p className="text-4xl font-bold text-brand-primary">4+</p>
               <p className="mt-2 text-slate-600 dark:text-slate-400">
-                Supported image formats (JPG, PNG, WebP, AVIF) for maximum flexibility.
+                Supported image formats (JPG, PNG, WebP, AVIF, HEIC) for maximum flexibility.
               </p>
             </div>
 
             <div>
               <p className="text-4xl font-bold text-brand-primary">0</p>
               <p className="mt-2 text-slate-600 dark:text-slate-400">
-                Images ever stored on our servers. All processing happens in your browser.
+                Images ever stored on our servers. All processing happens locally in your browser.
               </p>
             </div>
           </div>
@@ -117,11 +157,11 @@ export default function AboutPage() {
             </p>
 
             <p>
-              Browser-based processing removes that entire trust requirement. When conversions happen locally, we have no access to your files. We can't see them, store them, or accidentally expose them. You maintain complete control from start to finish.
+              Browser-based processing removes that entire trust requirement. When conversions happen locally, we have no access to your files. We can&apos;t see them, store them, or accidentally expose them. You maintain complete control from start to finish.
             </p>
 
             <p>
-              For professionals—designers, developers, photographers, consultants—this privacy guarantee is non-negotiable. For everyone else, it's just peace of mind.
+              For professionals—designers, developers, photographers, consultants—this privacy guarantee is non-negotiable. For everyone else, it&apos;s just peace of mind.
             </p>
           </div>
         </section>
@@ -134,7 +174,7 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-4">
             <p>
-              A tool is only useful if people understand when to use it. That's why we've built out a growing library of guides covering:
+              A tool is only useful if people understand when to use it. That&apos;s why we&apos;ve built out a growing library of guides covering:
             </p>
 
             <ul className="space-y-3 pl-5">
@@ -157,7 +197,7 @@ export default function AboutPage() {
             </ul>
 
             <p className="mt-4">
-              Our blog isn't just promotional—it's designed to be genuinely useful whether or not you use our converter. We publish research-backed recommendations, real-world use cases, and step-by-step guides that help people make better decisions about their images.
+              Our blog isn&apos;t just promotional—it&apos;s designed to be genuinely useful whether or not you use our converter. We publish research-backed recommendations, real-world use cases, and step-by-step guides that help people make better decisions about their images.
             </p>
           </div>
         </section>
@@ -174,11 +214,11 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-4">
             <p>
-              There's no company behind ConvertImageNow beyond the person building it. No venture funding to chase. No investors demanding growth at any cost. No plan to add ads, paywalls, or pivot to something else.
+              There&apos;s no corporate bloat behind ConvertImageNow. No venture funding to chase. No investors demanding growth at any cost. No plan to add paywalls or invasive tracking.
             </p>
 
             <p>
-              The tool exists because it was useful to build. It stays free because that was the point from the start. We're not running a business trying to monetize you—we're providing a tool that solves a real problem and backing it with educational content to help people use it well.
+              The tool exists because it was useful to build. It stays free because that was the point from the start. We&apos;re providing a tool that solves a real problem and backing it with educational content to help people use it well.
             </p>
           </div>
         </section>
@@ -186,12 +226,12 @@ export default function AboutPage() {
         {/* What's Next */}
         <section>
           <h2 className="text-3xl font-bold tracking-tight">
-            What We're Building Next
+            What We&apos;re Building Next
           </h2>
 
           <div className="mt-6 space-y-4">
             <p>
-              ConvertImageNow is actively developed. We're working on:
+              ConvertImageNow is actively developed. We&apos;re working on:
             </p>
 
             <ul className="space-y-3 pl-5">
@@ -205,16 +245,16 @@ export default function AboutPage() {
               </li>
               <li className="flex gap-3">
                 <span className="text-brand-primary">•</span>
-                <span>Deeper guides on image optimization for specific industries (e-commerce, web, email)</span>
+                <span>Deeper guides on image optimization for specific industries</span>
               </li>
               <li className="flex gap-3">
                 <span className="text-brand-primary">•</span>
-                <span>Open-source release of core conversion libraries</span>
+                <span>Open-source release of core conversion utilities</span>
               </li>
             </ul>
 
             <p className="mt-4">
-              If you have suggestions, find a bug, or just want to share how you're using ConvertImageNow, we'd love to hear from you.
+              If you have suggestions, find a bug, or just want to share how you&apos;re using ConvertImageNow, we&apos;d love to hear from you.
             </p>
           </div>
         </section>
@@ -284,7 +324,6 @@ export default function AboutPage() {
             </a>
           </p>
         </section>
-
       </div>
     </article>
   );
