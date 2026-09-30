@@ -2,16 +2,57 @@ import type { Metadata } from "next";
 import { Mail, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
+const SITE_URL = "https://convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/contact`;
+
 export const metadata: Metadata = {
-  title: "Contact Us",
+  title: "Contact Us | ConvertImageNow Support & Feedback",
   description:
-    "Get in touch with the ConvertImageNow team — questions, feedback, and feature requests welcome.",
-  alternates: { canonical: "/contact" },
+    "Get in touch with the ConvertImageNow team. Contact our support for questions, bug reports, feature suggestions, and browser-based converter feedback.",
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "Contact Us | ConvertImageNow Support & Feedback",
+    description:
+      "Reach out to ConvertImageNow for assistance, feedback, and inquiries regarding our free online image tools.",
+    url: PAGE_URL,
+    siteName: "ConvertImageNow",
+    type: "website",
+  },
+};
+
+const CONTACT_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  name: "Contact ConvertImageNow",
+  url: PAGE_URL,
+  description:
+    "Contact ConvertImageNow support team for inquiries, bug reports, and converter suggestions.",
+  mainEntity: {
+    "@type": "Organization",
+    name: "ConvertImageNow",
+    url: SITE_URL,
+    email: "contact@convertimagenow.com",
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: "contact@convertimagenow.com",
+      availableLanguage: ["English"],
+    },
+  },
 };
 
 export default function ContactPage() {
   return (
     <div className="container-page py-14 sm:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(CONTACT_SCHEMA),
+        }}
+      />
+
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Contact Us
