@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import './globals.css';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://convertimagenow.com'),
@@ -38,3 +39,17 @@ export const metadata: Metadata = {
       'Private in-browser image conversion for JPG, PNG, WebP, and AVIF.',
   },
 };
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en">
+      <body className="antialiased min-h-screen bg-slate-50 text-slate-900">
+        {children}
+      </body>
+    </html>
+  );
+}
