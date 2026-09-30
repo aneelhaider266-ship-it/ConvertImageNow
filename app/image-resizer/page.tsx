@@ -3,31 +3,25 @@ import Link from "next/link";
 import ImageResizer from "@/components/ImageResizer";
 import {
   ShieldCheck,
-  WifiOff,
   Infinity as InfinityIcon,
   CheckCircle2,
   ArrowRight,
   Zap,
-  Lock,
-  Cpu,
   Sparkles,
   ChevronRight,
   Monitor,
   Smartphone,
-  HelpCircle,
-  Crop,
   Maximize2,
-  SlidersHorizontal,
-  Layers,
-  FileCheck,
-  Info,
   Scale,
 } from "lucide-react";
+
+const SITE_URL = "https://convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/image-resizer`;
 
 export const metadata: Metadata = {
   title: "Free Online Image Resizer – Resize Image Pixels & Dimensions",
   description:
-    "Resize JPG, PNG, WebP, and AVIF images free by exact pixels, aspect ratio, or percentage. Batch resize multiple photos in your browser with zero server uploads.",
+    "Resize JPG, PNG, WebP, and AVIF images free by exact pixels or percentage. Batch resize multiple photos in your browser with zero server uploads or watermarks.",
   keywords: [
     "image resizer",
     "resize image online",
@@ -39,13 +33,13 @@ export const metadata: Metadata = {
     "resize picture online free",
   ],
   alternates: {
-    canonical: "https://www.convertimagenow.com/image-resizer",
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "Free Online Image Resizer – Resize Image Pixels & Dimensions",
     description:
       "Resize images by exact width/height in pixels or scale by percentage. 100% client-side privacy, locked aspect ratios, and instant batch ZIP download.",
-    url: "https://www.convertimagenow.com/image-resizer",
+    url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
   },
@@ -65,19 +59,19 @@ const BREADCRUMB_SCHEMA = {
       "@type": "ListItem",
       position: 1,
       name: "Home",
-      item: "https://www.convertimagenow.com",
+      item: `${SITE_URL}/`,
     },
     {
       "@type": "ListItem",
       position: 2,
       name: "Tools",
-      item: "https://www.convertimagenow.com/tools",
+      item: `${SITE_URL}/tools`,
     },
     {
       "@type": "ListItem",
       position: 3,
       name: "Image Resizer",
-      item: "https://www.convertimagenow.com/image-resizer",
+      item: PAGE_URL,
     },
   ],
 };
@@ -86,7 +80,7 @@ const SOFTWARE_SCHEMA = {
   "@context": "https://schema.org",
   "@type": "WebApplication",
   name: "ConvertImageNow Online Image Resizer",
-  url: "https://www.convertimagenow.com/image-resizer",
+  url: PAGE_URL,
   applicationCategory: "MultimediaApplication",
   operatingSystem: "All (Browser-based: Windows, macOS, Linux, iOS, Android)",
   browserRequirements: "Requires modern web browser with HTML5 Canvas API support",
@@ -319,7 +313,6 @@ export default function ImageResizerPage() {
             batch-resize multiple files directly in your browser.
           </p>
 
-          {/* Core Trust Validation Bar */}
           <div className="mt-5 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs font-medium text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" /> No server
@@ -498,7 +491,7 @@ export default function ImageResizerPage() {
           </div>
         </section>
 
-        {/* Critical Distinction: Resizing vs. Compressing */}
+        {/* Resizing vs. Compressing */}
         <section className="mx-auto mt-16 max-w-4xl space-y-10">
           <div className="rounded-2xl border border-indigo-200/90 bg-indigo-50/50 p-6 shadow-sm sm:p-8 dark:border-indigo-900/60 dark:bg-indigo-950/20">
             <div className="flex items-start gap-4">
