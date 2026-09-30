@@ -1,11 +1,30 @@
 import type { Metadata } from "next";
 import { FAQ_ITEMS } from "@/lib/faq";
 
+const SITE_URL = "https://convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/faq`;
+
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions",
+  title: "Frequently Asked Questions | ConvertImageNow Help & FAQ",
   description:
-    "Answers to common questions about ConvertImageNow — pricing, privacy, supported formats, batch conversion, and more.",
-  alternates: { canonical: "/faq" },
+    "Find clear answers to common questions about ConvertImageNow. Learn about client-side privacy, batch image conversion, supported formats, and file limits.",
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "Frequently Asked Questions | ConvertImageNow Help & FAQ",
+    description:
+      "Find answers to common questions about our free, private online image conversion tools.",
+    url: PAGE_URL,
+    siteName: "ConvertImageNow",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Frequently Asked Questions | ConvertImageNow",
+    description:
+      "Everything you need to know about ConvertImageNow: formats, privacy, and batch processing.",
+  },
 };
 
 export default function FaqPage() {
