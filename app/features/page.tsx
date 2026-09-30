@@ -9,11 +9,30 @@ import {
   Smartphone,
 } from "lucide-react";
 
+const SITE_URL = "https://convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/features`;
+
 export const metadata: Metadata = {
-  title: "Features",
+  title: "ConvertImageNow Features | Fast & Private Image Tools",
   description:
-    "See why ConvertImageNow is one of the fastest, most private image converters on the web — browser-based processing, no uploads, no limits.",
-  alternates: { canonical: "/features" },
+    "Explore ConvertImageNow features: 100% private in-browser image conversion, zero server uploads, unlimited batch processing, and no hidden subscriptions.",
+  alternates: {
+    canonical: PAGE_URL,
+  },
+  openGraph: {
+    title: "ConvertImageNow Features | Fast & Private Image Tools",
+    description:
+      "Discover the speed, privacy, and simplicity behind our client-side image conversion engine.",
+    url: PAGE_URL,
+    siteName: "ConvertImageNow",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ConvertImageNow Features | Fast & Private Image Tools",
+    description:
+      "100% client-side conversion, unlimited batches, and zero file uploads.",
+  },
 };
 
 const FEATURES = [
@@ -54,9 +73,34 @@ const FEATURES = [
   },
 ];
 
+const FEATURES_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  name: "ConvertImageNow Core Features",
+  url: PAGE_URL,
+  description:
+    "Key architectural features and benefits of the ConvertImageNow client-side platform.",
+  mainEntity: {
+    "@type": "ItemList",
+    itemListElement: FEATURES.map((f, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: f.title,
+      description: f.desc,
+    })),
+  },
+};
+
 export default function FeaturesPage() {
   return (
     <div className="container-page py-14 sm:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(FEATURES_SCHEMA),
+        }}
+      />
+
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
           Built for speed, privacy, and simplicity
