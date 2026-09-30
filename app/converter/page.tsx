@@ -3,20 +3,29 @@ import Link from "next/link";
 import ImageConverter from "@/components/ImageConverter";
 import { ShieldCheck, Gauge, Layers } from "lucide-react";
 
+const SITE_URL = "https://convertimagenow.com";
+const PAGE_URL = `${SITE_URL}/converter`;
+
 export const metadata: Metadata = {
   title: "Free Online Image Converter | JPG, PNG, WebP & AVIF",
   description:
-    "Convert JPG, PNG, WebP, and AVIF images online for free. Batch conversion, quality controls, ZIP downloads, and private browser-based processing.",
+    "Convert JPG, PNG, WebP, and AVIF images online for free. Enjoy batch conversion, quality controls, ZIP downloads, and 100% private in-browser processing.",
   alternates: {
-    canonical: "https://www.convertimagenow.com/converter",
+    canonical: PAGE_URL,
   },
   openGraph: {
     title: "Free Online Image Converter | ConvertImageNow",
     description:
       "Convert JPG, PNG, WebP, and AVIF images privately in your browser.",
-    url: "https://www.convertimagenow.com/converter",
+    url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Free Online Image Converter | ConvertImageNow",
+    description:
+      "Private, browser-based image conversion for JPG, PNG, WebP, and AVIF.",
   },
 };
 
@@ -38,29 +47,53 @@ const POINTS = [
   },
 ];
 
-const SERVICE_SCHEMA = {
+const FAQS = [
+  {
+    q: "Is ConvertImageNow free?",
+    a: "Yes. ConvertImageNow provides free browser-based image conversion for supported formats without requiring registration.",
+  },
+  {
+    q: "Are my images uploaded to any server?",
+    a: "Supported conversions are processed locally in your browser. Check the privacy policy for complete information about data handling.",
+  },
+  {
+    q: "Can I convert multiple images at once?",
+    a: "Yes. You can upload multiple supported images and download the converted files separately or as a ZIP archive.",
+  },
+  {
+    q: "Does the converter work on mobile?",
+    a: "Yes. The tool is designed to work in modern desktop and mobile browsers including iOS Safari and Android Chrome.",
+  },
+];
+
+const WEB_APP_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "Service",
-  name: "ConvertImageNow Image Converter",
-  serviceType: "Online Image Format Conversion",
-  url: "https://www.convertimagenow.com/converter",
-  provider: {
-    "@type": "Organization",
-    name: "ConvertImageNow",
-    url: "https://www.convertimagenow.com",
-  },
-  areaServed: "Worldwide",
-  audience: {
-    "@type": "Audience",
-    audienceType: "People converting image files",
-  },
+  "@type": "WebApplication",
+  name: "ConvertImageNow Online Image Converter",
+  url: PAGE_URL,
+  applicationCategory: "MultimediaApplication",
+  operatingSystem: "All",
+  browserRequirements: "Requires HTML5 Canvas and JavaScript support",
   offers: {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
   },
   description:
-    "Free browser-based conversion for JPG, PNG, WebP, and AVIF images.",
+    "Free browser-based conversion for JPG, PNG, WebP, and AVIF images without server uploads.",
+};
+
+const FAQ_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((faq) => ({
+    "@type": "Question",
+    name: faq.q,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.a,
+    },
+  })),
 };
 
 export default function ConverterPage() {
@@ -69,7 +102,13 @@ export default function ConverterPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(SERVICE_SCHEMA),
+          __html: JSON.stringify(WEB_APP_SCHEMA),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(FAQ_SCHEMA),
         }}
       />
 
@@ -174,46 +213,16 @@ export default function ConverterPage() {
         </h2>
 
         <div className="space-y-6">
-          <div>
-            <h3 className="font-semibold">
-              Is ConvertImageNow free?
-            </h3>
-            <p className="mt-2 leading-7">
-              Yes. ConvertImageNow provides free browser-based image conversion
-              for supported formats without requiring registration.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold">
-              Are my images uploaded?
-            </h3>
-            <p className="mt-2 leading-7">
-              Supported conversions are processed locally in your browser.
-              Check the privacy policy for complete information about data
-              handling.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold">
-              Can I convert multiple images?
-            </h3>
-            <p className="mt-2 leading-7">
-              Yes. You can upload multiple supported images and download the
-              converted files separately or as a ZIP archive.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="font-semibold">
-              Does the converter work on mobile?
-            </h3>
-            <p className="mt-2 leading-7">
-              Yes. The tool is designed to work in modern desktop and mobile
-              browsers.
-            </p>
-          </div>
+          {FAQS.map(({ q, a }) => (
+            <div key={q}>
+              <h3 className="font-semibold text-slate-900 dark:text-slate-100">
+                {q}
+              </h3>
+              <p className="mt-2 leading-7 text-slate-600 dark:text-slate-400">
+                {a}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
 
