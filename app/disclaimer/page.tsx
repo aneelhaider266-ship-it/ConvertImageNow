@@ -1,9 +1,12 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Disclaimer",
-  description: "Disclaimer for the use of ConvertImageNow.",
-  alternates: { canonical: "/disclaimer" },
+  title: "Disclaimer | Client-Side Image Processing ConvertImageNow",
+  description:
+    "Read ConvertImageNow website disclaimer regarding local file processing, format conversions, image compression accuracy, and performance guidelines.",
+  alternates: {
+    canonical: "https://convertimagenow.com/disclaimer",
+  },
 };
 
 export default function DisclaimerPage() {
