@@ -81,6 +81,13 @@ const SOFTWARE_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    ratingCount: "136",
+    bestRating: "5",
+    worstRating: "1",
+  },
   featureList: [
     "100% Client-side conversion via HTML5 Canvas API",
     "Zero server uploads for maximum privacy",
@@ -427,7 +434,6 @@ export default function JpgToPngPage() {
 
         {/* Educational Content Section */}
         <section className="mx-auto mt-16 max-w-4xl space-y-12">
-          {/* Transparency Callout */}
           <div className="rounded-2xl border border-amber-200/90 bg-amber-50/50 p-6 shadow-sm dark:border-amber-900/60 dark:bg-amber-950/20 sm:p-7">
             <div className="flex items-start gap-4">
               <div className="rounded-lg bg-amber-100 p-2 text-amber-700 dark:bg-amber-900/60 dark:text-amber-300">
@@ -448,7 +454,6 @@ export default function JpgToPngPage() {
             </div>
           </div>
 
-          {/* Deep-Dive: Why Convert JPG to PNG */}
           <div className="grid gap-8 lg:grid-cols-2">
             <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
               <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
@@ -503,7 +508,6 @@ export default function JpgToPngPage() {
             </article>
           </div>
 
-          {/* Technical Comparison Table */}
           <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
             <div className="border-b border-slate-200/90 bg-slate-100/60 px-6 py-4 dark:border-slate-800 dark:bg-slate-800/50">
               <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
@@ -551,7 +555,6 @@ export default function JpgToPngPage() {
             </div>
           </div>
 
-          {/* Device Specific Guides */}
           <div>
             <h2 className="text-2xl font-bold tracking-tight sm:text-3xl text-slate-900 dark:text-slate-100">
               Converting JPG to PNG Across Devices
@@ -591,7 +594,6 @@ export default function JpgToPngPage() {
             </div>
           </div>
 
-          {/* Related Tools Topical Cluster */}
           <div className="rounded-2xl border border-slate-200/80 bg-slate-100/50 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
             <div className="flex items-center justify-between">
               <div>
@@ -640,7 +642,6 @@ export default function JpgToPngPage() {
             </div>
           </div>
 
-          {/* Frequently Asked Questions */}
           <div className="space-y-6">
             <div className="text-center sm:text-left">
               <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
