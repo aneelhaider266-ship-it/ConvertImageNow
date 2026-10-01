@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle2, Clock } from "lucide-react";
+import { CheckCircle2, Clock, Zap, ShieldCheck } from "lucide-react";
 
 const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/tools`;
 
 export const metadata: Metadata = {
-  title: "Free Online Image Tools | ConvertImageNow Tool Suite",
+  title: "Free Online Image Tools | ConvertImageNow",
   description:
     "Explore ConvertImageNow free online image tools. Fast, private browser-based utilities to convert, compress, and resize JPG, PNG, WebP, and AVIF photos.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Free Online Image Tools | ConvertImageNow Tool Suite",
+    title: "Free Online Image Tools | ConvertImageNow",
     description:
       "Explore our complete suite of browser-based image converters, compressors, and resizers.",
     url: PAGE_URL,
@@ -113,8 +113,9 @@ export default function ToolsPage() {
           Free Online Image Tools
         </h1>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Eight tools are live today, with more on the way — all free, all
-          browser-based.
+          Eight professional image utilities are live today, with more active
+          features in development. All tools execute locally on your device with
+          zero file uploads and complete data privacy.
         </p>
       </div>
 
@@ -123,12 +124,12 @@ export default function ToolsPage() {
           {LIVE_TOOLS.map((tool) => (
             <div
               key={tool.href}
-              className="flex items-center justify-between rounded-2xl border border-brand-accent/30 bg-brand-accent/5 p-5"
+              className="flex items-center justify-between rounded-2xl border border-brand-accent/30 bg-brand-accent/5 p-5 transition-shadow hover:shadow-sm"
             >
               <div className="flex items-center gap-3">
-                <CheckCircle2 className="text-brand-accent" size={22} />
+                <CheckCircle2 className="text-brand-accent shrink-0" size={22} />
                 <div>
-                  <p className="font-semibold">{tool.title}</p>
+                  <p className="font-semibold text-slate-900 dark:text-white">{tool.title}</p>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
                     {tool.desc}
                   </p>
@@ -144,7 +145,7 @@ export default function ToolsPage() {
           ))}
         </div>
 
-        <h2 className="mt-12 text-xl font-semibold">Coming soon</h2>
+        <h2 className="mt-12 text-xl font-semibold text-slate-900 dark:text-white">Upcoming Tools & Roadmap</h2>
         <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-2">
           {UPCOMING.map((tool) => (
             <li
@@ -158,29 +159,33 @@ export default function ToolsPage() {
         </ul>
 
         <div className="mt-14 space-y-6 text-left text-slate-700 dark:text-slate-300">
-          <h2 className="text-2xl font-bold">One converter, built to grow</h2>
+          <h2 className="text-2xl font-bold text-slate-900 dark:text-white">One Universal Converter Suite, Built to Scale</h2>
           <p>
-            The image converter above is the foundation of ConvertImageNow, and it
-            already handles the most common conversion needs — swapping between
-            JPG, PNG, WebP, and AVIF with full control over output quality and
-            batch processing. Everything on this page runs the same way: locally
-            in your browser, with nothing uploaded to a server.
+            ConvertImageNow offers a complete browser-based workstation for
+            developers, web designers, content creators, and photographers. Our
+            tools eliminate common headaches like email attachment size limits,
+            government upload caps, and slow-loading websites.
           </p>
           <p>
-            The tools listed under &quot;Coming soon&quot; are the next things
-            we&apos;re building, based on what people actually ask for after
-            converting an image — cropping it for a specific use, optimizing it
-            further without a second converter, or making a quick rotation before
-            downloading. Each one will follow the same rule as the converter:
-            free, no sign-up, no file ever leaving your device.
+            Every utility on this platform is powered by modern HTML5 Canvas, Web
+            Workers, and WebAssembly decoders. Unlike legacy cloud converters that
+            force you to wait in server queues, our conversions process
+            instantaneously using your device&apos;s own CPU and GPU memory.
           </p>
           <p>
-            If there&apos;s a specific tool you&apos;d like to see prioritized,
-            you&apos;re welcome to{" "}
+            Whether you are batch-converting dozens of camera snapshots into
+            compact WebP files for better Google Core Web Vitals, or flattening
+            transparent PNG graphics into standard JPG images, your photos never
+            leave your browser. No registration is required, no subscriptions
+            exist, and no watermarks are ever stamped on your downloads.
+          </p>
+          <p>
+            Have a feature request or need a specialized conversion preset? Feel
+            free to{" "}
             <Link href="/contact" className="text-brand-primary hover:underline">
-              reach out
+              contact our support team
             </Link>{" "}
-            and let us know what you&apos;re trying to do.
+            anytime.
           </p>
         </div>
       </div>
