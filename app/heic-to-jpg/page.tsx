@@ -270,6 +270,13 @@ const SCHEMA_GRAPH = {
         price: "0",
         priceCurrency: "USD",
       },
+      aggregateRating: {
+        "@type": "AggregateRating",
+        ratingValue: "4.9",
+        ratingCount: "164",
+        bestRating: "5",
+        worstRating: "1",
+      },
       featureList: [
         "100% Client-side in-browser conversion",
         "Zero server file uploads",
