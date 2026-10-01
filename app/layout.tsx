@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import Footer from '@/components/Footer'; // 👉 YEH IMPORT CHECK KARO
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://convertimagenow.com'),
@@ -15,28 +16,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://convertimagenow.com',
-    siteName: 'ConvertImageNow',
-    title: 'ConvertImageNow — Free Online Image Converter & Compressor',
-    description:
-      'Convert JPG, PNG, WebP, and AVIF directly in your browser. Fast, free, and completely private.',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'ConvertImageNow — Free Online Image Converter',
-    description:
-      'Private in-browser image conversion for JPG, PNG, WebP, and AVIF.',
   },
 };
 
@@ -47,8 +26,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="antialiased min-h-screen bg-slate-50 text-slate-900">
-        {children}
+      <body className="antialiased min-h-screen bg-slate-50 text-slate-900 flex flex-col justify-between">
+        <main className="flex-grow">
+          {children}
+        </main>
+        <Footer /> {/* 👉 YEH FOOTER ADD HO JAYEGA */}
       </body>
     </html>
   );
