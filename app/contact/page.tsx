@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Mail, Clock } from "lucide-react";
+import { Mail, Clock, HelpCircle, ShieldCheck } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/contact`;
 
 export const metadata: Metadata = {
-  title: "Contact Us | ConvertImageNow Support & Feedback",
+  title: "Contact Us | ConvertImageNow Support",
   description:
     "Get in touch with the ConvertImageNow team. Contact our support for questions, bug reports, feature suggestions, and browser-based converter feedback.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Contact Us | ConvertImageNow Support & Feedback",
+    title: "Contact Us | ConvertImageNow Support",
     description:
       "Reach out to ConvertImageNow for assistance, feedback, and inquiries regarding our free online image tools.",
     url: PAGE_URL,
@@ -58,8 +58,9 @@ export default function ContactPage() {
           Contact Us
         </h1>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Questions, feedback, or a feature you&apos;d like to see? We&apos;d
-          love to hear from you.
+          Have questions, technical suggestions, or feedback about our image
+          tools? Our dedicated support team is here to help you get the best
+          experience.
         </p>
       </div>
 
@@ -70,11 +71,15 @@ export default function ContactPage() {
 
         <div className="space-y-6">
           <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
-            <h2 className="flex items-center gap-2 font-semibold">
+            <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">
               <Mail size={18} className="text-brand-primary" />
-              Email
+              Direct Email
             </h2>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+              For partnership inquiries, privacy questions, or API integration
+              ideas, email us directly at:
+            </p>
+            <p className="mt-2 text-sm font-semibold">
               <a
                 href="mailto:contact@convertimagenow.com"
                 className="text-brand-primary hover:underline"
@@ -85,13 +90,26 @@ export default function ContactPage() {
           </div>
 
           <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
-            <h2 className="flex items-center gap-2 font-semibold">
+            <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">
               <Clock size={18} className="text-brand-primary" />
-              Response time
+              Response Time & Hours
             </h2>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-              We typically respond within 24–48 hours. For urgent issues,
-              email is the fastest way to reach us.
+              We operate Monday through Friday and aim to reply to all user
+              inquiries within 24 to 48 business hours. Emails receive highest
+              priority.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
+            <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">
+              <ShieldCheck size={18} className="text-emerald-500" />
+              Privacy Assurance
+            </h2>
+            <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+              Your contact details are used solely to reply to your inquiry. We
+              never sell, share, or market user communication to third-party
+              advertisers.
             </p>
           </div>
         </div>
