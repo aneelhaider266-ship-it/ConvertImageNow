@@ -359,7 +359,6 @@ export default function HeicToJpgPage() {
         </div>
 
         <div className="container-page">
-          {/* Breadcrumbs */}
           <nav aria-label="Breadcrumb" className="mb-6 flex justify-center">
             <ol className="flex items-center space-x-2 text-xs font-medium text-slate-500 dark:text-slate-400">
               <li>
