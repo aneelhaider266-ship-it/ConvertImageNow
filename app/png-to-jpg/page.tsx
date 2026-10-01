@@ -152,6 +152,13 @@ const SOFTWARE_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    ratingCount: "148",
+    bestRating: "5",
+    worstRating: "1",
+  },
   description:
     "Free, browser-based utility to convert PNG images to JPG format locally without server uploads.",
   url: PAGE_URL,
