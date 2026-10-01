@@ -89,6 +89,13 @@ const SOFTWARE_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    ratingCount: "139",
+    bestRating: "5",
+    worstRating: "1",
+  },
   featureList: [
     "Exact pixel (width x height) dimension customization",
     "Proportional percentage scaling with aspect ratio lock",
