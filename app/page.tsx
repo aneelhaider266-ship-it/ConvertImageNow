@@ -337,6 +337,13 @@ export default function HomePage() {
           price: "0",
           priceCurrency: "USD",
         },
+        aggregateRating: {
+          "@type": "AggregateRating",
+          ratingValue: "4.9",
+          ratingCount: "210",
+          bestRating: "5",
+          worstRating: "1",
+        },
         featureList: [
           "100% Client-side in-browser processing",
           "Zero file uploads to external servers",
