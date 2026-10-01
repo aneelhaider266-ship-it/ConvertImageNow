@@ -3,23 +3,22 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
-      // 1. Broken tools ko live converter par redirect karo (Semrush 404 Fix)
+      // permanent: true (301 Permanent Redirect - No Warning)
       {
         source: '/png-to-webp',
         destination: '/converter',
-        permanent: false,
+        permanent: true,
       },
       {
         source: '/webp-to-jpg',
         destination: '/converter',
-        permanent: false,
+        permanent: true,
       },
       {
         source: '/webp-to-png',
         destination: '/converter',
-        permanent: false,
+        permanent: true,
       },
-      // 2. Purane moved URLs ke redirects
       {
         source: '/online-image-converter',
         destination: '/converter',
