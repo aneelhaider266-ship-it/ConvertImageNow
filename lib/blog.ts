@@ -12,7 +12,7 @@ export type BlogPost = {
 };
 
 export const BLOG_POSTS: BlogPost[] = [
-  {
+ {
     slug: "how-to-make-image-file-smaller",
     title: "How to Make an Image File Smaller Without Losing Quality",
     excerpt:
@@ -32,27 +32,27 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     author: "ConvertImageNow Team",
     content: [
-      "Need to make an image file smaller right now for an email, job portal, visa application, or website? You don't need expensive software like Photoshop. You can use our free browser-based [Online Image Compressor](/image-compressor) to reduce file weight by up to 80% in seconds, or scale dimensions with our [Online Image Resizer](/image-resizer)—completely privately with zero uploads.",
+      "Need to make an image file smaller right now for an email, job portal, visa application, or website? You don't need expensive software like Photoshop. You can simply **drag and drop** your file into our free browser-based [Online Image Compressor](/image-compressor) to get a lightweight **compressed image** in seconds, or scale dimensions with our [Online Image Resizer](/image-resizer)—completely privately with zero uploads.",
 
-      "Large photo files often cause failed uploads, slow down websites, and consume precious device storage. Fortunately, reducing image file size without noticeable blur or pixelation comes down to three proven techniques: **compressing data**, **reducing pixel dimensions**, and **switching to modern formats like WebP or AVIF**.",
+      "Large photo files often cause failed uploads, slow down websites, and consume precious device storage. Fortunately, learning how to reduce image size without noticeable blur or pixelation comes down to three proven techniques: **compressing data**, **reducing pixel dimensions**, and **switching to modern formats like WebP or AVIF**.",
 
       "## 1. Compress the Image (Quickest Way to Shrink File Size)",
 
-      "Image compression eliminates redundant digital data within a photo. Photographs taken on modern smartphones contain subtle color gradations that human eyes cannot readily perceive. Using moderate lossy compression (between 75% and 85% quality) typically cuts file size by **50% to 75%** while keeping the photo crisp.",
+      "Image compression eliminates redundant digital data within a photo. Photographs taken on modern smartphones contain subtle color gradations that human eyes cannot readily perceive. Using moderate lossy compression (between 75% and 85% quality) dramatically **reduces the file size** by **50% to 75%** while keeping the photo clean and crisp.",
 
-      "To compress images without installing apps: open our [Free Image Compressor](/image-compressor), drag and drop your JPG or PNG files, set your preferred quality threshold, and download the compressed files individually or as a ZIP archive.",
+      "To compress images without installing third-party apps: open our [Free Image Compressor](/image-compressor), **upload your image** from your computer or phone gallery, set your preferred quality threshold, and download the resulting **compressed image** individually or as a single ZIP archive.",
 
       "## 2. Reduce Image Dimensions (Scale Down Megapixels)",
 
-      "A 12-megapixel phone camera captures photos at 4000 × 3000 pixels. If you only need to display that image on a blog at 1200 pixels wide or attach it to an email, 70% of those pixels are completely wasted.",
+      "A 12-megapixel phone camera captures photos at 4000 × 3000 pixels. If you only need to display that image on a blog at 1200 pixels wide or attach it to an email, 70% of those pixels are completely wasted. Scaling down physical canvas dimensions is the most drastic step that **reduces the file size** from **6MB down to under 500KB** before you even apply compression.",
 
-      "By reducing physical dimensions from 4000px down to 1200px using our [Online Image Resizer](/image-resizer), your file size drops from **6MB down to under 500KB** before you even apply compression.",
+      "When you **upload your image** to our [Online Image Resizer](/image-resizer), make sure the aspect ratio lock remains enabled so your image scales proportionally without stretching or blur.",
 
       "## 3. Convert to Modern Web Formats (WebP & AVIF)",
 
       "Legacy formats like standard JPG and PNG were invented in the 1990s. Modern web formats developed by Google and AOMedia provide dramatically superior compression algorithms:",
 
-      "- **Switch JPG to WebP:** Reduces byte size by **25% to 35%** at identical visual clarity. Use our [JPG to WebP Converter](/jpg-to-webp).",
+      "- **Switch JPG to WebP:** Produces a **compressed image** that is **25% to 35% smaller** at identical visual clarity. Use our [JPG to WebP Converter](/jpg-to-webp).",
       "- **Flatten PNG to JPG:** If your PNG photo has a solid background, converting it with our [PNG to JPG Converter](/png-to-jpg) eliminates heavy transparent channels and shrinks files up to 5x.",
       "- **Convert iPhone HEIC to JPG:** Convert heavy Apple snapshots with our [HEIC to JPG Tool](/heic-to-jpg) for universal sharing on Windows and web forms.",
 
@@ -62,18 +62,18 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "1. **Scale dimensions first:** If your image is 3000+ pixels wide, resize it down to 800–1000 pixels using the [Image Resizer](/image-resizer).",
       "2. **Compress with quality slider:** Drop the resized file into the [Image Compressor](/image-compressor) and set the quality slider to 65%–75%.",
-      "3. **Check the live file size:** The tool calculates output weight in real time so you hit your exact target before downloading.",
+      "3. **Check live output:** The browser calculates the size in real time so you verify your **compressed image** is under 100KB before downloading.",
 
       "## How Do I Shrink a Photo File Size on iPhone & Android?",
 
       "You do not need to download ad-heavy apps from the App Store or Google Play:",
 
-      "- **On iPhone / iPad:** Open Safari, visit ConvertImageNow, tap the upload area to choose from your Photo Library, adjust quality, and save the compressed JPG directly back to your Photos app.",
+      "- **On iPhone / iPad:** Open Safari, visit ConvertImageNow, tap to **upload your image** from your Photo Library, adjust quality, and save the converted file directly back to your Photos app.",
       "- **On Android Devices:** Open Chrome, select photos from your Files or Gallery, and compress or resize locally using your mobile browser's hardware acceleration.",
 
       "## How to Lower Image Size on Windows PC",
 
-      "Windows users can drag and drop entire folders of high-resolution images into our [Universal Converter](/converter). Everything processes locally in client-side RAM—saving your PC from installing heavy third-party software.",
+      "Windows users can **drag and drop** entire folders of high-resolution images into our [Universal Converter](/converter). Everything processes locally in client-side RAM—saving your PC from installing heavy desktop software.",
 
       "## Frequently Asked Questions (FAQ)",
 
@@ -87,7 +87,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "No. ConvertImageNow runs 100% locally in your web browser using HTML5 Canvas and WebAssembly. Your photos never touch a cloud server, ensuring complete data privacy.",
 
       "### Which reduces file size more: resizing or compressing?",
-      "Resizing reduces file size more drastically because it physically discards millions of unnecessary pixels. For example, scaling an image from 4K down to 1080p cuts raw pixel data by 75% immediately."
+      "Resizing **reduces the file size** more drastically because it physically discards millions of unnecessary pixels. For example, scaling an image from 4K down to 1080p cuts raw pixel data by 75% immediately."
     ],
   },
   {
