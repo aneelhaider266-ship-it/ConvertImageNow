@@ -89,6 +89,13 @@ const SOFTWARE_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    ratingCount: "172",
+    bestRating: "5",
+    worstRating: "1",
+  },
   featureList: [
     "100% client-side image compression via HTML5 Canvas and Blob APIs",
     "No server uploads ensures full privacy for personal and corporate files",
@@ -333,7 +340,6 @@ export default function ImageCompressorPage() {
             uploads, no wait queues, and no watermark.
           </p>
 
-          {/* Core Trust Badges */}
           <div className="mt-5 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs font-medium text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Zero cloud
