@@ -1,27 +1,38 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  // Trailing slashes consistently remove karo duplicate URLs rokne ke liye
-  trailingSlash: false,
   async redirects() {
     return [
-      // 1. WWW se non-WWW 301 permanent redirect
+      // 1. Broken tools ko live converter par redirect karo (Semrush 404 Fix)
       {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.convertimagenow.com' }],
-        destination: 'https://convertimagenow.com/:path*',
-        permanent: true,
+        source: '/png-to-webp',
+        destination: '/converter',
+        permanent: false,
       },
-      // 2. Broken page `/online-image-converter` ko live converter par redirect
+      {
+        source: '/webp-to-jpg',
+        destination: '/converter',
+        permanent: false,
+      },
+      {
+        source: '/webp-to-png',
+        destination: '/converter',
+        permanent: false,
+      },
+      // 2. Purane moved URLs ke redirects
       {
         source: '/online-image-converter',
         destination: '/converter',
         permanent: true,
       },
-      // 3. Agar batch conversion page ka URL change hua tha to use sahi page par bhejo
       {
         source: '/batch-image-conversion',
         destination: '/tools',
+        permanent: true,
+      },
+      {
+        source: '/blog/batch-image-conversion',
+        destination: '/blog/batch-convert-images',
         permanent: true,
       },
     ];
