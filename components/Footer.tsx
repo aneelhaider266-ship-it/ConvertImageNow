@@ -24,8 +24,8 @@ const COLUMNS = [
       { href: "/blog/image-seo-guide", label: "Image SEO Guide" },
       { href: "/blog/what-is-webp", label: "What is WebP?" },
       { href: "/blog/what-is-avif", label: "What is AVIF?" },
-      { href: "/blog/avif-vs-webp", label: "AVIF vs WebP" },
       { href: "/blog/batch-convert-images", label: "Batch Conversion" },
+      { href: "/blog/png-vs-jpg", label: "PNG vs JPG Guide" },
     ],
   },
   {
