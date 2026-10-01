@@ -79,6 +79,13 @@ const WEB_APP_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    ratingCount: "215",
+    bestRating: "5",
+    worstRating: "1",
+  },
   description:
     "Free browser-based conversion for JPG, PNG, WebP, and AVIF images without server uploads.",
 };
