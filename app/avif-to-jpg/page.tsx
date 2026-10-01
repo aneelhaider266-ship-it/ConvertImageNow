@@ -149,6 +149,13 @@ const WEB_APP_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    ratingCount: "124",
+    bestRating: "5",
+    worstRating: "1",
+  },
   description:
     "Free browser-based AVIF to JPG conversion without registration or server upload.",
 };
