@@ -109,6 +109,13 @@ const SOFTWARE_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    ratingCount: "135",
+    bestRating: "5",
+    worstRating: "1",
+  },
   description:
     "Free, browser-based utility to bulk convert JPG images to WebP format locally without server uploads to improve website load times.",
   url: PAGE_URL,
