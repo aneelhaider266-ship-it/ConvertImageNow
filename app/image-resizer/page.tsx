@@ -19,7 +19,7 @@ const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/image-resizer`;
 
 export const metadata: Metadata = {
-  title: "Free Online Image Resizer – Resize Image Pixels & Dimensions",
+  title: "Free Online Image Resizer – Change Dimensions",
   description:
     "Resize JPG, PNG, WebP, and AVIF images free by exact pixels or percentage. Batch resize multiple photos in your browser with zero server uploads or watermarks.",
   keywords: [
