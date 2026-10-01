@@ -852,7 +852,7 @@ export const BLOG_POSTS: BlogPost[] = [
   }, 
 {
   slug: "jpg-vs-webp",
-  title: "JPG vs WebP: Which Format Wins for Size, Quality, and Speed",
+  title: "JPG vs WebP: Size, Quality & Speed Compared",
   excerpt: "Comparing JPG vs WebP for your website or online store? See which format wins on file size, image quality, and page load speed for you.",
   date: "2026-09-11",
   updatedDate: "2026-09-11",
