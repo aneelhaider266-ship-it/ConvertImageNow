@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Terms of Service | ConvertImageNow Free Image Converter',
+  title: 'Terms of Service | ConvertImageNow',
   description:
-    'Read the terms of service for ConvertImageNow. Free, unlimited, browser-based image conversion with zero server storage and complete data privacy for users.',
+    'Read the terms for using ConvertImageNow's browser-based image conversion tools, including acceptable use and service limitations.',
   alternates: {
     canonical: 'https://convertimagenow.com/terms',
   },
@@ -16,7 +16,7 @@ export default function TermsPage() {
         Terms of Service
       </h1>
       <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-        Last updated: August 2026
+        Last updated: November 2026
       </p>
 
       <div className="mt-8 space-y-6 text-slate-700 dark:text-slate-300">
@@ -35,9 +35,7 @@ export default function TermsPage() {
             Use of the service
           </h2>
           <p className="mt-2">
-            ConvertImageNow provides free, browser-based image conversion
-            tools. You are responsible for the images you convert and for
-            ensuring you have the right to use and process them.
+            ConvertImageNow provides free, browser-based image conversion tools for supported formats. Selected image files are processed in the browser rather than sent to a conversion server. You are responsible for the images you select and for ensuring you have the right to use and process them. Practical file and batch limits depend on your browser and device.
           </p>
         </section>
 
