@@ -238,9 +238,9 @@ export default function PngToJpgPage() {
                 <Icon className="h-6 w-6" aria-hidden="true" />
               </div>
 
-              <h3 className="relative text-lg font-bold text-slate-900 dark:text-white">
+              <h2 className="relative text-lg font-bold text-slate-900 dark:text-white">
                 {title}
-              </h3>
+              </h2>
 
               <p className="relative mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                 {desc}
@@ -255,10 +255,10 @@ export default function PngToJpgPage() {
           </h2>
           <p>
             PNG is a lossless format that preserves transparency and sharp
-            detail, which can make files larger than comparable JPG images. The difference depends on the image and compression settings.
-            an equivalent JPG. Converting PNG to JPEG is useful when you need
-            smaller files for email attachments, faster website loading, or
-            uploading to platforms that don&apos;t accept PNG.
+            detail. A JPG copy may be smaller for some photographs, but the
+            result depends on image content and quality settings. Converting
+            PNG to JPEG is useful when you need a widely supported format for
+            email attachments, websites, or platforms that do not accept PNG.
           </p>
 
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
