@@ -481,12 +481,12 @@ export default function HomePage() {
                   <Link
                     key={tool.slug}
                     href={tool.slug}
-                    className="group relative flex flex-col justify-between rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/60 hover:shadow-lg hover:shadow-brand-primary/5 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-brand-primary/60"
+                    className="group relative flex flex-col justify-between rounded-xl border border-[#314969] bg-[#172642]/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[#398BFF]/70 hover:bg-[#1b2d4c] hover:shadow-lg hover:shadow-[#398BFF]/10"
                   >
                     <div>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700 dark:text-slate-200">
-                          <span className="rounded bg-slate-100 px-1.5 py-0.5 dark:bg-slate-800">
+                          <span className="rounded bg-[#101B33] px-1.5 py-0.5 text-slate-200">
                             {tool.from}
                           </span>
                           <ArrowRight className="h-3 w-3 text-brand-primary" />
@@ -494,7 +494,7 @@ export default function HomePage() {
                             {tool.to}
                           </span>
                         </div>
-                        <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                        <span className="rounded-full border border-[#314969] bg-[#101B33] px-2 py-0.5 text-[10px] font-semibold text-slate-300">
                           {tool.badge}
                         </span>
                       </div>
