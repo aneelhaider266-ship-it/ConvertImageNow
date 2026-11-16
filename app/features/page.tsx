@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ConvertImageNow Features | Fast & Private Image Tools",
+    title: "ConvertImageNow Features | Browser-Based Tools",
     description:
       "Browser-based processing, batch downloads, and no account requirement.",
   },
