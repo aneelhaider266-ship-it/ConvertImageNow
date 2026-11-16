@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Online Image Resizer – Resize Image Pixels & Dimensions",
     description:
-      "Resize images by exact width/height in pixels or scale by percentage. 100% client-side privacy, locked aspect ratios, and instant batch ZIP download.",
+      "Resize images by pixel dimensions or percentage, with an aspect-ratio option and batch downloads. Processing capacity depends on your device and browser memory.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
@@ -102,7 +102,7 @@ const SOFTWARE_SCHEMA = {
     "100% client-side rendering via HTML5 Canvas with zero cloud uploads",
     "Batch image resizing with one-click ZIP packaging",
     "Format preservation for JPG, PNG, WebP, and AVIF",
-    "Offline capability once page is loaded in browser",
+
     "No file size caps, watermarks, or user registration",
   ],
 };
@@ -200,18 +200,18 @@ const CORE_DIFFERENTIATORS = [
   {
     icon: Maximize2,
     title: "Pixel-Perfect Resampling",
-    desc: "Hardware-accelerated bilinear and bicubic canvas interpolation preserves crisp typography, smooth contours, and rich details.",
+    desc: "The browser Canvas API resamples the image when dimensions change. Results depend on the source image and chosen output dimensions.",
     badge: "High Precision",
   },
   {
     icon: Zap,
     title: "Zero Server Wait Time",
     desc: "Process multi-megapixel RAW exports or bulk batches at native device speed with zero network queue delays.",
-    badge: "Instantaneous",
+    badge: "Browser-Based",
   },
   {
     icon: InfinityIcon,
-    title: "Unlimited Batch Processing",
+    title: "Batch Image Resizing",
     desc: "Resize dozens of files in one session and export as a single compressed ZIP archive with no paywalls or daily caps.",
     badge: "No Limits",
   },
@@ -307,7 +307,7 @@ export default function ImageResizerPage() {
         <header className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/80 px-3.5 py-1 text-xs font-medium tracking-wide text-indigo-700 shadow-sm backdrop-blur dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
             <Sparkles className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
-            <span>100% Client-Side Engine • Private & Instant</span>
+            <span>Browser-Based Resizing • No Conversion-Server Upload</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
@@ -359,7 +359,7 @@ export default function ImageResizerPage() {
             <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
               Unlike cloud services that throttle file counts or compress images on
               untrusted remote servers, ConvertImageNow resizes directly in your
-              browser with complete privacy and zero wait queues.
+              browser without uploading selected image files to a conversion server.
             </p>
           </div>
 
