@@ -883,23 +883,23 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "## How JPG and WebP compare on file size and quality",
 
-    "Run the same photo through both formats and the numbers tell a clear story. **WebP vs JPG file size** tests consistently show WebP producing files 25 to 35 percent smaller than JPG at a visually similar quality level. That gap holds across product photos, screenshots, and full-bleed hero images, which is why so many site owners switch once they see it firsthand.",
+    "Compare the same source image in both formats at similar visual quality. **WebP vs JPG file size** results vary with image content, encoder, and quality settings; WebP may produce a smaller file, but there is no fixed percentage that applies to every photo, screenshot, or graphic. Measure the actual output before choosing a format.",
 
     "![WebP vs JPG File Size at 80% Quality](/blog/jpg-vs-webp/webp-vs-jpg-file-size.webp)",
 
-    "> At matched quality, WebP almost always beats JPG on file size, sometimes by a third or more.",
+    "> At a comparable visual quality, WebP may produce a smaller file than JPG. Results depend on the source image and encoder, so compare the actual files.",
 
-    "Quality tells a similar story once you look past raw numbers. The WebP format supports both lossy and lossless compression, while JPG only does lossy, so WebP has more flexibility to preserve detail in shadows and fine textures. In practical webp vs jpg quality comparisons, a WebP file at 80 percent quality often looks sharper than a JPG at the same setting, because WebP's compression algorithm handles edges and gradients more efficiently.",
+    "WebP supports both lossy and lossless compression, while JPG uses lossy compression. However, a quality percentage in one encoder is not directly equivalent to the same percentage in another. Compare the images visually at their intended display size rather than assuming one format will always look sharper.",
 
     "Here's a quick side-by-side for a typical 1920x1080 product photo:",
 
     "| Format | Setting | What to compare |\n|---|---|---|\n| JPG | Higher quality | Larger output may retain more detail |\n| WebP | Similar quality target | May be smaller; compare the actual file |\n| JPG | Lower quality | Smaller output may show more artifacts |\n| WebP | Lower quality | Check for softness or compression artifacts |",
 
-    "The **jpg vs webp size** difference grows more noticeable as you lower quality settings, since WebP degrades more gracefully. If you're chasing smaller files without sacrificing visible sharpness, WebP gives you more room to work with before compression artifacts become obvious to visitors.",
+    "The **jpg vs webp size** difference changes with the source image and the quality settings. Test several outputs and check for softness, banding, or compression artifacts before selecting a format for your site.",
 
     "## How to decide which format fits your website",
 
-    "Deciding which image format to use comes down to your audience and your workflow, not just raw numbers. **WebP vs JPG for website** use cases favor WebP almost every time today, since over 97 percent of browsers in use, including all major desktop and mobile browsers, now support it according to Can I Use tracking. JPG still makes sense for legacy tools, certain email clients, or software that hasn't caught up.",
+    "Deciding which image format to use comes down to your audience and workflow, not just raw numbers. **WebP vs JPG for website** use cases often favor WebP when your target browsers and publishing tools support it. JPG remains useful for compatibility with older software and workflows that expect JPEG files.",
 
     "![Which Format Fits Your Content](/blog/jpg-vs-webp/which-format-fits-your-content.webp)",
 
