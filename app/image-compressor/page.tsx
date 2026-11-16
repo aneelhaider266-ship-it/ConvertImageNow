@@ -252,8 +252,8 @@ const RELATED_TOOLS = [
     href: "/jpg-to-png",
   },
   {
-    name: "HEIC to JPG Converter",
-    desc: "Convert Apple iPhone HEIC pictures to standard compressible JPEGs.",
+    name: "HEIC to JPG Guide",
+    desc: "Learn about HEIC compatibility and ways to create JPG copies on supported devices.",
     href: "/heic-to-jpg",
   },
   {
@@ -534,16 +534,16 @@ export default function ImageCompressorPage() {
 
             <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
               <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-                Client-Side Security: Why Zero Uploads Matter
+                How Browser Processing Handles Selected Images
               </h2>
               <p className="mt-3 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
-                Traditional cloud-based compressors send your images to third-party web servers. ConvertImageNow takes a modern, decentralized approach:
+                The converter uses browser image decoding and Canvas APIs to create output files. Selected image files are processed in the browser rather than sent to a conversion server:
               </p>
               <ul className="mt-4 space-y-2.5 text-xs text-slate-600 dark:text-slate-300">
                 <li className="flex items-start gap-2">
                   <Lock className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>Complete Privacy:</strong> Selected image files are processed in the browser rather than sent to a conversion server. Review the Privacy Policy for details about general website data.
+                    <strong>Selected File Handling:</strong> Selected image files are processed in the browser rather than sent to a conversion server. Review the Privacy Policy for details about general website data.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
@@ -555,7 +555,7 @@ export default function ImageCompressorPage() {
                 <li className="flex items-start gap-2">
                   <WifiOff className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>No Internet Bandwidth Drain:</strong> Once the page is loaded, you can compress files without uploading large megabyte payloads over metered connections.
+                    <strong>No Conversion Upload Queue:</strong> The selected image data is not sent to a conversion server for processing.
                   </span>
                 </li>
               </ul>
