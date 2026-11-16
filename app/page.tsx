@@ -339,36 +339,18 @@ export default function HomePage() {
           {
             "@type": "ListItem",
             position: 4,
-            name: "PNG to WebP Converter",
-            url: `${SITE_URL}/png-to-webp`,
-          },
-          {
-            "@type": "ListItem",
-            position: 5,
             name: "AVIF to JPG Converter",
             url: `${SITE_URL}/avif-to-jpg`,
           },
           {
             "@type": "ListItem",
-            position: 6,
-            name: "WebP to JPG Converter",
-            url: `${SITE_URL}/webp-to-jpg`,
-          },
-          {
-            "@type": "ListItem",
-            position: 7,
-            name: "WebP to PNG Converter",
-            url: `${SITE_URL}/webp-to-png`,
-          },
-          {
-            "@type": "ListItem",
-            position: 8,
+            position: 5,
             name: "Online Image Compressor",
             url: `${SITE_URL}/image-compressor`,
           },
           {
             "@type": "ListItem",
-            position: 9,
+            position: 6,
             name: "Online Image Resizer",
             url: `${SITE_URL}/image-resizer`,
           },
