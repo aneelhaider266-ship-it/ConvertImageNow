@@ -108,9 +108,7 @@ export default function ToolsPage() {
           Free Online Image Tools
         </h1>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Seven professional image utilities are live today, with more active
-          features in development. All tools execute locally on your device with
-          selected image files are processed in your browser rather than sent to a conversion server.
+          Browse the available tools for converting, compressing, and resizing supported image formats. Selected image files are processed in your browser rather than sent to a conversion server.
         </p>
       </div>
 
@@ -162,17 +160,10 @@ export default function ToolsPage() {
             government upload caps, and slow-loading websites.
           </p>
           <p>
-            Every utility on this platform is powered by modern HTML5 Canvas, Web
-            Workers, and WebAssembly decoders. Unlike legacy cloud converters that
-            force you to wait in server queues, our conversions process
-            using your browser's image decoding and Canvas APIs.
+            Supported conversions use your browser's image decoding and Canvas APIs. The exact formats and controls available depend on the selected tool.
           </p>
           <p>
-            Whether you are converting supported camera images into
-            compact WebP files for better Google Core Web Vitals, or flattening
-            transparent PNG graphics into standard JPG images, selected image files are processed in the browser rather than sent to a conversion server. The tool supports
-            leave your browser. No registration is required, no subscriptions
-            and exports can be downloaded individually or as a ZIP archive.
+            Whether you are converting a supported image to another format, adjusting output quality, or changing pixel dimensions, check the result before using it. Batch tools provide individual downloads and ZIP export where available.
           </p>
           <p>
             Have a feature request or need a specialized conversion preset? Feel
