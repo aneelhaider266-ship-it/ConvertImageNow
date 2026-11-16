@@ -391,12 +391,12 @@ export default function HomePage() {
 
         <div className="container-page">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-[#398BFF]/30 bg-[#398BFF]/10 px-3.5 py-1 text-xs font-medium tracking-wide text-[#9CC5FF] dark:border-[#398BFF]/30 dark:bg-[#398BFF]/10 dark:text-[#9CC5FF]">
+            <div className="inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-[#398BFF]/30 bg-[#398BFF]/10 px-3 py-1.5 text-[10px] font-medium leading-snug tracking-wide text-[#9CC5FF] sm:px-3.5 sm:py-1 sm:text-xs">
               <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
               <span>Browser-Based Processing • No Conversion-Server Upload</span>
             </div>
 
-            <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 text-[2rem] font-extrabold leading-[1.12] tracking-tight text-white sm:text-5xl sm:leading-tight lg:text-6xl">
               Free Online Image Converter
             </h1>
 
@@ -420,10 +420,10 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-8 flex max-w-2xl items-center justify-center gap-3 rounded-2xl border border-[#314969] bg-[#172642]/70 px-3 py-4 shadow-xl shadow-black/20 sm:mt-10 sm:gap-6 sm:px-8 sm:py-6" aria-label="JPG, PNG and WebP image format illustration">
+          <div className="mx-auto mt-7 flex max-w-2xl items-center justify-center gap-2 rounded-2xl border border-[#314969] bg-[#172642]/70 px-2 py-3 shadow-xl shadow-black/20 sm:mt-10 sm:gap-6 sm:px-8 sm:py-6" aria-label="JPG, PNG and WebP image format illustration">
             {["JPG", "PNG", "WebP"].map((format, index) => (
               <div key={format} className="flex items-center gap-3 sm:gap-6">
-                <div className="flex h-16 w-16 flex-col items-center justify-center rounded-xl border border-[#398BFF]/35 bg-[#101B33] text-[#9CC5FF] shadow-lg shadow-[#398BFF]/10 sm:h-20 sm:w-20">
+                <div className="flex h-14 w-14 flex-col items-center justify-center rounded-xl border border-[#398BFF]/35 bg-[#101B33] text-[#9CC5FF] shadow-lg shadow-[#398BFF]/10 sm:h-20 sm:w-20">
                   <ImageIcon aria-hidden="true" className="h-7 w-7 sm:h-9 sm:w-9" />
                   <span className="text-[10px] font-bold tracking-wider sm:text-xs">{format}</span>
                 </div>
@@ -432,7 +432,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-[#314969] bg-[#172642]/95 p-2 shadow-2xl shadow-black/30 backdrop-blur-xl dark:border-[#314969] dark:bg-[#172642]/95 sm:p-4">
+          <div className="mx-auto mt-7 max-w-4xl rounded-2xl border border-[#314969] bg-[#172642]/95 p-2 shadow-2xl shadow-black/30 backdrop-blur-xl sm:mt-10 sm:p-4">
             <ImageConverter />
           </div>
         </div>
