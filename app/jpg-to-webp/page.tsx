@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JPG to WebP Converter – Free & Private",
+    title: "JPG to WebP Converter – Browser-Based",
     description:
       "Batch convert JPG images to WebP in your browser. Test the resulting images on your website to assess performance.",
   },
@@ -47,7 +47,7 @@ const POINTS = [
   },
   {
     icon: InfinityIcon,
-    title: "No Artificial Limits",
+    title: "Batch ZIP Downloads",
     desc: "Add multiple JPG files and download WebP results individually or as a ZIP. Practical capacity depends on your device and browser memory.",
   },
 ];
@@ -59,11 +59,11 @@ const FAQS = [
   },
   {
     q: "How much smaller will my file be after converting to WebP?",
-    a: "WebP files are typically 25 to 35 percent smaller than an equivalent JPEG at a similar visual quality, though the exact reduction depends on the image complexity and the quality setting you choose.",
+    a: "WebP can produce smaller files than JPEG in some cases, but the result depends on the source image, encoder, and quality setting. Compare the output file size and visual quality before choosing a format.",
   },
   {
     q: "Will converting JPG to WebP reduce image quality?",
-    a: "Because both JPG and WebP use lossy compression, converting between them involves a re-encoding step that can introduce minor additional artifacts. At high quality settings (80-95%), this difference is usually imperceptible.",
+    a: "Because both JPG and WebP use lossy compression, converting between them involves re-encoding and may introduce additional artifacts. The amount of visible change depends on the source image and quality setting, so review the converted result before downloading.",
   },
   {
     q: "Is WebP supported by all browsers?",
