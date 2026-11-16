@@ -20,7 +20,7 @@ const SITE_URL = "https://convertimagenow.com";
 export const metadata: Metadata = {
   title: "Free Online Image Converter – Convert JPG, PNG & WebP",
   description:
-    "Convert images online directly in your browser. 100% private client-side processing, zero server uploads, and instant batch conversion for JPG, PNG, and WebP.",
+    "Convert images online directly in your browser. Browser-based image conversion for JPG, PNG, WebP, and supported AVIF files, with batch processing and no conversion-server upload.",
   alternates: {
     canonical: `${SITE_URL}/`,
   },
@@ -156,38 +156,38 @@ const CONVERTER_TOOLS = [
 const CORE_BENEFITS = [
   {
     icon: Lock,
-    title: "100% Client-Side Privacy",
-    desc: "Files never travel across the internet. Your photos are drawn directly into your browser's local HTML5 Canvas memory and processed on-device.",
+    title: "Private Browser Processing",
+    desc: "Supported image conversions are processed locally in your browser. The converter does not send those image files to a conversion server.",
     highlight: "Zero Server Uploads",
   },
   {
     icon: Zap,
     title: "Local Browser Processing",
-    desc: "Bypasses upload queues and remote worker latency. Batch conversions execute using your computer or smartphone's native GPU/CPU cycles.",
+    desc: "Supported conversions run in your browser using the Canvas API. Processing speed depends on your device, image dimensions, and browser.",
     highlight: "No server upload",
   },
   {
     icon: Layers,
-    title: "True Bulk Processing",
-    desc: "Queue dozens of mixed format files simultaneously. Convert entire collections in parallel with one-click individual or bundled ZIP downloads.",
+    title: "Batch Conversion",
+    desc: "Add multiple supported images to the queue, convert them, and download files individually or together as a ZIP archive.",
     highlight: "Batch Ready",
   },
   {
     icon: SlidersHorizontal,
-    title: "Granular Quality Calibration",
-    desc: "Dial in the exact compression threshold between 1% and 100% to hit strict target file weight requirements without destroying detail.",
+    title: "Output Quality Control",
+    desc: "Adjust output quality for JPG and WebP. PNG output does not use the lossy quality slider.",
     highlight: "Precise Control",
   },
   {
     icon: InfinityIcon,
-    title: "Unmetered & Unlimited",
-    desc: "No artificial monthly limits, no daily conversion credits, and no paywalls. Convert high-resolution files continuously without registration.",
+    title: "Free to Use",
+    desc: "Use the browser-based converter without creating an account. Practical file limits depend on your device and available browser memory.",
     highlight: "Zero Paywalls",
   },
   {
     icon: Gift,
-    title: "Clean, Watermark-Free Exports",
-    desc: "Every converted file is 100% clean and pristine. ConvertImageNow leaves source metadata unblemished with zero promotional branding.",
+    title: "Watermark-Free Downloads",
+    desc: "Converted files are exported without an added ConvertImageNow watermark. Canvas-based conversion may not preserve all original metadata.",
     highlight: "Pristine Output",
   },
 ];
@@ -342,7 +342,7 @@ export default function HomePage() {
           "100% Client-side in-browser processing",
           "Zero file uploads to external servers",
           "Batch conversion with ZIP export",
-          "Precision lossy and lossless quality control",
+          "Adjustable quality for supported lossy output formats",
           "No watermarks or file size restrictions",
           "Support for JPG, PNG, WebP, AVIF, and HEIC",
         ],
@@ -925,7 +925,7 @@ export default function HomePage() {
                 title:
                   "How to Make an Image File Smaller Without Losing Quality",
                 excerpt:
-                  "A practical guide to lossy and lossless compression, dimension scaling, and modern container selection to cut image payload by up to 80%.",
+                  "A practical guide to lossy and lossless compression, dimension scaling, and modern container selection to cut image payload by with results that vary by image and settings.",
                 href: "/blog/how-to-make-image-file-smaller",
                 category: "Optimization Strategy",
               },
