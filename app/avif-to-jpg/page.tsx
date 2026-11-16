@@ -244,9 +244,9 @@ export default function AvifToJpgPage() {
           {POINTS.map(({ icon: Icon, title, desc }) => (
             <article
               key={title}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/70 p-7 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/70 p-7 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/60"
             >
-              <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-slate-800/30" aria-hidden="true" />
+              <div className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-[#263956]/30" aria-hidden="true" />
 
               <div className="relative mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-primary/10 text-brand-primary ring-1 ring-brand-primary/20 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3 dark:bg-brand-primary/20 dark:ring-brand-primary/30">
                 <Icon className="h-6 w-6" aria-hidden="true" />
@@ -326,7 +326,7 @@ export default function AvifToJpgPage() {
               "Download the JPG file, or download multiple converted files as a ZIP archive.",
             ].map((step, idx) => (
               <li key={idx} className="flex gap-3">
-                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700 dark:bg-[#263956] dark:text-slate-300">
                   {idx + 1}
                 </span>
                 <span className="leading-relaxed">{step}</span>
@@ -341,10 +341,10 @@ export default function AvifToJpgPage() {
             {DEVICES.map(({ icon: Icon, name, steps }) => (
               <div
                 key={name}
-                className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50"
+                className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/50"
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 dark:bg-[#263956] dark:text-slate-300">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white">{name}</h3>
@@ -362,32 +362,32 @@ export default function AvifToJpgPage() {
             AVIF vs JPG
           </h2>
 
-          <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900/50">
+          <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-[#314969] dark:bg-[#172642]/50">
             <table className="w-full text-left text-sm sm:text-base">
-              <thead className="border-b border-slate-200 bg-slate-50/80 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/80">
+              <thead className="border-b border-slate-200 bg-slate-50/80 backdrop-blur-sm dark:border-[#314969] dark:bg-[#172642]/80">
                 <tr>
                   <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">Feature</th>
                   <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">AVIF</th>
                   <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">JPG</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+              <tbody className="divide-y divide-slate-200 dark:divide-[#314969]">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">Compatibility</td>
                   <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Limited on older apps and devices</td>
                   <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Supported almost everywhere</td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">Compression</td>
                   <td className="px-6 py-4 text-slate-600 dark:text-slate-400">More efficient at similar quality</td>
                   <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Less efficient, larger files</td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">Transparency</td>
                   <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Supported</td>
                   <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Not supported</td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">Best for</td>
                   <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Modern web delivery</td>
                   <td className="px-6 py-4 text-slate-600 dark:text-slate-400">Maximum compatibility, printing, editing</td>
@@ -422,11 +422,11 @@ export default function AvifToJpgPage() {
             {FAQS.map((faq) => (
               <details
                 key={faq.q}
-                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900/40 dark:hover:border-slate-700"
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-[#314969] dark:bg-[#172642]/40 dark:hover:border-slate-700"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-5 text-lg font-semibold text-slate-900 outline-none dark:text-slate-100 [&::-webkit-details-marker]:hidden">
                   {faq.q}
-                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-slate-800 dark:text-slate-400">
+                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-[#263956] dark:text-slate-400">
                     +
                   </span>
                 </summary>
