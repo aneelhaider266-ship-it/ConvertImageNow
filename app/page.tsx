@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Online Image Converter | ConvertImageNow",
     description:
-      "Private, browser-based batch image converter. Zero uploads, zero quality compromises.",
+      "Convert supported image formats in your browser with batch processing and adjustable output quality.",
   },
   robots: {
     index: true,
@@ -196,22 +196,22 @@ const HOW_IT_WORKS_STEPS = [
   {
     step: "01",
     title: "Select or Drop Images",
-    desc: "Drag individual files or entire folders into the converter zone. We support JPG, PNG, WebP, AVIF, and HEIC source files directly from local storage.",
+    desc: "Choose supported image files from your device and add them to the conversion queue. The main converter accepts JPG, PNG, WebP, and AVIF inputs.",
   },
   {
     step: "02",
     title: "Target Output & Balance Quality",
-    desc: "Pick your destination codec (JPG, PNG, WebP, or AVIF) and adjust the compression slider to strike the ideal balance between byte weight and visual crispness.",
+    desc: "Choose JPG, PNG, or WebP as the output format. Adjust quality for JPG and WebP; PNG output does not use the lossy quality slider.",
   },
   {
     step: "03",
     title: "Instant In-Memory Render",
-    desc: "Your browser decodes the image via HTML5 Canvas API and encodes it locally into the target container. No external network requests are made.",
+    desc: "The browser decodes supported images and converts them with the Canvas API. The image data is processed locally rather than sent to a conversion server.",
   },
   {
     step: "04",
     title: "Download Clean Files or Archive",
-    desc: "Save converted images one by one or export your full batch in a structured, uncompressed ZIP archive with preserved filenames.",
+    desc: "Download converted images individually or together in a ZIP archive.",
   },
 ];
 
@@ -236,7 +236,7 @@ const FORMAT_COMPARISON = [
     format: "WebP",
     bestFor: "Production websites, Core Web Vitals, hero headers",
     transparency: "Yes (Lossy & Lossless)",
-    compression: "Lossy & Lossless (25–35% smaller than JPG)",
+    compression: "Lossy and lossless options; file size varies by image and settings",
     compatibility: "97%+ Modern Browsers (Chrome, Safari, Edge, Firefox)",
     verdict: "Default format choice for maximum web page speed and SEO performance.",
   },
@@ -244,8 +244,8 @@ const FORMAT_COMPARISON = [
     format: "AVIF",
     bestFor: "Next-gen web graphics, extreme data compression",
     transparency: "Yes (10-bit & 12-bit HDR)",
-    compression: "Advanced AV1-based lossy/lossless (50% smaller than JPG)",
-    compatibility: "Modern desktop & mobile evergreen browsers",
+    compression: "AV1-based compression; results vary by image and encoder",
+    compatibility: "Supported by many modern browsers; check target-device compatibility",
     verdict: "The highest compression efficiency available for modern web platforms.",
   },
 ];
@@ -255,19 +255,19 @@ const REAL_WORLD_USE_CASES = [
     title: "Core Web Vitals & Google PageSpeed Optimization",
     scenario: "Fix slow Largest Contentful Paint (LCP) caused by oversized banners",
     solution:
-      "Modernizing high-resolution JPG/PNG banners into WebP or AVIF reduces transfer weight by up to 70%. Faster byte transfers directly improve LCP and mobile bounce rates.",
+      "Converting suitable large JPG or PNG images to WebP or AVIF can reduce transfer size. Measure the result and test page performance after changing formats.",
   },
   {
     title: "Overcoming Strict Marketplace & CMS Upload Limits",
     scenario: "E-commerce portals rejecting raw HEIC snapshots or heavy PNG product renders",
     solution:
-      "Platforms like eBay, Etsy, and Amazon enforce strict JPG/PNG specifications under 10MB. Converting files client-side ensures immediate validation without software setup.",
+      "Image upload requirements vary by marketplace and listing type. Check the current platform requirements before converting an image for upload.",
   },
   {
     title: "Eliminating Transparency Bloat on Solid Backgrounds",
     scenario: "Accidental PNG captures bloating blog layouts and newsletters",
     solution:
-      "Photographs saved as PNG waste enormous memory storing unused alpha channels. Re-encoding solid-background assets to 85% quality JPG slashes file size by up to 5x.",
+      "For photographs without transparency, JPG may produce smaller files than PNG. Compare the output visually and choose a quality setting appropriate for the image.",
   },
   {
     title: "Cross-Platform Asset Distribution & Printing",
@@ -280,15 +280,15 @@ const REAL_WORLD_USE_CASES = [
 const HOMEPAGE_FAQS = [
   {
     q: "Is ConvertImageNow completely free to use?",
-    a: "Yes. ConvertImageNow is 100% free with no hidden tiers, no credit cards, no subscriptions, and no conversion limits. You can process single photos or large bulk folders without hitting paywalls.",
+    a: "The converter is available without an account. The number and size of images you can process at once may depend on your device and browser memory.",
   },
   {
     q: "Are my uploaded photos kept private and secure?",
-    a: "Your images are never uploaded to any remote server or third-party cloud. ConvertImageNow processes all conversions locally on your computer or phone using your browser's built-in HTML5 Canvas engine. Your files never leave your device.",
+    a: "The supported conversion workflow processes image data in your browser rather than uploading it to a conversion server. Normal website requests, such as loading the page, may still contact the site.",
   },
   {
     q: "What is the difference between converting to WebP versus JPG?",
-    a: "WebP provides modern compression algorithms that achieve 25% to 35% smaller file sizes than JPG at equivalent visual quality. Additionally, WebP supports transparent backgrounds, whereas JPG always flattens transparent pixels into solid backgrounds.",
+    a: "WebP supports lossy and lossless compression as well as transparency. Whether it produces a smaller file than JPG depends on the image and encoding settings. JPG does not support transparency.",
   },
   {
     q: "Can I convert multiple images at the same time?",
@@ -296,7 +296,7 @@ const HOMEPAGE_FAQS = [
   },
   {
     q: "Will converting an image degrade its visual quality?",
-    a: "Converting between lossless formats (such as WebP lossless to PNG) preserves pixel-for-pixel visual quality. When converting to lossy formats (like JPG or standard WebP), our quality slider lets you configure compression from 1% to 100%, allowing you to retain imperceptible visual fidelity.",
+    a: "Converting to JPG or lossy WebP can reduce image quality, depending on the selected setting. PNG output does not use the quality slider. Keep an original copy if preserving the source is important.",
   },
   {
     q: "Does ConvertImageNow work on mobile phones?",
@@ -304,7 +304,7 @@ const HOMEPAGE_FAQS = [
   },
   {
     q: "Do you place watermarks on converted images?",
-    a: "No. None of our tools add watermarks, branding, stamps, or promotional overlays to your files. Your images remain completely unaltered outside of the requested format conversion.",
+    a: "The converter does not add a ConvertImageNow watermark to converted downloads. Format conversion can change image encoding and may not preserve all original metadata.",
   },
   {
     q: "Why should I convert HEIC photos to JPG?",
@@ -441,7 +441,7 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-[#263956] bg-gradient-to-b from-[#172642] via-[#101B33] to-[#101B33] py-10 dark:border-[#263956] sm:py-14 sm:py-16 lg:py-20">
+      <section className="relative overflow-hidden border-b border-[#263956] bg-gradient-to-b from-[#172642] via-[#101B33] to-[#101B33] py-10 dark:border-[#263956] sm:py-16 lg:py-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -925,7 +925,7 @@ export default function HomePage() {
                 title:
                   "How to Make an Image File Smaller Without Losing Quality",
                 excerpt:
-                  "A practical guide to lossy and lossless compression, dimension scaling, and modern container selection to cut image payload by with results that vary by image and settings.",
+                  "Learn how image dimensions, file formats, and quality settings affect file size. Results vary by the original image and conversion settings.",
                 href: "/blog/how-to-make-image-file-smaller",
                 category: "Optimization Strategy",
               },
