@@ -8,6 +8,7 @@ import {
   Layers,
   ArrowRight,
   ShieldCheck,
+  Image as ImageIcon,
   Cpu,
   SlidersHorizontal,
   CheckCircle2,
@@ -337,9 +338,6 @@ export default function HomePage() {
           price: "0",
           priceCurrency: "USD",
         },
-        aggregateRating: {
-          "@type": "AggregateRating",
-        },
         featureList: [
           "100% Client-side in-browser processing",
           "Zero file uploads to external servers",
@@ -486,7 +484,7 @@ export default function HomePage() {
             {["JPG", "PNG", "WebP"].map((format, index) => (
               <div key={format} className="flex items-center gap-3 sm:gap-6">
                 <div className="flex h-16 w-16 flex-col items-center justify-center rounded-xl border border-[#398BFF]/35 bg-[#101B33] text-[#9CC5FF] shadow-lg shadow-[#398BFF]/10 sm:h-20 sm:w-20">
-                  <span aria-hidden="true" className="text-2xl sm:text-3xl">▧</span>
+                  <ImageIcon aria-hidden="true" className="h-7 w-7 sm:h-9 sm:w-9" />
                   <span className="text-[10px] font-bold tracking-wider sm:text-xs">{format}</span>
                 </div>
                 {index < 2 && <ArrowRight className="h-5 w-5 shrink-0 text-[#398BFF] sm:h-7 sm:w-7" aria-hidden="true" />}
