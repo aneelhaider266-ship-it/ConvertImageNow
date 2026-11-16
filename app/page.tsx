@@ -59,7 +59,7 @@ const CONVERTER_TOOLS = [
       {
         name: "PNG to JPG Converter",
         slug: "/png-to-jpg",
-        badge: "Fast & Lossless",
+        badge: "Format Conversion",
         from: "PNG",
         to: "JPG",
         desc: "Flatten transparent PNG assets into compact JPGs for photography and fast web delivery.",
@@ -67,7 +67,7 @@ const CONVERTER_TOOLS = [
       {
         name: "JPG to PNG Converter",
         slug: "/jpg-to-png",
-        badge: "Pixel Accurate",
+        badge: "PNG Output",
         from: "JPG",
         to: "PNG",
         desc: "Convert standard JPG photographs into uncompressed PNG graphics for editing and overlays.",
@@ -138,7 +138,7 @@ const CONVERTER_TOOLS = [
         badge: "Byte Reducer",
         from: "MULTI",
         to: "MIN",
-        desc: "Intelligently squeeze image file weights by up to 80% without introducing visible noise or blur.",
+        desc: "Reduce image file size with adjustable output quality. Results depend on the source image and chosen settings.",
       },
       {
         name: "Online Image Resizer",
@@ -161,9 +161,9 @@ const CORE_BENEFITS = [
   },
   {
     icon: Zap,
-    title: "Hardware-Accelerated Speed",
+    title: "Local Browser Processing",
     desc: "Bypasses upload queues and remote worker latency. Batch conversions execute using your computer or smartphone's native GPU/CPU cycles.",
-    highlight: "Sub-Second Renders",
+    highlight: "No server upload",
   },
   {
     icon: Layers,
@@ -339,10 +339,6 @@ export default function HomePage() {
         },
         aggregateRating: {
           "@type": "AggregateRating",
-          ratingValue: "4.9",
-          ratingCount: "210",
-          bestRating: "5",
-          worstRating: "1",
         },
         featureList: [
           "100% Client-side in-browser processing",
@@ -447,7 +443,7 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-b from-slate-50/60 via-white to-white py-12 dark:border-slate-800/80 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900 sm:py-16 lg:py-20">
+      <section className="relative overflow-hidden border-b border-[#263956] bg-gradient-to-b from-[#172642] via-[#101B33] to-[#101B33] py-10 dark:border-[#263956] sm:py-14 sm:py-16 lg:py-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -457,7 +453,7 @@ export default function HomePage() {
 
         <div className="container-page">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3.5 py-1 text-xs font-medium tracking-wide text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300">
+            <div className="inline-flex items-center gap-2 rounded-full border border-[#398BFF]/30 bg-[#398BFF]/10 px-3.5 py-1 text-xs font-medium tracking-wide text-[#9CC5FF] dark:border-[#398BFF]/30 dark:bg-[#398BFF]/10 dark:text-[#9CC5FF]">
               <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
               <span>100% Private Client-Side Engine • Zero Cloud Uploads</span>
             </div>
@@ -467,9 +463,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
-              Convert JPG, PNG, WebP, AVIF, and HEIC files instantly in your
-              browser. Clean batch conversions with zero file size limits, no
-              watermarks, and complete data privacy.
+              Convert JPG, PNG, WebP, and supported AVIF files in your browser. Batch process images, choose an output format, and download converted files without uploading them to a conversion server.
             </p>
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400">
@@ -488,7 +482,19 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/80 p-2 shadow-2xl shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80 sm:p-4">
+          <div className="mx-auto mt-8 flex max-w-2xl items-center justify-center gap-3 rounded-2xl border border-[#314969] bg-[#172642]/70 px-3 py-4 shadow-xl shadow-black/20 sm:mt-10 sm:gap-6 sm:px-8 sm:py-6" aria-label="JPG, PNG and WebP image format illustration">
+            {["JPG", "PNG", "WebP"].map((format, index) => (
+              <div key={format} className="flex items-center gap-3 sm:gap-6">
+                <div className="flex h-16 w-16 flex-col items-center justify-center rounded-xl border border-[#398BFF]/35 bg-[#101B33] text-[#9CC5FF] shadow-lg shadow-[#398BFF]/10 sm:h-20 sm:w-20">
+                  <span aria-hidden="true" className="text-2xl sm:text-3xl">▧</span>
+                  <span className="text-[10px] font-bold tracking-wider sm:text-xs">{format}</span>
+                </div>
+                {index < 2 && <ArrowRight className="h-5 w-5 shrink-0 text-[#398BFF] sm:h-7 sm:w-7" aria-hidden="true" />}
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-[#314969] bg-[#172642]/95 p-2 shadow-2xl shadow-black/30 backdrop-blur-xl dark:border-[#314969] dark:bg-[#172642]/95 sm:p-4">
             <ImageConverter />
           </div>
         </div>
