@@ -807,7 +807,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "### Applying settings across a batch",
     
-    "If you uploaded multiple files, the same format and quality settings apply to the whole batch at once, so you're not adjusting sliders one image at a time. That single setup step is what makes batch conversion genuinely faster than juggling separate desktop tools for each file.",
+    "If you uploaded multiple files, the same format and quality settings apply to the whole batch at once, so you're not adjusting sliders one image at a time. Using one set of controls can simplify batch work, although processing time still depends on the number and size of images and your device.",
     
     "## Step 3. Convert and download your JPG file",
     
@@ -827,7 +827,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "### Does converting JPEG to JPG lose quality?",
     
-    "Basically, if you keep the quality slider above 80 percent, JPG uses lossy compression, so every re-save discards a tiny bit of detail, but one conversion pass at a sensible quality setting won't produce a visible difference. Repeated re-saves at low quality are what actually cause noticeable degradation, which is why it helps to know how to convert images without losing quality.",
+    "JPG uses lossy compression, so re-encoding can discard image data even at higher quality settings. A single export may look acceptable, but visible changes depend on the source image and chosen quality. Repeated lossy exports can compound compression artifacts, so keep the original and compare the result.",
     
     "### Can I convert JPG to JPEG the other way?",
     
@@ -865,7 +865,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "## Why your image format choice affects site speed and SEO",
 
-    "Every image on your page adds weight, and that weight determines how fast your site loads. **Page speed** is one of the clearest signals Google uses to rank pages, and images are usually the biggest chunk of that weight. Choosing between JPG and WebP isn't just a technical detail, it directly shapes how quickly a visitor sees your content and whether search engines reward you for it, which is why it belongs in any plan to optimize images for search engines.",
+    "Images contribute to page weight and can affect loading performance, particularly when large files are used above the fold. **Page speed** and page experience matter to visitors and are among many considerations in search, but no image format guarantees higher rankings. Choosing between JPG and WebP is one part of a broader image-optimization workflow.",
 
     "### Core Web Vitals and load time",
 
@@ -875,7 +875,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "### Mobile visitors and slower connections",
 
-    "Mobile users make up most web traffic, and many of them are on spotty connections where every kilobyte matters. Sluggish load times on mobile push bounce rates up, and Google's own research shows conversion rates drop sharply as load time increases beyond a few seconds. Smaller image files mean less data pulled over cellular networks, faster rendering, and fewer visitors giving up before the page finishes loading.",
+    "Many visitors browse on mobile devices and may use slower or metered connections. Large image files can consume more data and contribute to slower page rendering. Optimize dimensions and compression, then measure performance on the devices and networks your audience actually uses.",
 
     "### Crawl efficiency and site-wide performance",
 
@@ -959,10 +959,10 @@ export const BLOG_POSTS: BlogPost[] = [
     "Below, you'll find a step by step walkthrough for converting a single PNG or a whole batch of them, notes on when JPG actually makes sense over PNG, and tips for keeping quality high while file size stays low. No sign-up, no watermark, no catch, just a quick conversion so you can get back to your actual work.",
     "## PNG vs JPG: why convert your images",
     "PNG and JPG solve different problems, and mixing them up costs you either quality or file size. PNG files use lossless compression, which keeps every pixel exactly as it was, plus they support transparency. That's why logos, icons, and screenshots with sharp edges look best in PNG. JPG, on the other hand, uses lossy compression that shrinks file size dramatically by discarding data the human eye barely notices, especially in photos with lots of color gradients.",
-    "Question is when that trade-off actually helps you. If you're uploading product photos to an online store, attaching a picture to an email, or trying to speed up a slow-loading web page, JPG almost always wins. A PNG photograph may be larger than a JPG copy, but the size difference and visual impact vary by image and quality setting.",
+    "The right choice depends on where the image will be used. JPG is widely supported for product photos and email attachments, while PNG may be preferable when transparency or lossless output matters. Compare file size and visual quality for each source image rather than assuming one format always wins.",
     "| Feature | PNG | JPG |\n|---|---|---|\n| Compression | Lossless | Lossy |\n| Transparency | Yes | No |\n| Typical file size | Larger | Smaller |\n| Best for | Logos, screenshots, graphics | Photos, web images, email attachments |",
     "Running the numbers this way makes the choice obvious for most everyday tasks.",
-    "If your image is a photo and file size matters, JPG is almost always the right call.",
+    "If your image is a photograph and file size matters, JPG is a widely compatible option; compare it with WebP or AVIF when your workflow supports those formats.",
     "Sites that let you png convert jpg in bulk save you from doing this math one file at a time. Once you understand which format actually serves your goal, converting becomes a simple mechanical step rather than a guessing game, and that's exactly what the next few steps walk you through.",
     "## Step 1. Upload your PNG images",
     "Open the free online image converter in any modern browser on your desktop or phone, no download or install required. You'll see a drag-and-drop zone right on the homepage, and that's where the actual convert png into jpg online process starts. Drop a single PNG onto that zone, or select multiple files at once if you're batch converting a whole folder of product photos or screenshots.",
