@@ -64,3 +64,94 @@ select:focus-visible {
 .container-page {
   @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
 }
+
+
+/* Semantic typography for article content. */
+.blog-content {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.blog-content > * + * {
+  margin-top: 1.15rem;
+}
+
+.blog-content h2 {
+  margin-top: 2.75rem;
+  color: #fff;
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.blog-content h3 {
+  margin-top: 2rem;
+  color: #f8fafc;
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.blog-content a {
+  color: #70aaff;
+  text-decoration: underline;
+  text-decoration-color: rgba(112, 170, 255, 0.45);
+  text-underline-offset: 3px;
+}
+
+.blog-content a:hover {
+  color: #a8ccff;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.blog-content ul {
+  list-style: disc;
+}
+
+.blog-content ol {
+  list-style: decimal;
+}
+
+.blog-content li + li {
+  margin-top: 0.5rem;
+}
+
+.blog-content strong {
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.blog-content blockquote {
+  margin: 1.75rem 0;
+  border-left: 3px solid var(--cin-blue);
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: rgba(23, 38, 66, 0.72);
+  padding: 1rem 1.25rem;
+  color: #e2e8f0;
+}
+
+.blog-content code {
+  border-radius: 0.35rem;
+  background: #172642;
+  padding: 0.15rem 0.35rem;
+  color: #bfdbfe;
+  font-size: 0.9em;
+}
+
+.blog-content img {
+  display: block;
+  max-height: 32rem;
+  object-fit: contain;
+}
+
+.blog-content hr {
+  border-color: #314969;
+}
