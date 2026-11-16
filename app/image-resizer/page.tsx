@@ -308,9 +308,7 @@ export default function ImageResizerPage() {
           </h1>
 
           <p className="mt-3.5 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-            Resize JPG, PNG, WebP, and AVIF images to exact pixel dimensions or
-            percentage scale. Lock aspect ratios, avoid blurry distortion, and
-            batch-resize multiple files directly in your browser.
+            Resize supported JPG, PNG, WebP, and AVIF images by pixel dimensions or percentage. Keep the aspect ratio when needed; sharpness depends on the source image and chosen dimensions. Add multiple files and download a ZIP archive.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs font-medium text-slate-500 dark:text-slate-400">
