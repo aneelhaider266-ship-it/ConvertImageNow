@@ -225,7 +225,7 @@ export default function ImageConverter({
         className={`flex min-h-[310px] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed px-6 py-14 text-center transition-colors sm:min-h-[280px] ${
           isDragging
             ? "border-brand-primary bg-brand-primary/5"
-            : "border-slate-300 bg-slate-50 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800/70"
+            : "border-slate-300 bg-slate-50 hover:bg-slate-100 dark:border-[#314969] dark:bg-[#172642] dark:hover:bg-[#263956]"
         }`}
       >
         <input
@@ -253,7 +253,7 @@ export default function ImageConverter({
           Drag &amp; drop images here, or click to browse
         </p>
 
-        <p className="mt-1 max-w-md text-sm leading-6 text-slate-500 dark:text-slate-400">
+        <p className="mt-1 max-w-md text-sm leading-6 text-slate-500 dark:text-slate-300">
           Supports JPG, PNG, WebP, AVIF — batch upload supported
         </p>
 
@@ -264,11 +264,11 @@ export default function ImageConverter({
       </div>
 
       {/* Controls */}
-      <div className="mt-6 flex min-h-[142px] flex-col gap-6 rounded-2xl border border-slate-200 p-5 dark:border-slate-800 sm:min-h-[98px] sm:flex-row sm:items-center sm:justify-between">
+      <div className="mt-6 flex min-h-[142px] flex-col gap-6 rounded-2xl border border-slate-200 p-5 dark:border-[#314969] sm:min-h-[98px] sm:flex-row sm:items-center sm:justify-between">
         <div>
           <p className="mb-2 text-sm font-semibold">Convert to</p>
 
-          <div className="inline-flex h-9 rounded-lg border border-slate-200 p-1 dark:border-slate-700">
+          <div className="inline-flex h-9 rounded-lg border border-slate-200 p-1 dark:border-[#314969]">
             {FORMATS.map((item) => (
               <button
                 key={item.value}
@@ -277,7 +277,7 @@ export default function ImageConverter({
                 className={`h-7 rounded-md px-4 text-sm font-medium transition-colors ${
                   format === item.value
                     ? "bg-brand-primary text-white"
-                    : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                    : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-[#263956]"
                 }`}
               >
                 {item.label}
@@ -334,7 +334,7 @@ export default function ImageConverter({
             type="button"
             onClick={downloadAllZip}
             disabled={doneCount === 0}
-            className="inline-flex min-h-10 items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 disabled:opacity-40 dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800"
+            className="inline-flex min-h-10 items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold text-slate-700 transition-colors hover:bg-slate-100 disabled:opacity-40 dark:border-[#314969] dark:text-slate-200 dark:hover:bg-[#263956]"
           >
             <FolderArchive size={16} aria-hidden="true" />
             Download All (ZIP)
@@ -343,7 +343,7 @@ export default function ImageConverter({
           <button
             type="button"
             onClick={clearAll}
-            className="ml-auto inline-flex min-h-10 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-red-600 dark:text-slate-400"
+            className="ml-auto inline-flex min-h-10 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-red-600 dark:text-slate-300"
           >
             <Trash2 size={16} aria-hidden="true" />
             Clear all
@@ -353,7 +353,7 @@ export default function ImageConverter({
 
       {/* File list */}
       {hasQueue && (
-        <ul className="mt-6 divide-y divide-slate-200 rounded-2xl border border-slate-200 dark:divide-slate-800 dark:border-slate-800">
+        <ul className="mt-6 divide-y divide-slate-200 rounded-2xl border border-slate-200 dark:divide-[#314969] dark:border-[#314969]">
           {queue.map((item) => (
             <li key={item.id} className="flex min-h-[90px] items-center gap-4 p-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -370,7 +370,7 @@ export default function ImageConverter({
                   {item.file.name}
                 </p>
 
-                <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-400">
+                <div className="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500 dark:text-slate-300">
                   <span>{formatBytes(item.file.size)}</span>
 
                   {item.status === "done" && item.convertedBlob && (
@@ -414,7 +414,7 @@ export default function ImageConverter({
                       type="button"
                       onClick={() => downloadOne(item)}
                       aria-label={`Download ${item.file.name}`}
-                      className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100 hover:text-brand-primary dark:hover:bg-slate-800"
+                      className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100 hover:text-brand-primary dark:hover:bg-[#263956]"
                     >
                       <Download size={16} aria-hidden="true" />
                     </button>
@@ -438,7 +438,7 @@ export default function ImageConverter({
                   type="button"
                   onClick={() => removeItem(item.id)}
                   aria-label={`Remove ${item.file.name}`}
-                  className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 hover:text-red-500 dark:hover:bg-slate-800"
+                  className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 hover:text-red-500 dark:hover:bg-[#263956]"
                 >
                   <X size={16} aria-hidden="true" />
                 </button>
