@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Online Image Converter – Private In-Browser Image Conversion",
     description:
-      "Batch convert JPG, PNG, WebP, AVIF, and HEIC files locally in your browser. Fast, private, watermark-free, and 100% free.",
+      "Convert supported image formats in your browser. Batch processing, adjustable output quality, and ZIP downloads.",
     url: `${SITE_URL}/`,
     siteName: "ConvertImageNow",
     locale: "en_US",
@@ -79,7 +79,7 @@ const CONVERTER_TOOLS = [
         badge: "Core Web Vitals",
         from: "JPG",
         to: "WEBP",
-        desc: "Cut file sizes by 25–35% while preserving visual clarity for modern Google PageSpeed scores.",
+        desc: "Convert JPG images to WebP. Resulting file size and visual quality depend on the source image and chosen settings.",
       },
       {
         name: "PNG to WebP Converter",
@@ -453,7 +453,7 @@ export default function HomePage() {
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-[#398BFF]/30 bg-[#398BFF]/10 px-3.5 py-1 text-xs font-medium tracking-wide text-[#9CC5FF] dark:border-[#398BFF]/30 dark:bg-[#398BFF]/10 dark:text-[#9CC5FF]">
               <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
-              <span>100% Private Client-Side Engine • Zero Cloud Uploads</span>
+              <span>Browser-Based Processing • No Conversion-Server Upload</span>
             </div>
 
             <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
