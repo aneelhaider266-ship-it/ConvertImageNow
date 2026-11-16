@@ -70,7 +70,7 @@ export default function ContactPage() {
         </div>
 
         <div className="space-y-6">
-          <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
+          <div className="rounded-2xl border border-slate-200 bg-white/70 p-6 dark:border-[#314969] dark:bg-[#172642]/70">
             <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">
               <Mail size={18} className="text-brand-primary" />
               Direct Email
