@@ -3,7 +3,6 @@ import ImageConverter from "@/components/ImageConverter";
 import {
   ShieldCheck,
   WifiOff,
-  Infinity as InfinityIcon,
   Gauge,
   Zap,
   Layers,
@@ -46,7 +45,7 @@ const POINTS = [
     desc: "Once the page has loaded, conversion happens entirely on your device's local memory.",
   },
   {
-    icon: InfinityIcon,
+    icon: Layers,
     title: "Batch ZIP Downloads",
     desc: "Add multiple JPG files and download WebP results individually or as a ZIP. Practical capacity depends on your device and browser memory.",
   },
