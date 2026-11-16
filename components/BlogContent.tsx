@@ -84,6 +84,8 @@ export default function BlogContent({ content }: { content: string[] }) {
           <img
             src={image[2]}
             alt={image[1]}
+            width={1200}
+            height={675}
             loading="lazy"
             className="h-auto w-full rounded-2xl border border-[#314969] object-cover"
           />
