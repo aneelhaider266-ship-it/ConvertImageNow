@@ -66,7 +66,7 @@ const FAQS = [
   },
   {
     q: "Is WebP supported by all browsers?",
-    a: "WebP is natively supported by over 96% of modern browsers, including Chrome, Firefox, Safari, and Edge. Some older image editors and specialized workflows, such as print production using CMYK color, may still expect JPG or PNG instead.",
+    a: "WebP is supported by major modern browsers, including current versions of Chrome, Firefox, Safari, and Edge. Older browser versions and some image-editing or print workflows may still require JPG or PNG.",
   },
   {
     q: "Why should I use WebP instead of JPG for my website?",
@@ -231,11 +231,11 @@ export default function JpgToWebpPage() {
             Why ConvertImageNow Is Different
           </h2>
           <p>
-            Traditional online image converters require you to upload your files
-            to a cloud server, wait in a queue, and download them back.
-            ConvertImageNow processes your JPG images{" "}
-            <strong>directly in your browser</strong> using HTML5 and your
-            browser Canvas APIs.
+            Some image-conversion services process files on remote servers.
+            ConvertImageNow processes supported JPG images{" "}
+            <strong>directly in your browser</strong> using image decoding and
+            Canvas APIs, rather than uploading selected image files to a
+            ConvertImageNow conversion server.
           </p>
           <p>
             Selected image data is processed in your browser rather than uploaded to a
