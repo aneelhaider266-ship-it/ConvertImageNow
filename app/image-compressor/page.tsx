@@ -22,7 +22,7 @@ const PAGE_URL = `${SITE_URL}/image-compressor`;
 export const metadata: Metadata = {
   title: "Free Online Image Compressor – Reduce Image Size in KB",
   description:
-    "Compress supported JPG, PNG, WebP, and AVIF images in your browser. Adjust output quality and compare file size and appearance; results vary by image and settings.",
+    "Process JPG, PNG, WebP, and supported AVIF inputs in your browser. Export as JPG, PNG, or WebP and compare file size and appearance.",
   keywords: [
     "image compressor",
     "compress image online",
@@ -92,7 +92,7 @@ const SOFTWARE_SCHEMA = {
   featureList: [
     "Browser-based image processing via Canvas and Blob APIs",
     "Selected image files are processed in the browser rather than sent to a conversion server",
-    "Batch image compression for JPG, PNG, WebP, and AVIF",
+    "Batch processing for JPG, PNG, WebP, and supported AVIF inputs",
     "Adjustable output quality for supported lossy formats",
     "One-click batch ZIP file download",
 
@@ -159,15 +159,15 @@ const STATS_CARDS = [
   },
   {
     format: "WebP",
-    typicalSavings: "Varies by image",
-    technique: "Lossy or lossless encoding",
+    typicalSavings: "Output varies",
+    technique: "Lossy browser encoding",
     bestFor: "Modern websites and general web graphics",
   },
   {
-    format: "AVIF",
-    typicalSavings: "Varies by image",
-    technique: "AV1-based image encoding",
-    bestFor: "Modern web images where browser support is suitable",
+    format: "AVIF input",
+    typicalSavings: "Output varies",
+    technique: "Browser decoding; no AVIF export",
+    bestFor: "Convert supported AVIF inputs to JPG, PNG, or WebP",
   },
 ];
 
@@ -197,36 +197,36 @@ const TECHNICAL_COMPARISON = [
     attribute: "Compression Mode",
     jpeg: "Lossy",
     png: "Lossless",
-    webp: "Lossy & Lossless",
-    avif: "Lossy & Lossless",
+    webp: "Lossy output in this tool",
+    avif: "Input only; no AVIF export",
   },
   {
     attribute: "Visual Quality Retention",
-    jpeg: "High (at 75-85% slider)",
+    jpeg: "Depends on selected quality setting",
     png: "Lossless PNG encoding",
-    webp: "Superior visual fidelity",
-    avif: "Maximum fidelity per byte",
+    webp: "Depends on selected quality setting",
+    avif: "Converted to a supported output format",
   },
   {
     attribute: "Alpha Transparency",
     jpeg: "No",
     png: "Yes (Full 8-bit alpha)",
     webp: "Yes (Full 8-bit alpha)",
-    avif: "Yes (Full 8-bit alpha)",
+    avif: "May contain transparency",
   },
   {
     attribute: "Browser Compatibility",
     jpeg: "Very broad browser and device support",
     png: "Very broad browser and device support",
-    webp: "97%+ (All modern browsers)",
-    avif: "93%+ (Modern engines)",
+    webp: "Supported by modern browsers",
+    avif: "Browser support varies",
   },
   {
     attribute: "Ideal Use Case",
     jpeg: "Digital camera photos",
     png: "Icons, UI, screenshots",
-    jpegFallback: "General web graphics",
-    avif: "High-efficiency web assets",
+    webp: "Modern web graphics",
+    avif: "Input format only; export as JPG, PNG, or WebP",
   },
 ];
 
@@ -366,11 +366,10 @@ export default function ImageCompressorPage() {
               id="benchmark-heading"
               className="text-2xl font-bold tracking-tight sm:text-3xl"
             >
-              Compression Benchmarks Across File Formats
+              Supported Input Formats and Output Options
             </h2>
             <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-              Different file types respond differently to compression algorithms.
-              Here is what you can realistically expect using our browser compressor:
+              The tool accepts JPG, PNG, WebP, and supported AVIF inputs. Converted files can be exported as JPG, PNG, or WebP; size and appearance depend on the source and settings.
             </p>
           </div>
 
@@ -385,7 +384,6 @@ export default function ImageCompressorPage() {
                     {card.format}
                   </span>
                   <span className="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">
-                    <TrendingDown className="h-3 w-3" />
                     {card.typicalSavings}
                   </span>
                 </div>
