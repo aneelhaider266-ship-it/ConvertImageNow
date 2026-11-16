@@ -16,12 +16,12 @@ const PAGE_URL = `${SITE_URL}/jpg-to-webp`;
 export const metadata: Metadata = {
   title: "JPG to WebP Converter – Convert JPG to WebP Online Free",
   description:
-    "Convert JPG to WebP online for free. Reduce image file size by 25-35% for faster websites — private, browser-based, no upload, no signup, no watermark.",
+    "Convert JPG images to WebP in your browser. Batch convert files and adjust output quality; file size depends on the source image and settings.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "JPG to WebP Converter – Convert JPG to WebP Online Free",
     description:
-      "Convert JPG to WebP online for free. Reduce image file size by 25-35% for faster websites.",
+      "Convert JPG images to WebP in your browser. Compare output file size and visual quality for your images.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "JPG to WebP Converter – Free & Private",
     description:
-      "Batch convert JPGs to WebP instantly in your browser to improve Core Web Vitals.",
+      "Batch convert JPG images to WebP in your browser. Test the resulting images on your website to assess performance.",
   },
 };
 
@@ -42,7 +42,7 @@ const POINTS = [
   },
   {
     icon: WifiOff,
-    title: "Works Offline",
+    title: "Browser-Based Processing",
     desc: "Once the page has loaded, conversion happens entirely on your device's local memory.",
   },
   {
@@ -79,7 +79,7 @@ const FAQS = [
   },
   {
     q: "Are my images uploaded to a server?",
-    a: "No. Conversion happens completely locally. Unlike standard cloud converters, your files never leave your device, ensuring maximum privacy and zero upload wait times.",
+    a: "The selected image data is processed locally in your browser rather than uploaded to a conversion server. Normal website requests may still contact the site.",
   },
 ];
 
@@ -167,7 +167,7 @@ export default function JpgToWebpPage() {
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-5 text-sm font-medium text-slate-600 dark:text-slate-400">
           <span className="flex items-center gap-1.5">
-            <Zap className="h-4.5 w-4.5 text-brand-primary" /> Instant Results
+            <Zap className="h-4.5 w-4.5 text-brand-primary" /> Browser-Based
           </span>
           <span className="hidden h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700 sm:block" />
           <span className="flex items-center gap-1.5">
@@ -175,7 +175,7 @@ export default function JpgToWebpPage() {
           </span>
           <span className="hidden h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700 sm:block" />
           <span className="flex items-center gap-1.5">
-            <ShieldCheck className="h-4.5 w-4.5 text-emerald-500" /> 100% Private
+            <ShieldCheck className="h-4.5 w-4.5 text-emerald-500" /> Local Processing
           </span>
         </div>
       </section>
@@ -272,7 +272,7 @@ export default function JpgToWebpPage() {
                   at high quality settings (80-95%), this difference is
                   imperceptible to the human eye.
                 </strong>{" "}
-                Use the quality slider in the tool above to instantly preview
+                Use the quality slider in the tool above to adjust the output quality
                 and perfectly balance file size against visual sharpness.
               </p>
             </div>
@@ -354,7 +354,7 @@ export default function JpgToWebpPage() {
                     Baseline / Standard
                   </td>
                   <td className="px-6 py-4 font-bold text-emerald-600 dark:text-emerald-400">
-                    25–35% Smaller
+                    Variable File Size
                   </td>
                 </tr>
                 <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
