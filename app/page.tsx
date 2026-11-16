@@ -63,7 +63,7 @@ const CONVERTER_TOOLS = [
         badge: "Format Conversion",
         from: "PNG",
         to: "JPG",
-        desc: "Flatten transparent PNG assets into compact JPGs for photography and fast web delivery.",
+        desc: "Convert PNG images to JPG for photographs that do not need transparency. Compare file size and visual quality after conversion.",
       },
       {
         name: "JPG to PNG Converter",
@@ -407,7 +407,7 @@ export default function HomePage() {
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 text-brand-primary" />
-                No file upload queues
+                No server-side image uploads
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 text-brand-primary" />
@@ -525,14 +525,15 @@ export default function HomePage() {
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
-              Engineered for Privacy & Speed
+              Designed for Browser-Based Processing
             </span>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
               Why Convert Images with ConvertImageNow?
             </h2>
             <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-              Unlike legacy online converters that send private files to cloud
-              queues, ConvertImageNow utilizes your device&apos;s native web APIs.
+              For supported formats, image conversion runs in your browser using its
+              image decoding and Canvas APIs. Selected image files are not sent
+              to a conversion server.
             </p>
           </div>
 
