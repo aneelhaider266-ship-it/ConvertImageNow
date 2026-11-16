@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | How ConvertImageNow Uses Minimal Cookies",
+  title: "Cookie Policy | ConvertImageNow",
   description:
-    "Understand how ConvertImageNow uses minimal cookies for essential site functionality and analytics without tracking your private files or image uploads.",
+    "Learn how cookies and similar technologies may be used for essential site functions, analytics, and advertising.",
   alternates: {
     canonical: "https://convertimagenow.com/cookie-policy",
   },
