@@ -37,8 +37,8 @@ export const metadata: Metadata = {
 const POINTS = [
   {
     icon: ShieldCheck,
-    title: "Truly Private",
-    desc: "Your images never touch a server. Conversion happens directly in your browser using the HTML5 Canvas API.",
+    title: "Browser-Based Conversion",
+    desc: "The selected JPG image is processed in your browser using Canvas APIs rather than uploaded to a conversion server.",
   },
   {
     icon: WifiOff,
@@ -48,7 +48,7 @@ const POINTS = [
   {
     icon: InfinityIcon,
     title: "No Artificial Limits",
-    desc: "No daily quota, no watermark, and no server-side upload bottlenecks for bulk batches.",
+    desc: "Add multiple JPG files and download WebP results individually or as a ZIP. Practical capacity depends on your device and browser memory.",
   },
 ];
 
@@ -243,7 +243,7 @@ export default function JpgToWebpPage() {
             to a cloud server, wait in a queue, and download them back.
             ConvertImageNow processes your JPG images{" "}
             <strong>directly in your browser</strong> using HTML5 and your
-            device&apos;s native hardware.
+            browser Canvas APIs.
           </p>
           <p>
             Selected image data is processed in your browser rather than uploaded to a
