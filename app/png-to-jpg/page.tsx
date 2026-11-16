@@ -107,7 +107,7 @@ const FAQS = [
   },
   {
     q: "Can I convert multiple PNG files at once?",
-    a: "Yes. You can select multiple PNG images, convert them together, and download the results individually or as a ZIP archive — no limit on how many files you batch convert.",
+    a: "Yes. You can select multiple PNG images, convert them together, and download the results individually or as a ZIP archive — Batch capacity depends on your device and available browser memory.",
   },
   {
     q: "Are my images uploaded to a server?",
@@ -119,7 +119,7 @@ const FAQS = [
   },
   {
     q: "Why is my JPG file so much smaller than the original PNG?",
-    a: "PNG uses lossless compression, which keeps files large, especially for photos — often 4 to 10 times larger than an equivalent JPG. JPG's lossy compression reduces file size significantly while remaining visually similar at a good quality setting.",
+    a: "PNG is lossless and supports transparency. JPG uses lossy compression and may create smaller files for photographs, but the size difference depends on the image and quality setting.",
   },
   {
     q: "Can I change PNG to JPG on my phone or tablet?",
