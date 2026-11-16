@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Terms of Service | ConvertImageNow',
   description:
-    'Read the terms for using ConvertImageNow's browser-based image conversion tools, including acceptable use and service limitations.',
+    "Read the terms for using ConvertImageNow's browser-based image conversion tools, including acceptable use and service limitations.",
   alternates: {
     canonical: 'https://convertimagenow.com/terms',
   },
