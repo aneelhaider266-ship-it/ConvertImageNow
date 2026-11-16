@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Footer from '@/components/Footer'; // 👉 YEH IMPORT CHECK KARO
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://convertimagenow.com'),
@@ -25,8 +26,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="antialiased min-h-screen bg-slate-50 text-slate-900 flex flex-col justify-between">
+    <html lang="en" className="dark">
+      <body className="antialiased min-h-screen bg-[#101B33] text-slate-100 flex flex-col justify-between">
+        <Header />
         <main className="flex-grow">
           {children}
         </main>
