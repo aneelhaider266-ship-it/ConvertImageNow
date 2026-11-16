@@ -152,7 +152,7 @@ const STATS_CARDS = [
   },
   {
     format: "PNG",
-    typicalSavings: "Varies by image",
+    typicalSavings: "Output varies",
     technique: "Lossless PNG encoding",
     bestFor: "Screenshots, logos, and images that need transparency",
   },
