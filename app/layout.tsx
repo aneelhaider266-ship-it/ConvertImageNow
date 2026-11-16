@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://convertimagenow.com'),
   title: {
     default: 'ConvertImageNow — Free Online Image Converter & Compressor',
-    template: '%s | ConvertImageNow',
+    template: '%s',
   },
   description:
     'Convert JPG, PNG, WebP, and AVIF images instantly in your browser. Browser-based image conversion for JPG, PNG, WebP, and AVIF, with batch processing and no conversion-server upload.',
