@@ -192,9 +192,9 @@ const CORE_DIFFERENTIATORS = [
   },
   {
     icon: Maximize2,
-    title: "Pixel-Perfect Resampling",
+    title: "Canvas-Based Resizing",
     desc: "The browser Canvas API resamples the image when dimensions change. Results depend on the source image and chosen output dimensions.",
-    badge: "High Precision",
+    badge: "Adjustable Dimensions",
   },
   {
     icon: Zap,
@@ -213,7 +213,7 @@ const CORE_DIFFERENTIATORS = [
 const RELATED_TOOLS = [
   {
     name: "Free Image Compressor",
-    desc: "Change image dimensions while keeping the selected aspect ratio; output file size depends on format and settings.",
+    desc: "Adjust output quality to help reduce image file size. Results depend on the source image and selected settings.",
     href: "/image-compressor",
   },
   {
