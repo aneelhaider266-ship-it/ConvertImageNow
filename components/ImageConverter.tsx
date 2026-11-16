@@ -43,6 +43,31 @@ let idCounter = 0;
 
 const nextId = () => `img-${Date.now()}-${idCounter++}`;
 
+function extensionForBlob(blob: Blob): string {
+  switch (blob.type) {
+    case "image/jpeg":
+      return "jpg";
+    case "image/webp":
+      return "webp";
+    case "image/avif":
+      return "avif";
+    case "image/png":
+    default:
+      return "png";
+  }
+}
+
+function clearConvertedResults(items: QueueItem[]): QueueItem[] {
+  return items.map((item) => ({
+    ...item,
+    status: "pending",
+    convertedBlob: undefined,
+    convertedWidth: undefined,
+    convertedHeight: undefined,
+    errorMessage: undefined,
+  }));
+}
+
 type ImageConverterProps = {
   initialFormat?: OutputFormat;
 };
@@ -175,7 +200,7 @@ export default function ImageConverter({
 
     const baseName = item.file.name.replace(/\.[^/.]+$/, "");
 
-    saveAs(item.convertedBlob, `${baseName}.${format}`);
+    saveAs(item.convertedBlob, `${baseName}.${extensionForBlob(item.convertedBlob)}`);
   };
 
   const downloadAllZip = async () => {
@@ -190,7 +215,10 @@ export default function ImageConverter({
     doneItems.forEach((item) => {
       const baseName = item.file.name.replace(/\.[^/.]+$/, "");
 
-      zip.file(`${baseName}.${format}`, item.convertedBlob as Blob);
+      zip.file(
+        `${baseName}.${extensionForBlob(item.convertedBlob as Blob)}`,
+        item.convertedBlob as Blob
+      );
     });
 
     const zipBlob = await zip.generateAsync({
@@ -254,12 +282,12 @@ export default function ImageConverter({
         </p>
 
         <p className="mt-1 max-w-md text-sm leading-6 text-slate-500 dark:text-slate-300">
-          Supports JPG, PNG, WebP, AVIF — batch upload supported
+          Supports JPG, PNG, WebP, and AVIF where browser decoding is supported
         </p>
 
         <p className="mt-4 flex min-h-5 items-center gap-1.5 text-xs font-medium text-brand-accent">
           <ShieldCheck size={14} className="shrink-0" aria-hidden="true" />
-          Nothing is uploaded — everything runs locally in your browser
+          Selected image data is processed in your browser rather than sent to a conversion server
         </p>
       </div>
 
@@ -273,7 +301,12 @@ export default function ImageConverter({
               <button
                 key={item.value}
                 type="button"
-                onClick={() => setFormat(item.value)}
+                onClick={() => {
+                  if (format !== item.value) {
+                    setFormat(item.value);
+                    setQueue((prev) => clearConvertedResults(prev));
+                  }
+                }}
                 className={`h-7 rounded-md px-4 text-sm font-medium transition-colors ${
                   format === item.value
                     ? "bg-brand-primary text-white"
@@ -298,7 +331,10 @@ export default function ImageConverter({
             min={1}
             max={100}
             value={quality}
-            onChange={(event) => setQuality(Number(event.target.value))}
+            onChange={(event) => {
+              setQuality(Number(event.target.value));
+              setQueue((prev) => clearConvertedResults(prev));
+            }}
             disabled={format === "png"}
             className="block h-5 w-full accent-brand-primary disabled:opacity-40"
             aria-label="Output quality"
