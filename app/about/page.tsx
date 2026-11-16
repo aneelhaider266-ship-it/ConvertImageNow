@@ -39,7 +39,6 @@ const ABOUT_SCHEMA = {
     "@type": "Organization",
     name: "ConvertImageNow",
     url: SITE_URL,
-    logo: `${SITE_URL}/logo.png`,
     description: "Free in-browser client-side image converter and compressor.",
   },
 };
