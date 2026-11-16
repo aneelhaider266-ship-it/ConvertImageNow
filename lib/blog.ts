@@ -97,7 +97,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "PNG and JPG are designed for different jobs. Learn which format is better for photos, logos, screenshots, transparency, and websites, with real examples.",
     date: "2026-01-19",
     updatedDate: "2026-09-01",
-    canonical: "https://www.convertimagenow.com/blog/png-vs-jpg",
+    canonical: "https://convertimagenow.com/blog/png-vs-jpg",
     keywords: [
       "PNG vs JPG",
       "PNG or JPG",
@@ -161,7 +161,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-04-06",
     updatedDate: "2026-09-01",
     canonical:
-      "https://www.convertimagenow.com/blog/jpg-to-webp-guide",
+      "https://convertimagenow.com/blog/jpg-to-webp-guide",
     keywords: [
       "JPG to WebP",
       "convert JPG to WebP",
@@ -221,7 +221,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-01-12",
     updatedDate: "2026-09-01",
     canonical:
-      "https://www.convertimagenow.com/blog/best-image-formats-explained",
+      "https://convertimagenow.com/blog/best-image-formats-explained",
     keywords: [
       "best image format",
       "JPG vs PNG",
@@ -280,7 +280,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Learn what WebP is, how it compares with JPG and PNG, why it matters, and why it is useful for faster-loading, better-performing websites today.",
     date: "2026-01-26",
     updatedDate: "2026-09-01",
-    canonical: "https://www.convertimagenow.com/blog/what-is-webp",
+    canonical: "https://convertimagenow.com/blog/what-is-webp",
     keywords: [
       "what is WebP",
       "WebP image format",
@@ -348,7 +348,7 @@ export const BLOG_POSTS: BlogPost[] = [
     date: "2026-03-23",
     updatedDate: "2026-09-01",
     canonical:
-      "https://www.convertimagenow.com/blog/how-to-convert-heic-to-jpg",
+      "https://convertimagenow.com/blog/how-to-convert-heic-to-jpg",
     keywords: [
       "how to convert HEIC to JPG",
       "HEIC to JPG online",
@@ -408,7 +408,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Learn how to optimize images for search engines with alt text, file names, compression, dimensions, captions, and responsive image delivery.",
     date: "2026-02-14",
-    canonical: "https://www.convertimagenow.com/blog/image-seo-guide",
+    canonical: "https://convertimagenow.com/blog/image-seo-guide",
     keywords: [
       "image SEO",
       "optimize images for SEO",
@@ -462,7 +462,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Learn when a JPG copy may be useful, how HEIC compatibility varies, and which device tools can export HEIC photos.",
     date: "2026-05-03",
-    canonical: "https://www.convertimagenow.com/blog/heic-to-jpg-guide",
+    canonical: "https://convertimagenow.com/blog/heic-to-jpg-guide",
     keywords: [
       "HEIC to JPG",
       "convert HEIC to JPG",
@@ -582,7 +582,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Compare AVIF, WebP, PNG, and JPG side by side for file size, image quality, and browser support before choosing a format for your site.",
     date: "2026-02-28",
     canonical:
-      "https://www.convertimagenow.com/blog/best-image-formats-compared",
+      "https://convertimagenow.com/blog/best-image-formats-compared",
     keywords: [
       "image format comparison",
       "AVIF vs WebP vs JPG",
@@ -636,7 +636,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Learn how to convert multiple images at once using free online batch conversion tools, saving time with no software install or signup required.",
     date: "2026-06-10",
-    canonical: "https://www.convertimagenow.com/blog/batch-convert-images",
+    canonical: "https://convertimagenow.com/blog/batch-convert-images",
     keywords: [
       "batch convert images",
       "convert multiple images",
@@ -683,7 +683,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Learn how to convert and resize images while preserving visual quality, avoiding compression artifacts, and keeping your file sizes small.",
     date: "2026-07-15",
     canonical:
-      "https://www.convertimagenow.com/blog/convert-images-without-losing-quality",
+      "https://convertimagenow.com/blog/convert-images-without-losing-quality",
     keywords: [
       "convert images without losing quality",
       "preserve image quality",
@@ -733,7 +733,7 @@ export const BLOG_POSTS: BlogPost[] = [
   excerpt: "Fix upload rejections fast with a free online JPEG to JPG converter. Batch process locally in your browser, no uploads, no account, no watermarks.",
   date: "2026-09-11",
   updatedDate: "2026-09-11",
-  canonical: "https://www.convertimagenow.com/blog/online-image-converter-jpeg-to-jpg",
+  canonical: "https://convertimagenow.com/blog/online-image-converter-jpeg-to-jpg",
   keywords: ["convert JPEG to JPG", "JPEG to JPG converter", "online image converter", "free JPEG converter", "batch convert images"],
   author: "ConvertImageNow",
   image: "/blog/jpeg-to-jpg/old-computer-laptop.jpg",
@@ -856,7 +856,7 @@ export const BLOG_POSTS: BlogPost[] = [
   excerpt: "Comparing JPG vs WebP for your website or online store? See which format wins on file size, image quality, and page load speed for you.",
   date: "2026-09-11",
   updatedDate: "2026-09-11",
-  canonical: "https://www.convertimagenow.com/blog/jpg-vs-webp",
+  canonical: "https://convertimagenow.com/blog/jpg-vs-webp",
   keywords: ["JPG vs WebP", "image format comparison", "WebP file size", "image optimization", "web performance"],
   author: "ConvertImageNow",
   image: "/blog/jpg-vs-webp/webp-vs-jpg-file-size.webp",
@@ -948,7 +948,7 @@ export const BLOG_POSTS: BlogPost[] = [
   excerpt: "Convert PNG to JPG online for free, shrink files for your website, email, or upload forms in seconds. No signup, no software required at all.",
   date: "2026-09-13",
   updatedDate: "2026-09-13",
-  canonical: "https://www.convertimagenow.com/blog/convert-png-to-jpg-online",
+  canonical: "https://convertimagenow.com/blog/convert-png-to-jpg-online",
   keywords: ["convert png to jpg", "png to jpg converter", "convert png into jpg online", "png to jpeg", "batch image converter"],
   author: "ConvertImageNow",
   image: "/blog/convert-png-to-jpg-online/png-to-jpg-hero.webp",
@@ -1007,7 +1007,7 @@ export const BLOG_POSTS: BlogPost[] = [
   date: "2026-09-15",
   updatedDate: "2026-09-15",
   canonical:
-    "https://www.convertimagenow.com/blog/how-to-use-free-online-image-converter",
+    "https://convertimagenow.com/blog/how-to-use-free-online-image-converter",
   image: "/blog/how-to-use-free-online-image-converter/laptop-desk.jpg",
   keywords: [
     "free online image converter",
