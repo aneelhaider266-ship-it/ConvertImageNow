@@ -76,7 +76,7 @@ const CONVERTER_TOOLS = [
       {
         name: "JPG to WebP Converter",
         slug: "/jpg-to-webp",
-        badge: "Core Web Vitals",
+        badge: "Modern Format",
         from: "JPG",
         to: "WEBP",
         desc: "Convert JPG images to WebP. Resulting file size and visual quality depend on the source image and chosen settings.",
@@ -126,13 +126,13 @@ const CORE_BENEFITS = [
     icon: Lock,
     title: "Private Browser Processing",
     desc: "Supported image conversions are processed locally in your browser. The converter does not send those image files to a conversion server.",
-    highlight: "Zero Server Uploads",
+    highlight: "Browser-Based",
   },
   {
     icon: Zap,
     title: "Local Browser Processing",
     desc: "Supported conversions run in your browser using the Canvas API. Processing speed depends on your device, image dimensions, and browser.",
-    highlight: "No server upload",
+    highlight: "Canvas Processing",
   },
   {
     icon: Layers,
