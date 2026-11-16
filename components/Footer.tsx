@@ -68,9 +68,9 @@ export default function Footer() {
               </span>
             </Link>
             <p className="mt-3 max-w-xs text-xs text-slate-500 dark:text-slate-400">
-              Convert images instantly, right in your browser. Fast, free, and always private.
+              Convert supported image formats in your browser. No account is required to use the converter.
             </p>
-    </div>
+          </div>
 
           {/* Links Cols */}
           {COLUMNS.map((col) => (
@@ -95,7 +95,7 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-[#263956] pt-6 text-center text-xs text-slate-400">
-          <p>© {new Date().getFullYear()} ConvertImageNow. All rights reserved. 100% In-Browser Local Processing.</p>
+          <p>© {new Date().getFullYear()} ConvertImageNow. All rights reserved. Browser-based image conversion.</p>
         </div>
       </div>
     </footer>
