@@ -55,7 +55,7 @@ export const metadata: Metadata = {
 const CONVERTER_TOOLS = [
   {
     category: "Popular Conversions",
-    description: "The most requested everyday web image transformations",
+    description: "Popular everyday image format transformations",
     tools: [
       {
         name: "PNG to JPG Converter",
@@ -150,13 +150,13 @@ const CORE_BENEFITS = [
     icon: InfinityIcon,
     title: "Free to Use",
     desc: "Use the browser-based converter without creating an account. Practical file limits depend on your device and available browser memory.",
-    highlight: "Zero Paywalls",
+    highlight: "No Account Needed",
   },
   {
     icon: Gift,
     title: "Watermark-Free Downloads",
     desc: "Converted files are exported without an added ConvertImageNow watermark. Canvas-based conversion may not preserve all original metadata.",
-    highlight: "Pristine Output",
+    highlight: "No Added Watermark",
   },
 ];
 
@@ -173,7 +173,7 @@ const HOW_IT_WORKS_STEPS = [
   },
   {
     step: "03",
-    title: "Instant In-Memory Render",
+    title: "Browser-Based Conversion",
     desc: "The browser decodes supported images and converts them with the Canvas API. The image data is processed locally rather than sent to a conversion server.",
   },
   {
@@ -455,8 +455,7 @@ export default function HomePage() {
             Explore All Online Image Converters & Tools
           </h2>
           <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-            Select a dedicated tool below for format-specific presets, batch
-            processing controls, and custom optimization guides.
+            Choose a tool for common format conversions, image compression, or resizing.
           </p>
         </div>
 
@@ -731,7 +730,7 @@ export default function HomePage() {
 
             <div className="mt-8 space-y-5 text-sm leading-relaxed text-slate-600 dark:text-slate-300 sm:text-base">
               <p>
-                Some online converters send images to a remote service for processing. ConvertImageNow uses browser-based conversion for supported formats, so the image data is handled locally by the browser rather than uploaded to a conversion server.
+                For supported formats, ConvertImageNow processes image data locally in your browser rather than uploading the selected image to a conversion server.
               </p>
 
               <p>
@@ -906,14 +905,13 @@ export default function HomePage() {
           />
 
           <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
-            Instant In-Browser Utility
+            Browser-Based Image Utility
           </span>
           <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
             Start Converting Your Images Today
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
-            No registration, no watermarks, and no cloud uploads. Fast, private
-            image conversions directly inside your web browser.
+            No registration or added watermarks. Supported image conversions run locally in your browser.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
