@@ -404,7 +404,7 @@ export default function HomePage() {
               Convert JPG, PNG, WebP, and supported AVIF files in your browser. Batch process images, choose an output format, and download converted files without uploading them to a conversion server.
             </p>
 
-            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-300">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 text-brand-primary" />
                 No server-side image uploads
@@ -462,16 +462,16 @@ export default function HomePage() {
         <div className="mt-14 space-y-12">
           {CONVERTER_TOOLS.map((group) => (
             <div key={group.category}>
-              <div className="mb-5 flex flex-col justify-between border-b border-slate-200/80 pb-3 dark:border-slate-800 sm:flex-row sm:items-end">
+              <div className="mb-5 flex flex-col justify-between border-b border-slate-200/80 pb-3 dark:border-[#314969] sm:flex-row sm:items-end">
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                     {group.category}
                   </h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                  <p className="text-sm text-slate-500 dark:text-slate-300">
                     {group.description}
                   </p>
                 </div>
-                <span className="mt-2 text-xs font-semibold text-slate-400 dark:text-slate-500 sm:mt-0">
+                <span className="mt-2 text-xs font-semibold text-slate-400 dark:text-slate-400 sm:mt-0">
                   {group.tools.length} Tools Available
                 </span>
               </div>
@@ -503,7 +503,7 @@ export default function HomePage() {
                         {tool.name}
                       </h4>
 
-                      <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                      <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
                         {tool.desc}
                       </p>
                     </div>
@@ -521,7 +521,7 @@ export default function HomePage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
+      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -543,13 +543,13 @@ export default function HomePage() {
               return (
                 <div
                   key={b.title}
-                  className="rounded-2xl border border-slate-200/80 bg-white p-7 shadow-sm transition-shadow hover:shadow-md dark:border-slate-800 dark:bg-slate-950"
+                  className="rounded-2xl border border-slate-200/80 bg-white p-7 shadow-sm transition-shadow hover:shadow-md dark:border-[#314969] dark:bg-[#172642]"
                 >
                   <div className="flex items-center justify-between">
                     <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-400">
                       {b.highlight}
                     </span>
                   </div>
@@ -558,7 +558,7 @@ export default function HomePage() {
                     {b.title}
                   </h3>
 
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                     {b.desc}
                   </p>
                 </div>
@@ -587,7 +587,7 @@ export default function HomePage() {
           {HOW_IT_WORKS_STEPS.map((step) => (
             <div
               key={step.step}
-              className="relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950"
+              className="relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-[#314969] dark:bg-[#172642]"
             >
               <div>
                 <span className="font-mono text-3xl font-black text-brand-primary/30">
@@ -596,7 +596,7 @@ export default function HomePage() {
                 <h3 className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                   {step.desc}
                 </p>
               </div>
@@ -606,7 +606,7 @@ export default function HomePage() {
       </section>
 
       {/* Format Comparison Table */}
-      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
+      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -621,10 +621,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-950">
+          <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm dark:border-[#314969] dark:bg-[#172642]">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">
-                <thead className="border-b border-slate-200 bg-slate-100/60 text-xs font-bold uppercase tracking-wider text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                <thead className="border-b border-slate-200 bg-slate-100/60 text-xs font-bold uppercase tracking-wider text-slate-700 dark:border-[#314969] dark:bg-[#172642] dark:text-slate-300">
                   <tr>
                     <th scope="col" className="px-6 py-4">
                       Format
@@ -643,7 +643,7 @@ export default function HomePage() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200/80 dark:divide-slate-800">
+                <tbody className="divide-y divide-slate-200/80 dark:divide-[#314969]">
                   {FORMAT_COMPARISON.map((row) => (
                     <tr
                       key={row.format}
@@ -655,16 +655,16 @@ export default function HomePage() {
                       >
                         {row.format}
                       </th>
-                      <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                      <td className="px-6 py-4 text-slate-600 dark:text-slate-300">
                         {row.transparency}
                       </td>
-                      <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                      <td className="px-6 py-4 text-slate-600 dark:text-slate-300">
                         {row.compression}
                       </td>
-                      <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                      <td className="px-6 py-4 text-slate-600 dark:text-slate-300">
                         {row.compatibility}
                       </td>
-                      <td className="px-6 py-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                      <td className="px-6 py-4 text-xs leading-relaxed text-slate-500 dark:text-slate-300">
                         {row.verdict}
                       </td>
                     </tr>
@@ -695,15 +695,15 @@ export default function HomePage() {
           {REAL_WORLD_USE_CASES.map((uc) => (
             <div
               key={uc.title}
-              className="rounded-2xl border border-slate-200/80 bg-white p-7 shadow-sm dark:border-slate-800 dark:bg-slate-950"
+              className="rounded-2xl border border-slate-200/80 bg-white p-7 shadow-sm dark:border-[#314969] dark:bg-[#172642]"
             >
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                 {uc.title}
               </h3>
-              <div className="mt-2 inline-block rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+              <div className="mt-2 inline-block rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600 dark:bg-[#101B33] dark:text-slate-300">
                 Issue: {uc.scenario}
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 {uc.solution}
               </p>
             </div>
@@ -712,9 +712,9 @@ export default function HomePage() {
       </section>
 
       {/* In-Browser Security Deep Dive */}
-      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
+      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-24">
         <div className="container-page">
-          <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200/90 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-950 sm:p-12">
+          <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200/90 bg-white p-8 shadow-sm dark:border-[#314969] dark:bg-[#172642] sm:p-12">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-primary/10 text-brand-primary">
                 <Cpu className="h-7 w-7" />
@@ -740,27 +740,27 @@ export default function HomePage() {
               </p>
 
               <div className="grid gap-4 pt-4 sm:grid-cols-3">
-                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-slate-800">
+                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-[#314969]">
                   <p className="font-mono text-xl font-bold text-brand-primary">
                     Local
                   </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-300">
                     Image conversion runs in your browser
                   </p>
                 </div>
-                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-slate-800">
+                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-[#314969]">
                   <p className="font-mono text-xl font-bold text-brand-primary">
                     Canvas API
                   </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-300">
                     Uses browser image processing capabilities
                   </p>
                 </div>
-                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-slate-800">
+                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-[#314969]">
                   <p className="font-mono text-xl font-bold text-brand-primary">
                     Your Device
                   </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-300">
                     Keep your original files under your control
                   </p>
                 </div>
@@ -796,18 +796,18 @@ export default function HomePage() {
           {HOMEPAGE_FAQS.map((faq) => (
             <details
               key={faq.q}
-              className="group rounded-2xl border border-slate-200/80 bg-white p-6 transition-all open:border-brand-primary/40 open:shadow-sm dark:border-slate-800 dark:bg-slate-950"
+              className="group rounded-2xl border border-slate-200/80 bg-white p-6 transition-all open:border-brand-primary/40 open:shadow-sm dark:border-[#314969] dark:bg-[#172642]"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900 dark:text-white">
                 <span className="text-base">{faq.q}</span>
                 <span
                   aria-hidden="true"
-                  className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-500 transition-transform duration-200 group-open:rotate-45 dark:bg-slate-800 dark:text-slate-400"
+                  className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-500 transition-transform duration-200 group-open:rotate-45 dark:bg-[#101B33] dark:text-slate-300"
                 >
                   +
                 </span>
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 {faq.a}
               </p>
             </details>
@@ -826,7 +826,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Articles Section */}
-      <section className="border-t border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
+      <section className="border-t border-slate-200/80 bg-slate-50/50 py-16 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -870,7 +870,7 @@ export default function HomePage() {
               <Link
                 key={post.href}
                 href={post.href}
-                className="group flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/60 hover:shadow-md dark:border-slate-800 dark:bg-slate-950"
+                className="group flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/60 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]"
               >
                 <div>
                   <span className="inline-flex items-center rounded-full bg-brand-primary/10 px-3 py-1 text-xs font-semibold text-brand-primary">
@@ -879,7 +879,7 @@ export default function HomePage() {
                   <h3 className="mt-4 text-base font-bold text-slate-900 transition-colors group-hover:text-brand-primary dark:text-white dark:group-hover:text-brand-primary">
                     {post.title}
                   </h3>
-                  <p className="mt-2.5 line-clamp-3 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                  <p className="mt-2.5 line-clamp-3 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
                     {post.excerpt}
                   </p>
                 </div>
@@ -895,7 +895,7 @@ export default function HomePage() {
 
       {/* CTA Banner */}
       <section className="container-page py-16 sm:py-20">
-        <div className="relative overflow-hidden rounded-3xl bg-slate-900 px-8 py-14 text-center text-white shadow-2xl dark:border dark:border-slate-800 sm:px-16">
+        <div className="relative overflow-hidden rounded-3xl bg-slate-900 px-8 py-14 text-center text-white shadow-2xl dark:border dark:border-[#314969] sm:px-16">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-primary/20 blur-3xl"
