@@ -201,9 +201,9 @@ export default function JpgToWebpPage() {
                 <Icon className="h-6 w-6" aria-hidden="true" />
               </div>
 
-              <h3 className="relative text-lg font-bold text-slate-900 dark:text-white">
+              <h2 className="relative text-lg font-bold text-slate-900 dark:text-white">
                 {title}
-              </h3>
+              </h2>
 
               <p className="relative mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                 {desc}
