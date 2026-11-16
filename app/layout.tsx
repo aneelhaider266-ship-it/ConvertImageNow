@@ -11,6 +11,30 @@ export const metadata: Metadata = {
   },
   description:
     'Convert JPG, PNG, WebP, and supported AVIF images in your browser. Batch processing and no conversion-server upload for supported image files.',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'ConvertImageNow',
+    title: 'ConvertImageNow — Free Online Image Converter & Compressor',
+    description:
+      'Convert supported image formats in your browser. Adjust quality, resize, and download JPG, PNG, or WebP files.',
+    url: 'https://convertimagenow.com',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'ConvertImageNow — Free browser-based image converter',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ConvertImageNow — Free Online Image Converter',
+    description:
+      'Convert supported image formats in your browser. Adjust quality, resize, and download.',
+    images: ['/twitter-image'],
+  },
   alternates: {
     canonical: './',
   },
