@@ -132,7 +132,7 @@ const FAQS = [
   },
   {
     q: "Is there a file size or batch limit?",
-    a: "There is no server-imposed upload limit because supported conversion happens in your browser. The practical limit depends on your device's available memory and browser — most phones and computers handle dozens of images at once without issue.",
+    a: "There is no conversion-server upload queue for supported files because conversion happens in your browser. The practical batch size depends on your device, browser, image dimensions, and available memory.",
   },
 ];
 
@@ -286,15 +286,11 @@ export default function AvifToJpgPage() {
             ConvertImageNow is designed for browser-based image conversion.
             Supported image processing takes place locally in your browser, so
             your files do not need to be sent to our conversion server. This makes
-            it a private option when you want to convert AVIF to JPG without
-            uploading your images.
+            so selected image files are not uploaded to a ConvertImageNow
+            conversion server during this workflow. See the Privacy Policy for
+            information about general website requests and analytics.
           </p>
-          <p>
-            You can verify this yourself: open your browser&apos;s developer tools
-            (Network tab) while converting, and you&apos;ll see no image data being
-            sent anywhere. Please review the privacy policy for complete
-            information about data handling.
-          </p>
+
 
           {/* Transparency Callout */}
           <div className="not-prose my-10 flex flex-col gap-4 rounded-2xl border border-amber-500/20 bg-amber-50/50 p-6 shadow-sm backdrop-blur-sm sm:flex-row sm:items-start dark:border-amber-500/20 dark:bg-amber-950/30">
