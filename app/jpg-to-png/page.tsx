@@ -113,7 +113,7 @@ const FAQS = [
   },
   {
     q: "Why is the converted PNG file larger in file size than the original JPG?",
-    a: "PNG uses lossless DEFLATE compression, which retains every single pixel without approximations, whereas JPG uses lossy Discrete Cosine Transform (DCT) compression that discards subtle color nuances. Because PNG preserves the full uncompressed raster data of the decoded JPG, the resulting file is usually 2x to 5x larger than the original JPG.",
+    a: "PNG uses lossless DEFLATE compression, while JPG uses lossy compression. Converting a JPG to PNG does not restore details already lost in the JPG. The resulting PNG may be larger, depending on the image.",
   },
   {
     q: "Are my photos uploaded to your server during conversion?",
@@ -300,10 +300,9 @@ export default function JpgToPngPage() {
           </h1>
 
           <p className="mt-3.5 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-            Transform JPEG images into lossless Portable Network Graphics (PNG)
-            format instantly in your browser. Maintain crystal-clear visual
-            fidelity with zero server uploads, no signups, and unlimited batch
-            processing.
+            Convert JPEG images to PNG format in your browser. PNG uses lossless
+            encoding, but it cannot restore detail already lost in the original
+            JPG. Add multiple files and download the converted results together.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs font-medium text-slate-500 dark:text-slate-400">
@@ -495,13 +494,13 @@ export default function JpgToPngPage() {
                 <li className="flex items-start gap-2.5">
                   <Cpu className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>Canvas API Processing:</strong> The browser draws your image into an in-memory bitmap canvas element and serializes it to a PNG Blob via hardware-accelerated local execution.
+                    <strong>Canvas API Processing:</strong> The browser draws your image into an in-memory bitmap canvas element and serializes it to a PNG Blob using the browser Canvas API.
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Zap className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>Instant Memory Clearing:</strong> When you finish downloading or close the browser tab, the temporary blob URLs and image memory are immediately collected by your browser garbage collector.
+                    <strong>Temporary browser data:</strong> The browser manages temporary image data and object URLs used during conversion.
                   </span>
                 </li>
               </ul>
