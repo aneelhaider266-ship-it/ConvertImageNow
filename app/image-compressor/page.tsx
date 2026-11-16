@@ -422,8 +422,7 @@ export default function ImageCompressorPage() {
               </span>
               <h3 className="mt-3 text-sm font-semibold">Select or Drop Files</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                Drag your JPG, PNG, WebP, or AVIF images onto the tool area. Batch
-                selection is supported for dozens of photos at once.
+                Select JPG, PNG, WebP, or AVIF images. You can add multiple files; practical batch capacity depends on your device and browser memory.
               </p>
             </div>
 
@@ -433,8 +432,7 @@ export default function ImageCompressorPage() {
               </span>
               <h3 className="mt-3 text-sm font-semibold">Set Quality & Format</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                Keep the original format or switch to WebP. Adjust the quality slider
-                Compare the preview and file size to choose a suitable quality setting.
+                Choose JPG, PNG, or WebP as the output format. Adjust quality for JPG and WebP; PNG output does not use the quality slider. Compare the result before downloading.
               </p>
             </div>
 
@@ -444,8 +442,7 @@ export default function ImageCompressorPage() {
               </span>
               <h3 className="mt-3 text-sm font-semibold">Local Processing</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                Click Convert/Compress. Your device&apos;s internal browser engine
-                encodes the binary streams without transmitting any data over the internet.
+                Start conversion. Your browser decodes the selected images and uses Canvas APIs to create output files without sending the selected image data to a conversion server.
               </p>
             </div>
 
