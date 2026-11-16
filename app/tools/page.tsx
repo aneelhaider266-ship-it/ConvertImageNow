@@ -35,11 +35,6 @@ const LIVE_TOOLS = [
     href: "/converter",
   },
   {
-    title: "HEIC to JPG Converter",
-    desc: "Convert iPhone HEIC photos to JPG",
-    href: "/heic-to-jpg",
-  },
-  {
     title: "AVIF to JPG Converter",
     desc: "Convert modern AVIF images to JPG",
     href: "/avif-to-jpg",
@@ -113,7 +108,7 @@ export default function ToolsPage() {
           Free Online Image Tools
         </h1>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Eight professional image utilities are live today, with more active
+          Seven professional image utilities are live today, with more active
           features in development. All tools execute locally on your device with
           zero file uploads and complete data privacy.
         </p>
