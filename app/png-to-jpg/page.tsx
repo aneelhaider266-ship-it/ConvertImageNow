@@ -46,7 +46,7 @@ const POINTS = [
   },
   {
     icon: WifiOff,
-    title: "Works offline",
+    title: "Browser-based processing",
     desc: "Once the page has loaded, conversion happens entirely on your device.",
   },
   {
@@ -86,7 +86,7 @@ const DEVICES = [
       "Open ConvertImageNow in your mobile browser.",
       "Tap to upload a PNG from your gallery.",
       "Select JPG format.",
-      "Tap convert to process instantly.",
+      "Tap convert to process the selected images in your browser.",
       "Save the JPG directly to your photos.",
     ],
   },
@@ -111,7 +111,7 @@ const FAQS = [
   },
   {
     q: "Are my images uploaded to a server?",
-    a: "No. Conversion happens locally in your browser using the HTML5 Canvas API. Your files never leave your device — unlike most other online converters, which require uploading your images first.",
+    a: "The selected image data is processed locally in your browser using the HTML5 Canvas API rather than uploaded to a conversion server.",
   },
   {
     q: "Does converting PNG to JPG reduce image quality?",
@@ -193,7 +193,7 @@ export default function PngToJpgPage() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 sm:text-xl">
-          Convert PNG images to JPG (JPEG) instantly — no uploads, no signup,
+          Convert PNG images to JPG (JPEG) in your browser — no conversion-server upload, no signup,
           and no waiting. Drop your files below and batch convert them directly in
           your browser.
         </p>
@@ -208,7 +208,6 @@ export default function PngToJpgPage() {
           </span>
           <span className="hidden h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700 sm:block" />
           <span className="flex items-center gap-1.5">
-            <WifiOff className="h-4 w-4 text-purple-500" /> Works Offline
           </span>
         </div>
       </section>
