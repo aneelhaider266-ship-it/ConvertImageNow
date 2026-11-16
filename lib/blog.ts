@@ -550,11 +550,11 @@ export const BLOG_POSTS: BlogPost[] = [
       "- **Encoding Speed:** WebP wins. Generating AVIF files requires more CPU processing power than encoding WebP or JPG.",
       "- **Transparency & HDR:** AVIF natively supports 10-bit and 12-bit color depth, HDR (High Dynamic Range), and full alpha transparency.",
 
-      "For an in-depth breakdown, read our complete comparison guide: [AVIF vs WebP: Which Format Is Better?](https://convertimagenow.com/blog/avif-vs-webp).",
+      "For a broader side-by-side overview, read our [image format comparison guide](/blog/best-image-formats-compared).",
 
       "## AVIF Browser Support in 2026",
 
-      "AVIF now enjoys comprehensive support across all major modern desktop and mobile browsers:",
+      "AVIF is supported by many current desktop and mobile browsers, but support depends on browser version and device.",
 
       "- **Google Chrome:** Supported since version 85.",
       "- **Mozilla Firefox:** Supported since version 93.",
@@ -1066,7 +1066,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "### Uploading multiple files at once",
 
-    "If you're prepping product photos or a batch of screenshots, select several files at once instead of repeating the process one by one. [Batch conversion](/blog/batch-image-conversion) is built in, so dropping in twenty images takes the same effort as dropping in one.",
+    "If you're prepping product photos or a batch of screenshots, select several files at once instead of repeating the process one by one. [Batch conversion](/blog/batch-convert-images) is built in, so dropping in twenty images takes the same effort as dropping in one.",
 
     "Once your files appear in the queue, nothing has been uploaded to a server. They're sitting in your browser's memory, ready for the next step: picking your output format.",
 
