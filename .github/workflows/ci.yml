@@ -34,7 +34,7 @@ jobs:
         run: npm install --package-lock-only --no-audit --no-fund
 
       - name: Apply compatible dependency security fixes
-        run: npm audit fix --package-lock-only --audit-level=high
+        run: npm audit fix --audit-level=high
 
       - name: Commit synchronized lockfile
         id: lockfile
