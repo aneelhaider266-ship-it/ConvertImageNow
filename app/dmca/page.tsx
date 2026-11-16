@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "DMCA Notice & Takedown Policy | ConvertImageNow",
+  title: "DMCA Policy | ConvertImageNow",
   description:
-    "ConvertImageNow DMCA copyright policies. All conversions execute client-side; no copyrighted media or photos are ever hosted or stored on our web servers.",
+    "Read the ConvertImageNow copyright and DMCA notice process for material published on this website.",
   alternates: {
     canonical: "https://convertimagenow.com/dmca",
   },
@@ -16,16 +16,16 @@ export default function DmcaPage() {
         DMCA Policy
       </h1>
       <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-        Last updated: January 2026
+        Last updated: November 2026
       </p>
 
       <div className="mt-8 space-y-6 text-slate-700 dark:text-slate-300">
         <p>
           ConvertImageNow respects the intellectual property rights of
-          others. Because our image converter processes files entirely in
-          your browser, we never see, store, or host the images you
-          convert — so there is nothing on our servers to remove in that
-          respect.
+          others. For supported conversions, selected image files are
+          processed in your browser rather than uploaded to a conversion
+          server. This does not change our responsibility to review valid
+          copyright notices concerning material published on this website.
         </p>
         <p>
           If you believe content published on this website (such as blog
