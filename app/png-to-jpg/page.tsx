@@ -292,8 +292,7 @@ export default function PngToJpgPage() {
                 JPG does not support transparent backgrounds. When you convert a
                 PNG with transparency to JPG, the transparent areas are filled with
                 a solid background (usually white). If you need to keep transparency, consider
-                converting to <strong>WebP</strong> instead, which supports both transparency and
-                smaller file sizes.
+                converting to <strong>WebP</strong> instead, which supports transparency. Compare the resulting file size and appearance with the original.
               </p>
             </div>
           </div>
@@ -302,7 +301,7 @@ export default function PngToJpgPage() {
             How to Convert PNG to JPG Across Devices
           </h2>
           <p>
-            Because our tool runs entirely in your browser, the process is identical whether you are on a desktop, phone, or tablet. No app installation is required.
+            Selected image data is processed in your browser. The steps and available format support can vary by browser and device; no separate app installation is required.
           </p>
 
           <div className="not-prose my-10 grid gap-6 sm:grid-cols-3">
