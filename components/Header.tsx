@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Menu, X, Moon, Sun, ImageIcon } from "lucide-react";
+import { useState } from "react";
+import { Menu, X, ImageIcon } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -16,24 +16,7 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useState(false);
 
-  useEffect(() => {
-    const stored = window.localStorage.getItem("cin-theme");
-
-    const isDark = stored ? stored === "dark" : true;
-
-    setDark(isDark);
-    document.documentElement.classList.toggle("dark", isDark);
-  }, []);
-
-  const toggleDark = () => {
-    const nextDark = !dark;
-
-    setDark(nextDark);
-    document.documentElement.classList.toggle("dark", nextDark);
-    window.localStorage.setItem("cin-theme", nextDark ? "dark" : "light");
-  };
 
   return (
     <header className="sticky top-0 z-50 h-16 shrink-0 border-b border-slate-200 bg-[#101B33]/95 backdrop-blur border-[#263956] dark:border-[#263956] dark:bg-[#101B33]/95">
@@ -74,20 +57,6 @@ export default function Header() {
 
         {/* Actions */}
         <div className="flex h-16 items-center gap-2">
-          <button
-            type="button"
-            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-            aria-pressed={dark}
-            onClick={toggleDark}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-          >
-            {dark ? (
-              <Sun size={18} aria-hidden="true" />
-            ) : (
-              <Moon size={18} aria-hidden="true" />
-            )}
-          </button>
-
           <Link
             href="/converter"
             className="inline-flex h-9 items-center rounded-full bg-[#398BFF] px-3 text-xs font-semibold text-white transition-transform hover:-translate-y-0.5 sm:h-10 sm:px-4 sm:text-sm"
