@@ -232,7 +232,7 @@ const RELATED_TOOLS = [
     href: "/jpg-to-webp",
   },
   {
-    name: "HEIC to JPG Converter",
+    name: "HEIC to JPG Guide",
     desc: "Convert Apple iPhone camera captures into universally editable JPG files.",
     href: "/heic-to-jpg",
   },
@@ -482,7 +482,7 @@ export default function ImageResizerPage() {
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 4
               </span>
-              <h3 className="mt-3 text-sm font-semibold">Instant Download</h3>
+              <h3 className="mt-3 text-sm font-semibold">Download Your Resized Images</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
                 Download resized images individually, or export all files
                 together in a neat, organized ZIP archive.
@@ -564,10 +564,7 @@ export default function ImageResizerPage() {
                   </h3>
                 </div>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                  Drag and drop dozens of heavy camera assets directly from your
-                  desktop. Take advantage of multi-threaded browser rendering to
-                  bulk-resize high-resolution photos in seconds and export a single
-                  ZIP archive.
+                  Add supported image files from your desktop, choose the target dimensions, and download the resized files individually or together as a ZIP archive.
                 </p>
               </div>
 
