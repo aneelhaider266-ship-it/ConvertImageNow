@@ -209,7 +209,7 @@ const RELATED_TOOLS = [
   {
     name: "HEIC to JPG Guide",
     desc: "Learn about HEIC compatibility and ways to create JPG copies on supported devices.",
-    href: "/heic-to-jpg",
+    href: "/blog/heic-to-jpg-guide",
   },
   {
     name: "AVIF to JPG Converter",
