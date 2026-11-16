@@ -87,7 +87,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "The conversion workflow processes selected image files in your browser using image decoding and Canvas APIs rather than uploading them to a conversion server. General website requests and analytics are described in the Privacy Policy.",
 
       "### Which reduces file size more: resizing or compressing?",
-      "Resizing **reduces the file size** more drastically because it physically discards millions of unnecessary pixels. For example, scaling an image from 4K down to 1080p cuts raw pixel data by 75% immediately."
+      "Resizing reduces the number of pixels an image contains. For example, scaling a 3840 × 2160 image to 1920 × 1080 reduces its pixel count by 75%. The resulting file-size change depends on the image content and compression settings."
     ],
   },
   {
@@ -140,7 +140,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## PNG vs JPG for Social Media",
 
-      "Most social platforms automatically compress images you upload, regardless of the format you started with. Uploading a PNG doesn't guarantee your image stays lossless once it's on the platform. For most social posts, JPG is a practical starting choice unless your image specifically needs a transparent background, such as a logo overlay.",
+      "Many social platforms may resize or recompress images after upload, regardless of the original format. Uploading a PNG does not guarantee the platform will preserve it losslessly. For most social posts, JPG is a practical starting choice unless your image specifically needs a transparent background, such as a logo overlay.",
 
       "## Converting Between PNG and JPG",
 
@@ -750,7 +750,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "## Where the extra letter came from",
     
-    "Older versions of Windows, running on MS-DOS, only allowed file extensions with three characters. Mac and Unix systems never had that restriction, so files saved on those platforms often kept the full four-letter \"jpeg\" tag. When Windows caught up and dropped the limit, both extensions stuck around, and now you'll bump into either one depending on where a file was created, exported, or resaved.",
+    "The shorter .jpg extension became common partly because legacy DOS and Windows filename conventions used the 8.3 format, which allowed only three characters for an extension. Modern systems support longer extensions, but both .jpg and .jpeg remain valid and widely recognized.",
     
     "![Old computer vs modern laptop](/blog/jpeg-to-jpg/old-computer-laptop.jpg)",
     
