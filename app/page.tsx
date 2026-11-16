@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/`,
   },
   openGraph: {
-    title: "Free Online Image Converter – Private In-Browser Image Conversion",
+    title: "Free Online Image Converter – Browser-Based Conversion",
     description:
       "Convert supported image formats in your browser. Batch processing, adjustable output quality, and ZIP downloads.",
     url: `${SITE_URL}/`,
@@ -303,8 +303,8 @@ export default function HomePage() {
           priceCurrency: "USD",
         },
         featureList: [
-          "100% Client-side in-browser processing",
-          "Zero file uploads to external servers",
+          "Browser-based processing for supported image files",
+          "Selected image files are not sent to a conversion server",
           "Batch conversion with ZIP export",
           "Adjustable quality for supported lossy output formats",
           "No added watermark on converted downloads",
@@ -578,7 +578,7 @@ export default function HomePage() {
             How to Convert Images Online in 4 Simple Steps
           </h2>
           <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-            Convert any photograph or digital graphic in seconds without
+            Convert supported photographs and digital graphics in your browser without
             installing external applications or registering an account.
           </p>
         </div>
@@ -912,7 +912,7 @@ export default function HomePage() {
             Start Converting Your Images Today
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
-            No registration or added watermarks. Supported image conversions run locally in your browser.
+            No registration or added watermarks. Supported image conversions process selected image files in your browser.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
