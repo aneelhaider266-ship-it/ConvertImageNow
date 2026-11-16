@@ -308,8 +308,7 @@ export default function JpgToPngPage() {
               ZIP downloads
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> No watermarks
-              or quality limits
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> No added watermark
             </span>
           </div>
         </header>
