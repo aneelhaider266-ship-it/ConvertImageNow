@@ -126,7 +126,7 @@ const FAQS = [
   },
   {
     q: "Which image format creates the smallest file?",
-    a: "There is no single smallest format for every image. Compare JPG, WebP, and AVIF outputs using the same source and inspect both file size and visual quality. PNG is often useful when transparency or exact pixel preservation matters.",
+    a: "There is no single smallest format for every image. Compare JPG and WebP outputs using the same source and inspect both file size and visual quality. AVIF is accepted as an input format here, not an output format. PNG is useful when transparency or lossless encoding of the decoded pixels matters.",
   },
 ];
 
@@ -247,7 +247,7 @@ const RELATED_TOOLS = [
   },
   {
     name: "JPG to PNG Converter",
-    desc: "Wrap JPG images into lossless PNG containers for safe multi-pass editing.",
+    desc: "Save a JPG as PNG before further edits to avoid additional lossy JPEG saves; this does not restore detail already lost in the original JPG.",
     href: "/jpg-to-png",
   },
   {
