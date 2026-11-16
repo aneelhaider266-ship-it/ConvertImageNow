@@ -471,8 +471,8 @@ export default function ImageResizerPage() {
               </span>
               <h3 className="mt-3 text-sm font-semibold">Lock Aspect Ratio</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                Ensure the aspect ratio lock remains enabled so images never
-                stretch, skew, or distort unnaturally.
+                Keep the aspect ratio lock enabled when you want to preserve the
+                original proportions and avoid stretching or distortion.
               </p>
             </div>
 
