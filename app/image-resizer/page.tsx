@@ -206,7 +206,7 @@ const CORE_DIFFERENTIATORS = [
     icon: InfinityIcon,
     title: "Batch Image Resizing",
     desc: "Add multiple files and export the resized results as a ZIP archive. Practical batch size depends on your device and browser memory.",
-    badge: "No Limits",
+    badge: "Batch ZIP Export",
   },
 ];
 
