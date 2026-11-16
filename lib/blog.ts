@@ -14,9 +14,9 @@ export type BlogPost = {
 export const BLOG_POSTS: BlogPost[] = [
  {
     slug: "how-to-make-image-file-smaller",
-    title: "How to Make an Image File Smaller Without Losing Quality",
+    title: "How to Make Images Smaller While Preserving Quality",
     excerpt:
-      "Learn how to reduce image file size in KB without losing quality. Complete 2026 guide to compressing, resizing, and converting photos on any device.",
+      "Learn how to reduce image file size in KB while preserving as much visual quality as possible. A practical guide to compression, resizing, and format conversion.",
     date: "2026-08-11",
     updatedDate: "2026-10-01",
     canonical:
@@ -514,7 +514,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
 {
     slug: "what-is-avif",
-    title: "What Is AVIF? The Modern Image Format Explained (2026 Guide)",
+    title: "What Is AVIF? A Modern Image Format Guide",
     excerpt:
       "What is AVIF, how does it compare to JPG and WebP, and should you use it? Learn file size benefits, browser support, and how to convert AVIF instantly.",
     date: "2026-03-01",
@@ -729,7 +729,7 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
   slug: "online-image-converter-jpeg-to-jpg",
-  title: "How to Convert JPEG to JPG with a Free Online Image Converter",
+  title: "How to Convert JPEG to JPG Online",
   excerpt: "Fix upload rejections fast with a free online JPEG to JPG converter. Batch process locally in your browser, no uploads, no account, no watermarks.",
   date: "2026-09-11",
   updatedDate: "2026-09-11",
