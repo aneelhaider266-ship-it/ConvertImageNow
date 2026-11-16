@@ -44,7 +44,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/blog/jpg-vs-webp`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/convert-png-to-jpg-online`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
     { url: `${baseUrl}/blog/how-to-use-free-online-image-converter`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
-    { url: `${baseUrl}/blog/why-i-built-convertimagenow`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
   ];
 
   // 4. Legal & Compliance Pages
