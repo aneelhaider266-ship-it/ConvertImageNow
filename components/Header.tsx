@@ -24,7 +24,7 @@ export default function Header() {
     const prefersDark =
       window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false;
 
-    const isDark = stored === "dark" || (!stored && prefersDark);
+    const isDark = stored ? stored === "dark" : true;
 
     setDark(isDark);
     document.documentElement.classList.toggle("dark", isDark);
@@ -39,7 +39,7 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 h-16 shrink-0 border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
+    <header className="sticky top-0 z-50 h-16 shrink-0 border-b border-slate-200 bg-[#101B33]/95 backdrop-blur border-[#263956] dark:border-[#263956] dark:bg-[#101B33]/95">
       <div className="container-page flex h-16 items-center justify-between">
         {/* Logo */}
         <Link
@@ -93,7 +93,7 @@ export default function Header() {
 
           <Link
             href="/converter"
-            className="hidden h-10 items-center rounded-full bg-brand-primary px-4 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 sm:inline-flex"
+            className="inline-flex h-9 items-center rounded-full bg-[#398BFF] px-3 text-xs font-semibold text-white transition-transform hover:-translate-y-0.5 sm:h-10 sm:px-4 sm:text-sm"
           >
             Start Converting
           </Link>
@@ -121,7 +121,7 @@ export default function Header() {
         <nav
           id="mobile-navigation"
           aria-label="Mobile navigation"
-          className="border-t border-slate-200 bg-white px-4 pb-4 dark:border-slate-800 dark:bg-slate-950 lg:hidden"
+          className="border-t border-[#314969] bg-[#172642] px-4 pb-4 text-white dark:border-[#314969] dark:bg-[#172642] lg:hidden"
         >
           <ul className="flex flex-col gap-1 pt-2">
             {NAV_LINKS.map((link) => (
