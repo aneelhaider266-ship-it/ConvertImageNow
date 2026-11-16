@@ -200,7 +200,7 @@ export default function AvifToJpgPage() {
         <div className="mb-6 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-primary/5 px-4 py-1.5 text-sm font-semibold text-brand-primary shadow-sm backdrop-blur-sm dark:border-brand-primary/30 dark:bg-brand-primary/10 dark:text-brand-primary/90">
             <Zap className="h-4 w-4" aria-hidden="true" />
-            100% Free & Browser-Based
+            Free & Browser-Based
           </span>
         </div>
 
@@ -224,7 +224,6 @@ export default function AvifToJpgPage() {
           </span>
           <span className="hidden h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700 sm:block" />
           <span className="flex items-center gap-1.5">
-            <WifiOff className="h-4.5 w-4.5 text-brand-primary" /> Works Offline
           </span>
         </div>
       </section>
