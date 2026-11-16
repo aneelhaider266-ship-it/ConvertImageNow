@@ -99,7 +99,7 @@ const SOFTWARE_SCHEMA = {
   featureList: [
     "Exact pixel (width x height) dimension customization",
     "Proportional percentage scaling with aspect ratio lock",
-    "100% client-side rendering via HTML5 Canvas with zero cloud uploads",
+    "Browser-based image rendering via HTML5 Canvas",
     "Batch image resizing with one-click ZIP packaging",
     "Format preservation for JPG, PNG, WebP, and AVIF",
 
@@ -220,7 +220,7 @@ const CORE_DIFFERENTIATORS = [
 const RELATED_TOOLS = [
   {
     name: "Free Image Compressor",
-    desc: "Reduce file byte size (KB) by up to 80% without altering pixel dimensions.",
+    desc: "Change image dimensions while keeping the selected aspect ratio; output file size depends on format and settings.",
     href: "/image-compressor",
   },
   {
