@@ -6,11 +6,11 @@ function renderInline(value: string): ReactNode[] {
 
   return value.split(pattern).filter(Boolean).map((part, index) => {
     if (part.startsWith("**") && part.endsWith("**")) {
-      return <strong key={index}>{part.slice(2, -2)}</strong>;
+      return <strong key={index}>{renderInline(part.slice(2, -2))}</strong>;
     }
 
     if (part.startsWith("*") && part.endsWith("*")) {
-      return <em key={index}>{part.slice(1, -1)}</em>;
+      return <em key={index}>{renderInline(part.slice(1, -1))}</em>;
     }
 
     if (part.startsWith("`") && part.endsWith("`")) {
