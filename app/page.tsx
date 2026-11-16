@@ -248,7 +248,7 @@ const REAL_WORLD_USE_CASES = [
 const HOMEPAGE_FAQS = [
   {
     q: "Is ConvertImageNow completely free to use?",
-    a: "The converter is available without an account. The number and size of images you can process at once may depend on your device and browser memory.",
+    a: "The converter is free to use and does not require an account. The practical number and size of images you can process in a batch depend on your device and browser memory.",
   },
   {
     q: "Are my uploaded photos kept private and secure?",
@@ -256,11 +256,11 @@ const HOMEPAGE_FAQS = [
   },
   {
     q: "What is the difference between converting to WebP versus JPG?",
-    a: "WebP supports lossy and lossless compression as well as transparency. Whether it produces a smaller file than JPG depends on the image and encoding settings. JPG does not support transparency.",
+    a: "The WebP format supports lossy and lossless encoding and can include transparency. This converter uses browser Canvas encoding with an adjustable quality setting for WebP output. Whether the result is smaller than JPG depends on the image and settings.",
   },
   {
-    q: "Can I convert multiple images at the same time?",
-    a: "Yes. ConvertImageNow supports client-side batch processing. Drop multiple files into the conversion area, pick your target format and compression level, and download all files individually or packaged as a single ZIP archive.",
+    q: "Can I convert multiple images in one batch?",
+    a: "Yes. Add multiple supported files to the queue, choose the output format and quality, and start conversion. The browser processes queued files sequentially; you can download them individually or together as a ZIP archive.",
   },
   {
     q: "Will converting an image degrade its visual quality?",
@@ -268,7 +268,7 @@ const HOMEPAGE_FAQS = [
   },
   {
     q: "Does ConvertImageNow work on mobile phones?",
-    a: "Yes. ConvertImageNow is fully responsive and functions seamlessly across iOS (Safari) and Android (Chrome, Firefox, Samsung Internet). You can convert photos directly from your phone's photo library or camera roll.",
+    a: "The site is responsive and can be used in modern mobile browsers. Select supported images from your phone's photo library or Files app; available formats depend on browser support.",
   },
   {
     q: "Do you place watermarks on converted images?",
