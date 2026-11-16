@@ -191,10 +191,10 @@ export default function JpgToWebpPage() {
           {POINTS.map(({ icon: Icon, title, desc }) => (
             <article
               key={title}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/70 p-7 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/70 p-7 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/60"
             >
               <div
-                className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-slate-800/30"
+                className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-[#263956]/30"
                 aria-hidden="true"
               />
 
@@ -283,7 +283,7 @@ export default function JpgToWebpPage() {
                   "Download your new WebP images (or click Download ZIP for batches).",
                 ].map((step, idx) => (
                   <li key={idx} className="flex gap-3">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700 dark:bg-[#263956] dark:text-slate-300">
                       {idx + 1}
                     </span>
                     <span className="leading-relaxed">{step}</span>
@@ -321,9 +321,9 @@ export default function JpgToWebpPage() {
           </p>
 
           {/* Comparison Table */}
-          <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900/50">
+          <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-[#314969] dark:bg-[#172642]/50">
             <table className="w-full text-left text-sm sm:text-base">
-              <thead className="border-b border-slate-200 bg-slate-50/80 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/80">
+              <thead className="border-b border-slate-200 bg-slate-50/80 backdrop-blur-sm dark:border-[#314969] dark:bg-[#172642]/80">
                 <tr>
                   <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">
                     Feature
@@ -336,8 +336,8 @@ export default function JpgToWebpPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+              <tbody className="divide-y divide-slate-200 dark:divide-[#314969]">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Web File Size
                   </td>
@@ -348,7 +348,7 @@ export default function JpgToWebpPage() {
                     Variable File Size
                   </td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Compression Type
                   </td>
@@ -359,7 +359,7 @@ export default function JpgToWebpPage() {
                     Lossy & Lossless
                   </td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Transparency (Alpha)
                   </td>
@@ -370,7 +370,7 @@ export default function JpgToWebpPage() {
                     Supported
                   </td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Best Used For
                   </td>
@@ -393,11 +393,11 @@ export default function JpgToWebpPage() {
             {FAQS.map(({ q, a }) => (
               <details
                 key={q}
-                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900/40 dark:hover:border-slate-700"
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-[#314969] dark:bg-[#172642]/40 dark:hover:border-slate-700"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-5 text-lg font-semibold text-slate-900 outline-none dark:text-slate-100 [&::-webkit-details-marker]:hidden">
                   {q}
-                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-slate-800 dark:text-slate-400">
+                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-[#263956] dark:text-slate-400">
                     +
                   </span>
                 </summary>
