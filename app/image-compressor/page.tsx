@@ -216,8 +216,8 @@ const TECHNICAL_COMPARISON = [
   },
   {
     attribute: "Browser Compatibility",
-    jpeg: "100% Universal",
-    png: "100% Universal",
+    jpeg: "Very broad browser and device support",
+    png: "Very broad browser and device support",
     webp: "97%+ (All modern browsers)",
     avif: "93%+ (Modern engines)",
   },
