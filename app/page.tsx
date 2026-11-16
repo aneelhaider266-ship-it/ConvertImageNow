@@ -188,16 +188,16 @@ const FORMAT_COMPARISON = [
     format: "JPG / JPEG",
     bestFor: "Photographs, complex color gradients, camera exports",
     transparency: "No",
-    compression: "Lossy (Variable 1–100%)",
-    compatibility: "100% Universal (All browsers, OSs, print)",
+    compression: "Lossy; quality and file size depend on encoder settings",
+    compatibility: "Very broad support; confirm requirements for specialist workflows",
     verdict: "Essential fallback when broad compatibility is paramount.",
   },
   {
     format: "PNG",
     bestFor: "Logos, UI icons, sharp text, screenshots, line art",
-    transparency: "Yes (Full 8-bit Alpha Channel)",
-    compression: "Lossless (DEFLATE / Canvas)",
-    compatibility: "100% Universal",
+    transparency: "Yes",
+    compression: "Lossless (DEFLATE)",
+    compatibility: "Very broad support across browsers and operating systems",
     verdict: "Standard for crisp transparent graphics where artifacts are unacceptable.",
   },
   {
@@ -205,16 +205,16 @@ const FORMAT_COMPARISON = [
     bestFor: "Production websites, Core Web Vitals, hero headers",
     transparency: "Yes (Lossy & Lossless)",
     compression: "Lossy and lossless options; file size varies by image and settings",
-    compatibility: "97%+ Modern Browsers (Chrome, Safari, Edge, Firefox)",
-    verdict: "Default format choice for maximum web page speed and SEO performance.",
+    compatibility: "Supported by modern browsers; check older-device requirements",
+    verdict: "A practical web format when browser support and output size suit your use case.",
   },
   {
     format: "AVIF",
     bestFor: "Next-gen web graphics, extreme data compression",
-    transparency: "Yes (10-bit & 12-bit HDR)",
+    transparency: "Yes",
     compression: "AV1-based compression; results vary by image and encoder",
     compatibility: "Supported by many modern browsers; check target-device compatibility",
-    verdict: "The highest compression efficiency available for modern web platforms.",
+    verdict: "Often offers strong compression; compare output quality, encoding time, and browser support.",
   },
 ];
 
@@ -847,7 +847,7 @@ export default function HomePage() {
                 title:
                   "JPG vs WebP: Which Format Wins for Size, Quality, and Speed",
                 excerpt:
-                  "Comprehensive benchmark comparisons show WebP yielding 25–35% smaller file sizes at visually identical quality thresholds.",
+                  "Compare file size and visual quality using the same source image; results vary with content and encoding settings.",
                 href: "/blog/jpg-vs-webp",
                 category: "Format Comparison",
               },
