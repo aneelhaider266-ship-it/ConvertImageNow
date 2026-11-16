@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle2, Clock, Zap, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Clock } from "lucide-react";
 
 const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/tools`;
