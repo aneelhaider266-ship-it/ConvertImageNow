@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
         Privacy Policy
       </h1>
       <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-        Last updated: August 2026
+        Last updated: November 2026
       </p>
 
       <div className="mt-8 space-y-6 text-slate-700 dark:text-slate-300">
@@ -64,11 +64,10 @@ export default function PrivacyPolicyPage() {
           <p className="mt-2">
             We may use third-party advertising companies, including Google,
             to serve ads when you visit this site. These companies may use
-            cookies or similar technologies (such as the DoubleClick DART
-            cookie) to serve ads based on your prior visits to this site or
-            other websites. Google&apos;s use of advertising cookies enables
-            it and its partners to serve ads to you based on your visit to
-            this site and/or other sites on the Internet.
+            cookies or similar technologies to serve ads based on your prior
+            visits to this site or other websites. Google and its partners may
+            use information from this site and other sites to personalize ads,
+            subject to your advertising and privacy settings.
           </p>
           <p className="mt-2">
             You may opt out of personalized advertising by visiting{" "}
