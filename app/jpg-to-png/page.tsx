@@ -144,14 +144,14 @@ const FEATURE_CARDS = [
   },
   {
     icon: Zap,
-    title: "Browser-Based Processing",
-    desc: "The browser uses its image decoding and Canvas APIs to create PNG output without sending the selected image data to a conversion server.",
+    title: "No Conversion-Server Upload",
+    desc: "The selected JPG image is processed in your browser using Canvas and Blob APIs rather than uploaded to a conversion server.",
     accent: "from-blue-500/10 to-cyan-500/10 text-blue-600 dark:text-blue-400",
   },
   {
     icon: WifiOff,
     title: "Local Image Processing",
-    desc: "Because the processing scripts cache in your browser runtime, you can keep converting images even if your connection drops.",
+    desc: "The conversion workflow uses your browser Canvas API. An active internet connection may still be needed to load the website and its resources.",
     accent: "from-violet-500/10 to-purple-500/10 text-violet-600 dark:text-violet-400",
   },
   {
@@ -207,8 +207,8 @@ const RELATED_TOOLS = [
     href: "/jpg-to-webp",
   },
   {
-    name: "HEIC to JPG Converter",
-    desc: "Convert Apple iPhone HEIC/HEIF camera photos into universally compatible JPGs.",
+    name: "HEIC to JPG Guide",
+    desc: "Learn about HEIC compatibility and ways to create JPG copies on supported devices.",
     href: "/heic-to-jpg",
   },
   {
@@ -416,7 +416,7 @@ export default function JpgToPngPage() {
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 4
               </span>
-              <h3 className="mt-3 text-sm font-semibold">Instant Download</h3>
+              <h3 className="mt-3 text-sm font-semibold">Download PNG Files</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
                 Save individual PNG files directly to your device or click Download All to retrieve a tidy ZIP archive.
               </p>
