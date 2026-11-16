@@ -71,7 +71,7 @@ const CONVERTER_TOOLS = [
         badge: "PNG Output",
         from: "JPG",
         to: "PNG",
-        desc: "Convert standard JPG photographs into uncompressed PNG graphics for editing and overlays.",
+        desc: "Convert JPG images to PNG when you need a PNG file for graphics workflows. Converting to PNG does not restore detail lost in the original JPG.",
       },
       {
         name: "JPG to WebP Converter",
@@ -87,7 +87,7 @@ const CONVERTER_TOOLS = [
         badge: "Alpha Channel",
         from: "PNG",
         to: "WEBP",
-        desc: "Retain crisp transparent edges while drastically reducing file payload for responsive websites.",
+        desc: "Convert PNG images to WebP. Transparency support and resulting file size depend on browser encoding support and the source image.",
       },
     ],
   },
@@ -125,7 +125,7 @@ const CONVERTER_TOOLS = [
         badge: "Design Ready",
         from: "WEBP",
         to: "PNG",
-        desc: "Convert WebP graphics into editable lossless PNG format preserving 24-bit color fidelity.",
+        desc: "Convert WebP images to PNG for workflows that require PNG files. The output is a raster image, not an editable design file.",
       },
     ],
   },
@@ -273,7 +273,7 @@ const REAL_WORLD_USE_CASES = [
     title: "Cross-Platform Asset Distribution & Printing",
     scenario: "Sharing iPhone HEIC photos with Windows, Android, and print labs",
     solution:
-      "Apple's default HEIC container fails to open natively on older Windows builds and consumer photo kiosks. Batch converting to JPG restores instant plug-and-play viewing.",
+      "HEIC compatibility varies across operating systems, apps, and upload forms. Check the destination requirements and use a compatible converter when a JPG copy is needed.",
   },
 ];
 
@@ -308,7 +308,7 @@ const HOMEPAGE_FAQS = [
   },
   {
     q: "Why should I convert HEIC photos to JPG?",
-    a: "HEIC is Apple's proprietary capture format for iPhones. While it saves disk space on iOS, many Windows applications, web forms, and desktop photo editors cannot open HEIC files. Converting them to JPG makes them universally accessible anywhere.",
+    a: "HEIC is commonly used by Apple devices. Compatibility varies by operating system and application; converting a supported HEIC file to JPG can make it easier to share with services that require JPG.",
   },
 ];
 
@@ -322,7 +322,7 @@ export default function HomePage() {
         url: `${SITE_URL}/`,
         name: "ConvertImageNow",
         description:
-          "Free online image converter providing private, browser-based batch conversion across JPG, PNG, WebP, AVIF, and HEIC formats.",
+          "Free online image converter for browser-based batch conversion of supported JPG, PNG, WebP, and AVIF images.",
         inLanguage: "en-US",
       },
       {
@@ -791,47 +791,37 @@ export default function HomePage() {
 
             <div className="mt-8 space-y-5 text-sm leading-relaxed text-slate-600 dark:text-slate-300 sm:text-base">
               <p>
-                Traditional web converters require you to transmit photos over
-                HTTP to an unfamiliar cloud server. That server decodes your image,
-                writes it to temporary disk storage, and makes it vulnerable to
-                logging, data interception, or third-party scraping.
+                Some online converters send images to a remote service for processing. ConvertImageNow uses browser-based conversion for supported formats, so the image data is handled locally by the browser rather than uploaded to a conversion server.
               </p>
 
               <p>
                 <strong>ConvertImageNow works fundamentally differently.</strong>{" "}
-                We utilize the standard HTML5 Canvas 2D Context API and browser
-                WebAssembly image codecs. When you select an image, your browser
-                reads the local binary buffer directly via JavaScript{" "}
-                <code className="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">
-                  FileReader
-                </code>
-                , mounts it in client memory, and rasterizes it into the target
-                format without making an external network dispatch.
+                The converter uses the browser’s image decoding and Canvas capabilities to create the selected output format. The conversion workflow does not upload the selected image to a conversion server.
               </p>
 
               <div className="grid gap-4 pt-4 sm:grid-cols-3">
                 <div className="rounded-xl border border-slate-200/70 p-4 dark:border-slate-800">
                   <p className="font-mono text-xl font-bold text-brand-primary">
-                    0 Bytes
+                    Local
                   </p>
                   <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                    Uploaded to remote cloud servers
+                    Image conversion runs in your browser
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200/70 p-4 dark:border-slate-800">
                   <p className="font-mono text-xl font-bold text-brand-primary">
-                    100% Local
+                    Canvas API
                   </p>
                   <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                    Processing executes on local CPU/GPU
+                    Uses browser image processing capabilities
                   </p>
                 </div>
                 <div className="rounded-xl border border-slate-200/70 p-4 dark:border-slate-800">
                   <p className="font-mono text-xl font-bold text-brand-primary">
-                    Zero Logs
+                    Your Device
                   </p>
                   <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                    No database retention or user tracking
+                    Keep your original files under your control
                   </p>
                 </div>
               </div>
