@@ -343,8 +343,8 @@ export default function HomePage() {
           "Zero file uploads to external servers",
           "Batch conversion with ZIP export",
           "Adjustable quality for supported lossy output formats",
-          "No watermarks or file size restrictions",
-          "Support for JPG, PNG, WebP, AVIF, and HEIC",
+          "No added watermark on converted downloads",
+          "JPG, PNG, WebP, and supported AVIF input formats",
         ],
       },
       {
