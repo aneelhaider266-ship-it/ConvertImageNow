@@ -193,9 +193,7 @@ export default function PngToJpgPage() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 sm:text-xl">
-          Convert PNG images to JPG (JPEG) in your browser — no conversion-server upload, no signup,
-          Select PNG images below, choose JPG output, and convert them in your browser.
-          your browser.
+          Convert PNG images to JPG (JPEG) in your browser. Select multiple PNG files, adjust JPG output quality, and download the converted files individually or as a ZIP archive.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-slate-600 dark:text-slate-400">
@@ -208,6 +206,7 @@ export default function PngToJpgPage() {
           </span>
           <span className="hidden h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700 sm:block" />
           <span className="flex items-center gap-1.5">
+            <ShieldCheck className="h-4 w-4 text-emerald-500" /> No Added Watermark
           </span>
         </div>
       </section>
