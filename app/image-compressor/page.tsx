@@ -9,7 +9,6 @@ import {
   Cpu,
   Sparkles,
   ChevronRight,
-  TrendingDown,
   Monitor,
   Smartphone,
   Gauge,
@@ -147,7 +146,7 @@ const FAQ_SCHEMA = {
 const STATS_CARDS = [
   {
     format: "JPEG / JPG",
-    typicalSavings: "Varies by image",
+    typicalSavings: "Output varies",
     technique: "Lossy browser encoding",
     bestFor: "Photographs and general-purpose image sharing",
   },
