@@ -1115,7 +1115,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "### Matching format to purpose",
 
-    "Grab **JPG** for photographs and marketplace listings since it compresses well and every platform accepts it. Reach for **PNG** when you need a transparent background, like a logo or icon overlaid on other content. Choose **WebP** for websites, since [the format delivers smaller files than JPG at similar quality](/blog/jpg-vs-webp), which speeds up page loads. Consider **AVIF** when file size matters most and your audience uses modern browsers, since [this newer compression format](/blog/avif-vs-webp) often beats WebP.",
+    "Grab **JPG** for photographs and marketplace listings since it compresses well and every platform accepts it. Reach for **PNG** when you need a transparent background, like a logo or icon overlaid on other content. Choose **WebP** for websites, since [the format delivers smaller files than JPG at similar quality](/blog/jpg-vs-webp), which speeds up page loads. Consider **AVIF** when file size matters most and your audience uses modern browsers, since [this newer compression format](/blog/what-is-avif) often beats WebP.",
 
     "> Pick the format for where the image lives, not the format you're used to.",
 
