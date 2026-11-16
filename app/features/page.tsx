@@ -3,7 +3,7 @@ import {
   Zap,
   Lock,
   Globe2,
-  InfinityIcon,
+  CheckCircle2,
   UserX,
   Layers,
   Smartphone,
@@ -13,16 +13,16 @@ const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/features`;
 
 export const metadata: Metadata = {
-  title: "ConvertImageNow Features | Fast & Private Image Tools",
+  title: "ConvertImageNow Features | Browser-Based Tools",
   description:
-    "Explore ConvertImageNow features: 100% private in-browser image conversion, zero server uploads, unlimited batch processing, and no hidden subscriptions.",
+    "Explore browser-based image conversion, adjustable output quality, batch downloads, and supported formats.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
     title: "ConvertImageNow Features | Fast & Private Image Tools",
     description:
-      "Discover the speed, privacy, and simplicity behind our client-side image conversion engine.",
+      "Discover how supported image files are processed in your browser and how the available tools work.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "ConvertImageNow Features | Fast & Private Image Tools",
     description:
-      "100% client-side conversion, unlimited batches, and zero file uploads.",
+      "Browser-based processing, batch downloads, and no account requirement.",
   },
 };
 
@@ -39,22 +39,22 @@ const FEATURES = [
   {
     icon: Zap,
     title: "Fast Processing",
-    desc: "Conversions run on your own device, so there's no upload wait or server queue slowing you down.",
+    desc: "Selected image files are processed in your browser rather than sent to a conversion server. Processing time depends on your device and image size.",
   },
   {
     icon: Lock,
     title: "Privacy First",
-    desc: "Your images are never transmitted anywhere. What happens in your browser stays in your browser.",
+    desc: "Selected image files are processed locally for supported conversions. The website still makes normal requests and may collect limited technical data as described in the Privacy Policy.",
   },
   {
     icon: Globe2,
     title: "Browser Based",
-    desc: "No software to install — ConvertImageNow works entirely inside modern web browsers using the Canvas API.",
+    desc: "No separate desktop software is required. Supported conversions use browser image decoding and Canvas APIs.",
   },
   {
-    icon: InfinityIcon,
-    title: "Unlimited Usage",
-    desc: "Convert one image or one thousand — there's no cap on how much you can use the tool.",
+    icon: CheckCircle2,
+    title: "Free to Use",
+    desc: "Use the listed tools without creating an account. Practical batch capacity depends on your device and browser memory.",
   },
   {
     icon: UserX,
@@ -64,12 +64,12 @@ const FEATURES = [
   {
     icon: Layers,
     title: "Batch Processing",
-    desc: "Select or drag in multiple files at once and convert them all together.",
+    desc: "Select multiple supported files. The converter processes queued images sequentially and offers individual downloads or ZIP export.",
   },
   {
     icon: Smartphone,
     title: "Cross Platform",
-    desc: "Works on desktop, tablet, and mobile browsers alike, with a fully responsive interface.",
+    desc: "The interface is responsive across desktop and mobile screen sizes. Available formats depend on browser support.",
   },
 ];
 
@@ -116,7 +116,7 @@ export default function FeaturesPage() {
         {FEATURES.map((f) => (
           <div
             key={f.title}
-            className="rounded-2xl border border-slate-200 p-6 transition-shadow hover:shadow-md dark:border-slate-800"
+            className="rounded-2xl border border-slate-200 p-6 transition-shadow hover:shadow-md dark:border-[#314969]"
           >
             <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
               <f.icon size={20} />
