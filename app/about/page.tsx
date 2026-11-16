@@ -226,12 +226,12 @@ export default function AboutPage() {
         {/* What's Next */}
         <section>
           <h2 className="text-3xl font-bold tracking-tight">
-            What We&apos;re Building Next
+            Potential Future Improvements
           </h2>
 
           <div className="mt-6 space-y-4">
             <p>
-              ConvertImageNow is actively developed. We&apos;re working on:
+              Possible areas for future improvement include:
             </p>
 
             <ul className="space-y-3 pl-5">
