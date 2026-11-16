@@ -175,19 +175,19 @@ const USE_CASES = [
     icon: Gauge,
     target: "Web & Core Web Vitals",
     recommendation: "Target < 150 KB",
-    desc: "Speed up Largest Contentful Paint (LCP) and cut bandwidth costs by compressing desktop hero images and product thumbnails.",
+    desc: "Reducing the dimensions or file size of oversized hero images and product thumbnails can lower transfer size and may help LCP. Measure page performance after changes.",
   },
   {
     icon: FileCheck,
     target: "Government & Job Portals",
     recommendation: "Target 20 KB – 100 KB",
-    desc: "Meet strict upload size limits for passport photos, signatures, college admissions, and national ID document portals.",
+    desc: "Work toward upload limits for passport photos, signatures, college admissions, and document portals. Check the actual output size against the portal requirement.",
   },
   {
     icon: Sparkles,
     target: "Email Attachments & Newsletters",
     recommendation: "Target < 500 KB",
-    desc: "Prevent inbox delivery bounces and slow mobile download times by optimizing newsletter graphics and pitch deck slides.",
+    desc: "Reduce the size of newsletter graphics and presentation slides, then check attachment limits and image quality before sending.",
   },
 ];
 
