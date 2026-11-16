@@ -110,7 +110,7 @@ export default function ToolsPage() {
         <p className="mt-3 text-slate-600 dark:text-slate-300">
           Seven professional image utilities are live today, with more active
           features in development. All tools execute locally on your device with
-          zero file uploads and complete data privacy.
+          selected image files are processed in your browser rather than sent to a conversion server.
         </p>
       </div>
 
@@ -165,14 +165,14 @@ export default function ToolsPage() {
             Every utility on this platform is powered by modern HTML5 Canvas, Web
             Workers, and WebAssembly decoders. Unlike legacy cloud converters that
             force you to wait in server queues, our conversions process
-            instantaneously using your device&apos;s own CPU and GPU memory.
+            using your browser's image decoding and Canvas APIs.
           </p>
           <p>
-            Whether you are batch-converting dozens of camera snapshots into
+            Whether you are converting supported camera images into
             compact WebP files for better Google Core Web Vitals, or flattening
-            transparent PNG graphics into standard JPG images, your photos never
+            transparent PNG graphics into standard JPG images, selected image files are processed in the browser rather than sent to a conversion server. The tool supports
             leave your browser. No registration is required, no subscriptions
-            exist, and no watermarks are ever stamped on your downloads.
+            and exports can be downloaded individually or as a ZIP archive.
           </p>
           <p>
             Have a feature request or need a specialized conversion preset? Feel
