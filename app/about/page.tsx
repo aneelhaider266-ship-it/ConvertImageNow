@@ -203,7 +203,7 @@ export default function AboutPage() {
         </section>
 
         {/* How We Work */}
-        <section className="rounded-3xl border border-slate-200 p-8 dark:border-slate-800">
+        <section className="rounded-3xl border border-slate-200 p-8 dark:border-[#314969]">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
             <Zap size={24} aria-hidden="true" />
           </div>
@@ -260,7 +260,7 @@ export default function AboutPage() {
         </section>
 
         {/* Resources */}
-        <section className="rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900">
+        <section className="rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-[#314969] dark:bg-[#172642]">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
             <BookOpen size={24} aria-hidden="true" />
           </div>
@@ -284,7 +284,7 @@ export default function AboutPage() {
 
             <Link
               href="/converter"
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-3 font-medium text-brand-primary hover:bg-white dark:border-slate-700 dark:hover:bg-slate-950"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-3 font-medium text-brand-primary hover:bg-white dark:border-[#314969] dark:hover:bg-slate-950"
             >
               Start Converting
               <ArrowRight size={16} aria-hidden="true" />
