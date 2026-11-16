@@ -31,7 +31,7 @@ export const metadata: Metadata = {
 const LIVE_TOOLS = [
   {
     title: "Image Converter",
-    desc: "Convert between JPG, PNG, WebP, and AVIF",
+    desc: "Convert JPG, PNG, WebP, and supported AVIF inputs to JPG, PNG, or WebP",
     href: "/converter",
   },
   {
