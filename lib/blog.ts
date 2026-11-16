@@ -619,12 +619,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## Comparison Table",
 
-      "| Format | Compression | Transparency | Typical use | Compatibility notes |
-|---|---|---|---|---|
-| JPG | Lossy | No | Photographs and broad sharing | Very broad support |
-| PNG | Lossless | Yes | Logos, screenshots, and sharp graphics | Very broad support |
-| WebP | Lossy or lossless | Yes | Web images and animation | Supported by most current browsers |
-| AVIF | Lossy or lossless | Yes | Modern web images where supported | Check older browsers, apps, and editing tools |",
+      "| Format | Compression | Transparency | Typical use | Compatibility notes |\\n|---|---|---|---|---|\\n| JPG | Lossy | No | Photographs and broad sharing | Very broad support |\\n| PNG | Lossless | Yes | Logos, screenshots, and sharp graphics | Very broad support |\\n| WebP | Lossy or lossless | Yes | Web images and animation | Supported by most current browsers |\\n| AVIF | Lossy or lossless | Yes | Modern web images where supported | Check older browsers, apps, and editing tools |",
 
       "## Choosing a Format",
 
