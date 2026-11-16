@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     template: '%s | ConvertImageNow',
   },
   description:
-    'Convert JPG, PNG, WebP, and AVIF images instantly in your browser. 100% private, free batch processing, no file uploads to servers.',
+    'Convert JPG, PNG, WebP, and AVIF images instantly in your browser. Browser-based image conversion for JPG, PNG, WebP, and AVIF, with batch processing and no conversion-server upload.',
   alternates: {
     canonical: './',
   },
@@ -32,7 +32,7 @@ export default function RootLayout({
         <main className="flex-grow">
           {children}
         </main>
-        <Footer /> {/* 👉 YEH FOOTER ADD HO JAYEGA */}
+        <Footer />
       </body>
     </html>
   );
