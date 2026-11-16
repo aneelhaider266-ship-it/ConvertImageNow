@@ -19,13 +19,13 @@ export default function Header() {
 
 
   return (
-    <header className="sticky top-0 z-50 h-16 shrink-0 border-b border-slate-200 bg-[#101B33]/95 backdrop-blur border-[#263956] dark:border-[#263956] dark:bg-[#101B33]/95">
-      <div className="container-page flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 h-14 shrink-0 border-b border-[#263956] bg-[#101B33]/95 backdrop-blur sm:h-16">
+      <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-2 px-3 sm:h-16 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link
           href="/"
           aria-label="ConvertImageNow home"
-          className="flex h-10 items-center gap-2 font-semibold"
+          className="flex min-w-0 shrink items-center gap-1.5 font-semibold sm:gap-2"
         >
           <span
             aria-hidden="true"
@@ -34,7 +34,7 @@ export default function Header() {
             <ImageIcon size={18} />
           </span>
 
-          <span className="whitespace-nowrap text-lg tracking-tight">
+          <span className="whitespace-nowrap text-[14px] tracking-tight sm:text-lg">
             Convert<span className="text-brand-primary">ImageNow</span>
           </span>
         </Link>
@@ -56,12 +56,12 @@ export default function Header() {
         </nav>
 
         {/* Actions */}
-        <div className="flex h-16 items-center gap-2">
+        <div className="flex h-14 shrink-0 items-center gap-1 sm:h-16 sm:gap-2">
           <Link
             href="/converter"
-            className="inline-flex h-9 items-center rounded-full bg-[#398BFF] px-3 text-xs font-semibold text-white transition-transform hover:-translate-y-0.5 sm:h-10 sm:px-4 sm:text-sm"
+            className="inline-flex h-9 shrink-0 items-center whitespace-nowrap rounded-full bg-[#398BFF] px-2.5 text-[11px] font-semibold text-white transition-transform hover:-translate-y-0.5 sm:h-10 sm:px-4 sm:text-sm"
           >
-            Start Converting
+            <span className="sm:hidden">Convert</span><span className="hidden sm:inline">Start Converting</span>
           </Link>
 
           {/* Mobile menu button */}
@@ -70,7 +70,7 @@ export default function Header() {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 lg:hidden"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 lg:hidden"
             onClick={() => setMenuOpen((open) => !open)}
           >
             {menuOpen ? (
