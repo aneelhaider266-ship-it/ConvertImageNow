@@ -23,14 +23,14 @@ const PAGE_URL = `${SITE_URL}/jpg-to-png`;
 export const metadata: Metadata = {
   title: "Convert JPG to PNG Online Free – Instant Browser Tool",
   description:
-    "Convert JPG to PNG online for free without uploading files to servers. Fast, lossless JPEG to PNG conversion right in your browser with batch processing.",
+    "Convert JPG to PNG online in your browser. Create PNG files from JPG images with batch processing and ZIP downloads.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
     title: "Convert JPG to PNG Online Free – Private & Browser-Based",
     description:
-      "Transform JPG images into lossless PNG files directly in your browser. No file uploads, zero wait times, no watermarks, and complete privacy.",
+      "Convert JPG images to PNG in your browser. PNG uses lossless encoding, but converting a JPG cannot restore detail already lost during JPEG compression.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "JPG to PNG Converter – Free, Fast & Private",
     description:
-      "Convert JPG images to PNG locally in your browser. Batch conversion, no server uploads, and no quality compromise.",
+      "Convert JPG images to PNG locally in your browser with batch conversion and ZIP downloads.",
   },
 };
 
@@ -93,7 +93,7 @@ const SOFTWARE_SCHEMA = {
     "Zero server uploads for maximum privacy",
     "Batch JPG to PNG processing",
     "No watermark and no file size quotas",
-    "Offline conversion capability after initial page load",
+    
     "Instant ZIP archive download for multi-file conversions",
   ],
 };
@@ -117,11 +117,11 @@ const FAQS = [
   },
   {
     q: "Are my photos uploaded to your server during conversion?",
-    a: "No. ConvertImageNow executes the entire conversion locally on your device using the browser's native HTML5 Canvas and Blob APIs. Your image files never leave your computer or phone, are never uploaded across the internet, and are never saved to an external database.",
+    a: "The selected image data is processed locally in your browser using the Canvas and Blob APIs rather than uploaded to a conversion server. See the privacy policy for details about general website data.",
   },
   {
     q: "Can I convert multiple JPG files to PNG at the same time?",
-    a: "Yes. You can select or drag dozens of JPG files simultaneously. ConvertImageNow processes the queue in parallel within your browser memory and provides a one-click ZIP download option to retrieve all your converted PNG images instantly.",
+    a: "Yes. Add multiple JPG files to the queue, convert them in your browser, and download the results individually or together as a ZIP archive.",
   },
   {
     q: "What is the difference between JPG and JPEG?",
@@ -145,7 +145,7 @@ const FAQ_SCHEMA = {
 const FEATURE_CARDS = [
   {
     icon: ShieldCheck,
-    title: "100% Client-Side Privacy",
+    title: "Browser-Based Processing",
     desc: "Files are rendered locally in your browser through HTML5 Canvas. No bytes are transmitted to any remote cloud or external storage.",
     accent: "from-emerald-500/10 to-teal-500/10 text-emerald-600 dark:text-emerald-400",
   },
@@ -157,7 +157,7 @@ const FEATURE_CARDS = [
   },
   {
     icon: WifiOff,
-    title: "Offline-Ready Architecture",
+    title: "Local Image Processing",
     desc: "Because the processing scripts cache in your browser runtime, you can keep converting images even if your connection drops.",
     accent: "from-violet-500/10 to-purple-500/10 text-violet-600 dark:text-violet-400",
   },
@@ -210,7 +210,7 @@ const RELATED_TOOLS = [
   },
   {
     name: "JPG to WebP Converter",
-    desc: "Shrink JPG file sizes by an extra 25-35% using next-gen WebP compression.",
+    desc: "Convert JPG images to WebP; file size and visual quality depend on the source and selected quality setting.",
     href: "/jpg-to-webp",
   },
   {
@@ -225,7 +225,7 @@ const RELATED_TOOLS = [
   },
   {
     name: "Free Image Compressor",
-    desc: "Reduce image file sizes instantly without perceptible loss in visual clarity.",
+    desc: "Adjust output quality and compare the resulting file size and appearance.",
     href: "/image-compressor",
   },
   {
@@ -292,7 +292,7 @@ export default function JpgToPngPage() {
         <header className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/80 px-3.5 py-1 text-xs font-medium tracking-wide text-indigo-700 shadow-sm backdrop-blur dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
             <Sparkles className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
-            <span>100% Client-Side Processing • Zero Uploads</span>
+            <span>Browser-Based Processing • No Conversion-Server Upload</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
@@ -340,12 +340,12 @@ export default function JpgToPngPage() {
               id="features-heading"
               className="text-2xl font-bold tracking-tight sm:text-3xl"
             >
-              Engineered for Speed, Privacy, and Precision
+              Browser-Based Image Conversion
             </h2>
             <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
               Most online converters upload your files to remote web servers.
               ConvertImageNow relies on modern client-side browser technology to
-              deliver superior privacy and instantaneous conversions.
+              processes supported images locally in your browser.
             </p>
           </div>
 
@@ -416,7 +416,7 @@ export default function JpgToPngPage() {
               </span>
               <h3 className="mt-3 text-sm font-semibold">Execute Conversion</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                Click Convert. The browser hardware draws and decodes the pixels into raw PNG binary streams instantaneously.
+                Click Convert. Your browser decodes the image and exports a PNG file using the Canvas API.
               </p>
             </div>
 
@@ -463,7 +463,7 @@ export default function JpgToPngPage() {
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600 dark:text-indigo-400" />
                   <span>
-                    <strong>Halt Generational Quality Loss:</strong> Re-saving a JPG compresses it again, creating &quot;mosquito noise&quot; and pixelation. PNG uses lossless DEFLATE encoding, safeguarding crisp lines forever.
+                    <strong>Understand format conversion:</strong> PNG encoding is lossless, but converting an already-compressed JPG to PNG does not recover detail lost in the original JPG.
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
