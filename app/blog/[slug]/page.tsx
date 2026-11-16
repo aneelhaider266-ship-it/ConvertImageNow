@@ -1,6 +1,7 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { BLOG_POSTS } from '@/lib/blog';
+import BlogContent from '@/components/BlogContent';
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -105,34 +106,30 @@ export default async function BlogPostPage({ params }: PageProps) {
   };
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#101B33] text-slate-100">
       {/* Article Schema JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
-      <article className="max-w-3xl mx-auto px-4 sm:px-6 py-12">
-        <header className="mb-8">
-          <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+      <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+        <header className="mb-10 border-b border-[#314969] pb-8">
+          <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             {post.title}
           </h1>
-          <div className="flex items-center text-sm text-slate-500 space-x-2">
-            <span>Published on {post.date}</span>
+          <div className="flex flex-wrap items-center gap-2 text-sm text-slate-400">
+            <time dateTime={post.date}>Published on {post.date}</time>
             {post.updatedDate && post.updatedDate !== post.date && (
               <>
                 <span>•</span>
-                <span>Updated on {post.updatedDate}</span>
+                <time dateTime={post.updatedDate}>Updated on {post.updatedDate}</time>
               </>
             )}
           </div>
         </header>
 
-        <div className="prose prose-slate max-w-none text-slate-700 leading-relaxed space-y-4">
-          {post.content.map((paragraph, index) => (
-            <p key={index}>{paragraph}</p>
-          ))}
-        </div>
+        <BlogContent content={post.content} />
       </article>
     </main>
   );
