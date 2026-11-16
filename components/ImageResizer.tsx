@@ -389,6 +389,7 @@ export default function ImageResizer() {
           <div className="inline-flex h-9 rounded-lg border border-slate-200 p-1 dark:border-[#314969]">
             <button
               type="button"
+              disabled={isResizing}
               onClick={() => setMode("pixels")}
               className={`h-7 rounded-md px-4 text-sm font-medium transition-colors ${
                 mode === "pixels"
@@ -400,6 +401,7 @@ export default function ImageResizer() {
             </button>
             <button
               type="button"
+              disabled={isResizing}
               onClick={() => setMode("percent")}
               className={`h-7 rounded-md px-4 text-sm font-medium transition-colors ${
                 mode === "percent"
@@ -414,6 +416,7 @@ export default function ImageResizer() {
           {mode === "pixels" && (
             <button
               type="button"
+              disabled={isResizing}
               onClick={() => setLockAspect((prev) => !prev)}
               className="ml-auto inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 px-3 text-sm font-medium text-slate-600 dark:border-[#314969] dark:text-slate-300"
             >
@@ -430,6 +433,7 @@ export default function ImageResizer() {
               <input
                 type="number"
                 min={1}
+                disabled={isResizing}
                 value={widthPx}
                 onChange={(event) =>
                   handleWidthChange(
@@ -451,7 +455,7 @@ export default function ImageResizer() {
                     event.target.value === "" ? "" : Number(event.target.value)
                   )
                 }
-                disabled={lockAspect}
+                disabled={lockAspect || isResizing}
                 className="h-10 w-32 rounded-lg border border-slate-200 px-3 text-sm font-normal disabled:opacity-50 dark:border-[#314969] dark:bg-[#172642]"
               />
             </label>
@@ -466,6 +470,7 @@ export default function ImageResizer() {
             <input
               type="range"
               min={1}
+              disabled={isResizing}
               max={200}
               value={percentage}
               onChange={(event) => setPercentage(Number(event.target.value))}
@@ -506,6 +511,7 @@ export default function ImageResizer() {
           <button
             type="button"
             onClick={clearAll}
+            disabled={isResizing}
             className="ml-auto inline-flex min-h-10 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-red-500"
           >
             <Trash2 size={16} aria-hidden="true" />
@@ -599,6 +605,7 @@ export default function ImageResizer() {
                 <button
                   type="button"
                   onClick={() => removeItem(item.id)}
+                  disabled={isResizing}
                   aria-label={`Remove ${item.file.name}`}
                   className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 dark:hover:bg-[#263956]"
                 >
