@@ -54,7 +54,7 @@ const COLUMNS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-200 bg-slate-50 dark:border-slate-800 dark:bg-slate-950">
+    <footer className="border-t border-[#263956] bg-[#101B33] text-slate-100">
       <div className="container-page mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
           {/* Brand Col */}
@@ -70,17 +70,7 @@ export default function Footer() {
             <p className="mt-3 max-w-xs text-xs text-slate-500 dark:text-slate-400">
               Convert images instantly, right in your browser. Fast, free, and always private.
             </p>
-            <address className="mt-4 max-w-xs text-xs text-slate-400 not-italic">
-              6103 Third St, Apt 842<br />
-              Philadelphia, CA 63823<br />
-              <a
-                href="tel:+14585311441"
-                className="mt-1 block text-brand-primary hover:underline"
-              >
-                +1 (458) 531-1441
-              </a>
-            </address>
-          </div>
+    </div>
 
           {/* Links Cols */}
           {COLUMNS.map((col) => (
@@ -104,7 +94,7 @@ export default function Footer() {
           ))}
         </div>
 
-        <div className="mt-12 border-t border-slate-200 pt-6 text-center text-xs text-slate-400 dark:border-slate-800">
+        <div className="mt-12 border-t border-[#263956] pt-6 text-center text-xs text-slate-400">
           <p>© {new Date().getFullYear()} ConvertImageNow. All rights reserved. 100% In-Browser Local Processing.</p>
         </div>
       </div>
