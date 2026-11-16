@@ -909,7 +909,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "Check your priorities against this quick list before you commit to one format site-wide:",
 
-    "- **Product photos and hero images**: use WebP for smaller files without visible quality loss.\n- **Screenshots with sharp text or lines**: WebP still compresses cleaner than JPG here.\n- **Print-ready exports or files headed to older editing software**: stick with JPG for compatibility.\n- **Email newsletters**: JPG remains the safer choice since some clients render WebP inconsistently.\n- **Large batches of e-commerce images**: WebP saves storage and bandwidth at scale.",
+    "- **Product photos and hero images**: consider WebP and compare the output; file size and visual quality depend on the image and settings.\n- **Screenshots with sharp text or lines**: PNG may be preferable when exact sharp edges or transparency matter; compare WebP if file size is a priority.\n- **Print-ready exports or files headed to older editing software**: stick with JPG for compatibility.\n- **Email newsletters**: JPG remains the safer choice since some clients render WebP inconsistently.\n- **Large batches of e-commerce images**: WebP saves storage and bandwidth at scale.",
 
     "### Test before you commit site-wide",
 
@@ -989,7 +989,7 @@ export const BLOG_POSTS: BlogPost[] = [
     "The converted JPG files are available to download individually or together as a ZIP archive after processing finishes.",
     "Every file keeps its original name, just with a new .jpg extension, so you won't lose track of what's what. If you're not happy with the result, nothing stops you from sliding the quality back up and running the png to jpg converter again. The converter creates output files for download and does not overwrite the selected source files.",
     "## Other ways to convert PNG to JPG on Windows and Mac",
-    "Sometimes you'd rather skip the browser entirely, and both major operating systems already include basic tools for this. On Windows, the built-in Photos app or Paint lets you open a PNG and use \"Save As\" to pick JPG, though you won't get a quality slider or batch support without digging into settings most people never touch.",
+    "Sometimes you'd rather skip the browser entirely, and both major operating systems already include basic tools for this. On Windows, the built-in Photos app or Paint lets you open a PNG and use \"Save As\" to pick JPG, with export options that vary by app and operating-system version.",
     "Apple users have a similar option through Preview, where File > Export lets you choose JPEG and adjust a basic quality slider one image at a time.",
     "Built-in tools work fine for one photo, but they turn tedious fast once you've got a folder full of PNGs.",
     "The catch with both native apps is speed at scale. Converting 50 images one at a time in Preview or Paint eats your afternoon, and neither app was built for batch work. That's the gap a browser-based PNG to JPG converter fills, especially when you're also trying to avoid installing extra software just for one task.",
@@ -1029,7 +1029,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "> The best image converter is one that never sees your files in the first place.",
 
-    "Cost is the third factor. Plenty of image file type converter sites cap you at a handful of free conversions before demanding a subscription, or they slap a watermark on your output. That's a dealbreaker if you're batch-processing fifty product photos for an online store. A genuinely free tool has no login wall, no daily limit, and no fine print.",
+    "Cost is another consideration. ConvertImageNow offers its listed browser-based conversion tools without requiring an account or adding a watermark. Review the available controls and privacy policy before using any online service.",
 
     "Here's how the two approaches stack up:",
 
