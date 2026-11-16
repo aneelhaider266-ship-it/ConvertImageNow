@@ -81,51 +81,19 @@ const CONVERTER_TOOLS = [
         to: "WEBP",
         desc: "Convert JPG images to WebP. Resulting file size and visual quality depend on the source image and chosen settings.",
       },
-      {
-        name: "PNG to WebP Converter",
-        slug: "/png-to-webp",
-        badge: "Alpha Channel",
-        from: "PNG",
-        to: "WEBP",
-        desc: "Convert PNG images to WebP. Transparency support and resulting file size depend on browser encoding support and the source image.",
-      },
     ],
   },
   {
-    category: "Next-Gen & Mobile Formats",
-    description: "Format bridges for Apple iOS snapshots and bleeding-edge codecs",
+    category: "Modern Image Formats",
+    description: "Convert supported modern image formats for broader compatibility",
     tools: [
-      {
-        name: "HEIC to JPG Converter",
-        slug: "/heic-to-jpg",
-        badge: "iPhone Default",
-        from: "HEIC",
-        to: "JPG",
-        desc: "Transform Apple High-Efficiency photos into universally compatible JPGs for Windows and web.",
-      },
       {
         name: "AVIF to JPG Converter",
         slug: "/avif-to-jpg",
         badge: "Compatibility",
         from: "AVIF",
         to: "JPG",
-        desc: "Turn modern AV1-encoded AVIF files into legacy JPG format for older editors and platforms.",
-      },
-      {
-        name: "WebP to JPG Converter",
-        slug: "/webp-to-jpg",
-        badge: "Universal Export",
-        from: "WEBP",
-        to: "JPG",
-        desc: "Export downloaded WebP website graphics into standard JPG images for desktop software.",
-      },
-      {
-        name: "WebP to PNG Converter",
-        slug: "/webp-to-png",
-        badge: "Design Ready",
-        from: "WEBP",
-        to: "PNG",
-        desc: "Convert WebP images to PNG for workflows that require PNG files. The output is a raster image, not an editable design file.",
+        desc: "Convert supported AVIF images to JPG. Browser format support can vary by device and browser.",
       },
     ],
   },
@@ -259,7 +227,7 @@ const REAL_WORLD_USE_CASES = [
   },
   {
     title: "Overcoming Strict Marketplace & CMS Upload Limits",
-    scenario: "E-commerce portals rejecting raw HEIC snapshots or heavy PNG product renders",
+    scenario: "E-commerce portals rejecting oversized product images",
     solution:
       "Image upload requirements vary by marketplace and listing type. Check the current platform requirements before converting an image for upload.",
   },
@@ -271,9 +239,9 @@ const REAL_WORLD_USE_CASES = [
   },
   {
     title: "Cross-Platform Asset Distribution & Printing",
-    scenario: "Sharing iPhone HEIC photos with Windows, Android, and print labs",
+    scenario: "Sharing image files across devices and applications",
     solution:
-      "HEIC compatibility varies across operating systems, apps, and upload forms. Check the destination requirements and use a compatible converter when a JPG copy is needed.",
+      "Image compatibility varies across operating systems, apps, and upload forms. Check the destination requirements and choose a supported format when a JPG copy is needed.",
   },
 ];
 
@@ -305,10 +273,6 @@ const HOMEPAGE_FAQS = [
   {
     q: "Do you place watermarks on converted images?",
     a: "The converter does not add a ConvertImageNow watermark to converted downloads. Format conversion can change image encoding and may not preserve all original metadata.",
-  },
-  {
-    q: "Why should I convert HEIC photos to JPG?",
-    a: "HEIC is commonly used by Apple devices. Compatibility varies by operating system and application; converting a supported HEIC file to JPG can make it easier to share with services that require JPG.",
   },
 ];
 
@@ -381,36 +345,30 @@ export default function HomePage() {
           {
             "@type": "ListItem",
             position: 5,
-            name: "HEIC to JPG Converter",
-            url: `${SITE_URL}/heic-to-jpg`,
-          },
-          {
-            "@type": "ListItem",
-            position: 6,
             name: "AVIF to JPG Converter",
             url: `${SITE_URL}/avif-to-jpg`,
           },
           {
             "@type": "ListItem",
-            position: 7,
+            position: 6,
             name: "WebP to JPG Converter",
             url: `${SITE_URL}/webp-to-jpg`,
           },
           {
             "@type": "ListItem",
-            position: 8,
+            position: 7,
             name: "WebP to PNG Converter",
             url: `${SITE_URL}/webp-to-png`,
           },
           {
             "@type": "ListItem",
-            position: 9,
+            position: 8,
             name: "Online Image Compressor",
             url: `${SITE_URL}/image-compressor`,
           },
           {
             "@type": "ListItem",
-            position: 10,
+            position: 9,
             name: "Online Image Resizer",
             url: `${SITE_URL}/image-resizer`,
           },
