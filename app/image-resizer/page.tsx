@@ -45,9 +45,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online Image Resizer – Batch Resize Without Quality Loss",
+    title: "Free Online Image Resizer – Change Image Dimensions",
     description:
-      "Quickly adjust image width, height, or scale percentage. Client-side browser processing with zero upload lag.",
+      "Change image width, height, or scale percentage in your browser. Resizing can affect sharpness, especially when enlarging small images.",
   },
 };
 
@@ -89,13 +89,6 @@ const SOFTWARE_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "139",
-    bestRating: "5",
-    worstRating: "1",
-  },
   featureList: [
     "Exact pixel (width x height) dimension customization",
     "Proportional percentage scaling with aspect ratio lock",
@@ -103,7 +96,7 @@ const SOFTWARE_SCHEMA = {
     "Batch image resizing with one-click ZIP packaging",
     "Format preservation for JPG, PNG, WebP, and AVIF",
 
-    "No file size caps, watermarks, or user registration",
+    "Batch resizing with ZIP downloads; practical capacity depends on your device and browser memory",
   ],
 };
 
@@ -122,11 +115,11 @@ const FAQS = [
   },
   {
     q: "Are my photos uploaded to a remote server when I resize them?",
-    a: "No. ConvertImageNow operates entirely client-side. The HTML5 Canvas API renders, bicubic resamples, and exports your images in local device memory. Your photos never traverse the internet and cannot be accessed by third parties.",
+    a: "The resizing workflow uses your browser Canvas API to render and export the selected image. Selected image files are processed in the browser rather than uploaded to a ConvertImageNow conversion server. General website requests and analytics are covered by the Privacy Policy.",
   },
   {
     q: "Can I batch resize multiple images at once?",
-    a: "Yes. You can drag and drop multiple JPG, PNG, WebP, or AVIF files into the tool simultaneously. Set your target width, height, or percentage scale, and all photos will be resized in parallel and bundled into a downloadable ZIP archive.",
+    a: "Yes. Add multiple supported JPG, PNG, WebP, or AVIF images, set the target dimensions or percentage, and download the results individually or as a ZIP. Practical batch capacity depends on your device and browser memory.",
   },
   {
     q: "How does the aspect ratio lock work?",
@@ -193,9 +186,9 @@ const SOCIAL_PRESETS = [
 const CORE_DIFFERENTIATORS = [
   {
     icon: ShieldCheck,
-    title: "100% Browser Privacy",
-    desc: "Your photos and corporate graphics are never uploaded to an external cloud or server. Resizing runs entirely in client-side RAM.",
-    badge: "Zero Uploads",
+    title: "Browser-Based Processing",
+    desc: "The resizing workflow uses your browser Canvas API. Selected image files are processed in the browser rather than sent to a conversion server.",
+    badge: "Local Processing",
   },
   {
     icon: Maximize2,
@@ -205,14 +198,14 @@ const CORE_DIFFERENTIATORS = [
   },
   {
     icon: Zap,
-    title: "Zero Server Wait Time",
-    desc: "Process multi-megapixel RAW exports or bulk batches at native device speed with zero network queue delays.",
+    title: "No Conversion Upload Queue",
+    desc: "Resize supported image files in your browser without sending the selected image data to a conversion server.",
     badge: "Browser-Based",
   },
   {
     icon: InfinityIcon,
     title: "Batch Image Resizing",
-    desc: "Resize dozens of files in one session and export as a single compressed ZIP archive with no paywalls or daily caps.",
+    desc: "Add multiple files and export the resized results as a ZIP archive. Practical batch size depends on your device and browser memory.",
     badge: "No Limits",
   },
 ];
