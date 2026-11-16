@@ -1,74 +1,54 @@
 # ConvertImageNow
-## 🌐 Website
 
-ConvertImageNow is a free online image converter that supports PNG, JPG, WebP, and AVIF formats.
+Free browser-based image conversion and resizing tools.
 
-👉 https://www.convertimagenow.com
+**Live site:** https://convertimagenow.com
 
-Free, browser-based image converter — Next.js 15 + TypeScript + Tailwind CSS.
-All image conversion happens client-side via the Canvas API. No files are
-ever uploaded to a server.
+## Supported formats
 
-## Local development
+- **Input:** JPG, PNG, WebP, and AVIF where the browser supports AVIF decoding.
+- **Output:** JPG, PNG, and WebP.
+- **Not currently supported:** HEIC / HEIF.
 
-```bash
-npm install
-npm run dev
-```
+Selected image files are processed in the browser with image decoding and Canvas APIs rather than uploaded to a conversion server. The website still makes normal requests to load pages and resources; see the Privacy Policy for site-data details.
 
-Open http://localhost:3000
+## Stack
 
-## Project structure
-
-- `app/` — pages (App Router)
-- `components/` — Header, Footer, ImageConverter, ContactForm
-- `lib/` — image conversion logic, FAQ + blog content
-
-## Deploying
-
-See the step-by-step deployment guide provided separately for:
-1. Pushing this code to GitHub
-2. Importing the repo into Vercel
-3. Connecting the convertimagenow.com domain
-4. Configuring DNS + HTTPS
-
-## Wiring up the contact form
-
-`app/api/contact/route.ts` currently logs submissions but does not send
-email. To deliver messages to contact@convertimagenow.com, connect an email
-provider such as [Resend](https://resend.com) (see comments in that file)
-and add the resulting API key as an Environment Variable in Vercel.
-
-Free, browser-based image converter — Next.js 15 + TypeScript + Tailwind CSS.
-All image conversion happens client-side via the Canvas API. No files are
-ever uploaded to a server.
+- Next.js 15.5.29 (App Router)
+- React 18
+- TypeScript
+- Tailwind CSS
+- Node.js 22.x
+- Sharp 0.35.5
 
 ## Local development
 
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 
-Open http://localhost:3000
+Open http://localhost:3000.
+
+## Build
+
+```bash
+npm run build
+```
 
 ## Project structure
 
-- `app/` — pages (App Router)
-- `components/` — Header, Footer, ImageConverter, ContactForm
-- `lib/` — image conversion logic, FAQ + blog content
+- `app/` — App Router pages, metadata, sitemap, and robots rules
+- `components/` — shared layout, converter, resizer, and contact components
+- `lib/` — image conversion logic, FAQs, and blog content
+- `public/` — static assets
 
-## Deploying
+## Deployment
 
-See the step-by-step deployment guide provided separately for:
-1. Pushing this code to GitHub
-2. Importing the repo into Vercel
-3. Connecting the convertimagenow.com domain
-4. Configuring DNS + HTTPS
+The project is connected to Vercel. Use Node.js 22.x for builds and keep the GitHub lockfile in sync with `package.json`.
 
-## Wiring up the contact form
+Before promoting a change to production, verify the Vercel deployment and test the main converter on desktop and mobile.
 
-`app/api/contact/route.ts` currently logs submissions but does not send
-email. To deliver messages to contact@convertimagenow.com, connect an email
-provider such as [Resend](https://resend.com) (see comments in that file)
-and add the resulting API key as an Environment Variable in Vercel.
+## Contact form
+
+The current `app/api/contact/route.ts` logs submissions but does not send email. Connect an email provider and configure its API key in Vercel before relying on form delivery.
