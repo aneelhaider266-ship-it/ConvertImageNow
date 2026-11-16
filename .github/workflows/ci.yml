@@ -5,9 +5,10 @@ on:
     branches: [main]
   push:
     branches: [main]
+  workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 concurrency:
   group: ci-${{ github.event.pull_request.number || github.ref }}
@@ -20,6 +21,8 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -32,6 +35,27 @@ jobs:
 
       - name: Apply compatible dependency security fixes
         run: npm audit fix --package-lock-only --audit-level=high
+
+      - name: Commit synchronized lockfile
+        id: lockfile
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          if git diff --quiet -- package-lock.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add package-lock.json
+            git commit -m "chore: sync npm lockfile and security fixes"
+            git push origin "HEAD:${GITHUB_HEAD_REF}"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate updated branch head
+        if: steps.lockfile.outputs.changed == 'true'
+        run: gh workflow run ci.yml --ref "$GITHUB_HEAD_REF"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install dependencies
         run: npm ci
