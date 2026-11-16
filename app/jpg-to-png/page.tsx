@@ -21,7 +21,7 @@ const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/jpg-to-png`;
 
 export const metadata: Metadata = {
-  title: "Convert JPG to PNG Online Free – Instant Browser Tool",
+  title: "Convert JPG to PNG Online Free – Browser-Based Tool",
   description:
     "Convert JPG to PNG online in your browser. Create PNG files from JPG images with batch processing and ZIP downloads.",
   alternates: {
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "JPG to PNG Converter – Free, Fast & Private",
+    title: "JPG to PNG Converter – Free Browser-Based Tool",
     description:
       "Convert JPG images to PNG locally in your browser with batch conversion and ZIP downloads.",
   },
@@ -81,20 +81,13 @@ const SOFTWARE_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "136",
-    bestRating: "5",
-    worstRating: "1",
-  },
   featureList: [
-    "100% Client-side conversion via HTML5 Canvas API",
-    "Zero server uploads for maximum privacy",
+    "Browser-based conversion using Canvas and Blob APIs",
+    "Selected image files are processed in the browser rather than sent to a conversion server",
     "Batch JPG to PNG processing",
-    "No watermark and no file size quotas",
+    "Batch conversion with individual downloads and ZIP export",
     
-    "Instant ZIP archive download for multi-file conversions",
+    "ZIP archive download for multiple converted files",
   ],
 };
 
@@ -146,13 +139,13 @@ const FEATURE_CARDS = [
   {
     icon: ShieldCheck,
     title: "Browser-Based Processing",
-    desc: "Files are rendered locally in your browser through HTML5 Canvas. No bytes are transmitted to any remote cloud or external storage.",
+    desc: "Selected image files are processed in your browser using Canvas and Blob APIs rather than uploaded to a conversion server.",
     accent: "from-emerald-500/10 to-teal-500/10 text-emerald-600 dark:text-emerald-400",
   },
   {
     icon: Zap,
-    title: "Zero Server Wait Times",
-    desc: "Skip slow upload queues and download lags. Browser-level execution processes photos at the raw speed of your local CPU and GPU.",
+    title: "Browser-Based Processing",
+    desc: "The browser uses its image decoding and Canvas APIs to create PNG output without sending the selected image data to a conversion server.",
     accent: "from-blue-500/10 to-cyan-500/10 text-blue-600 dark:text-blue-400",
   },
   {
@@ -163,8 +156,8 @@ const FEATURE_CARDS = [
   },
   {
     icon: InfinityIcon,
-    title: "Uncapped Batch Conversion",
-    desc: "Convert multiple JPG files simultaneously without arbitrary paywalls, conversion limits, mandatory accounts, or watermarks.",
+    title: "Batch Conversion",
+    desc: "Add multiple JPG files to the queue and download the PNG results individually or together as a ZIP. Practical batch capacity depends on your device and browser memory.",
     accent: "from-amber-500/10 to-orange-500/10 text-amber-600 dark:text-amber-400",
   },
 ];
@@ -188,7 +181,7 @@ const COMPARISON_ROWS = [
   {
     feature: "Re-saving & Editing",
     jpg: "Degrades quality each save (compression artifacts)",
-    png: "Zero quality loss over repeated saves",
+    png: "Lossless PNG encoding after conversion",
   },
   {
     feature: "Relative File Size",
@@ -488,7 +481,7 @@ export default function JpgToPngPage() {
                 <li className="flex items-start gap-2.5">
                   <Lock className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>Zero Network Exposure:</strong> Your medical scans, financial records, contract screenshots, and private photos are never uploaded to our servers or third-party cloud infrastructure.
+                    <strong>Browser Processing:</strong> The selected image data is processed in your browser rather than uploaded to a conversion server. General website requests and analytics are covered by the Privacy Policy.
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
@@ -573,7 +566,7 @@ export default function JpgToPngPage() {
                   </h3>
                 </div>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                  Open Chrome, Safari, Edge, or Firefox. Drag and drop dozens of JPG images from your File Explorer or Finder directly into the page drop zone for instantaneous batch conversion with ZIP packaging.
+                  Open a supported browser, add multiple JPG images to the queue, and convert them to PNG. Download the results individually or together as a ZIP archive.
                 </p>
               </div>
 
