@@ -22,7 +22,7 @@ const PAGE_URL = `${SITE_URL}/image-compressor`;
 export const metadata: Metadata = {
   title: "Free Online Image Compressor – Reduce Image Size in KB",
   description:
-    "Compress JPG, PNG, WebP, and AVIF images online for free without server uploads. Reduce image file sizes by up to 80% without visible loss in quality.",
+    "Compress supported JPG, PNG, WebP, and AVIF images in your browser. Adjust output quality and compare file size and appearance; results vary by image and settings.",
   keywords: [
     "image compressor",
     "compress image online",
@@ -97,7 +97,7 @@ const SOFTWARE_SCHEMA = {
     worstRating: "1",
   },
   featureList: [
-    "100% client-side image compression via HTML5 Canvas and Blob APIs",
+    "Browser-based image processing via Canvas and Blob APIs",
     "No server uploads ensures full privacy for personal and corporate files",
     "Batch image compression for JPG, PNG, WebP, and AVIF",
     "Precision lossy and lossless file size reduction",
