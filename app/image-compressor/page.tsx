@@ -264,7 +264,7 @@ const RELATED_TOOLS = [
 
 export default function ImageCompressorPage() {
   return (
-    <div className="relative min-h-screen bg-slate-50/70 font-sans text-slate-900 antialiased selection:bg-indigo-500 selection:text-white dark:bg-slate-950 dark:text-slate-100">
+    <div className="relative min-h-screen bg-slate-50/70 font-sans text-slate-900 antialiased selection:bg-indigo-500 selection:text-white dark:bg-[#101B33] dark:text-slate-100">
       {/* Structured Data Embeds */}
       <script
         type="application/ld+json"
@@ -284,7 +284,7 @@ export default function ImageCompressorPage() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[580px] overflow-hidden"
       >
-        <div className="absolute left-1/2 top-0 h-[500px] w-[1050px] -translate-x-1/2 bg-gradient-to-b from-indigo-100/70 via-sky-50/40 to-transparent blur-3xl dark:from-indigo-950/25 dark:via-slate-900/10 dark:to-transparent" />
+        <div className="absolute left-1/2 top-0 h-[500px] w-[1050px] -translate-x-1/2 bg-gradient-to-b from-indigo-100/70 via-sky-50/40 to-transparent blur-3xl dark:from-indigo-950/25 dark:via-[#172642]/10 dark:to-transparent" />
       </div>
 
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -350,7 +350,7 @@ export default function ImageCompressorPage() {
         {/* Image Compressor Tool Component Card */}
         <section
           aria-label="Image Compressor Tool"
-          className="mx-auto mt-8 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-md sm:p-7 dark:border-slate-800/80 dark:bg-slate-900/95 dark:shadow-black/40"
+          className="mx-auto mt-8 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-md sm:p-7 dark:border-[#314969]/80 dark:bg-[#172642]/95 dark:shadow-black/40"
         >
           <ImageConverter />
         </section>
@@ -376,7 +376,7 @@ export default function ImageCompressorPage() {
             {STATS_CARDS.map((card) => (
               <div
                 key={card.format}
-                className="group relative rounded-xl border border-slate-200/80 bg-white/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-indigo-800"
+                className="group relative rounded-xl border border-slate-200/80 bg-white/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/60 dark:hover:border-indigo-800"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
@@ -400,7 +400,7 @@ export default function ImageCompressorPage() {
         {/* Step-by-Step Practical Workflow */}
         <section
           aria-labelledby="how-to-heading"
-          className="mx-auto mt-16 max-w-4xl rounded-2xl border border-slate-200/80 bg-white/60 p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-slate-900/40"
+          className="mx-auto mt-16 max-w-4xl rounded-2xl border border-slate-200/80 bg-white/60 p-6 shadow-sm sm:p-8 dark:border-[#314969] dark:bg-[#172642]/40"
         >
           <div className="max-w-2xl">
             <h2
@@ -416,7 +416,7 @@ export default function ImageCompressorPage() {
           </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 1
               </span>
@@ -427,7 +427,7 @@ export default function ImageCompressorPage() {
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 2
               </span>
@@ -438,7 +438,7 @@ export default function ImageCompressorPage() {
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 3
               </span>
@@ -449,7 +449,7 @@ export default function ImageCompressorPage() {
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 4
               </span>
@@ -484,7 +484,7 @@ export default function ImageCompressorPage() {
             {USE_CASES.map(({ icon: Icon, target, recommendation, desc }) => (
               <div
                 key={target}
-                className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+                className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]"
               >
                 <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
                   <Icon className="h-5 w-5" />
@@ -506,7 +506,7 @@ export default function ImageCompressorPage() {
         {/* Technical Deep Dive: Lossy vs Lossless & Privacy */}
         <section className="mx-auto mt-16 max-w-4xl space-y-10">
           <div className="grid gap-8 lg:grid-cols-2">
-            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
                 Lossy vs. Lossless Compression Explained
               </h2>
@@ -514,13 +514,13 @@ export default function ImageCompressorPage() {
                 Understanding how compression algorithms handle your image pixels allows you to pick the ideal format:
               </p>
               <div className="mt-4 space-y-3 text-xs text-slate-600 dark:text-slate-300">
-                <div className="rounded-lg bg-slate-50 p-3 dark:bg-slate-800/60">
+                <div className="rounded-lg bg-slate-50 p-3 dark:bg-[#263956]/60">
                   <strong className="text-slate-900 dark:text-slate-100">
                     Lossy (JPG & WebP):
                   </strong>{" "}
                   Removes subtle color variations that human eyes rarely distinguish. The resulting file size and appearance depend on the source image, output format, and quality setting.
                 </div>
-                <div className="rounded-lg bg-slate-50 p-3 dark:bg-slate-800/60">
+                <div className="rounded-lg bg-slate-50 p-3 dark:bg-[#263956]/60">
                   <strong className="text-slate-900 dark:text-slate-100">
                     Lossless (PNG):
                   </strong>{" "}
@@ -529,7 +529,7 @@ export default function ImageCompressorPage() {
               </div>
             </article>
 
-            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
                 How Browser Processing Handles Selected Images
               </h2>
@@ -560,8 +560,8 @@ export default function ImageCompressorPage() {
           </div>
 
           {/* Technical Comparison Table */}
-          <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <div className="border-b border-slate-200/90 bg-slate-100/60 px-6 py-4 dark:border-slate-800 dark:bg-slate-800/50">
+          <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm dark:border-[#314969] dark:bg-[#172642]">
+            <div className="border-b border-slate-200/90 bg-slate-100/60 px-6 py-4 dark:border-[#314969] dark:bg-[#263956]/50">
               <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                 Format Compression Matrix
               </h2>
@@ -572,7 +572,7 @@ export default function ImageCompressorPage() {
 
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm text-slate-700 dark:text-slate-300">
-                <thead className="border-b border-slate-200/80 bg-slate-50 text-xs uppercase font-semibold text-slate-600 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-400">
+                <thead className="border-b border-slate-200/80 bg-slate-50 text-xs uppercase font-semibold text-slate-600 dark:border-[#314969] dark:bg-[#101B33]/40 dark:text-slate-400">
                   <tr>
                     <th scope="col" className="px-5 py-3.5">
                       Specification
@@ -591,11 +591,11 @@ export default function ImageCompressorPage() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200/70 dark:divide-slate-800">
+                <tbody className="divide-y divide-slate-200/70 dark:divide-[#314969]">
                   {TECHNICAL_COMPARISON.map((row) => (
                     <tr
                       key={row.attribute}
-                      className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40"
+                      className="hover:bg-slate-50/50 dark:hover:bg-[#263956]/40"
                     >
                       <td className="px-5 py-3.5 font-medium text-slate-900 dark:text-slate-100 text-xs sm:text-sm">
                         {row.attribute}
@@ -629,7 +629,7 @@ export default function ImageCompressorPage() {
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
                 <div className="flex items-center gap-3">
                   <div className="rounded-lg bg-indigo-50 p-2 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
                     <Monitor className="h-5 w-5" />
@@ -643,7 +643,7 @@ export default function ImageCompressorPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
                 <div className="flex items-center gap-3">
                   <div className="rounded-lg bg-emerald-50 p-2 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400">
                     <Smartphone className="h-5 w-5" />
@@ -660,7 +660,7 @@ export default function ImageCompressorPage() {
           </div>
 
           {/* Related Tools Topical Cluster */}
-          <div className="rounded-2xl border border-slate-200/80 bg-slate-100/50 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <div className="rounded-2xl border border-slate-200/80 bg-slate-100/50 p-6 sm:p-8 dark:border-[#314969] dark:bg-[#172642]/50">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
@@ -683,7 +683,7 @@ export default function ImageCompressorPage() {
                 <Link
                   key={tool.name}
                   href={tool.href}
-                  className="group rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:border-indigo-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-700"
+                  className="group rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:border-indigo-300 hover:shadow-md dark:border-[#314969] dark:bg-[#172642] dark:hover:border-indigo-700"
                 >
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-semibold text-slate-900 group-hover:text-indigo-600 dark:text-slate-100 dark:group-hover:text-indigo-400">
@@ -734,11 +734,11 @@ export default function ImageCompressorPage() {
               {FAQS.map(({ q, a }) => (
                 <details
                   key={q}
-                  className="group rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm transition open:shadow-md dark:border-slate-800 dark:bg-slate-900"
+                  className="group rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm transition open:shadow-md dark:border-[#314969] dark:bg-[#172642]"
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-slate-900 focus:outline-none dark:text-slate-100">
                     <span>{q}</span>
-                    <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-200 group-open:rotate-180 dark:bg-slate-800 dark:text-slate-400">
+                    <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-200 group-open:rotate-180 dark:bg-[#263956] dark:text-slate-400">
                       <ChevronRight className="h-3.5 w-3.5 rotate-90" />
                     </span>
                   </summary>
