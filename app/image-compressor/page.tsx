@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Free Online Image Compressor – Reduce Image Size Instantly",
+    title: "Free Online Image Compressor – Adjust Image Quality",
     description:
       "Compress supported images in your browser. Batch sizes depend on your device and available browser memory; download converted files individually or as a ZIP.",
     url: PAGE_URL,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online Image Compressor – Private & Client-Side",
+    title: "Free Browser-Based Image Compressor",
     description:
       "Adjust output quality to reduce image file size. Results vary by source image and settings; lossy compression can affect visual quality.",
   },
@@ -89,52 +89,45 @@ const SOFTWARE_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "172",
-    bestRating: "5",
-    worstRating: "1",
-  },
   featureList: [
     "Browser-based image processing via Canvas and Blob APIs",
-    "No server uploads ensures full privacy for personal and corporate files",
+    "Selected image files are processed in the browser rather than sent to a conversion server",
     "Batch image compression for JPG, PNG, WebP, and AVIF",
-    "Precision lossy and lossless file size reduction",
+    "Adjustable output quality for supported lossy formats",
     "One-click batch ZIP file download",
 
-    "No watermark, registration, or file size limits",
+    "Individual downloads and ZIP export for multiple converted files",
   ],
 };
 
 const FAQS = [
   {
-    q: "How do I compress an image to under 100KB or 50KB?",
-    a: "To compress an image to meet strict upload limits (such as government portals, job applications, or visa forms), drop your JPG or PNG image into the tool above. Select JPG or WebP as the target format and adjust the quality slider down to between 60% and 75%. If the file remains over your target size, scale down its dimensions using our Image Resizer before re-compressing.",
+    q: "How can I reduce an image to a target size such as 100KB or 50KB?",
+    a: "Choose JPG or WebP as the output format and lower the quality setting gradually, checking the resulting file size after each conversion. If the file is still too large, reduce its pixel dimensions with the Image Resizer and try again. A particular target size cannot be guaranteed because results depend on the image.",
   },
   {
     q: "Will compressing an image reduce its visual quality?",
-    a: "When using lossy compression (JPG and WebP) at a 75% to 85% quality threshold, the file size drops by 50% to 80% while remaining visually indistinguishable to the human eye at standard viewing distance. For PNG images, compression is lossless, preserving 100% of pixel detail and alpha transparency while optimizing the underlying DEFLATE data stream.",
+    a: "JPG and WebP use lossy encoding, so lower quality settings can reduce detail or introduce visible artifacts. Compare the preview and resulting file size before downloading. PNG output does not use the quality slider; it is encoded as PNG by the browser.",
   },
   {
-    q: "Are my images uploaded to any remote server or stored in the cloud?",
-    a: "No. ConvertImageNow runs 100% locally within your browser using the HTML5 Canvas API and Web Workers. Your files are never transferred across the internet, never stored on a database, and never seen by anyone else, making it completely compliant for confidential documents, IDs, and private photos.",
+    q: "Are my selected images uploaded to a conversion server?",
+    a: "The conversion workflow uses your browser's image decoding and Canvas APIs to create the output. Selected image files are processed in the browser rather than uploaded to a ConvertImageNow conversion server. General website requests and analytics are covered by the Privacy Policy.",
   },
   {
-    q: "What is the difference between lossy and lossless image compression?",
-    a: "Lossy compression (used in JPG and WebP) permanently discards non-critical color frequencies that the human visual cortex cannot readily perceive, yielding massive reductions in file size. Lossless compression (used in PNG) reorganizes and indexes image data without altering a single pixel, guaranteeing byte-for-byte visual accuracy at the cost of a larger file footprint.",
+    q: "What is the difference between lossy and lossless image formats?",
+    a: "Lossy formats such as JPG and lossy WebP can discard image information to reduce file size. PNG uses lossless encoding, which preserves the pixel data supplied to the PNG encoder. Converting an already-compressed image to PNG cannot restore detail that was lost earlier.",
   },
   {
-    q: "Can I compress PNG images without losing transparent backgrounds?",
-    a: "Yes. Compressing PNG files retains full 8-bit alpha transparency. You can also convert and compress PNG graphics into WebP, which supports lossless alpha channels while generating files up to 26% smaller than traditional PNGs.",
+    q: "Can I keep a transparent background when converting PNG images?",
+    a: "PNG supports transparency. If you choose JPG as the output, transparent areas are flattened against a solid background. Choose PNG or a transparency-supporting WebP output when you need transparency.",
   },
   {
-    q: "How many images can I compress simultaneously?",
-    a: "There are no artificial batch limits. Because compression runs on your device's local CPU and GPU, you can drag and drop dozens of images at once, compress them in parallel, and export them as a single packaged ZIP archive.",
+    q: "Can I compress multiple images at once?",
+    a: "You can add multiple supported images to the queue and download converted files individually or together as a ZIP archive. The practical batch size depends on your device, browser, image dimensions, and available memory.",
   },
   {
-    q: "Which image format delivers the smallest file size?",
-    a: "AVIF and WebP offer the highest compression efficiency on the web today. WebP files are typically 25% to 35% smaller than comparable JPEGs at identical perceived quality, while AVIF can reduce sizes by up to 50%, dramatically improving site speed and Google Core Web Vitals.",
+    q: "Which image format creates the smallest file?",
+    a: "There is no single smallest format for every image. Compare JPG, WebP, and AVIF outputs using the same source and inspect both file size and visual quality. PNG is often useful when transparency or exact pixel preservation matters.",
   },
 ];
 
@@ -154,27 +147,27 @@ const FAQ_SCHEMA = {
 const STATS_CARDS = [
   {
     format: "JPEG / JPG",
-    typicalSavings: "50% – 80%",
-    technique: "Lossy Discrete Cosine Transform (DCT)",
-    bestFor: "Real-world photography, blog hero images, social media",
+    typicalSavings: "Varies by image",
+    technique: "Lossy browser encoding",
+    bestFor: "Photographs and general-purpose image sharing",
   },
   {
     format: "PNG",
-    typicalSavings: "20% – 50%",
-    technique: "Lossless DEFLATE & Palette Optimization",
-    bestFor: "Screenshots, vector logos, transparent UI graphics",
+    typicalSavings: "Varies by image",
+    technique: "Lossless PNG encoding",
+    bestFor: "Screenshots, logos, and images that need transparency",
   },
   {
     format: "WebP",
-    typicalSavings: "65% – 88%",
-    technique: "Predictive Block Coding (Lossy & Lossless)",
-    bestFor: "Modern websites, e-commerce storefronts, mobile apps",
+    typicalSavings: "Varies by image",
+    technique: "Lossy or lossless encoding",
+    bestFor: "Modern websites and general web graphics",
   },
   {
     format: "AVIF",
-    typicalSavings: "70% – 90%",
-    technique: "AV1 Intra-Frame Compression",
-    bestFor: "Next-gen web graphics with high dynamic range",
+    typicalSavings: "Varies by image",
+    technique: "AV1-based image encoding",
+    bestFor: "Modern web images where browser support is suitable",
   },
 ];
 
@@ -444,7 +437,7 @@ export default function ImageCompressorPage() {
               <h3 className="mt-3 text-sm font-semibold">Set Quality & Format</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
                 Keep the original format or switch to WebP. Adjust the quality slider
-                (80% is recommended for near-perfect visual balance).
+                Compare the preview and file size to choose a suitable quality setting.
               </p>
             </div>
 
@@ -528,13 +521,13 @@ export default function ImageCompressorPage() {
                   <strong className="text-slate-900 dark:text-slate-100">
                     Lossy (JPG & WebP):
                   </strong>{" "}
-                  Removes subtle color variations that human eyes rarely distinguish. Compressing a 4MB photo at 80% quality typically cuts 70% of the byte size without noticeable blur.
+                  Removes subtle color variations that human eyes rarely distinguish. The resulting file size and appearance depend on the source image, output format, and quality setting.
                 </div>
                 <div className="rounded-lg bg-slate-50 p-3 dark:bg-slate-800/60">
                   <strong className="text-slate-900 dark:text-slate-100">
                     Lossless (PNG):
                   </strong>{" "}
-                  Eliminates redundant data through statistical tokenization (similar to a ZIP archive). Maintains 100% pixel fidelity, making it essential for logos, icons, and diagrams with sharp text.
+                  PNG uses lossless encoding and preserves the pixel data supplied to the encoder. It is often suitable for logos, icons, and graphics with sharp edges.
                 </div>
               </div>
             </article>
@@ -550,13 +543,13 @@ export default function ImageCompressorPage() {
                 <li className="flex items-start gap-2">
                   <Lock className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>Complete Privacy:</strong> Medical documents, invoices, legal contracts, and personal photos remain exclusively in your local device memory.
+                    <strong>Complete Privacy:</strong> Selected image files are processed in the browser rather than sent to a conversion server. Review the Privacy Policy for details about general website data.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Cpu className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>Hardware Acceleration:</strong> Uses your device&apos;s multi-core CPU and GPU to decode and re-encode images via the HTML5 Canvas API.
+                    <strong>Browser Processing:</strong> The converter uses browser image decoding and Canvas APIs to create output files.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
@@ -649,7 +642,7 @@ export default function ImageCompressorPage() {
                   </h3>
                 </div>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                  Select and drag entire folders of high-resolution camera RAW exports, PNG mockups, or JPEG assets. Take advantage of multi-threaded browser rendering to compress batches in seconds and download them as a ZIP archive.
+                  Select supported JPG, PNG, WebP, or AVIF images. Add multiple files to the queue and download the results as a ZIP; practical capacity depends on your device and browser memory.
                 </p>
               </div>
 
@@ -663,7 +656,7 @@ export default function ImageCompressorPage() {
                   </h3>
                 </div>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                  Upload photos directly from your Camera Roll or Files app. Compress large mobile phone photos to under 100KB or 200KB directly on your handset before submitting them to job boards or university portals.
+                  Upload photos directly from your Camera Roll or Files app. Adjust output quality and dimensions on your device, then check the resulting file size against the upload requirements.
                 </p>
               </div>
             </div>
