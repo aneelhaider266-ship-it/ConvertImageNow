@@ -784,7 +784,7 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "Drop supported files into the queue or use the file picker. The main converter accepts JPG, PNG, WebP, and AVIF inputs. You can select multiple images at once; the converter processes them sequentially and lets you download results individually or as a ZIP.",
     
-    "### Nothing leaves your device",
+    "### Selected images are processed in your browser",
     
     "Here's the part that matters most if you're converting anything personal, a scanned document, a client photo, or an ID image: selected image files are processed in your browser using image decoding and the HTML5 Canvas API rather than uploaded to a conversion server. General website requests and analytics are described in the Privacy Policy.",
     
@@ -802,11 +802,11 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "### Setting the quality slider",
     
-    "Next to the format dropdown, you'll find a quality slider, usually set to a sensible default around 80 to 90 percent. Higher values keep more detail but produce a larger file, lower values shrink the file size at the cost of some sharpness. For most product photos, screenshots, and general use, 80 percent hits a solid balance you won't notice in normal viewing.",
+    "Next to the format dropdown, you'll find a quality slider. The converter starts at 80 percent for lossy output formats. Higher values generally retain more detail and create larger files; lower values can reduce file size while increasing visible compression. The best setting depends on the image and intended use, so compare the preview and output.",
     
-    "- **Uploading to a marketplace?** Stick with 85-90 percent to keep product detail crisp.",
-    "- **Emailing or embedding on a slow site?** Drop to 60-70 percent, one of several ways to shrink an image file.",
-    "- **Archiving originals?** Use 95-100 percent to preserve as much detail as possible.",
+    "- **Uploading to a marketplace?** Test a higher setting, then inspect product details at the size customers will see.",
+    "- **Emailing or embedding on a slow site?** Try a lower setting and check whether the smaller file still looks acceptable.",
+    "- **Archiving originals?** Keep the original source file; a high-quality lossy export is not a substitute for an original.",
     
     "The right quality setting depends on where the image is going, not some universal \"best\" number.",
     
