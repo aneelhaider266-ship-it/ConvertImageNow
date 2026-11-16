@@ -44,7 +44,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## 2. Reduce Image Dimensions (Scale Down Megapixels)",
 
-      "A 12-megapixel phone camera captures photos at 4000 × 3000 pixels. If you only need to display that image on a blog at 1200 pixels wide or attach it to an email, 70% of those pixels are completely wasted. Scaling down physical canvas dimensions is the most drastic step that **reduces the file size** from **6MB down to under 500KB** before you even apply compression.",
+      "A 12-megapixel phone camera captures photos at 4000 × 3000 pixels. If you only need to display the image at 1200 pixels wide, resizing it can reduce the amount of image data. The resulting file size depends on the original image, output format, and quality settings.",
 
       "When you **upload your image** to our [Online Image Resizer](/image-resizer), make sure the aspect ratio lock remains enabled so your image scales proportionally without stretching or blur.",
 
@@ -52,9 +52,9 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "Legacy formats like standard JPG and PNG were invented in the 1990s. Modern web formats developed by Google and AOMedia provide dramatically superior compression algorithms:",
 
-      "- **Switch JPG to WebP:** Produces a **compressed image** that is **25% to 35% smaller** at identical visual clarity. Use our [JPG to WebP Converter](/jpg-to-webp).",
-      "- **Flatten PNG to JPG:** If your PNG photo has a solid background, converting it with our [PNG to JPG Converter](/png-to-jpg) eliminates heavy transparent channels and shrinks files up to 5x.",
-      "- **Convert iPhone HEIC to JPG:** Convert heavy Apple snapshots with our [HEIC to JPG Tool](/heic-to-jpg) for universal sharing on Windows and web forms.",
+      "- **Switch JPG to WebP:** Convert the image to WebP and compare its file size and appearance with the original. Results vary by image and quality setting. Use our [JPG to WebP Converter](/jpg-to-webp).",
+      "- **Flatten PNG to JPG:** If a PNG photograph has no transparency requirement, compare a JPG export for file size and visual quality. Use our [PNG to JPG Converter](/png-to-jpg).",
+      "- **Convert iPhone HEIC to JPG:** This site does not currently accept HEIC files in its converter. Use a compatible device feature or an image converter that explicitly supports HEIC.",
 
       "## How to Reduce Image Size to Under 100KB or 50KB",
 
@@ -367,7 +367,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "Open a browser-based image converter, select the HEIC file, choose JPG as the output format, adjust the quality if available, and download the converted image.",
 
-      "You can use our [HEIC to JPG converter](/heic-to-jpg) for supported browser-based image conversions.",
+      "Convert the file with an application or browser-based tool that explicitly supports HEIC input. ConvertImageNow's current converter does not accept HEIC files.",
 
       "## Convert HEIC on iPhone",
 
@@ -483,7 +483,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## Online HEIC to JPG Conversion",
 
-      "Use our [HEIC to JPG converter](/heic-to-jpg) to convert photos directly in your browser — no download, no signup, no software installation required.",
+      "Convert the photo with a tool that explicitly supports HEIC input. ConvertImageNow's current converter does not accept HEIC files.",
 
       "## Quality After Conversion",
 
