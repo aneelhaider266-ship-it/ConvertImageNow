@@ -335,23 +335,22 @@ export default function ImageCompressorPage() {
           </h1>
 
           <p className="mt-3.5 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-            Compress JPG, PNG, WebP, and AVIF images online in seconds. Reduce
-            file size by up to 80% without visible loss in sharpness. No server
-            uploads, no wait queues, and no watermark.
+            Adjust output quality for supported image formats to help reduce file size.
+            Results depend on the source image and selected settings. No conversion-server upload or added watermark.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs font-medium text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Zero cloud
-              storage or uploads
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Local browser
+              processing
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Batch compress
               with ZIP export
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Browser-based processing
-              in modern browsers
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Adjustable output
+              quality
             </span>
           </div>
         </header>
