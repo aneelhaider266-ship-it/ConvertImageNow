@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "About ConvertImageNow – Privacy-First Image Conversion",
+    title: "About ConvertImageNow | Browser-Based Tools",
     description:
       "Learn about our browser-based conversion workflow and image format guides.",
     url: PAGE_URL,
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "About ConvertImageNow | Privacy-First Image Converter",
+    title: "About ConvertImageNow | Browser-Based Converter",
     description:
       "Browser-based image conversion for supported formats.",
   },
