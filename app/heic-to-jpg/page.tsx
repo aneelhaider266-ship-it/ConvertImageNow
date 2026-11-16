@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       "Convert iPhone HEIC photos to JPG locally in your browser. No uploads, no file size caps, no registration.",
   },
   robots: {
-    index: true,
+    index: false,
     follow: true,
     googleBot: {
       index: true,
