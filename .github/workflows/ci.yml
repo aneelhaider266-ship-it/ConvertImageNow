@@ -31,7 +31,9 @@ jobs:
           cache: npm
 
       - name: Sync lockfile with package manifest
-        run: npm install --package-lock-only --no-audit --no-fund
+        run: |
+          rm -f package-lock.json
+          npm install --package-lock-only --no-audit --no-fund
 
       - name: Apply compatible dependency security fixes
         run: npm audit fix --audit-level=high
