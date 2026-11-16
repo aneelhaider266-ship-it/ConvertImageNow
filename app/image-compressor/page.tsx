@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Online Image Compressor – Reduce Image Size Instantly",
     description:
-      "Compress JPEG, PNG, WebP, and AVIF images directly in your browser. 100% private, zero server uploads, no file size limits, and instant ZIP downloads.",
+      "Compress supported images in your browser. Batch sizes depend on your device and available browser memory; download converted files individually or as a ZIP.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Online Image Compressor – Private & Client-Side",
     description:
-      "Shrink image file size in KB without quality loss. Unlimited batch image compression powered by your browser's local GPU and CPU.",
+      "Adjust output quality to reduce image file size. Results vary by source image and settings; lossy compression can affect visual quality.",
   },
 };
 
@@ -102,7 +102,7 @@ const SOFTWARE_SCHEMA = {
     "Batch image compression for JPG, PNG, WebP, and AVIF",
     "Precision lossy and lossless file size reduction",
     "One-click batch ZIP file download",
-    "Offline capability after initial page load",
+
     "No watermark, registration, or file size limits",
   ],
 };
@@ -327,7 +327,7 @@ export default function ImageCompressorPage() {
         <header className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/80 px-3.5 py-1 text-xs font-medium tracking-wide text-indigo-700 shadow-sm backdrop-blur dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
             <Sparkles className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
-            <span>100% Client-Side Engine • Unlimited Free Compression</span>
+            <span>Browser-Based Compression • No Conversion-Server Upload</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
@@ -350,7 +350,7 @@ export default function ImageCompressorPage() {
               with ZIP export
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Works offline
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Browser-based processing
               in modern browsers
             </span>
           </div>
@@ -453,7 +453,7 @@ export default function ImageCompressorPage() {
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 3
               </span>
-              <h3 className="mt-3 text-sm font-semibold">Instant Local Process</h3>
+              <h3 className="mt-3 text-sm font-semibold">Local Processing</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
                 Click Convert/Compress. Your device&apos;s internal browser engine
                 encodes the binary streams without transmitting any data over the internet.
