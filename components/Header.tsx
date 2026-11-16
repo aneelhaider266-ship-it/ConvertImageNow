@@ -21,9 +21,6 @@ export default function Header() {
   useEffect(() => {
     const stored = window.localStorage.getItem("cin-theme");
 
-    const prefersDark =
-      window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false;
-
     const isDark = stored ? stored === "dark" : true;
 
     setDark(isDark);
