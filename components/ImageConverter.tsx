@@ -301,6 +301,7 @@ export default function ImageConverter({
               <button
                 key={item.value}
                 type="button"
+                disabled={isConverting}
                 onClick={() => {
                   if (format !== item.value) {
                     setFormat(item.value);
@@ -335,7 +336,7 @@ export default function ImageConverter({
               setQuality(Number(event.target.value));
               setQueue((prev) => clearConvertedResults(prev));
             }}
-            disabled={format === "png"}
+            disabled={format === "png" || isConverting}
             className="block h-5 w-full accent-brand-primary disabled:opacity-40"
             aria-label="Output quality"
           />
@@ -379,6 +380,7 @@ export default function ImageConverter({
           <button
             type="button"
             onClick={clearAll}
+            disabled={isConverting}
             className="ml-auto inline-flex min-h-10 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-red-600 dark:text-slate-300"
           >
             <Trash2 size={16} aria-hidden="true" />
@@ -473,6 +475,7 @@ export default function ImageConverter({
                 <button
                   type="button"
                   onClick={() => removeItem(item.id)}
+                  disabled={isConverting}
                   aria-label={`Remove ${item.file.name}`}
                   className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 hover:text-red-500 dark:hover:bg-[#263956]"
                 >
