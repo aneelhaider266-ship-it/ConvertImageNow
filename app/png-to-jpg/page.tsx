@@ -19,12 +19,12 @@ const OG_IMAGE = `${SITE_URL}/png-to-jpg/og-image.webp`;
 export const metadata: Metadata = {
   title: "PNG to JPG Converter – Convert PNG to JPG Online Free",
   description:
-    "Convert PNG to JPG (JPEG) online for free. Private, browser-based conversion — no upload, no signup, no watermark. Batch convert multiple PNG files at once.",
+    "Convert PNG to JPG (JPEG) online for free. Browser-based conversion with JPG quality controls, multiple-file selection, and ZIP downloads.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "PNG to JPG Converter – Convert PNG to JPG Online Free",
     description:
-      "Convert PNG to JPG (JPEG) online for free. Private, browser-based conversion — no upload, no signup, no watermark.",
+      "Convert PNG to JPG (JPEG) online for free. Browser-based conversion with adjustable JPG output quality.",
     type: "website",
     url: PAGE_URL,
     images: [{ url: OG_IMAGE }],
@@ -41,18 +41,18 @@ export const metadata: Metadata = {
 const POINTS = [
   {
     icon: ShieldCheck,
-    title: "Truly private",
-    desc: "Your images never touch a server. Conversion happens directly in your browser.",
+    title: "Browser-Based Processing",
+    desc: "Selected image files are processed in your browser rather than sent to a conversion server.",
   },
   {
     icon: WifiOff,
-    title: "Browser-based processing",
-    desc: "Once the page has loaded, conversion happens entirely on your device.",
+    title: "No Conversion-Server Upload",
+    desc: "The selected image data is processed by your browser Canvas API. An internet connection may still be needed to load the website and its resources.",
   },
   {
     icon: InfinityIcon,
-    title: "No artificial limits",
-    desc: "No daily quota, no watermark, and no server upload limit.",
+    title: "Batch Downloads",
+    desc: "Add multiple supported PNG files and download JPG results individually or together as a ZIP. Practical capacity depends on your device and browser memory.",
   },
 ];
 
