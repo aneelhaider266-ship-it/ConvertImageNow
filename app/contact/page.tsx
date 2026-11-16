@@ -89,7 +89,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
+          <div className="rounded-2xl border border-slate-200 p-6 dark:border-[#314969]">
             <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">
               <Clock size={18} className="text-brand-primary" />
               Response Time & Hours
@@ -99,7 +99,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
+          <div className="rounded-2xl border border-slate-200 p-6 dark:border-[#314969]">
             <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">
               <ShieldCheck size={18} className="text-emerald-500" />
               Privacy Assurance
