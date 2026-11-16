@@ -54,6 +54,9 @@ export default function BlogContent({ content }: { content: string[] }) {
   const source = content.flatMap((item) => item.split(/\r?\n/));
   const blocks: ReactNode[] = [];
   let index = 0;
+  // Normalize Markdown headings relative to the article's H1. The first
+  // content heading becomes H2; nested headings become H3, with no skipped levels.
+  const headingStack: number[] = [];
 
   while (index < source.length) {
     const line = source[index].trim();
@@ -63,11 +66,23 @@ export default function BlogContent({ content }: { content: string[] }) {
       continue;
     }
 
-    const heading = line.match(/^(#{2,6})\s+(.+)$/);
+    const heading = line.match(/^(#{2,6})\\s+(.+)$/);
     if (heading) {
-      const level = heading[1].length;
+      const sourceLevel = heading[1].length;
       const text = heading[2];
-      if (level === 2) {
+
+      // Find the nearest shallower heading to determine whether this is nested.
+      while (
+        headingStack.length > 0 &&
+        headingStack[headingStack.length - 1] >= sourceLevel
+      ) {
+        headingStack.pop();
+      }
+
+      const renderLevel: 2 | 3 = headingStack.length === 0 ? 2 : 3;
+      headingStack.push(sourceLevel);
+
+      if (renderLevel === 2) {
         blocks.push(<h2 key={index}>{renderInline(text)}</h2>);
       } else {
         blocks.push(<h3 key={index}>{renderInline(text)}</h3>);
