@@ -227,10 +227,10 @@ export default function PngToJpgPage() {
           {POINTS.map(({ icon: Icon, title, desc }) => (
             <article
               key={title}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/60 p-6 shadow-sm backdrop-blur-xl transition-all hover:-translate-y-1 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/60 p-6 shadow-sm backdrop-blur-xl transition-all hover:-translate-y-1 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/50"
             >
               <div
-                className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-slate-800/30"
+                className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-[#263956]/30"
                 aria-hidden="true"
               />
 
@@ -309,10 +309,10 @@ export default function PngToJpgPage() {
             {DEVICES.map(({ icon: Icon, name, steps }) => (
               <div
                 key={name}
-                className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50"
+                className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/50"
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 dark:bg-[#263956] dark:text-slate-300">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
@@ -348,9 +348,9 @@ export default function PngToJpgPage() {
             matters more than pixel-perfect transparency.
           </p>
 
-          <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900/50">
+          <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-[#314969] dark:bg-[#172642]/50">
             <table className="w-full border-collapse text-left text-sm sm:text-base">
-              <thead className="bg-slate-50/80 backdrop-blur-sm dark:bg-slate-900/80">
+              <thead className="bg-slate-50/80 backdrop-blur-sm dark:bg-[#172642]/80">
                 <tr>
                   <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">
                     Feature
@@ -363,8 +363,8 @@ export default function PngToJpgPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+              <tbody className="divide-y divide-slate-200 dark:divide-[#314969]">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Compression
                   </td>
@@ -375,7 +375,7 @@ export default function PngToJpgPage() {
                     Lossy (smaller files)
                   </td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Transparency
                   </td>
@@ -386,7 +386,7 @@ export default function PngToJpgPage() {
                     Not supported
                   </td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Best used for
                   </td>
@@ -409,11 +409,11 @@ export default function PngToJpgPage() {
             {FAQS.map(({ q, a }) => (
               <details
                 key={q}
-                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900/40 dark:hover:border-slate-700"
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-[#314969] dark:bg-[#172642]/40 dark:hover:border-slate-700"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-5 text-lg font-semibold text-slate-900 outline-none dark:text-slate-100 [&::-webkit-details-marker]:hidden">
                   {q}
-                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-slate-800 dark:text-slate-400">
+                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-[#263956] dark:text-slate-400">
                     +
                   </span>
                 </summary>
