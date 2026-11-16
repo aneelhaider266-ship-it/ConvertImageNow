@@ -4,44 +4,52 @@
 
 :root {
   color-scheme: dark;
-  background: #101B33;
+  --cin-navy: #101B33;
+  --cin-slate: #172642;
+  --cin-blue: #398BFF;
+  background: var(--cin-navy);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--cin-navy);
 }
 
 body {
-  background: #101B33;
-  color: #f8fafc;
-  margin: 0;
   min-height: 100%;
+  margin: 0;
+  background: var(--cin-navy);
+  color: #f8fafc;
 }
 
 ::selection {
-  @apply bg-brand-primary/20;
+  background: rgba(57, 139, 255, 0.35);
+  color: #fff;
 }
 
-/* Core Web Vitals: Prevent layout shifts from responsive images */
-img, svg, video, canvas {
+/* Keep replaced media within its responsive layout. */
+img,
+svg,
+video,
+canvas {
   max-width: 100%;
   height: auto;
 }
 
-/* Visible keyboard focus ring for accessibility (WCAG compliant) */
+/* Visible keyboard focus for interactive controls. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid var(--cin-blue);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Accessibility: Respect user motion preferences */
+/* Respect reduced-motion preferences. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -56,8 +64,3 @@ select:focus-visible {
 .container-page {
   @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
 }
-
-:root { --cin-navy: #101B33; --cin-slate: #172642; --cin-blue: #398BFF; }
-html, body { background: #101B33 !important; }
-body { color: #f8fafc !important; }
-::selection { background: rgba(57,139,255,.35); color: #fff; }
