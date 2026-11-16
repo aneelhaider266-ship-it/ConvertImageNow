@@ -95,9 +95,7 @@ export default function ContactPage() {
               Response Time & Hours
             </h2>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-              We operate Monday through Friday and aim to reply to all user
-              inquiries within 24 to 48 business hours. Emails receive highest
-              priority.
+              We review support inquiries on business days. Response times vary depending on the request and current workload.
             </p>
           </div>
 
