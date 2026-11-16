@@ -8,7 +8,7 @@ const PAGE_URL = `${SITE_URL}/tools`;
 export const metadata: Metadata = {
   title: "Free Online Image Tools | ConvertImageNow",
   description:
-    "Explore ConvertImageNow free online image tools. Fast, private browser-based utilities to convert, compress, and resize JPG, PNG, WebP, and AVIF photos.",
+    "Explore ConvertImageNow free online image tools. Browser-based utilities to convert, compress, and resize supported JPG, PNG, WebP, and AVIF images.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Online Image Tools | ConvertImageNow",
     description:
-      "Convert, compress, and resize images locally in your browser with zero server uploads.",
+      "Convert, compress, and resize supported images in your browser. Selected image files are processed locally.",
   },
 };
 
@@ -56,7 +56,7 @@ const LIVE_TOOLS = [
   },
   {
     title: "Image Compressor",
-    desc: "Compress JPG, PNG, and WebP without losing quality",
+    desc: "Adjust output quality for JPG and WebP; compare results before downloading",
     href: "/image-compressor",
   },
   {
