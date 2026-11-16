@@ -203,7 +203,7 @@ const TECHNICAL_COMPARISON = [
   {
     attribute: "Visual Quality Retention",
     jpeg: "High (at 75-85% slider)",
-    png: "100% Exact Pixel Match",
+    png: "Lossless PNG encoding",
     webp: "Superior visual fidelity",
     avif: "Maximum fidelity per byte",
   },
