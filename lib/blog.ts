@@ -495,11 +495,11 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## File Size Comparison",
 
-      "HEIC files are typically smaller than JPG files of the same photo. When you convert to JPG, the file may become larger unless you adjust compression settings during conversion.",
+      "HEIC files can be smaller than JPG versions of the same photo, but the result depends on image content, encoder settings, and quality. A JPG export may be larger or smaller, so compare the actual files when size matters.",
 
       "## HEIC vs JPG: Quality and Compression",
 
-      "HEIC uses a more modern compression algorithm than JPG, which is why it can store the same photo in roughly half the file size. However, this efficiency comes from patented technology that not every platform has licensed to support. JPG remains the more universally compatible choice even though it typically produces larger files for the same visual quality.",
+      "HEIC and JPG use different compression methods, and neither format guarantees a fixed file-size advantage for every image. The result depends on the encoder, image content, and quality settings. HEIC support varies across devices and software, while JPG remains widely compatible with browsers, apps, and operating systems.",
 
       "## Common Tools for Converting HEIC Files",
 
