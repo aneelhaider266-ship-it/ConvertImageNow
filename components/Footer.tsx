@@ -9,7 +9,6 @@ const COLUMNS = [
       { href: "/png-to-jpg", label: "PNG to JPG" },
       { href: "/jpg-to-png", label: "JPG to PNG" },
       { href: "/jpg-to-webp", label: "JPG to WebP" },
-      { href: "/heic-to-jpg", label: "HEIC to JPG" },
       { href: "/avif-to-jpg", label: "AVIF to JPG" },
       { href: "/image-compressor", label: "Image Compressor" },
       { href: "/image-resizer", label: "Image Resizer" },
@@ -19,7 +18,6 @@ const COLUMNS = [
     title: "Image Guides",
     links: [
       { href: "/blog/how-to-make-image-file-smaller", label: "Make Image Smaller" },
-      { href: "/blog/heic-to-jpg-guide", label: "HEIC to JPG Guide" },
       { href: "/blog/jpg-to-webp-guide", label: "JPG to WebP Guide" },
       { href: "/blog/image-seo-guide", label: "Image SEO Guide" },
       { href: "/blog/what-is-webp", label: "What is WebP?" },
