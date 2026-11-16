@@ -65,7 +65,7 @@ export default function Footer() {
                 Convert<span className="text-brand-primary">ImageNow</span>
               </span>
             </Link>
-            <p className="mt-3 max-w-xs text-xs text-slate-500 dark:text-slate-400">
+            <p className="mt-3 max-w-xs text-xs text-slate-500 dark:text-slate-300">
               Convert supported image formats in your browser. No account is required to use the converter.
             </p>
           </div>
@@ -81,7 +81,7 @@ export default function Footer() {
                   <li key={link.href}>
                     <Link
                       href={link.href}
-                      className="text-xs text-slate-500 transition-colors hover:text-brand-primary dark:text-slate-400 dark:hover:text-white"
+                      className="text-xs text-slate-500 transition-colors hover:text-brand-primary dark:text-slate-300 dark:hover:text-white"
                     >
                       {link.label}
                     </Link>
