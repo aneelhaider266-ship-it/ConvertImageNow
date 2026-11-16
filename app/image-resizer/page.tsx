@@ -245,7 +245,7 @@ const RELATED_TOOLS = [
 
 export default function ImageResizerPage() {
   return (
-    <div className="relative min-h-screen bg-slate-50/70 font-sans text-slate-900 antialiased selection:bg-indigo-500 selection:text-white dark:bg-slate-950 dark:text-slate-100">
+    <div className="relative min-h-screen bg-slate-50/70 font-sans text-slate-900 antialiased selection:bg-indigo-500 selection:text-white dark:bg-[#101B33] dark:text-slate-100">
       {/* Search Engine Schemas */}
       <script
         type="application/ld+json"
@@ -265,7 +265,7 @@ export default function ImageResizerPage() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[580px] overflow-hidden"
       >
-        <div className="absolute left-1/2 top-0 h-[480px] w-[1000px] -translate-x-1/2 bg-gradient-to-b from-indigo-100/70 via-sky-50/30 to-transparent blur-3xl dark:from-indigo-950/20 dark:via-slate-900/10 dark:to-transparent" />
+        <div className="absolute left-1/2 top-0 h-[480px] w-[1000px] -translate-x-1/2 bg-gradient-to-b from-indigo-100/70 via-sky-50/30 to-transparent blur-3xl dark:from-indigo-950/20 dark:via-[#172642]/10 dark:to-transparent" />
       </div>
 
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -332,7 +332,7 @@ export default function ImageResizerPage() {
         {/* Interactive Tool Container */}
         <section
           aria-label="Image Resizer Tool"
-          className="mx-auto mt-8 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-md sm:p-7 dark:border-slate-800/80 dark:bg-slate-900/95 dark:shadow-black/40"
+          className="mx-auto mt-8 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-md sm:p-7 dark:border-[#314969]/80 dark:bg-[#172642]/95 dark:shadow-black/40"
         >
           <ImageResizer />
         </section>
@@ -360,7 +360,7 @@ export default function ImageResizerPage() {
             {CORE_DIFFERENTIATORS.map((item) => (
               <div
                 key={item.title}
-                className="group relative rounded-xl border border-slate-200/80 bg-white/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-indigo-800"
+                className="group relative rounded-xl border border-slate-200/80 bg-white/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/60 dark:hover:border-indigo-800"
               >
                 <div className="flex items-center justify-between">
                   <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400">
@@ -403,17 +403,17 @@ export default function ImageResizerPage() {
             {SOCIAL_PRESETS.map((preset) => (
               <div
                 key={preset.platform}
-                className="flex flex-col justify-between rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+                className="flex flex-col justify-between rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]"
               >
                 <div className="flex items-start justify-between">
                   <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                     {preset.platform}
                   </h3>
-                  <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                  <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-[#263956] dark:text-slate-300">
                     {preset.tag}
                   </span>
                 </div>
-                <div className="mt-3 flex items-baseline justify-between border-t border-slate-100 pt-3 dark:border-slate-800/80">
+                <div className="mt-3 flex items-baseline justify-between border-t border-slate-100 pt-3 dark:border-[#314969]/80">
                   <span className="font-mono text-sm font-bold text-indigo-600 dark:text-indigo-400">
                     {preset.dimensions}
                   </span>
@@ -429,7 +429,7 @@ export default function ImageResizerPage() {
         {/* How-to Workflow Section */}
         <section
           aria-labelledby="workflow-heading"
-          className="mx-auto mt-16 max-w-4xl rounded-2xl border border-slate-200/80 bg-white/60 p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-slate-900/40"
+          className="mx-auto mt-16 max-w-4xl rounded-2xl border border-slate-200/80 bg-white/60 p-6 shadow-sm sm:p-8 dark:border-[#314969] dark:bg-[#172642]/40"
         >
           <div className="max-w-2xl">
             <h2
@@ -445,7 +445,7 @@ export default function ImageResizerPage() {
           </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 1
               </span>
@@ -456,7 +456,7 @@ export default function ImageResizerPage() {
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 2
               </span>
@@ -467,7 +467,7 @@ export default function ImageResizerPage() {
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 3
               </span>
@@ -478,7 +478,7 @@ export default function ImageResizerPage() {
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 4
               </span>
@@ -508,7 +508,7 @@ export default function ImageResizerPage() {
                   difference ensures optimal quality and file size:
                 </p>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-xl border border-indigo-200/60 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-slate-900/80">
+                  <div className="rounded-xl border border-indigo-200/60 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-[#172642]/80">
                     <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
                       Image Resizing (This Tool)
                     </h3>
@@ -519,7 +519,7 @@ export default function ImageResizerPage() {
                       constraints.
                     </p>
                   </div>
-                  <div className="rounded-xl border border-indigo-200/60 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-slate-900/80">
+                  <div className="rounded-xl border border-indigo-200/60 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-[#172642]/80">
                     <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
                       Image Compressing
                     </h3>
@@ -554,7 +554,7 @@ export default function ImageResizerPage() {
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
                 <div className="flex items-center gap-3">
                   <div className="rounded-lg bg-indigo-50 p-2 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
                     <Monitor className="h-5 w-5" />
@@ -568,7 +568,7 @@ export default function ImageResizerPage() {
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
                 <div className="flex items-center gap-3">
                   <div className="rounded-lg bg-emerald-50 p-2 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400">
                     <Smartphone className="h-5 w-5" />
@@ -588,7 +588,7 @@ export default function ImageResizerPage() {
           </div>
 
           {/* Related Tools Topical Cluster */}
-          <div className="rounded-2xl border border-slate-200/80 bg-slate-100/50 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <div className="rounded-2xl border border-slate-200/80 bg-slate-100/50 p-6 sm:p-8 dark:border-[#314969] dark:bg-[#172642]/50">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
@@ -612,7 +612,7 @@ export default function ImageResizerPage() {
                 <Link
                   key={tool.name}
                   href={tool.href}
-                  className="group rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:border-indigo-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-700"
+                  className="group rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:border-indigo-300 hover:shadow-md dark:border-[#314969] dark:bg-[#172642] dark:hover:border-indigo-700"
                 >
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-semibold text-slate-900 group-hover:text-indigo-600 dark:text-slate-100 dark:group-hover:text-indigo-400">
@@ -653,11 +653,11 @@ export default function ImageResizerPage() {
               {FAQS.map(({ q, a }) => (
                 <details
                   key={q}
-                  className="group rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm transition open:shadow-md dark:border-slate-800 dark:bg-slate-900"
+                  className="group rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm transition open:shadow-md dark:border-[#314969] dark:bg-[#172642]"
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-slate-900 focus:outline-none dark:text-slate-100">
                     <span>{q}</span>
-                    <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-200 group-open:rotate-180 dark:bg-slate-800 dark:text-slate-400">
+                    <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-200 group-open:rotate-180 dark:bg-[#263956] dark:text-slate-400">
                       <ChevronRight className="h-3.5 w-3.5 rotate-90" />
                     </span>
                   </summary>
