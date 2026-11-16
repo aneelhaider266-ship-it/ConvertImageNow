@@ -9,7 +9,7 @@ const PAGE_URL = `${SITE_URL}/converter`;
 export const metadata: Metadata = {
   title: "Free Online Image Converter | JPG, PNG, WebP & AVIF",
   description:
-    "Convert JPG, PNG, WebP, and AVIF images online for free. Enjoy batch conversion, quality controls, ZIP downloads, and 100% private in-browser processing.",
+    "Convert JPG, PNG, WebP, and AVIF images online for free. Enjoy batch conversion, quality controls, ZIP downloads, and browser-based processing for supported formats.",
   alternates: {
     canonical: PAGE_URL,
   },
