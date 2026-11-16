@@ -160,9 +160,8 @@ export default function JpgToWebpPage() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 sm:text-xl">
-          Convert JPG images to WebP instantly to create smaller files and faster
-          websites. No uploads, no waiting, no signup — everything runs locally
-          in your browser.
+          Convert JPG images to WebP in your browser. Resulting file size and
+          visual quality depend on the source image and selected settings.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-5 text-sm font-medium text-slate-600 dark:text-slate-400">
@@ -228,8 +227,8 @@ export default function JpgToWebpPage() {
           <p>
             WebP is a modern image format built specifically for the web by
             Google. Converting JPG images to WebP typically{" "}
-            <strong>reduces file size by 25 to 35 percent</strong> at an
-            identical visual quality. For web developers and site owners, this
+            can change file size and visual quality depending on the image and
+            selected quality setting. For web developers and site owners, this
             translates directly to faster page loads, lower bandwidth
             consumption, and massive improvements to{" "}
             <strong>Core Web Vitals</strong> (specifically the LCP—Largest
@@ -247,9 +246,8 @@ export default function JpgToWebpPage() {
             device&apos;s native hardware.
           </p>
           <p>
-            Nothing is ever uploaded. This means zero wait times for bulk
-            processing, no artificial daily file limits, and absolute privacy for
-            your personal or client photos.
+            Selected image data is processed in your browser rather than uploaded to a
+            conversion server. Batch capacity depends on your device and browser memory.
           </p>
 
           {/* Info Callout */}
