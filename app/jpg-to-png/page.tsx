@@ -102,7 +102,7 @@ const FAQS = [
   },
   {
     q: "Will converting a JPG to PNG improve its image quality?",
-    a: "No. Converting an existing JPG to PNG cannot restore image detail, sharpness, or clarity that was discarded during the original lossy JPEG compression. However, saving the file as a PNG stops generational quality loss—meaning any future edits, crops, or re-saves will not introduce further compression artifacts.",
+    a: "No. Converting an existing JPG to PNG cannot restore image detail, sharpness, or clarity discarded during the original lossy JPEG compression. Saving the current image as PNG avoids another lossy JPEG encoding step at this stage, but later edits or exports to a lossy format can still change image quality.",
   },
   {
     q: "Why is the converted PNG file larger in file size than the original JPG?",
