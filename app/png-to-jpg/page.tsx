@@ -256,7 +256,7 @@ export default function PngToJpgPage() {
           </h2>
           <p>
             PNG is a lossless format that preserves transparency and sharp
-            detail, which makes files larger — often 4 to 10 times bigger than
+            detail, which can make files larger than comparable JPG images. The difference depends on the image and compression settings.
             an equivalent JPG. Converting PNG to JPEG is useful when you need
             smaller files for email attachments, faster website loading, or
             uploading to platforms that don&apos;t accept PNG.
