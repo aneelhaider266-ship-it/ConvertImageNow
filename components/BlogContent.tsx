@@ -66,7 +66,7 @@ export default function BlogContent({ content }: { content: string[] }) {
       continue;
     }
 
-    const heading = line.match(/^(#{2,6})\\s+(.+)$/);
+    const heading = line.match(/^(#{2,6})\s+(.+)$/);
     if (heading) {
       const sourceLevel = heading[1].length;
       const text = heading[2];
