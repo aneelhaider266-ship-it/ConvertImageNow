@@ -184,7 +184,7 @@ export default function PngToJpgPage() {
         <div className="mb-6 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-primary/5 px-4 py-1.5 text-sm font-medium text-brand-primary backdrop-blur-sm dark:border-brand-primary/30 dark:bg-brand-primary/10 dark:text-brand-primary/90">
             <Zap className="h-4 w-4" aria-hidden="true" />
-            100% Free & Browser-Based
+            Free Browser-Based Conversion
           </span>
         </div>
 
@@ -194,7 +194,7 @@ export default function PngToJpgPage() {
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 sm:text-xl">
           Convert PNG images to JPG (JPEG) in your browser — no conversion-server upload, no signup,
-          and no waiting. Drop your files below and batch convert them directly in
+          Select PNG images below, choose JPG output, and convert them in your browser.
           your browser.
         </p>
 
@@ -335,7 +335,7 @@ export default function PngToJpgPage() {
           <p>
             Need to convert several screenshots or images at once? Select
             multiple PNG files, batch convert them together in one go, and
-            download the results as a single ZIP file. There is no artificial batch limit—it relies entirely on your device&apos;s memory.
+            download the results as a single ZIP file. The practical batch size depends on your device, browser, image dimensions, and available memory.
           </p>
 
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
