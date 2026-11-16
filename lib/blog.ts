@@ -58,10 +58,10 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## How to Reduce Image Size to Under 100KB or 50KB",
 
-      "Government portals, college admissions, and passport applications often enforce strict upload limits (such as 'Maximum 100KB' or 'Under 50KB'). Here is the exact formula to hit that target:",
+      "Some government portals, colleges, and application forms set strict upload limits such as 100KB or 50KB. There is no guaranteed formula for every image, but these steps can help you work toward the required size:",
 
       "1. **Scale dimensions first:** If your image is 3000+ pixels wide, resize it down to 800–1000 pixels using the [Image Resizer](/image-resizer).",
-      "2. **Compress with quality slider:** Drop the resized file into the [Image Compressor](/image-compressor) and set the quality slider to 65%–75%.",
+      "2. **Adjust output quality:** Select JPG or WebP in the [Image Compressor](/image-compressor), then lower the quality setting gradually and inspect the preview.",
       "3. **Check the result:** Review the actual output file size after conversion. Repeat with different quality settings or smaller dimensions if it is still above your target.",
 
       "## How Do I Shrink a Photo File Size on iPhone & Android?",
@@ -69,11 +69,11 @@ export const BLOG_POSTS: BlogPost[] = [
       "You do not need to download ad-heavy apps from the App Store or Google Play:",
 
       "- **On iPhone / iPad:** Open Safari, visit ConvertImageNow, tap to **upload your image** from your Photo Library, adjust quality, and save the converted file directly back to your Photos app.",
-      "- **On Android Devices:** Open Chrome, select photos from your Files or Gallery, and compress or resize locally using your mobile browser's hardware acceleration.",
+      "- **On Android Devices:** Open a supported browser, select photos from Files or Gallery, and use the browser-based converter. Performance depends on your device and browser.",
 
       "## How to Lower Image Size on Windows PC",
 
-      "Windows users can **drag and drop** entire folders of high-resolution images into our [Universal Converter](/converter). Everything processes locally in client-side RAM—saving your PC from installing heavy desktop software.",
+      "Windows users can select supported image files from File Explorer and add them to our [Universal Converter](/converter). The browser processes selected image data locally, so a separate desktop conversion application is not required.",
 
       "## Frequently Asked Questions (FAQ)",
 
@@ -81,7 +81,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "Try a suitable output format and quality setting, then compare the resulting file size and appearance. There is no fixed quality percentage or guaranteed reduction that works for every image.",
 
       "### Why does PNG create such large file sizes compared to JPG?",
-      "PNG uses lossless compression designed for logos, sharp icons, and transparent graphics. Storing photographs with millions of color gradients in PNG format creates bloated files that are typically 3x to 6x larger than JPG.",
+      "PNG uses lossless compression and supports transparency, which makes it useful for logos, icons, and graphics. JPG uses lossy compression and is often more space-efficient for photographs, although the difference depends on the image.",
 
       "### Are my photos uploaded to a server when I compress them?",
       "The conversion workflow processes selected image files in your browser using image decoding and Canvas APIs rather than uploading them to a conversion server. General website requests and analytics are described in the Privacy Policy.",
@@ -777,15 +777,15 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "### Drag, drop, or browse",
     
-    "Drop your image straight into the upload zone, or click through to browse your files the traditional way. The tool accepts JPEG, JPG, PNG, WebP, and AVIF, so you don't need to double-check the extension before you start. Got a whole batch of files? Select them all at once, since the batch conversion feature handles multiple images in a single pass instead of forcing you to repeat the process file by file.",
+    "Drop supported files into the queue or use the file picker. The main converter accepts JPG, PNG, WebP, and AVIF inputs. You can select multiple images at once; the converter processes them sequentially and lets you download results individually or as a ZIP.",
     
     "### Nothing leaves your device",
     
-    "Here's the part that matters most if you're converting anything personal, a scanned document, a client photo, or an ID image: everything processes locally in your browser using the HTML5 Canvas API. No file gets uploaded to a remote server, which means no waiting on a slow connection and no wondering where your image ends up afterward.",
+    "Here's the part that matters most if you're converting anything personal, a scanned document, a client photo, or an ID image: selected image files are processed in your browser using image decoding and the HTML5 Canvas API rather than uploaded to a conversion server. General website requests and analytics are described in the Privacy Policy.",
     
-    "Your photo never leaves your device, the conversion happens right there in the browser tab.",
+    "The selected image data is processed in your browser. The website still makes normal requests to load pages and resources.",
     
-    "This local-processing approach is also why the tool has no file size caps or daily limits tied to server load. Once your image appears in the preview, you're ready to move to the next step.",
+    "The practical file size and batch capacity depend on your device, browser, image dimensions, and available memory. Once your image appears in the queue, choose the output settings and continue.",
     
     "## Step 2. Choose your output format and quality",
     
@@ -811,13 +811,13 @@ export const BLOG_POSTS: BlogPost[] = [
     
     "## Step 3. Convert and download your JPG file",
     
-    "With your format and quality settings locked in, hit the convert button and watch the process finish in seconds. Since everything runs through your browser's Canvas API rather than a remote server, there's no upload queue or progress bar crawling along on a slow connection. A single photo converts almost instantly, and even a batch of twenty or thirty images typically wraps up in well under a minute, depending on your device.",
+    "When you start conversion, the browser decodes each image and uses the Canvas API to create the output. Files are processed one at a time; processing time varies with image dimensions, file size, browser, and device.",
     
     "### Grabbing your converted files",
     
     "Once the conversion finishes, you'll see a download link for each file, plus a download all option if you're working with a batch. Clicking download all bundles everything into a single zip, so you're not clicking through dozens of individual links one at a time. Open the zip, and you'll find your images already renamed with the proper .jpg extension, ready to upload wherever they were getting rejected before.",
     
-    "A finished conversion means a properly labeled JPG file sitting in your downloads folder, nothing left in the cloud.",
+    "After conversion, download the JPG file or ZIP archive. The selected image file is processed in your browser rather than uploaded to a conversion server.",
     
     "### Double-check before you upload again",
     
@@ -1090,13 +1090,13 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "## Step 3. Convert and download your images",
 
-    "With your format and quality settings locked in, hit the convert button and watch the process finish in seconds. This is where an image converter proves its worth: there's no upload progress bar crawling along, because your files never leave your device in the first place.",
+    "After you start conversion, the browser decodes the selected image and creates the output using Canvas APIs. Processing time varies with image size, browser, and device; selected image data is not sent to a conversion server.",
 
     "![Laptop showing converted product photos on a desk with plants](/blog/how-to-use-free-online-image-converter/laptop-plants.jpg)",
 
     "### What happens when you click convert",
 
-    "The HTML5 Canvas API in your browser redraws each image in the new format, right there on your machine. For a single photo, this takes less than a second. For a batch of fifty product shots, expect a few seconds total, not minutes.",
+    "The HTML5 Canvas API redraws each selected image in the chosen output format. Conversion time depends on image dimensions, browser, and device; the tool processes queued files sequentially.",
 
     "> Converting a batch of images shouldn't take longer than making a sandwich.",
 
@@ -1132,9 +1132,9 @@ export const BLOG_POSTS: BlogPost[] = [
 
     "## Converting images the easy way",
 
-    "Switching a file from one format to another shouldn't require a software install, an account, or a credit card. You've seen how a browser-based image converter handles the whole job in three steps: upload your files, pick the format and quality, then download the result. No server ever touches your images, no watermark gets stamped on your work, and no daily limit cuts you off halfway through a batch of product photos.",
+    "A browser-based image converter can handle supported files without a separate desktop installation or account. Select your images, choose a format and quality setting, then download the result. Selected image data is processed in your browser rather than sent to a conversion server; practical batch capacity depends on your device and browser.",
 
-    "That's the whole point of a genuinely free tool. Whether you're prepping a single logo or converting fifty images for an online store, the process stays the same and takes about as long as it took you to read this guide. Next time a file lands in the wrong format, skip the downloads and the sign-up forms. Open the [free online image converter](/converter) and convert it right in your browser, free, private, and done in seconds."
+    "Use the [free online image converter](/converter) when you need to change a supported image format. Compare the output with the original before using it, and keep a copy of the source file in case you need different settings later."
   ]
 },
 ];
