@@ -57,6 +57,22 @@ function extensionForBlob(blob: Blob): string {
   }
 }
 
+function uniqueZipName(fileName: string, usedNames: Set<string>): string {
+  const dotIndex = fileName.lastIndexOf(".");
+  const baseName = dotIndex > 0 ? fileName.slice(0, dotIndex) : fileName;
+  const extension = dotIndex > 0 ? fileName.slice(dotIndex) : "";
+  let candidate = fileName;
+  let suffix = 2;
+
+  while (usedNames.has(candidate.toLowerCase())) {
+    candidate = `${baseName} (${suffix})${extension}`;
+    suffix += 1;
+  }
+
+  usedNames.add(candidate.toLowerCase());
+  return candidate;
+}
+
 function clearConvertedResults(items: QueueItem[]): QueueItem[] {
   return items.map((item) => ({
     ...item,
@@ -212,13 +228,16 @@ export default function ImageConverter({
 
     const zip = new JSZip();
 
+    const usedNames = new Set<string>();
+
     doneItems.forEach((item) => {
       const baseName = item.file.name.replace(/\.[^/.]+$/, "");
-
-      zip.file(
+      const fileName = uniqueZipName(
         `${baseName}.${extensionForBlob(item.convertedBlob as Blob)}`,
-        item.convertedBlob as Blob
+        usedNames
       );
+
+      zip.file(fileName, item.convertedBlob as Blob);
     });
 
     const zipBlob = await zip.generateAsync({
