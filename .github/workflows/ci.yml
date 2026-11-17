@@ -38,6 +38,9 @@ jobs:
           npm audit --omit=dev --json > npm-audit-production.json || true
           node -e "const report = require('./npm-audit-production.json'); console.log('Production dependency audit:', JSON.stringify(report.metadata?.vulnerabilities || {})); for (const [name, item] of Object.entries(report.vulnerabilities || {})) console.log('PRODUCTION ' + name + ': ' + item.severity + '; direct=' + item.isDirect + '; range=' + item.range + '; fix=' + JSON.stringify(item.fixAvailable));"
 
+      - name: Enforce production dependency audit
+        run: npm audit --omit=dev --audit-level=high
+
       - name: Build Next.js application
         run: npm run build
         env:
