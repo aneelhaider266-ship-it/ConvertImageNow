@@ -21,11 +21,6 @@ const nextConfig = {
       },
       // 2. Retain the indexed legacy story URL and send visitors to the relevant About page.
       {
-        source: '/blog/best-image-formats-explained',
-        destination: '/blog/best-image-formats-compared',
-        permanent: true,
-      },
-      {
         source: '/blog/why-i-built-convertimagenow',
         destination: '/about',
         permanent: true,
