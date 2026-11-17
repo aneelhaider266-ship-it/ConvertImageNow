@@ -7,7 +7,7 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// 1. Generate static routes for all 16 posts
+// 1. Generate static routes for all published posts
 export async function generateStaticParams() {
   return BLOG_POSTS.map((post) => ({
     slug: post.slug,
