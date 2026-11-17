@@ -860,11 +860,11 @@ export default function HomePage() {
                 category: "Optimization Strategy",
               },
               {
-                title: "PNG vs JPG: Which Image Format Should You Use?",
+                title: "Best Image Format for Web: JPG, PNG, WebP & AVIF",
                 excerpt:
-                  "Understand when to choose alpha channel transparency versus discrete 24-bit photographic compression for web assets.",
-                href: "/blog/png-vs-jpg",
-                category: "Asset Architecture",
+                  "Choose a format by image type, transparency, quality, and browser support. Compare the trade-offs before publishing.",
+                href: "/blog/best-image-formats-compared",
+                category: "Format Guide",
               },
             ].map((post) => (
               <Link
