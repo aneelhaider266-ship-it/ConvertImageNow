@@ -14,7 +14,7 @@ export type BlogPost = {
 export const BLOG_POSTS: BlogPost[] = [
  {
     slug: "how-to-make-image-file-smaller",
-    title: "How to Make Images Smaller While Preserving Quality",
+    title: "How to Make an Image File Smaller Without Losing Quality",
     excerpt:
       "Learn how to reduce image file size in KB while preserving as much visual quality as possible. A practical guide to compression, resizing, and format conversion.",
     date: "2026-08-11",
