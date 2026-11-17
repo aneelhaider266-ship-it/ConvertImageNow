@@ -3,42 +3,54 @@
 @tailwind utilities;
 
 :root {
+  color-scheme: dark;
+  --cin-navy: #101B33;
+  --cin-slate: #172642;
+  --cin-blue: #398BFF;
+  background: var(--cin-navy);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 }
 
 html {
   scroll-behavior: smooth;
+  background: var(--cin-navy);
 }
 
 body {
-  @apply bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100;
-  margin: 0;
   min-height: 100%;
+  margin: 0;
+  background: var(--cin-navy);
+  color: #f8fafc;
 }
 
 ::selection {
-  @apply bg-brand-primary/20;
+  background: rgba(57, 139, 255, 0.35);
+  color: #fff;
 }
 
-/* Core Web Vitals: Prevent layout shifts from responsive images */
-img, svg, video, canvas {
+/* Keep replaced media within its responsive layout. */
+img,
+svg,
+video,
+canvas {
   max-width: 100%;
   height: auto;
 }
 
-/* Visible keyboard focus ring for accessibility (WCAG compliant) */
+/* Visible keyboard focus for interactive controls. */
 a:focus-visible,
+[role="button"]:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
 select:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid var(--cin-blue);
   outline-offset: 2px;
   border-radius: 4px;
 }
 
-/* Accessibility: Respect user motion preferences */
+/* Respect reduced-motion preferences. */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -52,4 +64,95 @@ select:focus-visible {
 
 .container-page {
   @apply mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8;
+}
+
+
+/* Semantic typography for article content. */
+.blog-content {
+  color: #cbd5e1;
+  font-size: 1rem;
+  line-height: 1.85;
+  overflow-wrap: anywhere;
+}
+
+.blog-content > * + * {
+  margin-top: 1.15rem;
+}
+
+.blog-content h2 {
+  margin-top: 2.75rem;
+  color: #fff;
+  font-size: clamp(1.45rem, 3vw, 1.9rem);
+  font-weight: 750;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.blog-content h3 {
+  margin-top: 2rem;
+  color: #f8fafc;
+  font-size: clamp(1.15rem, 2.5vw, 1.35rem);
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.blog-content a {
+  color: #70aaff;
+  text-decoration: underline;
+  text-decoration-color: rgba(112, 170, 255, 0.45);
+  text-underline-offset: 3px;
+}
+
+.blog-content a:hover {
+  color: #a8ccff;
+}
+
+.blog-content ul,
+.blog-content ol {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+}
+
+.blog-content ul {
+  list-style: disc;
+}
+
+.blog-content ol {
+  list-style: decimal;
+}
+
+.blog-content li + li {
+  margin-top: 0.5rem;
+}
+
+.blog-content strong {
+  color: #f8fafc;
+  font-weight: 700;
+}
+
+.blog-content blockquote {
+  margin: 1.75rem 0;
+  border-left: 3px solid var(--cin-blue);
+  border-radius: 0 0.75rem 0.75rem 0;
+  background: rgba(23, 38, 66, 0.72);
+  padding: 1rem 1.25rem;
+  color: #e2e8f0;
+}
+
+.blog-content code {
+  border-radius: 0.35rem;
+  background: #172642;
+  padding: 0.15rem 0.35rem;
+  color: #bfdbfe;
+  font-size: 0.9em;
+}
+
+.blog-content img {
+  display: block;
+  max-height: 32rem;
+  object-fit: contain;
+}
+
+.blog-content hr {
+  border-color: #314969;
 }

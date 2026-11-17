@@ -34,6 +34,50 @@ type QueueItem = {
 let idCounter = 0;
 const nextId = () => `img-${Date.now()}-${idCounter++}`;
 
+function extensionForBlob(blob: Blob): string {
+  switch (blob.type) {
+    case "image/jpeg":
+      return "jpg";
+    case "image/webp":
+      return "webp";
+    case "image/avif":
+      return "avif";
+    case "image/png":
+    default:
+      return "png";
+  }
+}
+
+function uniqueZipName(fileName: string, usedNames: Set<string>): string {
+  const dotIndex = fileName.lastIndexOf(".");
+  const baseName = dotIndex > 0 ? fileName.slice(0, dotIndex) : fileName;
+  const extension = dotIndex > 0 ? fileName.slice(dotIndex) : "";
+  let candidate = fileName;
+  let suffix = 2;
+
+  while (usedNames.has(candidate.toLowerCase())) {
+    candidate = `${baseName} (${suffix})${extension}`;
+    suffix += 1;
+  }
+
+  usedNames.add(candidate.toLowerCase());
+  return candidate;
+}
+
+function clearResizedResults(items: QueueItem[]): QueueItem[] {
+  return items.map((item) => {
+    const dimensionsAvailable = item.originalWidth > 0 && item.originalHeight > 0;
+    return {
+      ...item,
+      status: dimensionsAvailable ? "pending" : item.status,
+      resizedBlob: undefined,
+      resizedWidth: undefined,
+      resizedHeight: undefined,
+      errorMessage: dimensionsAvailable ? undefined : item.errorMessage,
+    };
+  });
+}
+
 function loadImageDimensions(
   file: File
 ): Promise<{ width: number; height: number }> {
@@ -178,6 +222,7 @@ export default function ImageResizer() {
 
   const handleWidthChange = (value: number | "") => {
     setWidthPx(value);
+    setQueue((prev) => clearResizedResults(prev));
     if (lockAspect && value !== "" && queue[0]?.originalWidth) {
       const ratio = queue[0].originalHeight / queue[0].originalWidth;
       setHeightPx(Math.round(Number(value) * ratio));
@@ -186,6 +231,7 @@ export default function ImageResizer() {
 
   const handleHeightChange = (value: number | "") => {
     setHeightPx(value);
+    setQueue((prev) => clearResizedResults(prev));
     if (lockAspect && value !== "" && queue[0]?.originalHeight) {
       const ratio = queue[0].originalWidth / queue[0].originalHeight;
       setWidthPx(Math.round(Number(value) * ratio));
@@ -273,7 +319,7 @@ export default function ImageResizer() {
     const dotIndex = item.file.name.lastIndexOf(".");
     const baseName =
       dotIndex > -1 ? item.file.name.slice(0, dotIndex) : item.file.name;
-    const ext = dotIndex > -1 ? item.file.name.slice(dotIndex + 1) : "png";
+    const ext = extensionForBlob(item.resizedBlob);
 
     saveAs(
       item.resizedBlob,
@@ -290,16 +336,19 @@ export default function ImageResizer() {
 
     const zip = new JSZip();
 
+    const usedNames = new Set<string>();
+
     doneItems.forEach((item) => {
       const dotIndex = item.file.name.lastIndexOf(".");
       const baseName =
         dotIndex > -1 ? item.file.name.slice(0, dotIndex) : item.file.name;
-      const ext = dotIndex > -1 ? item.file.name.slice(dotIndex + 1) : "png";
-
-      zip.file(
+      const ext = extensionForBlob(item.resizedBlob as Blob);
+      const fileName = uniqueZipName(
         `${baseName}-${item.resizedWidth}x${item.resizedHeight}.${ext}`,
-        item.resizedBlob as Blob
+        usedNames
       );
+
+      zip.file(fileName, item.resizedBlob as Blob);
     });
 
     const zipBlob = await zip.generateAsync({ type: "blob" });
@@ -331,7 +380,7 @@ export default function ImageResizer() {
         className={`flex min-h-[310px] cursor-pointer flex-col items-center justify-center rounded-2xl border-2 border-dashed p-8 text-center transition-colors ${
           isDragging
             ? "border-brand-primary bg-brand-primary/5"
-            : "border-slate-300 bg-slate-50 hover:bg-slate-100 dark:border-slate-700 dark:bg-slate-900 dark:hover:bg-slate-800"
+            : "border-slate-300 bg-slate-50 hover:bg-slate-100 dark:border-[#314969] dark:bg-[#172642] dark:hover:bg-[#263956]"
         }`}
       >
         <input
@@ -360,37 +409,45 @@ export default function ImageResizer() {
         </p>
 
         <p className="mt-1 max-w-md text-sm leading-6 text-slate-500 dark:text-slate-400">
-          Supports JPG, PNG, WebP, AVIF — batch upload supported
+          Supports JPG, PNG, WebP, and AVIF where browser decoding is supported
         </p>
 
         <p className="mt-4 flex min-h-5 items-center gap-1.5 text-xs font-medium text-brand-accent">
           <ShieldCheck size={14} className="shrink-0" aria-hidden="true" />
-          Nothing is uploaded — everything runs locally in your browser
+          Selected image data is processed in your browser rather than sent to a conversion server
         </p>
       </div>
 
       {/* Controls */}
-      <div className="mt-6 flex min-h-[142px] flex-col gap-6 rounded-2xl border border-slate-200 p-5 dark:border-slate-700">
+      <div className="mt-6 flex min-h-[142px] flex-col gap-6 rounded-2xl border border-slate-200 p-5 dark:border-[#314969]">
         <div className="flex flex-wrap items-center gap-2">
-          <div className="inline-flex h-9 rounded-lg border border-slate-200 p-1 dark:border-slate-700">
+          <div className="inline-flex h-9 rounded-lg border border-slate-200 p-1 dark:border-[#314969]">
             <button
               type="button"
-              onClick={() => setMode("pixels")}
+              disabled={isResizing}
+              onClick={() => {
+                setMode("pixels");
+                setQueue((prev) => clearResizedResults(prev));
+              }}
               className={`h-7 rounded-md px-4 text-sm font-medium transition-colors ${
                 mode === "pixels"
                   ? "bg-brand-primary text-white"
-                  : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                  : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-[#263956]"
               }`}
             >
               Pixels
             </button>
             <button
               type="button"
-              onClick={() => setMode("percent")}
+              disabled={isResizing}
+              onClick={() => {
+                setMode("percent");
+                setQueue((prev) => clearResizedResults(prev));
+              }}
               className={`h-7 rounded-md px-4 text-sm font-medium transition-colors ${
                 mode === "percent"
                   ? "bg-brand-primary text-white"
-                  : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
+                  : "text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-[#263956]"
               }`}
             >
               Percentage
@@ -400,8 +457,12 @@ export default function ImageResizer() {
           {mode === "pixels" && (
             <button
               type="button"
-              onClick={() => setLockAspect((prev) => !prev)}
-              className="ml-auto inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 px-3 text-sm font-medium text-slate-600 dark:border-slate-700 dark:text-slate-300"
+              disabled={isResizing}
+              onClick={() => {
+                setLockAspect((prev) => !prev);
+                setQueue((prev) => clearResizedResults(prev));
+              }}
+              className="ml-auto inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 px-3 text-sm font-medium text-slate-600 dark:border-[#314969] dark:text-slate-300"
             >
               {lockAspect ? <Lock size={16} /> : <Unlock size={16} />}
               {lockAspect ? "Aspect ratio locked" : "Aspect ratio unlocked"}
@@ -416,13 +477,14 @@ export default function ImageResizer() {
               <input
                 type="number"
                 min={1}
+                disabled={isResizing}
                 value={widthPx}
                 onChange={(event) =>
                   handleWidthChange(
                     event.target.value === "" ? "" : Number(event.target.value)
                   )
                 }
-                className="h-10 w-32 rounded-lg border border-slate-200 px-3 text-sm font-normal dark:border-slate-700 dark:bg-slate-900"
+                className="h-10 w-32 rounded-lg border border-slate-200 px-3 text-sm font-normal dark:border-[#314969] dark:bg-[#172642]"
               />
             </label>
 
@@ -437,8 +499,8 @@ export default function ImageResizer() {
                     event.target.value === "" ? "" : Number(event.target.value)
                   )
                 }
-                disabled={lockAspect}
-                className="h-10 w-32 rounded-lg border border-slate-200 px-3 text-sm font-normal disabled:opacity-50 dark:border-slate-700 dark:bg-slate-900"
+                disabled={lockAspect || isResizing}
+                className="h-10 w-32 rounded-lg border border-slate-200 px-3 text-sm font-normal disabled:opacity-50 dark:border-[#314969] dark:bg-[#172642]"
               />
             </label>
           </div>
@@ -452,9 +514,13 @@ export default function ImageResizer() {
             <input
               type="range"
               min={1}
+              disabled={isResizing}
               max={200}
               value={percentage}
-              onChange={(event) => setPercentage(Number(event.target.value))}
+              onChange={(event) => {
+                setPercentage(Number(event.target.value));
+                setQueue((prev) => clearResizedResults(prev));
+              }}
               className="block h-5 w-full accent-brand-primary"
               aria-label="Resize percentage"
             />
@@ -483,7 +549,7 @@ export default function ImageResizer() {
             type="button"
             onClick={downloadAllZip}
             disabled={doneCount === 0}
-            className="inline-flex min-h-10 items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold disabled:opacity-40 dark:border-slate-700"
+            className="inline-flex min-h-10 items-center gap-2 rounded-full border border-slate-300 px-5 py-2.5 text-sm font-semibold disabled:opacity-40 dark:border-[#314969]"
           >
             <FolderArchive size={16} aria-hidden="true" />
             Download All (ZIP)
@@ -492,6 +558,7 @@ export default function ImageResizer() {
           <button
             type="button"
             onClick={clearAll}
+            disabled={isResizing}
             className="ml-auto inline-flex min-h-10 items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-slate-500 hover:text-red-500"
           >
             <Trash2 size={16} aria-hidden="true" />
@@ -506,7 +573,7 @@ export default function ImageResizer() {
           {queue.map((item) => (
             <li
               key={item.id}
-              className="flex items-center gap-4 rounded-xl border border-slate-200 p-3 dark:border-slate-700"
+              className="flex items-center gap-4 rounded-xl border border-slate-200 p-3 dark:border-[#314969]"
             >
               <img
                 src={item.previewUrl}
@@ -562,7 +629,7 @@ export default function ImageResizer() {
                       type="button"
                       onClick={() => downloadOne(item)}
                       aria-label={`Download ${item.file.name}`}
-                      className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800"
+                      className="flex h-9 w-9 items-center justify-center rounded-full text-slate-500 hover:bg-slate-100 dark:hover:bg-[#263956]"
                     >
                       <Download size={16} aria-hidden="true" />
                     </button>
@@ -585,8 +652,9 @@ export default function ImageResizer() {
                 <button
                   type="button"
                   onClick={() => removeItem(item.id)}
+                  disabled={isResizing}
                   aria-label={`Remove ${item.file.name}`}
-                  className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800"
+                  className="flex h-9 w-9 items-center justify-center rounded-full text-slate-400 hover:bg-slate-100 dark:hover:bg-[#263956]"
                 >
                   <X size={16} aria-hidden="true" />
                 </button>

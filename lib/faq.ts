@@ -5,103 +5,103 @@ export type FaqItem = {
 
 export const FAQ_ITEMS: FaqItem[] = [
   {
-    question: "Is ConvertImageNow really free to use?",
+    question: "Is ConvertImageNow free to use?",
     answer:
-      "Yes. There are no subscriptions, no per-conversion fees, and no watermarks added to your images. You can convert as many images as you like.",
+      "Yes. The listed converter tools are free to use and do not require an account. Converted downloads do not include an added ConvertImageNow watermark. Practical batch capacity depends on your device and browser memory.",
   },
   {
     question: "Do I need to create an account to convert images?",
     answer:
-      "No sign-up is required. Just open the converter, drop in your images, and download the results.",
+      "No sign-up is required. Select supported images in the converter, choose an output format, and download the results.",
   },
   {
     question: "Are my images uploaded to your servers?",
     answer:
-      "No. Every conversion happens locally in your browser using the HTML5 Canvas API. Your files never leave your device.",
+      "For supported conversions, selected image files are processed in your browser using image decoding and Canvas APIs rather than uploaded to a conversion server. The website still makes normal requests to load pages and resources; see the Privacy Policy for details about site data.",
   },
   {
     question: "Which image formats can I convert?",
     answer:
-      "You can convert from JPG, PNG, WebP, and AVIF, and export to JPG, PNG, or WebP.",
+      "The main converter accepts JPG, PNG, WebP, and AVIF inputs where your browser supports AVIF decoding. You can export as JPG, PNG, or WebP. HEIC and HEIF files are not currently supported.",
   },
   {
     question: "Is there a limit on how many images I can convert at once?",
     answer:
-      "You can batch-convert as many images as your device's memory can comfortably handle — there's no artificial limit set by us.",
+      "You can add multiple supported images to the queue. The converter processes them sequentially; practical batch capacity depends on image dimensions, browser memory, and your device.",
   },
   {
     question: "Will converting reduce the quality of my images?",
     answer:
-      "You control the output quality with a slider from 1 to 100, so you can balance smaller file size against visual quality however you like.",
+      "JPG and WebP output include an adjustable quality setting from 1 to 100. Lower settings can reduce file size but may introduce visible artifacts. PNG output does not use the quality slider, and converting an already-compressed image to PNG cannot restore lost detail.",
   },
   {
     question: "What's the difference between JPG, PNG, and WebP?",
     answer:
-      "JPG is best for photos and small file sizes, PNG preserves transparency and sharp edges, and WebP often gives the best balance of quality and file size for the web.",
+      "JPG uses lossy compression and is commonly used for photographs. PNG uses lossless encoding and supports transparency. WebP supports lossy and lossless encoding as a format, while this converter creates WebP output using its adjustable quality setting. Compare results for your own images.",
   },
   {
     question: "Can I convert an image to have a transparent background?",
     answer:
-      "Converting to PNG or WebP preserves transparency if your original image already has it. Converting to JPG will fill transparent areas with white, since JPG doesn't support transparency.",
+      "PNG and WebP can preserve transparency when the source image has transparent pixels and the selected output supports them. JPG does not support transparency, so transparent areas are flattened against a white background.",
   },
   {
     question: "Does ConvertImageNow work on mobile devices?",
     answer:
-      "Yes, the tool is fully responsive and works on modern mobile browsers, tablets, and desktops alike.",
+      "The site is responsive and can be used in modern mobile browsers. Available input formats and practical file sizes depend on browser support, device memory, and image dimensions.",
   },
   {
     question: "Can I download all my converted images at once?",
     answer:
-      "Yes. Once your images finish converting, use the \"Download All (ZIP)\" button to get everything in a single archive.",
+      "Yes. After the queued files finish converting, download individual results or use the ZIP download option to collect them in one archive.",
   },
   {
     question: "Why is my browser slow when converting large images?",
     answer:
-      "Because conversion happens on your own device rather than a server, very large images or very large batches can take a moment depending on your device's processing power.",
+      "Image decoding and Canvas processing use your device's available resources. Large dimensions, large batches, limited memory, and other open tabs can affect processing time.",
   },
   {
     question: "Is AVIF supported for output as well as input?",
     answer:
-      "Currently AVIF is supported as an input format. Output is available in JPG, PNG, or WebP, since AVIF encoding support varies across browsers.",
+      "AVIF is accepted as an input format when your browser can decode it. The current converter exports JPG, PNG, or WebP; it does not encode AVIF output.",
   },
   {
     question: "Does ConvertImageNow work offline?",
     answer:
-      "Once the page is loaded, image conversion itself doesn't require an internet connection, since it all happens locally in your browser.",
+      "The conversion workflow processes selected image data in your browser after the page and required resources have loaded. The site is not presented as an offline or installable converter, so an internet connection may be needed to open or reload it.",
   },
   {
     question: "Can I use ConvertImageNow for commercial projects?",
     answer:
-      "Yes, there are no restrictions on how you use your converted images, commercial or personal.",
+      "You may use converted files in personal or commercial projects if you have the necessary rights to the original images and comply with any applicable third-party licenses. The converter does not grant rights to source content.",
   },
   {
     question: "What happens to my images after I close the tab?",
     answer:
-      "Nothing is stored anywhere. Once you close the tab, any in-progress files are simply cleared from your browser's memory.",
+      "The converter does not upload selected image files to a conversion server. Temporary image data used by the browser is released according to browser memory management when the page is closed; website requests and other site data are described in the Privacy Policy.",
   },
   {
     question: "Why would I convert PNG to JPG?",
     answer:
-      "JPG files are typically much smaller than PNG for photographs, which helps your website or app load faster.",
+      "JPG can produce smaller files for many photographs, but the result depends on the source image and quality setting. Transparent areas are flattened against a white background when converting to JPG.",
   },
   {
     question: "Why would I convert to WebP?",
     answer:
-      "WebP typically offers smaller file sizes than JPG or PNG at similar visual quality, which is great for web performance and SEO.",
+      "WebP can produce compact files for many web images, but file size and visual quality vary by source image and quality setting. Compare the converted result with the original before publishing.",
   },
   {
-    question: "Can I resize images while converting?",
+    question: "Can I resize images?",
     answer:
-      "Resizing isn't part of the converter yet, but it's on our roadmap as a dedicated tool — see the Tools page for what's coming soon.",
+      "Yes. Use the dedicated Image Resizer to change pixel dimensions or scale percentage while managing the aspect ratio.",
   },
   {
     question: "Is there a file size limit per image?",
     answer:
-      "There's no fixed limit imposed by ConvertImageNow, though extremely large files depend on your device's available memory.",
+      "The tool does not advertise a fixed per-image upload cap, but browser memory, device resources, image dimensions, and supported formats impose practical limits. Very large files may fail on some devices.",
   },
   {
     question: "How do I report a bug or request a feature?",
     answer:
-      "You can reach us any time through the Contact page — we read every message.",
+      "Use the Contact page to describe the issue, the browser and device you are using, and the steps needed to reproduce it.",
   },
 ];

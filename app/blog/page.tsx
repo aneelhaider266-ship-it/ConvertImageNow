@@ -39,7 +39,7 @@ export default function BlogIndexPage() {
           <Link
             key={post.slug}
             href={`/blog/${post.slug}`}
-            className="group rounded-2xl border border-slate-200 p-6 transition-shadow hover:shadow-md dark:border-slate-800"
+            className="group rounded-2xl border border-slate-200 bg-white/70 p-6 transition-shadow hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/70"
           >
             <p className="text-xs text-slate-500 dark:text-slate-400">
               {new Date(post.date).toLocaleDateString("en-US", {

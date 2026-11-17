@@ -7,14 +7,14 @@ const PAGE_URL = `${SITE_URL}/faq`;
 export const metadata: Metadata = {
   title: "Frequently Asked Questions | ConvertImageNow Help & FAQ",
   description:
-    "Find clear answers to common questions about ConvertImageNow. Learn about client-side privacy, batch image conversion, supported formats, and file limits.",
+    "Find answers about supported image formats, browser-based processing, output quality, batch downloads, and practical device limits.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
     title: "Frequently Asked Questions | ConvertImageNow Help & FAQ",
     description:
-      "Find answers to common questions about our free, private online image conversion tools.",
+      "Find answers about our free browser-based image conversion tools and supported formats.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Frequently Asked Questions | ConvertImageNow",
     description:
-      "Everything you need to know about ConvertImageNow: formats, privacy, and batch processing.",
+      "Learn about supported formats, browser processing, and batch conversion.",
   },
 };
 
@@ -60,7 +60,9 @@ export default function FaqPage() {
         </p>
       </div>
 
-      <div className="mx-auto mt-10 max-w-2xl divide-y divide-slate-200 dark:divide-slate-800">
+      <div className="mx-auto mt-10 max-w-2xl">
+        <h2 className="mb-3 text-xl font-semibold text-slate-900 dark:text-white">Common questions</h2>
+        <div className="divide-y divide-slate-200 dark:divide-[#314969]">
         {FAQ_ITEMS.map((item) => (
           <details key={item.question} className="group py-4">
             <summary className="flex cursor-pointer list-none items-center justify-between font-medium">
@@ -74,6 +76,7 @@ export default function FaqPage() {
             </p>
           </details>
         ))}
+        </div>
       </div>
     </div>
   );

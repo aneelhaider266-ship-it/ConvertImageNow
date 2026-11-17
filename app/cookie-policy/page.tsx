@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | How ConvertImageNow Uses Minimal Cookies",
+  title: "Cookie Policy | ConvertImageNow",
   description:
-    "Understand how ConvertImageNow uses minimal cookies for essential site functionality and analytics without tracking your private files or image uploads.",
+    "Learn how cookies and similar technologies may be used by ConvertImageNow and services integrated with the website.",
   alternates: {
     canonical: "https://convertimagenow.com/cookie-policy",
   },
@@ -16,14 +16,17 @@ export default function CookiePolicyPage() {
         Cookie Policy
       </h1>
       <p className="mt-2 text-sm text-slate-500 dark:text-slate-400">
-        Last updated: January 2026
+        Last updated: November 2026
       </p>
 
       <div className="mt-8 space-y-6 text-slate-700 dark:text-slate-300">
         <p>
           Cookies are small text files stored on your device by your
-          browser. ConvertImageNow uses a minimal set of cookies to keep the
-          site working well and to understand overall usage.
+          browser. Depending on the website features and third-party services
+          enabled, cookies or similar technologies may be used for essential
+          functions, security, analytics, or advertising. The categories below
+          describe possible uses and do not mean every category is active on
+          every visit.
         </p>
 
         <section>
@@ -32,12 +35,13 @@ export default function CookiePolicyPage() {
           </h2>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             <li>
-              <strong>Preference cookies</strong> — remember settings like
-              your light/dark mode choice.
+              <strong>Essential cookies</strong> — may support basic site
+              functions, security, or service delivery where required.
             </li>
             <li>
-              <strong>Analytics cookies</strong> — help us understand which
-              pages are useful so we can improve the site.
+              <strong>Analytics or advertising cookies</strong> — may be set
+              by services integrated with the site to measure usage or deliver
+              advertising, if those services are enabled.
             </li>
           </ul>
         </section>
@@ -48,8 +52,9 @@ export default function CookiePolicyPage() {
           </h2>
           <p className="mt-2">
             Most browsers let you block or delete cookies through their
-            settings. Doing so may affect some site preferences, but the
-            core image converter will continue to work.
+            settings. Blocking cookies may affect features that rely on them.
+            Third-party services may also have their own cookie and privacy
+            controls; review the relevant provider policies for details.
           </p>
         </section>
 

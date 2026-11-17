@@ -8,6 +8,7 @@ import {
   Layers,
   ArrowRight,
   ShieldCheck,
+  Image as ImageIcon,
   Cpu,
   SlidersHorizontal,
   CheckCircle2,
@@ -19,14 +20,14 @@ const SITE_URL = "https://convertimagenow.com";
 export const metadata: Metadata = {
   title: "Free Online Image Converter – Convert JPG, PNG & WebP",
   description:
-    "Convert images online directly in your browser. 100% private client-side processing, zero server uploads, and instant batch conversion for JPG, PNG, and WebP.",
+    "Convert images online directly in your browser. Browser-based image conversion for JPG, PNG, WebP, and supported AVIF files, with batch processing and no conversion-server upload.",
   alternates: {
     canonical: `${SITE_URL}/`,
   },
   openGraph: {
-    title: "Free Online Image Converter – Private In-Browser Image Conversion",
+    title: "Free Online Image Converter – Browser-Based Conversion",
     description:
-      "Batch convert JPG, PNG, WebP, AVIF, and HEIC files locally in your browser. Fast, private, watermark-free, and 100% free.",
+      "Convert supported image formats in your browser. Batch processing, adjustable output quality, and ZIP downloads.",
     url: `${SITE_URL}/`,
     siteName: "ConvertImageNow",
     locale: "en_US",
@@ -36,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Online Image Converter | ConvertImageNow",
     description:
-      "Private, browser-based batch image converter. Zero uploads, zero quality compromises.",
+      "Convert supported image formats in your browser with batch processing and adjustable output quality.",
   },
   robots: {
     index: true,
@@ -54,77 +55,45 @@ export const metadata: Metadata = {
 const CONVERTER_TOOLS = [
   {
     category: "Popular Conversions",
-    description: "The most requested everyday web image transformations",
+    description: "Popular everyday image format transformations",
     tools: [
       {
         name: "PNG to JPG Converter",
         slug: "/png-to-jpg",
-        badge: "Fast & Lossless",
+        badge: "Format Conversion",
         from: "PNG",
         to: "JPG",
-        desc: "Flatten transparent PNG assets into compact JPGs for photography and fast web delivery.",
+        desc: "Convert PNG images to JPG for photographs that do not need transparency. Compare file size and visual quality after conversion.",
       },
       {
         name: "JPG to PNG Converter",
         slug: "/jpg-to-png",
-        badge: "Pixel Accurate",
+        badge: "PNG Output",
         from: "JPG",
         to: "PNG",
-        desc: "Convert standard JPG photographs into uncompressed PNG graphics for editing and overlays.",
+        desc: "Convert JPG images to PNG when you need a PNG file for graphics workflows. Converting to PNG does not restore detail lost in the original JPG.",
       },
       {
         name: "JPG to WebP Converter",
         slug: "/jpg-to-webp",
-        badge: "Core Web Vitals",
+        badge: "Modern Format",
         from: "JPG",
         to: "WEBP",
-        desc: "Cut file sizes by 25–35% while preserving visual clarity for modern Google PageSpeed scores.",
-      },
-      {
-        name: "PNG to WebP Converter",
-        slug: "/png-to-webp",
-        badge: "Alpha Channel",
-        from: "PNG",
-        to: "WEBP",
-        desc: "Retain crisp transparent edges while drastically reducing file payload for responsive websites.",
+        desc: "Convert JPG images to WebP. Resulting file size and visual quality depend on the source image and chosen settings.",
       },
     ],
   },
   {
-    category: "Next-Gen & Mobile Formats",
-    description: "Format bridges for Apple iOS snapshots and bleeding-edge codecs",
+    category: "Modern Image Formats",
+    description: "Convert supported modern image formats for broader compatibility",
     tools: [
-      {
-        name: "HEIC to JPG Converter",
-        slug: "/heic-to-jpg",
-        badge: "iPhone Default",
-        from: "HEIC",
-        to: "JPG",
-        desc: "Transform Apple High-Efficiency photos into universally compatible JPGs for Windows and web.",
-      },
       {
         name: "AVIF to JPG Converter",
         slug: "/avif-to-jpg",
         badge: "Compatibility",
         from: "AVIF",
         to: "JPG",
-        desc: "Turn modern AV1-encoded AVIF files into legacy JPG format for older editors and platforms.",
-      },
-      {
-        name: "WebP to JPG Converter",
-        slug: "/webp-to-jpg",
-        badge: "Universal Export",
-        from: "WEBP",
-        to: "JPG",
-        desc: "Export downloaded WebP website graphics into standard JPG images for desktop software.",
-      },
-      {
-        name: "WebP to PNG Converter",
-        slug: "/webp-to-png",
-        badge: "Design Ready",
-        from: "WEBP",
-        to: "PNG",
-        desc: "Convert WebP graphics into editable lossless PNG format preserving 24-bit color fidelity.",
+        desc: "Convert supported AVIF images to JPG. Browser format support can vary by device and browser.",
       },
     ],
   },
@@ -138,7 +107,7 @@ const CONVERTER_TOOLS = [
         badge: "Byte Reducer",
         from: "MULTI",
         to: "MIN",
-        desc: "Intelligently squeeze image file weights by up to 80% without introducing visible noise or blur.",
+        desc: "Reduce image file size with adjustable output quality. Results depend on the source image and chosen settings.",
       },
       {
         name: "Online Image Resizer",
@@ -155,39 +124,39 @@ const CONVERTER_TOOLS = [
 const CORE_BENEFITS = [
   {
     icon: Lock,
-    title: "100% Client-Side Privacy",
-    desc: "Files never travel across the internet. Your photos are drawn directly into your browser's local HTML5 Canvas memory and processed on-device.",
-    highlight: "Zero Server Uploads",
+    title: "Private Browser Processing",
+    desc: "Supported image conversions are processed locally in your browser. The converter does not send those image files to a conversion server.",
+    highlight: "Browser-Based",
   },
   {
     icon: Zap,
-    title: "Hardware-Accelerated Speed",
-    desc: "Bypasses upload queues and remote worker latency. Batch conversions execute using your computer or smartphone's native GPU/CPU cycles.",
-    highlight: "Sub-Second Renders",
+    title: "Local Browser Processing",
+    desc: "Supported conversions run in your browser using the Canvas API. Processing speed depends on your device, image dimensions, and browser.",
+    highlight: "Canvas Processing",
   },
   {
     icon: Layers,
-    title: "True Bulk Processing",
-    desc: "Queue dozens of mixed format files simultaneously. Convert entire collections in parallel with one-click individual or bundled ZIP downloads.",
+    title: "Batch Conversion",
+    desc: "Add multiple supported images to the queue, convert them, and download files individually or together as a ZIP archive.",
     highlight: "Batch Ready",
   },
   {
     icon: SlidersHorizontal,
-    title: "Granular Quality Calibration",
-    desc: "Dial in the exact compression threshold between 1% and 100% to hit strict target file weight requirements without destroying detail.",
+    title: "Output Quality Control",
+    desc: "Adjust output quality for JPG and WebP. PNG output does not use the lossy quality slider.",
     highlight: "Precise Control",
   },
   {
     icon: InfinityIcon,
-    title: "Unmetered & Unlimited",
-    desc: "No artificial monthly limits, no daily conversion credits, and no paywalls. Convert high-resolution files continuously without registration.",
-    highlight: "Zero Paywalls",
+    title: "Free to Use",
+    desc: "Use the browser-based converter without creating an account. Practical file limits depend on your device and available browser memory.",
+    highlight: "No Account Needed",
   },
   {
     icon: Gift,
-    title: "Clean, Watermark-Free Exports",
-    desc: "Every converted file is 100% clean and pristine. ConvertImageNow leaves source metadata unblemished with zero promotional branding.",
-    highlight: "Pristine Output",
+    title: "Watermark-Free Downloads",
+    desc: "Converted files are exported without an added ConvertImageNow watermark. Canvas-based conversion may not preserve all original metadata.",
+    highlight: "No Added Watermark",
   },
 ];
 
@@ -195,22 +164,22 @@ const HOW_IT_WORKS_STEPS = [
   {
     step: "01",
     title: "Select or Drop Images",
-    desc: "Drag individual files or entire folders into the converter zone. We support JPG, PNG, WebP, AVIF, and HEIC source files directly from local storage.",
+    desc: "Choose supported image files from your device and add them to the conversion queue. The main converter accepts JPG, PNG, WebP, and AVIF inputs.",
   },
   {
     step: "02",
     title: "Target Output & Balance Quality",
-    desc: "Pick your destination codec (JPG, PNG, WebP, or AVIF) and adjust the compression slider to strike the ideal balance between byte weight and visual crispness.",
+    desc: "Choose JPG, PNG, or WebP as the output format. Adjust quality for JPG and WebP; PNG output does not use the lossy quality slider.",
   },
   {
     step: "03",
-    title: "Instant In-Memory Render",
-    desc: "Your browser decodes the image via HTML5 Canvas API and encodes it locally into the target container. No external network requests are made.",
+    title: "Browser-Based Conversion",
+    desc: "The browser decodes supported images and converts them with the Canvas API. The image data is processed locally rather than sent to a conversion server.",
   },
   {
     step: "04",
     title: "Download Clean Files or Archive",
-    desc: "Save converted images one by one or export your full batch in a structured, uncompressed ZIP archive with preserved filenames.",
+    desc: "Download converted images individually or together in a ZIP archive.",
   },
 ];
 
@@ -219,33 +188,33 @@ const FORMAT_COMPARISON = [
     format: "JPG / JPEG",
     bestFor: "Photographs, complex color gradients, camera exports",
     transparency: "No",
-    compression: "Lossy (Variable 1–100%)",
-    compatibility: "100% Universal (All browsers, OSs, print)",
+    compression: "Lossy; quality and file size depend on encoder settings",
+    compatibility: "Very broad support; confirm requirements for specialist workflows",
     verdict: "Essential fallback when broad compatibility is paramount.",
   },
   {
     format: "PNG",
     bestFor: "Logos, UI icons, sharp text, screenshots, line art",
-    transparency: "Yes (Full 8-bit Alpha Channel)",
-    compression: "Lossless (DEFLATE / Canvas)",
-    compatibility: "100% Universal",
+    transparency: "Yes",
+    compression: "Lossless (DEFLATE)",
+    compatibility: "Very broad support across browsers and operating systems",
     verdict: "Standard for crisp transparent graphics where artifacts are unacceptable.",
   },
   {
     format: "WebP",
     bestFor: "Production websites, Core Web Vitals, hero headers",
     transparency: "Yes (Lossy & Lossless)",
-    compression: "Lossy & Lossless (25–35% smaller than JPG)",
-    compatibility: "97%+ Modern Browsers (Chrome, Safari, Edge, Firefox)",
-    verdict: "Default format choice for maximum web page speed and SEO performance.",
+    compression: "Lossy and lossless options; file size varies by image and settings",
+    compatibility: "Supported by modern browsers; check older-device requirements",
+    verdict: "A practical web format when browser support and output size suit your use case.",
   },
   {
     format: "AVIF",
     bestFor: "Next-gen web graphics, extreme data compression",
-    transparency: "Yes (10-bit & 12-bit HDR)",
-    compression: "Advanced AV1-based lossy/lossless (50% smaller than JPG)",
-    compatibility: "Modern desktop & mobile evergreen browsers",
-    verdict: "The highest compression efficiency available for modern web platforms.",
+    transparency: "Yes",
+    compression: "AV1-based compression; results vary by image and encoder",
+    compatibility: "Supported by many modern browsers; check target-device compatibility",
+    verdict: "Often offers strong compression; compare output quality, encoding time, and browser support.",
   },
 ];
 
@@ -254,60 +223,56 @@ const REAL_WORLD_USE_CASES = [
     title: "Core Web Vitals & Google PageSpeed Optimization",
     scenario: "Fix slow Largest Contentful Paint (LCP) caused by oversized banners",
     solution:
-      "Modernizing high-resolution JPG/PNG banners into WebP or AVIF reduces transfer weight by up to 70%. Faster byte transfers directly improve LCP and mobile bounce rates.",
+      "Converting suitable large JPG or PNG images to WebP or AVIF can reduce transfer size. Measure the result and test page performance after changing formats.",
   },
   {
     title: "Overcoming Strict Marketplace & CMS Upload Limits",
-    scenario: "E-commerce portals rejecting raw HEIC snapshots or heavy PNG product renders",
+    scenario: "E-commerce portals rejecting oversized product images",
     solution:
-      "Platforms like eBay, Etsy, and Amazon enforce strict JPG/PNG specifications under 10MB. Converting files client-side ensures immediate validation without software setup.",
+      "Image upload requirements vary by marketplace and listing type. Check the current platform requirements before converting an image for upload.",
   },
   {
     title: "Eliminating Transparency Bloat on Solid Backgrounds",
     scenario: "Accidental PNG captures bloating blog layouts and newsletters",
     solution:
-      "Photographs saved as PNG waste enormous memory storing unused alpha channels. Re-encoding solid-background assets to 85% quality JPG slashes file size by up to 5x.",
+      "For photographs without transparency, JPG may produce smaller files than PNG. Compare the output visually and choose a quality setting appropriate for the image.",
   },
   {
     title: "Cross-Platform Asset Distribution & Printing",
-    scenario: "Sharing iPhone HEIC photos with Windows, Android, and print labs",
+    scenario: "Sharing image files across devices and applications",
     solution:
-      "Apple's default HEIC container fails to open natively on older Windows builds and consumer photo kiosks. Batch converting to JPG restores instant plug-and-play viewing.",
+      "Image compatibility varies across operating systems, apps, and upload forms. Check the destination requirements and choose a supported format when a JPG copy is needed.",
   },
 ];
 
 const HOMEPAGE_FAQS = [
   {
     q: "Is ConvertImageNow completely free to use?",
-    a: "Yes. ConvertImageNow is 100% free with no hidden tiers, no credit cards, no subscriptions, and no conversion limits. You can process single photos or large bulk folders without hitting paywalls.",
+    a: "The converter is free to use and does not require an account. The practical number and size of images you can process in a batch depend on your device and browser memory.",
   },
   {
     q: "Are my uploaded photos kept private and secure?",
-    a: "Your images are never uploaded to any remote server or third-party cloud. ConvertImageNow processes all conversions locally on your computer or phone using your browser's built-in HTML5 Canvas engine. Your files never leave your device.",
+    a: "The supported conversion workflow processes image data in your browser rather than uploading it to a conversion server. Normal website requests, such as loading the page, may still contact the site.",
   },
   {
     q: "What is the difference between converting to WebP versus JPG?",
-    a: "WebP provides modern compression algorithms that achieve 25% to 35% smaller file sizes than JPG at equivalent visual quality. Additionally, WebP supports transparent backgrounds, whereas JPG always flattens transparent pixels into solid backgrounds.",
+    a: "The WebP format supports lossy and lossless encoding and can include transparency. This converter uses browser Canvas encoding with an adjustable quality setting for WebP output. Whether the result is smaller than JPG depends on the image and settings.",
   },
   {
-    q: "Can I convert multiple images at the same time?",
-    a: "Yes. ConvertImageNow supports client-side batch processing. Drop multiple files into the conversion area, pick your target format and compression level, and download all files individually or packaged as a single ZIP archive.",
+    q: "Can I convert multiple images in one batch?",
+    a: "Yes. Add multiple supported files to the queue, choose the output format and quality, and start conversion. The browser processes queued files sequentially; you can download them individually or together as a ZIP archive.",
   },
   {
     q: "Will converting an image degrade its visual quality?",
-    a: "Converting between lossless formats (such as WebP lossless to PNG) preserves pixel-for-pixel visual quality. When converting to lossy formats (like JPG or standard WebP), our quality slider lets you configure compression from 1% to 100%, allowing you to retain imperceptible visual fidelity.",
+    a: "Converting to JPG or lossy WebP can reduce image quality, depending on the selected setting. PNG output does not use the quality slider. Keep an original copy if preserving the source is important.",
   },
   {
     q: "Does ConvertImageNow work on mobile phones?",
-    a: "Yes. ConvertImageNow is fully responsive and functions seamlessly across iOS (Safari) and Android (Chrome, Firefox, Samsung Internet). You can convert photos directly from your phone's photo library or camera roll.",
+    a: "The site is responsive and can be used in modern mobile browsers. Select supported images from your phone's photo library or Files app; available formats depend on browser support.",
   },
   {
     q: "Do you place watermarks on converted images?",
-    a: "No. None of our tools add watermarks, branding, stamps, or promotional overlays to your files. Your images remain completely unaltered outside of the requested format conversion.",
-  },
-  {
-    q: "Why should I convert HEIC photos to JPG?",
-    a: "HEIC is Apple's proprietary capture format for iPhones. While it saves disk space on iOS, many Windows applications, web forms, and desktop photo editors cannot open HEIC files. Converting them to JPG makes them universally accessible anywhere.",
+    a: "The converter does not add a ConvertImageNow watermark to converted downloads. Format conversion can change image encoding and may not preserve all original metadata.",
   },
 ];
 
@@ -321,7 +286,7 @@ export default function HomePage() {
         url: `${SITE_URL}/`,
         name: "ConvertImageNow",
         description:
-          "Free online image converter providing private, browser-based batch conversion across JPG, PNG, WebP, AVIF, and HEIC formats.",
+          "Free online image converter for browser-based batch conversion of supported JPG, PNG, WebP, and AVIF images.",
         inLanguage: "en-US",
       },
       {
@@ -337,20 +302,13 @@ export default function HomePage() {
           price: "0",
           priceCurrency: "USD",
         },
-        aggregateRating: {
-          "@type": "AggregateRating",
-          ratingValue: "4.9",
-          ratingCount: "210",
-          bestRating: "5",
-          worstRating: "1",
-        },
         featureList: [
-          "100% Client-side in-browser processing",
-          "Zero file uploads to external servers",
+          "Browser-based processing for supported image files",
+          "Selected image files are not sent to a conversion server",
           "Batch conversion with ZIP export",
-          "Precision lossy and lossless quality control",
-          "No watermarks or file size restrictions",
-          "Support for JPG, PNG, WebP, AVIF, and HEIC",
+          "Adjustable quality for supported lossy output formats",
+          "No added watermark on converted downloads",
+          "JPG, PNG, WebP, and supported AVIF input formats",
         ],
       },
       {
@@ -381,42 +339,18 @@ export default function HomePage() {
           {
             "@type": "ListItem",
             position: 4,
-            name: "PNG to WebP Converter",
-            url: `${SITE_URL}/png-to-webp`,
-          },
-          {
-            "@type": "ListItem",
-            position: 5,
-            name: "HEIC to JPG Converter",
-            url: `${SITE_URL}/heic-to-jpg`,
-          },
-          {
-            "@type": "ListItem",
-            position: 6,
             name: "AVIF to JPG Converter",
             url: `${SITE_URL}/avif-to-jpg`,
           },
           {
             "@type": "ListItem",
-            position: 7,
-            name: "WebP to JPG Converter",
-            url: `${SITE_URL}/webp-to-jpg`,
-          },
-          {
-            "@type": "ListItem",
-            position: 8,
-            name: "WebP to PNG Converter",
-            url: `${SITE_URL}/webp-to-png`,
-          },
-          {
-            "@type": "ListItem",
-            position: 9,
+            position: 5,
             name: "Online Image Compressor",
             url: `${SITE_URL}/image-compressor`,
           },
           {
             "@type": "ListItem",
-            position: 10,
+            position: 6,
             name: "Online Image Resizer",
             url: `${SITE_URL}/image-resizer`,
           },
@@ -447,7 +381,7 @@ export default function HomePage() {
       />
 
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-slate-200/80 bg-gradient-to-b from-slate-50/60 via-white to-white py-12 dark:border-slate-800/80 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900 sm:py-16 lg:py-20">
+      <section className="relative overflow-hidden border-b border-[#263956] bg-gradient-to-b from-[#172642] via-[#101B33] to-[#101B33] py-10 dark:border-[#263956] sm:py-16 lg:py-20">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
@@ -457,25 +391,23 @@ export default function HomePage() {
 
         <div className="container-page">
           <div className="mx-auto max-w-3xl text-center">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/20 bg-emerald-500/5 px-3.5 py-1 text-xs font-medium tracking-wide text-emerald-700 dark:border-emerald-400/20 dark:bg-emerald-400/10 dark:text-emerald-300">
+            <div className="inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-[#398BFF]/30 bg-[#398BFF]/10 px-3 py-1.5 text-[10px] font-medium leading-snug tracking-wide text-[#9CC5FF] sm:px-3.5 sm:py-1 sm:text-xs">
               <ShieldCheck className="h-3.5 w-3.5 shrink-0 text-emerald-600 dark:text-emerald-400" />
-              <span>100% Private Client-Side Engine • Zero Cloud Uploads</span>
+              <span>Browser-Based Processing • No Conversion-Server Upload</span>
             </div>
 
-            <h1 className="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-5 text-[2rem] font-extrabold leading-[1.12] tracking-tight text-white sm:text-5xl sm:leading-tight lg:text-6xl">
               Free Online Image Converter
             </h1>
 
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
-              Convert JPG, PNG, WebP, AVIF, and HEIC files instantly in your
-              browser. Clean batch conversions with zero file size limits, no
-              watermarks, and complete data privacy.
+              Convert JPG, PNG, WebP, and supported AVIF files in your browser. Batch process images, choose an output format, and download converted files without uploading them to a conversion server.
             </p>
 
-            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-400">
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-300">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 text-brand-primary" />
-                No file upload queues
+                No server-side image uploads
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 text-brand-primary" />
@@ -488,7 +420,19 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-10 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/80 p-2 shadow-2xl shadow-slate-900/5 backdrop-blur-xl dark:border-slate-800 dark:bg-slate-950/80 sm:p-4">
+          <div className="mx-auto mt-7 flex max-w-2xl items-center justify-center gap-2 rounded-2xl border border-[#314969] bg-[#172642]/70 px-2 py-3 shadow-xl shadow-black/20 sm:mt-10 sm:gap-6 sm:px-8 sm:py-6" aria-label="JPG, PNG and WebP image format illustration">
+            {["JPG", "PNG", "WebP"].map((format, index) => (
+              <div key={format} className="flex items-center gap-3 sm:gap-6">
+                <div className="flex h-14 w-14 flex-col items-center justify-center rounded-xl border border-[#398BFF]/35 bg-[#101B33] text-[#9CC5FF] shadow-lg shadow-[#398BFF]/10 sm:h-20 sm:w-20">
+                  <ImageIcon aria-hidden="true" className="h-7 w-7 sm:h-9 sm:w-9" />
+                  <span className="text-[10px] font-bold tracking-wider sm:text-xs">{format}</span>
+                </div>
+                {index < 2 && <ArrowRight className="h-5 w-5 shrink-0 text-[#398BFF] sm:h-7 sm:w-7" aria-hidden="true" />}
+              </div>
+            ))}
+          </div>
+
+          <div className="mx-auto mt-7 max-w-4xl rounded-2xl border border-[#314969] bg-[#172642]/95 p-2 shadow-2xl shadow-black/30 backdrop-blur-xl sm:mt-10 sm:p-4">
             <ImageConverter />
           </div>
         </div>
@@ -511,24 +455,23 @@ export default function HomePage() {
             Explore All Online Image Converters & Tools
           </h2>
           <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-            Select a dedicated tool below for format-specific presets, batch
-            processing controls, and custom optimization guides.
+            Choose a tool for common format conversions, image compression, or resizing.
           </p>
         </div>
 
         <div className="mt-14 space-y-12">
           {CONVERTER_TOOLS.map((group) => (
             <div key={group.category}>
-              <div className="mb-5 flex flex-col justify-between border-b border-slate-200/80 pb-3 dark:border-slate-800 sm:flex-row sm:items-end">
+              <div className="mb-5 flex flex-col justify-between border-b border-slate-200/80 pb-3 dark:border-[#314969] sm:flex-row sm:items-end">
                 <div>
                   <h3 className="text-xl font-bold text-slate-900 dark:text-white">
                     {group.category}
                   </h3>
-                  <p className="text-sm text-slate-500 dark:text-slate-400">
+                  <p className="text-sm text-slate-500 dark:text-slate-300">
                     {group.description}
                   </p>
                 </div>
-                <span className="mt-2 text-xs font-semibold text-slate-400 dark:text-slate-500 sm:mt-0">
+                <span className="mt-2 text-xs font-semibold text-slate-400 dark:text-slate-400 sm:mt-0">
                   {group.tools.length} Tools Available
                 </span>
               </div>
@@ -538,12 +481,12 @@ export default function HomePage() {
                   <Link
                     key={tool.slug}
                     href={tool.slug}
-                    className="group relative flex flex-col justify-between rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/60 hover:shadow-lg hover:shadow-brand-primary/5 dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-brand-primary/60"
+                    className="group relative flex flex-col justify-between rounded-xl border border-[#314969] bg-[#172642]/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-[#398BFF]/70 hover:bg-[#1b2d4c] hover:shadow-lg hover:shadow-[#398BFF]/10"
                   >
                     <div>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-1.5 text-xs font-bold text-slate-700 dark:text-slate-200">
-                          <span className="rounded bg-slate-100 px-1.5 py-0.5 dark:bg-slate-800">
+                          <span className="rounded bg-[#101B33] px-1.5 py-0.5 text-slate-200">
                             {tool.from}
                           </span>
                           <ArrowRight className="h-3 w-3 text-brand-primary" />
@@ -551,7 +494,7 @@ export default function HomePage() {
                             {tool.to}
                           </span>
                         </div>
-                        <span className="rounded-full bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                        <span className="rounded-full border border-[#314969] bg-[#101B33] px-2 py-0.5 text-[10px] font-semibold text-slate-300">
                           {tool.badge}
                         </span>
                       </div>
@@ -560,7 +503,7 @@ export default function HomePage() {
                         {tool.name}
                       </h4>
 
-                      <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                      <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
                         {tool.desc}
                       </p>
                     </div>
@@ -578,18 +521,19 @@ export default function HomePage() {
       </section>
 
       {/* Benefits Section */}
-      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
+      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
-              Engineered for Privacy & Speed
+              Designed for Browser-Based Processing
             </span>
             <h2 className="mt-2 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
               Why Convert Images with ConvertImageNow?
             </h2>
             <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-              Unlike legacy online converters that send private files to cloud
-              queues, ConvertImageNow utilizes your device&apos;s native web APIs.
+              For supported formats, image conversion runs in your browser using its
+              image decoding and Canvas APIs. Selected image files are not sent
+              to a conversion server.
             </p>
           </div>
 
@@ -599,13 +543,13 @@ export default function HomePage() {
               return (
                 <div
                   key={b.title}
-                  className="rounded-2xl border border-slate-200/80 bg-white p-7 shadow-sm transition-shadow hover:shadow-md dark:border-slate-800 dark:bg-slate-950"
+                  className="rounded-2xl border border-slate-200/80 bg-white p-7 shadow-sm transition-shadow hover:shadow-md dark:border-[#314969] dark:bg-[#172642]"
                 >
                   <div className="flex items-center justify-between">
                     <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
                       <Icon className="h-5 w-5" />
                     </span>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500">
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-slate-400 dark:text-slate-400">
                       {b.highlight}
                     </span>
                   </div>
@@ -614,7 +558,7 @@ export default function HomePage() {
                     {b.title}
                   </h3>
 
-                  <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                  <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                     {b.desc}
                   </p>
                 </div>
@@ -634,7 +578,7 @@ export default function HomePage() {
             How to Convert Images Online in 4 Simple Steps
           </h2>
           <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-            Convert any photograph or digital graphic in seconds without
+            Convert supported photographs and digital graphics in your browser without
             installing external applications or registering an account.
           </p>
         </div>
@@ -643,7 +587,7 @@ export default function HomePage() {
           {HOW_IT_WORKS_STEPS.map((step) => (
             <div
               key={step.step}
-              className="relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-950"
+              className="relative flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-[#314969] dark:bg-[#172642]"
             >
               <div>
                 <span className="font-mono text-3xl font-black text-brand-primary/30">
@@ -652,7 +596,7 @@ export default function HomePage() {
                 <h3 className="mt-3 text-lg font-bold text-slate-900 dark:text-white">
                   {step.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+                <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                   {step.desc}
                 </p>
               </div>
@@ -662,7 +606,7 @@ export default function HomePage() {
       </section>
 
       {/* Format Comparison Table */}
-      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
+      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-3xl text-center">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -677,10 +621,10 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-950">
+          <div className="mt-12 overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-sm dark:border-[#314969] dark:bg-[#172642]">
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm">
-                <thead className="border-b border-slate-200 bg-slate-100/60 text-xs font-bold uppercase tracking-wider text-slate-700 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300">
+                <thead className="border-b border-slate-200 bg-slate-100/60 text-xs font-bold uppercase tracking-wider text-slate-700 dark:border-[#314969] dark:bg-[#172642] dark:text-slate-300">
                   <tr>
                     <th scope="col" className="px-6 py-4">
                       Format
@@ -699,7 +643,7 @@ export default function HomePage() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200/80 dark:divide-slate-800">
+                <tbody className="divide-y divide-slate-200/80 dark:divide-[#314969]">
                   {FORMAT_COMPARISON.map((row) => (
                     <tr
                       key={row.format}
@@ -711,16 +655,16 @@ export default function HomePage() {
                       >
                         {row.format}
                       </th>
-                      <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                      <td className="px-6 py-4 text-slate-600 dark:text-slate-300">
                         {row.transparency}
                       </td>
-                      <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                      <td className="px-6 py-4 text-slate-600 dark:text-slate-300">
                         {row.compression}
                       </td>
-                      <td className="px-6 py-4 text-slate-600 dark:text-slate-400">
+                      <td className="px-6 py-4 text-slate-600 dark:text-slate-300">
                         {row.compatibility}
                       </td>
-                      <td className="px-6 py-4 text-xs leading-relaxed text-slate-500 dark:text-slate-400">
+                      <td className="px-6 py-4 text-xs leading-relaxed text-slate-500 dark:text-slate-300">
                         {row.verdict}
                       </td>
                     </tr>
@@ -751,15 +695,15 @@ export default function HomePage() {
           {REAL_WORLD_USE_CASES.map((uc) => (
             <div
               key={uc.title}
-              className="rounded-2xl border border-slate-200/80 bg-white p-7 shadow-sm dark:border-slate-800 dark:bg-slate-950"
+              className="rounded-2xl border border-slate-200/80 bg-white p-7 shadow-sm dark:border-[#314969] dark:bg-[#172642]"
             >
               <h3 className="text-lg font-bold text-slate-900 dark:text-white">
                 {uc.title}
               </h3>
-              <div className="mt-2 inline-block rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+              <div className="mt-2 inline-block rounded-md bg-slate-100 px-2 py-0.5 text-xs font-medium text-slate-600 dark:bg-[#101B33] dark:text-slate-300">
                 Issue: {uc.scenario}
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 {uc.solution}
               </p>
             </div>
@@ -768,9 +712,9 @@ export default function HomePage() {
       </section>
 
       {/* In-Browser Security Deep Dive */}
-      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
+      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-24">
         <div className="container-page">
-          <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200/90 bg-white p-8 shadow-sm dark:border-slate-800 dark:bg-slate-950 sm:p-12">
+          <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200/90 bg-white p-8 shadow-sm dark:border-[#314969] dark:bg-[#172642] sm:p-12">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-primary/10 text-brand-primary">
                 <Cpu className="h-7 w-7" />
@@ -787,47 +731,37 @@ export default function HomePage() {
 
             <div className="mt-8 space-y-5 text-sm leading-relaxed text-slate-600 dark:text-slate-300 sm:text-base">
               <p>
-                Traditional web converters require you to transmit photos over
-                HTTP to an unfamiliar cloud server. That server decodes your image,
-                writes it to temporary disk storage, and makes it vulnerable to
-                logging, data interception, or third-party scraping.
+                For supported formats, ConvertImageNow processes image data locally in your browser rather than uploading the selected image to a conversion server.
               </p>
 
               <p>
                 <strong>ConvertImageNow works fundamentally differently.</strong>{" "}
-                We utilize the standard HTML5 Canvas 2D Context API and browser
-                WebAssembly image codecs. When you select an image, your browser
-                reads the local binary buffer directly via JavaScript{" "}
-                <code className="rounded bg-slate-100 px-1 py-0.5 font-mono text-xs dark:bg-slate-800">
-                  FileReader
-                </code>
-                , mounts it in client memory, and rasterizes it into the target
-                format without making an external network dispatch.
+                The converter uses the browser’s image decoding and Canvas capabilities to create the selected output format. The conversion workflow does not upload the selected image to a conversion server.
               </p>
 
               <div className="grid gap-4 pt-4 sm:grid-cols-3">
-                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-slate-800">
+                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-[#314969]">
                   <p className="font-mono text-xl font-bold text-brand-primary">
-                    0 Bytes
+                    Local
                   </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                    Uploaded to remote cloud servers
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-300">
+                    Image conversion runs in your browser
                   </p>
                 </div>
-                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-slate-800">
+                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-[#314969]">
                   <p className="font-mono text-xl font-bold text-brand-primary">
-                    100% Local
+                    Canvas API
                   </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                    Processing executes on local CPU/GPU
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-300">
+                    Uses browser image processing capabilities
                   </p>
                 </div>
-                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-slate-800">
+                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-[#314969]">
                   <p className="font-mono text-xl font-bold text-brand-primary">
-                    Zero Logs
+                    Your Device
                   </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">
-                    No database retention or user tracking
+                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-300">
+                    Keep your original files under your control
                   </p>
                 </div>
               </div>
@@ -862,18 +796,18 @@ export default function HomePage() {
           {HOMEPAGE_FAQS.map((faq) => (
             <details
               key={faq.q}
-              className="group rounded-2xl border border-slate-200/80 bg-white p-6 transition-all open:border-brand-primary/40 open:shadow-sm dark:border-slate-800 dark:bg-slate-950"
+              className="group rounded-2xl border border-slate-200/80 bg-white p-6 transition-all open:border-brand-primary/40 open:shadow-sm dark:border-[#314969] dark:bg-[#172642]"
             >
               <summary className="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900 dark:text-white">
                 <span className="text-base">{faq.q}</span>
                 <span
                   aria-hidden="true"
-                  className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-500 transition-transform duration-200 group-open:rotate-45 dark:bg-slate-800 dark:text-slate-400"
+                  className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-xs font-bold text-slate-500 transition-transform duration-200 group-open:rotate-45 dark:bg-[#101B33] dark:text-slate-300"
                 >
                   +
                 </span>
               </summary>
-              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 {faq.a}
               </p>
             </details>
@@ -892,7 +826,7 @@ export default function HomePage() {
       </section>
 
       {/* Featured Articles Section */}
-      <section className="border-t border-slate-200/80 bg-slate-50/50 py-16 dark:border-slate-800 dark:bg-slate-900/40 sm:py-24">
+      <section className="border-t border-slate-200/80 bg-slate-50/50 py-16 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-24">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -913,7 +847,7 @@ export default function HomePage() {
                 title:
                   "JPG vs WebP: Which Format Wins for Size, Quality, and Speed",
                 excerpt:
-                  "Comprehensive benchmark comparisons show WebP yielding 25–35% smaller file sizes at visually identical quality thresholds.",
+                  "Compare file size and visual quality using the same source image; results vary with content and encoding settings.",
                 href: "/blog/jpg-vs-webp",
                 category: "Format Comparison",
               },
@@ -921,22 +855,22 @@ export default function HomePage() {
                 title:
                   "How to Make an Image File Smaller Without Losing Quality",
                 excerpt:
-                  "A practical guide to lossy and lossless compression, dimension scaling, and modern container selection to cut image payload by up to 80%.",
+                  "Learn how image dimensions, file formats, and quality settings affect file size. Results vary by the original image and conversion settings.",
                 href: "/blog/how-to-make-image-file-smaller",
                 category: "Optimization Strategy",
               },
               {
-                title: "PNG vs JPG: Which Image Format Should You Use?",
+                title: "Best Image Format for Web: JPG, PNG, WebP & AVIF",
                 excerpt:
-                  "Understand when to choose alpha channel transparency versus discrete 24-bit photographic compression for web assets.",
-                href: "/blog/png-vs-jpg",
-                category: "Asset Architecture",
+                  "Choose a format by image type, transparency, quality, and browser support. Compare the trade-offs before publishing.",
+                href: "/blog/best-image-formats-explained",
+                category: "Format Guide",
               },
             ].map((post) => (
               <Link
                 key={post.href}
                 href={post.href}
-                className="group flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/60 hover:shadow-md dark:border-slate-800 dark:bg-slate-950"
+                className="group flex flex-col justify-between rounded-2xl border border-slate-200/80 bg-white p-6 shadow-sm transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/60 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]"
               >
                 <div>
                   <span className="inline-flex items-center rounded-full bg-brand-primary/10 px-3 py-1 text-xs font-semibold text-brand-primary">
@@ -945,7 +879,7 @@ export default function HomePage() {
                   <h3 className="mt-4 text-base font-bold text-slate-900 transition-colors group-hover:text-brand-primary dark:text-white dark:group-hover:text-brand-primary">
                     {post.title}
                   </h3>
-                  <p className="mt-2.5 line-clamp-3 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
+                  <p className="mt-2.5 line-clamp-3 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
                     {post.excerpt}
                   </p>
                 </div>
@@ -961,7 +895,7 @@ export default function HomePage() {
 
       {/* CTA Banner */}
       <section className="container-page py-16 sm:py-20">
-        <div className="relative overflow-hidden rounded-3xl bg-slate-900 px-8 py-14 text-center text-white shadow-2xl dark:border dark:border-slate-800 sm:px-16">
+        <div className="relative overflow-hidden rounded-3xl bg-slate-900 px-8 py-14 text-center text-white shadow-2xl dark:border dark:border-[#314969] sm:px-16">
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-brand-primary/20 blur-3xl"
@@ -972,14 +906,13 @@ export default function HomePage() {
           />
 
           <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
-            Instant In-Browser Utility
+            Browser-Based Image Utility
           </span>
           <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
             Start Converting Your Images Today
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
-            No registration, no watermarks, and no cloud uploads. Fast, private
-            image conversions directly inside your web browser.
+            No registration or added watermarks. Supported image conversions process selected image files in your browser.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">

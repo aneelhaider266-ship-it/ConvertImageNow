@@ -3,7 +3,7 @@ import {
   Zap,
   Lock,
   Globe2,
-  InfinityIcon,
+  CheckCircle2,
   UserX,
   Layers,
   Smartphone,
@@ -13,48 +13,48 @@ const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/features`;
 
 export const metadata: Metadata = {
-  title: "ConvertImageNow Features | Fast & Private Image Tools",
+  title: "ConvertImageNow Features | Browser-Based Tools",
   description:
-    "Explore ConvertImageNow features: 100% private in-browser image conversion, zero server uploads, unlimited batch processing, and no hidden subscriptions.",
+    "Explore browser-based image conversion, adjustable output quality, batch downloads, and supported formats.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "ConvertImageNow Features | Fast & Private Image Tools",
+    title: "ConvertImageNow Features | Browser-Based Tools",
     description:
-      "Discover the speed, privacy, and simplicity behind our client-side image conversion engine.",
+      "Discover how supported image files are processed in your browser and how the available tools work.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ConvertImageNow Features | Fast & Private Image Tools",
+    title: "ConvertImageNow Features | Browser-Based Tools",
     description:
-      "100% client-side conversion, unlimited batches, and zero file uploads.",
+      "Browser-based processing, batch downloads, and no account requirement.",
   },
 };
 
 const FEATURES = [
   {
     icon: Zap,
-    title: "Fast Processing",
-    desc: "Conversions run on your own device, so there's no upload wait or server queue slowing you down.",
+    title: "Browser-Based Processing",
+    desc: "Selected image files are processed in your browser rather than sent to a conversion server. Processing time depends on your device and image size.",
   },
   {
     icon: Lock,
     title: "Privacy First",
-    desc: "Your images are never transmitted anywhere. What happens in your browser stays in your browser.",
+    desc: "Selected image files are processed locally for supported conversions. The website still makes normal requests and may collect limited technical data as described in the Privacy Policy.",
   },
   {
     icon: Globe2,
     title: "Browser Based",
-    desc: "No software to install — ConvertImageNow works entirely inside modern web browsers using the Canvas API.",
+    desc: "No separate desktop software is required. Supported conversions use browser image decoding and Canvas APIs.",
   },
   {
-    icon: InfinityIcon,
-    title: "Unlimited Usage",
-    desc: "Convert one image or one thousand — there's no cap on how much you can use the tool.",
+    icon: CheckCircle2,
+    title: "Free to Use",
+    desc: "Use the listed tools without creating an account. Practical batch capacity depends on your device and browser memory.",
   },
   {
     icon: UserX,
@@ -64,12 +64,12 @@ const FEATURES = [
   {
     icon: Layers,
     title: "Batch Processing",
-    desc: "Select or drag in multiple files at once and convert them all together.",
+    desc: "Select multiple supported files. The converter processes queued images sequentially and offers individual downloads or ZIP export.",
   },
   {
     icon: Smartphone,
     title: "Cross Platform",
-    desc: "Works on desktop, tablet, and mobile browsers alike, with a fully responsive interface.",
+    desc: "The interface is responsive across desktop and mobile screen sizes. Available formats depend on browser support.",
   },
 ];
 
@@ -79,7 +79,7 @@ const FEATURES_SCHEMA = {
   name: "ConvertImageNow Core Features",
   url: PAGE_URL,
   description:
-    "Key architectural features and benefits of the ConvertImageNow client-side platform.",
+    "Features of the ConvertImageNow browser-based image conversion tools.",
   mainEntity: {
     "@type": "ItemList",
     itemListElement: FEATURES.map((f, idx) => ({
@@ -116,7 +116,7 @@ export default function FeaturesPage() {
         {FEATURES.map((f) => (
           <div
             key={f.title}
-            className="rounded-2xl border border-slate-200 p-6 transition-shadow hover:shadow-md dark:border-slate-800"
+            className="rounded-2xl border border-slate-200 bg-white/70 p-6 transition-shadow hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/70"
           >
             <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
               <f.icon size={20} />
@@ -132,15 +132,15 @@ export default function FeaturesPage() {
       <div className="mx-auto mt-16 max-w-2xl space-y-6 text-left text-slate-700 dark:text-slate-300">
         <h2 className="text-2xl font-bold">Why speed and privacy go together</h2>
         <p>
-          Most online converters work by uploading your file to a server, converting it there, and sending the result back. That round trip is where the delay comes from, and it&apos;s also where your files leave your control. ConvertImageNow skips that step entirely — the conversion happens using your device&apos;s own processing power, through your browser, so there&apos;s nothing to upload and nothing to wait on.
+          Some online converters upload files for remote processing. ConvertImageNow uses browser APIs for supported conversions, so selected image data does not need to be sent to a conversion server. Processing time depends on the file, browser, and device.
         </p>
         <p>
-          This also means the tool works the same way whether you&apos;re converting a single screenshot or a folder of a hundred product photos. There&apos;s no server queue to slow down under load, no file size limit imposed to protect someone else&apos;s bandwidth, and no account required to unlock batch processing.
+          You can add multiple supported files to the queue, but practical batch size depends on image dimensions, browser memory, and the device. The current converter processes files sequentially and does not require an account.
         </p>
 
         <h2 className="text-2xl font-bold">No catches, no hidden costs</h2>
         <p>
-          ConvertImageNow doesn&apos;t have a paid tier, a daily conversion cap, or a watermark added to your downloads. The features above aren&apos;t a trial version of something bigger — they&apos;re the whole tool, available to everyone who opens the page, on any device with a modern browser.
+          The listed converter tools are free to use and do not require an account. Converted downloads do not include an added ConvertImageNow watermark. Browser and device limits still apply to large images and batches.
         </p>
       </div>
     </div>

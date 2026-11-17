@@ -9,14 +9,14 @@ const PAGE_URL = `${SITE_URL}/converter`;
 export const metadata: Metadata = {
   title: "Free Online Image Converter | JPG, PNG, WebP & AVIF",
   description:
-    "Convert JPG, PNG, WebP, and AVIF images online for free. Enjoy batch conversion, quality controls, ZIP downloads, and 100% private in-browser processing.",
+    "Convert JPG, PNG, WebP, and supported AVIF inputs in your browser. Export as JPG, PNG, or WebP with batch downloads.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
     title: "Free Online Image Converter | ConvertImageNow",
     description:
-      "Convert JPG, PNG, WebP, and AVIF images privately in your browser.",
+      "Process JPG, PNG, WebP, and supported AVIF inputs in your browser. Export as JPG, PNG, or WebP.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Online Image Converter | ConvertImageNow",
     description:
-      "Private, browser-based image conversion for JPG, PNG, WebP, and AVIF.",
+      "Browser-based conversion for JPG, PNG, WebP, and supported AVIF inputs.",
   },
 };
 
@@ -58,11 +58,11 @@ const FAQS = [
   },
   {
     q: "Can I convert multiple images at once?",
-    a: "Yes. You can upload multiple supported images and download the converted files separately or as a ZIP archive.",
+    a: "Yes. Add multiple supported images to the queue. The browser processes them sequentially, and you can download results individually or together as a ZIP archive.",
   },
   {
     q: "Does the converter work on mobile?",
-    a: "Yes. The tool is designed to work in modern desktop and mobile browsers including iOS Safari and Android Chrome.",
+    a: "The site is responsive and can be used in modern desktop and mobile browsers. Available input formats depend on browser support.",
   },
 ];
 
@@ -78,13 +78,6 @@ const WEB_APP_SCHEMA = {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "215",
-    bestRating: "5",
-    worstRating: "1",
   },
   description:
     "Free browser-based conversion for JPG, PNG, WebP, and AVIF images without server uploads.",
@@ -125,8 +118,8 @@ export default function ConverterPage() {
         </h1>
 
         <p className="mx-auto mt-4 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-          Convert JPG, PNG, WebP, and AVIF images online for free. Choose an
-          output format, adjust quality when available, and download your files
+          Select JPG, PNG, WebP, or supported AVIF input. Choose JPG, PNG, or WebP as
+          the output format, adjust quality when available, and download your files
           directly from your browser.
         </p>
       </section>
@@ -164,7 +157,7 @@ export default function ConverterPage() {
         </p>
 
         <p className="leading-7">
-          You can use the tool to change image formats, prepare files for
+          You can use the tool to change supported image formats, prepare files for
           websites and social media, and create smaller copies when suitable.
           Actual output size depends on the original image, dimensions, format,
           and quality setting.

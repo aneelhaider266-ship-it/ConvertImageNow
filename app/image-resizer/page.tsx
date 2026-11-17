@@ -21,7 +21,7 @@ const PAGE_URL = `${SITE_URL}/image-resizer`;
 export const metadata: Metadata = {
   title: "Free Online Image Resizer – Change Dimensions",
   description:
-    "Resize JPG, PNG, WebP, and AVIF images free by exact pixels or percentage. Batch resize multiple photos in your browser with zero server uploads or watermarks.",
+    "Resize JPG, PNG, WebP, and AVIF images by exact pixels or percentage. Batch resize photos in your browser without uploading selected image files to a conversion server.",
   keywords: [
     "image resizer",
     "resize image online",
@@ -38,16 +38,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Online Image Resizer – Resize Image Pixels & Dimensions",
     description:
-      "Resize images by exact width/height in pixels or scale by percentage. 100% client-side privacy, locked aspect ratios, and instant batch ZIP download.",
+      "Resize images by pixel dimensions or percentage, with an aspect-ratio option and batch downloads. Processing capacity depends on your device and browser memory.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online Image Resizer – Batch Resize Without Quality Loss",
+    title: "Free Online Image Resizer – Change Image Dimensions",
     description:
-      "Quickly adjust image width, height, or scale percentage. Client-side browser processing with zero upload lag.",
+      "Change image width, height, or scale percentage in your browser. Resizing can affect sharpness, especially when enlarging small images.",
   },
 };
 
@@ -89,28 +89,19 @@ const SOFTWARE_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "139",
-    bestRating: "5",
-    worstRating: "1",
-  },
   featureList: [
     "Exact pixel (width x height) dimension customization",
     "Proportional percentage scaling with aspect ratio lock",
-    "100% client-side rendering via HTML5 Canvas with zero cloud uploads",
+    "Browser-based image rendering via HTML5 Canvas",
     "Batch image resizing with one-click ZIP packaging",
-    "Format preservation for JPG, PNG, WebP, and AVIF",
-    "Offline capability once page is loaded in browser",
-    "No file size caps, watermarks, or user registration",
+    "Batch resizing with ZIP downloads; practical capacity depends on your device and browser memory",
   ],
 };
 
 const FAQS = [
   {
     q: "How do I resize an image without losing quality or making it blurry?",
-    a: "Downscaling (reducing pixel width and height) preserves sharpness because pixel density is condensed. However, upscaling (enlarging a small image to higher pixel counts) forces the browser to interpolate missing pixels, causing softness. To avoid blur, always resize from the highest-resolution original file and maintain the locked aspect ratio.",
+    a: "Downscaling usually retains perceived sharpness better than upscaling, but any resampling can alter fine detail. Upscaling asks the browser to interpolate pixels that are not present in the source and can look soft. Start with the highest-resolution original available, preview the result, and keep the aspect ratio locked when distortion is not intended.",
   },
   {
     q: "What is the difference between resizing an image and compressing it?",
@@ -122,11 +113,11 @@ const FAQS = [
   },
   {
     q: "Are my photos uploaded to a remote server when I resize them?",
-    a: "No. ConvertImageNow operates entirely client-side. The HTML5 Canvas API renders, bicubic resamples, and exports your images in local device memory. Your photos never traverse the internet and cannot be accessed by third parties.",
+    a: "The resizing workflow uses your browser Canvas API to render and export the selected image. Selected image files are processed in the browser rather than uploaded to a ConvertImageNow conversion server. General website requests and analytics are covered by the Privacy Policy.",
   },
   {
     q: "Can I batch resize multiple images at once?",
-    a: "Yes. You can drag and drop multiple JPG, PNG, WebP, or AVIF files into the tool simultaneously. Set your target width, height, or percentage scale, and all photos will be resized in parallel and bundled into a downloadable ZIP archive.",
+    a: "Yes. Add multiple supported JPG, PNG, WebP, or AVIF images, set the target dimensions or percentage, and download the results individually or as a ZIP. Practical batch capacity depends on your device and browser memory.",
   },
   {
     q: "How does the aspect ratio lock work?",
@@ -193,34 +184,34 @@ const SOCIAL_PRESETS = [
 const CORE_DIFFERENTIATORS = [
   {
     icon: ShieldCheck,
-    title: "100% Browser Privacy",
-    desc: "Your photos and corporate graphics are never uploaded to an external cloud or server. Resizing runs entirely in client-side RAM.",
-    badge: "Zero Uploads",
+    title: "Browser-Based Processing",
+    desc: "The resizing workflow uses your browser Canvas API. Selected image files are processed in the browser rather than sent to a conversion server.",
+    badge: "Local Processing",
   },
   {
     icon: Maximize2,
-    title: "Pixel-Perfect Resampling",
-    desc: "Hardware-accelerated bilinear and bicubic canvas interpolation preserves crisp typography, smooth contours, and rich details.",
-    badge: "High Precision",
+    title: "Canvas-Based Resizing",
+    desc: "The browser Canvas API resamples the image when dimensions change. Results depend on the source image and chosen output dimensions.",
+    badge: "Adjustable Dimensions",
   },
   {
     icon: Zap,
-    title: "Zero Server Wait Time",
-    desc: "Process multi-megapixel RAW exports or bulk batches at native device speed with zero network queue delays.",
-    badge: "Instantaneous",
+    title: "No Conversion Upload Queue",
+    desc: "Resize supported image files in your browser without sending the selected image data to a conversion server.",
+    badge: "Browser-Based",
   },
   {
     icon: InfinityIcon,
-    title: "Unlimited Batch Processing",
-    desc: "Resize dozens of files in one session and export as a single compressed ZIP archive with no paywalls or daily caps.",
-    badge: "No Limits",
+    title: "Batch Image Resizing",
+    desc: "Add multiple files and export the resized results as a ZIP archive. Practical batch size depends on your device and browser memory.",
+    badge: "Batch ZIP Export",
   },
 ];
 
 const RELATED_TOOLS = [
   {
     name: "Free Image Compressor",
-    desc: "Reduce file byte size (KB) by up to 80% without altering pixel dimensions.",
+    desc: "Adjust output quality to help reduce image file size. Results depend on the source image and selected settings.",
     href: "/image-compressor",
   },
   {
@@ -239,9 +230,9 @@ const RELATED_TOOLS = [
     href: "/jpg-to-webp",
   },
   {
-    name: "HEIC to JPG Converter",
+    name: "HEIC to JPG Guide",
     desc: "Convert Apple iPhone camera captures into universally editable JPG files.",
-    href: "/heic-to-jpg",
+    href: "/blog/heic-to-jpg-guide",
   },
   {
     name: "AVIF to JPG Converter",
@@ -252,7 +243,7 @@ const RELATED_TOOLS = [
 
 export default function ImageResizerPage() {
   return (
-    <div className="relative min-h-screen bg-slate-50/70 font-sans text-slate-900 antialiased selection:bg-indigo-500 selection:text-white dark:bg-slate-950 dark:text-slate-100">
+    <div className="relative min-h-screen bg-slate-50/70 font-sans text-slate-900 antialiased selection:bg-indigo-500 selection:text-white dark:bg-[#101B33] dark:text-slate-100">
       {/* Search Engine Schemas */}
       <script
         type="application/ld+json"
@@ -272,7 +263,7 @@ export default function ImageResizerPage() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[580px] overflow-hidden"
       >
-        <div className="absolute left-1/2 top-0 h-[480px] w-[1000px] -translate-x-1/2 bg-gradient-to-b from-indigo-100/70 via-sky-50/30 to-transparent blur-3xl dark:from-indigo-950/20 dark:via-slate-900/10 dark:to-transparent" />
+        <div className="absolute left-1/2 top-0 h-[480px] w-[1000px] -translate-x-1/2 bg-gradient-to-b from-indigo-100/70 via-sky-50/30 to-transparent blur-3xl dark:from-indigo-950/20 dark:via-[#172642]/10 dark:to-transparent" />
       </div>
 
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -307,7 +298,7 @@ export default function ImageResizerPage() {
         <header className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/80 px-3.5 py-1 text-xs font-medium tracking-wide text-indigo-700 shadow-sm backdrop-blur dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
             <Sparkles className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
-            <span>100% Client-Side Engine • Private & Instant</span>
+            <span>Browser-Based Resizing • No Conversion-Server Upload</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
@@ -315,9 +306,7 @@ export default function ImageResizerPage() {
           </h1>
 
           <p className="mt-3.5 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-            Resize JPG, PNG, WebP, and AVIF images to exact pixel dimensions or
-            percentage scale. Lock aspect ratios, avoid blurry distortion, and
-            batch-resize multiple files directly in your browser.
+            Resize supported JPG, PNG, WebP, and AVIF images by pixel dimensions or percentage. Keep the aspect ratio when needed; sharpness depends on the source image and chosen dimensions. Add multiple files and download a ZIP archive.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs font-medium text-slate-500 dark:text-slate-400">
@@ -339,7 +328,7 @@ export default function ImageResizerPage() {
         {/* Interactive Tool Container */}
         <section
           aria-label="Image Resizer Tool"
-          className="mx-auto mt-8 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-md sm:p-7 dark:border-slate-800/80 dark:bg-slate-900/95 dark:shadow-black/40"
+          className="mx-auto mt-8 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-md sm:p-7 dark:border-[#314969]/80 dark:bg-[#172642]/95 dark:shadow-black/40"
         >
           <ImageResizer />
         </section>
@@ -359,7 +348,7 @@ export default function ImageResizerPage() {
             <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
               Unlike cloud services that throttle file counts or compress images on
               untrusted remote servers, ConvertImageNow resizes directly in your
-              browser with complete privacy and zero wait queues.
+              browser without uploading selected image files to a conversion server.
             </p>
           </div>
 
@@ -367,7 +356,7 @@ export default function ImageResizerPage() {
             {CORE_DIFFERENTIATORS.map((item) => (
               <div
                 key={item.title}
-                className="group relative rounded-xl border border-slate-200/80 bg-white/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-indigo-800"
+                className="group relative rounded-xl border border-slate-200/80 bg-white/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/60 dark:hover:border-indigo-800"
               >
                 <div className="flex items-center justify-between">
                   <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600 dark:bg-indigo-950/60 dark:text-indigo-400">
@@ -410,17 +399,17 @@ export default function ImageResizerPage() {
             {SOCIAL_PRESETS.map((preset) => (
               <div
                 key={preset.platform}
-                className="flex flex-col justify-between rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+                className="flex flex-col justify-between rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]"
               >
                 <div className="flex items-start justify-between">
                   <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100">
                     {preset.platform}
                   </h3>
-                  <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-slate-800 dark:text-slate-300">
+                  <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] font-semibold text-slate-600 dark:bg-[#263956] dark:text-slate-300">
                     {preset.tag}
                   </span>
                 </div>
-                <div className="mt-3 flex items-baseline justify-between border-t border-slate-100 pt-3 dark:border-slate-800/80">
+                <div className="mt-3 flex items-baseline justify-between border-t border-slate-100 pt-3 dark:border-[#314969]/80">
                   <span className="font-mono text-sm font-bold text-indigo-600 dark:text-indigo-400">
                     {preset.dimensions}
                   </span>
@@ -436,7 +425,7 @@ export default function ImageResizerPage() {
         {/* How-to Workflow Section */}
         <section
           aria-labelledby="workflow-heading"
-          className="mx-auto mt-16 max-w-4xl rounded-2xl border border-slate-200/80 bg-white/60 p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-slate-900/40"
+          className="mx-auto mt-16 max-w-4xl rounded-2xl border border-slate-200/80 bg-white/60 p-6 shadow-sm sm:p-8 dark:border-[#314969] dark:bg-[#172642]/40"
         >
           <div className="max-w-2xl">
             <h2
@@ -452,7 +441,7 @@ export default function ImageResizerPage() {
           </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 1
               </span>
@@ -463,7 +452,7 @@ export default function ImageResizerPage() {
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 2
               </span>
@@ -474,22 +463,22 @@ export default function ImageResizerPage() {
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 3
               </span>
               <h3 className="mt-3 text-sm font-semibold">Lock Aspect Ratio</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                Ensure the aspect ratio lock remains enabled so images never
-                stretch, skew, or distort unnaturally.
+                Keep the aspect ratio lock enabled when you want to preserve the
+                original proportions and avoid stretching or distortion.
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 4
               </span>
-              <h3 className="mt-3 text-sm font-semibold">Instant Download</h3>
+              <h3 className="mt-3 text-sm font-semibold">Download Your Resized Images</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
                 Download resized images individually, or export all files
                 together in a neat, organized ZIP archive.
@@ -515,7 +504,7 @@ export default function ImageResizerPage() {
                   difference ensures optimal quality and file size:
                 </p>
                 <div className="mt-4 grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-xl border border-indigo-200/60 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-slate-900/80">
+                  <div className="rounded-xl border border-indigo-200/60 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-[#172642]/80">
                     <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
                       Image Resizing (This Tool)
                     </h3>
@@ -526,7 +515,7 @@ export default function ImageResizerPage() {
                       constraints.
                     </p>
                   </div>
-                  <div className="rounded-xl border border-indigo-200/60 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-slate-900/80">
+                  <div className="rounded-xl border border-indigo-200/60 bg-white/80 p-4 dark:border-indigo-900/50 dark:bg-[#172642]/80">
                     <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
                       Image Compressing
                     </h3>
@@ -561,7 +550,7 @@ export default function ImageResizerPage() {
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
                 <div className="flex items-center gap-3">
                   <div className="rounded-lg bg-indigo-50 p-2 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
                     <Monitor className="h-5 w-5" />
@@ -571,14 +560,11 @@ export default function ImageResizerPage() {
                   </h3>
                 </div>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                  Drag and drop dozens of heavy camera assets directly from your
-                  desktop. Take advantage of multi-threaded browser rendering to
-                  bulk-resize high-resolution photos in seconds and export a single
-                  ZIP archive.
+                  Add supported image files from your desktop, choose the target dimensions, and download the resized files individually or together as a ZIP archive.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
                 <div className="flex items-center gap-3">
                   <div className="rounded-lg bg-emerald-50 p-2 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400">
                     <Smartphone className="h-5 w-5" />
@@ -598,7 +584,7 @@ export default function ImageResizerPage() {
           </div>
 
           {/* Related Tools Topical Cluster */}
-          <div className="rounded-2xl border border-slate-200/80 bg-slate-100/50 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <div className="rounded-2xl border border-slate-200/80 bg-slate-100/50 p-6 sm:p-8 dark:border-[#314969] dark:bg-[#172642]/50">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
@@ -622,7 +608,7 @@ export default function ImageResizerPage() {
                 <Link
                   key={tool.name}
                   href={tool.href}
-                  className="group rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:border-indigo-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-700"
+                  className="group rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:border-indigo-300 hover:shadow-md dark:border-[#314969] dark:bg-[#172642] dark:hover:border-indigo-700"
                 >
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-semibold text-slate-900 group-hover:text-indigo-600 dark:text-slate-100 dark:group-hover:text-indigo-400">
@@ -663,11 +649,11 @@ export default function ImageResizerPage() {
               {FAQS.map(({ q, a }) => (
                 <details
                   key={q}
-                  className="group rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm transition open:shadow-md dark:border-slate-800 dark:bg-slate-900"
+                  className="group rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm transition open:shadow-md dark:border-[#314969] dark:bg-[#172642]"
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-slate-900 focus:outline-none dark:text-slate-100">
                     <span>{q}</span>
-                    <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-200 group-open:rotate-180 dark:bg-slate-800 dark:text-slate-400">
+                    <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-200 group-open:rotate-180 dark:bg-[#263956] dark:text-slate-400">
                       <ChevronRight className="h-3.5 w-3.5 rotate-90" />
                     </span>
                   </summary>

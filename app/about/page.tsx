@@ -6,25 +6,25 @@ const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/about`;
 
 export const metadata: Metadata = {
-  title: "About ConvertImageNow – Privacy-First Image Conversion",
+  title: "About ConvertImageNow | Browser-Based Tools",
   description:
-    "Learn why we built ConvertImageNow. Discover our privacy-first in-browser design helping designers and developers optimize images without cloud uploads.",
+    "Learn how ConvertImageNow processes supported image files in the browser and publishes practical guides to image formats and optimization.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "About ConvertImageNow – Privacy-First Image Conversion",
+    title: "About ConvertImageNow | Browser-Based Tools",
     description:
-      "Learn why we built ConvertImageNow and how our client-side architecture keeps your files 100% private.",
+      "Learn about our browser-based conversion workflow and image format guides.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "About ConvertImageNow | Privacy-First Image Converter",
+    title: "About ConvertImageNow | Browser-Based Converter",
     description:
-      "100% client-side in-browser image conversion with zero server uploads.",
+      "Browser-based image conversion for supported formats.",
   },
 };
 
@@ -34,12 +34,11 @@ const ABOUT_SCHEMA = {
   name: "About ConvertImageNow",
   url: PAGE_URL,
   description:
-    "Background, core privacy philosophy, and architecture of ConvertImageNow client-side tools.",
+    "Background and browser-based processing approach behind ConvertImageNow.",
   mainEntity: {
     "@type": "Organization",
     name: "ConvertImageNow",
     url: SITE_URL,
-    logo: `${SITE_URL}/logo.png`,
     description: "Free in-browser client-side image converter and compressor.",
   },
 };
@@ -61,7 +60,7 @@ export default function AboutPage() {
         </h1>
 
         <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-          Why we built a privacy-first image converter and what we&apos;re doing to help people optimize images smarter.
+          Why we built a browser-based image converter and how we help people make informed image format choices.
         </p>
       </div>
 
@@ -74,7 +73,7 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-4">
             <p>
-              Most online image converters require you to upload your files to a server before they&apos;ll do anything. That step was never actually necessary.
+              Some online image converters send selected files to a remote server for processing. For supported formats, browser APIs can perform the conversion on the user&apos;s device instead.
             </p>
 
             <p>
@@ -82,7 +81,7 @@ export default function AboutPage() {
             </p>
 
             <p>
-              Image conversion—changing a PNG to JPG, converting HEIC to a web-friendly format, or optimizing for WebP—is a fundamentally local operation. Your browser has all the tools it needs to do this work. The uploads were always an artifact of outdated web design, not a requirement.
+              Common format conversions such as PNG to JPG or JPG to WebP can be handled with browser image decoding and Canvas APIs. Browser support varies by format; HEIC is not currently accepted by our converter.
             </p>
           </div>
         </section>
@@ -95,21 +94,21 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-4">
             <p>
-              ConvertImageNow was built around a simple principle: conversions should happen on your device, using your browser&apos;s built-in capabilities, with your files never leaving your control.
+              ConvertImageNow uses browser APIs to process supported image files on your device rather than sending the selected image data to a conversion server.
             </p>
 
             <p>
-              Using the HTML5 Canvas API and modern compression techniques, we made it possible to convert JPG, PNG, WebP, and AVIF files directly in your browser—instantly, without any upload step. No account creation. No watermarks. No artificial limits. No data collection.
+              The converter uses browser image decoding and the HTML5 Canvas API for supported JPG, PNG, WebP, and AVIF inputs. It offers JPG, PNG, and WebP output, does not require an account, and does not add a watermark to converted downloads. Practical batch capacity depends on your device and browser memory.
             </p>
 
             <p>
-              This approach has a side benefit: it&apos;s faster. Your images don&apos;t have to travel to a server and back. Conversions start immediately, batch processing happens in seconds, and the results download directly from your device.
+              Processing selected image data in the browser avoids sending those files to a remote conversion server. Conversion time still depends on image dimensions, browser, and device.
             </p>
           </div>
         </section>
 
         {/* By the Numbers */}
-        <section className="rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900">
+        <section className="rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-[#314969] dark:bg-[#172642]">
           <h2 className="text-3xl font-bold tracking-tight">
             By the Numbers
           </h2>
@@ -123,23 +122,23 @@ export default function AboutPage() {
             </div>
 
             <div>
-              <p className="text-4xl font-bold text-brand-primary">25-35%</p>
+              <p className="text-4xl font-bold text-brand-primary">3</p>
               <p className="mt-2 text-slate-600 dark:text-slate-400">
-                Average file size reduction when converting PNG to WebP at matched quality.
+                Available output formats: JPG, PNG, and WebP. File-size results vary by image and settings.
               </p>
             </div>
 
             <div>
-              <p className="text-4xl font-bold text-brand-primary">4+</p>
+              <p className="text-4xl font-bold text-brand-primary">4</p>
               <p className="mt-2 text-slate-600 dark:text-slate-400">
-                Supported image formats (JPG, PNG, WebP, AVIF, HEIC) for maximum flexibility.
+                Accepted input formats: JPG, PNG, WebP, and AVIF where browser decoding is supported. HEIC is not currently supported.
               </p>
             </div>
 
             <div>
-              <p className="text-4xl font-bold text-brand-primary">0</p>
+              <p className="text-4xl font-bold text-brand-primary">Local</p>
               <p className="mt-2 text-slate-600 dark:text-slate-400">
-                Images ever stored on our servers. All processing happens locally in your browser.
+                Selected image files are processed in the browser rather than uploaded to a conversion server.
               </p>
             </div>
           </div>
@@ -157,11 +156,11 @@ export default function AboutPage() {
             </p>
 
             <p>
-              Browser-based processing removes that entire trust requirement. When conversions happen locally, we have no access to your files. We can&apos;t see them, store them, or accidentally expose them. You maintain complete control from start to finish.
+              For supported conversions, selected image data is processed in your browser rather than sent to a conversion server. The website still makes normal requests to load pages and may collect limited technical or contact information as described in the Privacy Policy.
             </p>
 
             <p>
-              For professionals—designers, developers, photographers, consultants—this privacy guarantee is non-negotiable. For everyone else, it&apos;s just peace of mind.
+              This approach can be useful for people working with personal photos, design files, or client images. Review the Privacy Policy and your browser environment before processing sensitive material.
             </p>
           </div>
         </section>
@@ -197,13 +196,13 @@ export default function AboutPage() {
             </ul>
 
             <p className="mt-4">
-              Our blog isn&apos;t just promotional—it&apos;s designed to be genuinely useful whether or not you use our converter. We publish research-backed recommendations, real-world use cases, and step-by-step guides that help people make better decisions about their images.
+              Our blog isn&apos;t just promotional—it&apos;s designed to be genuinely useful whether or not you use our converter. We publish practical explainers, format comparisons, and step-by-step guides to help people make better decisions about their images.
             </p>
           </div>
         </section>
 
         {/* How We Work */}
-        <section className="rounded-3xl border border-slate-200 p-8 dark:border-slate-800">
+        <section className="rounded-3xl border border-slate-200 p-8 dark:border-[#314969]">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
             <Zap size={24} aria-hidden="true" />
           </div>
@@ -214,11 +213,11 @@ export default function AboutPage() {
 
           <div className="mt-6 space-y-4">
             <p>
-              There&apos;s no corporate bloat behind ConvertImageNow. No venture funding to chase. No investors demanding growth at any cost. No plan to add paywalls or invasive tracking.
+              Our aim is to keep the converter straightforward to access and easy to use.
             </p>
 
             <p>
-              The tool exists because it was useful to build. It stays free because that was the point from the start. We&apos;re providing a tool that solves a real problem and backing it with educational content to help people use it well.
+              The listed converter tools are free to use and do not require an account. We support them with educational content that explains formats, output settings, and practical workflows.
             </p>
           </div>
         </section>
@@ -226,12 +225,12 @@ export default function AboutPage() {
         {/* What's Next */}
         <section>
           <h2 className="text-3xl font-bold tracking-tight">
-            What We&apos;re Building Next
+            Potential Future Improvements
           </h2>
 
           <div className="mt-6 space-y-4">
             <p>
-              ConvertImageNow is actively developed. We&apos;re working on:
+              Possible areas for future improvement include:
             </p>
 
             <ul className="space-y-3 pl-5">
@@ -260,7 +259,7 @@ export default function AboutPage() {
         </section>
 
         {/* Resources */}
-        <section className="rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-slate-800 dark:bg-slate-900">
+        <section className="rounded-3xl border border-slate-200 bg-slate-50 p-8 dark:border-[#314969] dark:bg-[#172642]">
           <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/10 text-brand-primary">
             <BookOpen size={24} aria-hidden="true" />
           </div>
@@ -276,7 +275,7 @@ export default function AboutPage() {
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
             <Link
               href="/blog"
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-3 font-medium text-brand-primary hover:bg-white dark:border-slate-700 dark:hover:bg-slate-950"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-3 font-medium text-brand-primary hover:bg-white dark:border-[#314969] dark:hover:bg-[#263956]"
             >
               Visit our Blog
               <ArrowRight size={16} aria-hidden="true" />
@@ -284,7 +283,7 @@ export default function AboutPage() {
 
             <Link
               href="/converter"
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-3 font-medium text-brand-primary hover:bg-white dark:border-slate-700 dark:hover:bg-slate-950"
+              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 px-4 py-3 font-medium text-brand-primary hover:bg-white dark:border-[#314969] dark:hover:bg-slate-950"
             >
               Start Converting
               <ArrowRight size={16} aria-hidden="true" />

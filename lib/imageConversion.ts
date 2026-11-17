@@ -30,7 +30,8 @@ export function compressionPercent(original: number, converted: number): number 
 
 /**
  * Converts a single image file to the target format entirely on the client
- * using the Canvas API. No data ever leaves the browser.
+ * using the Canvas API. The selected image file is processed locally rather
+ * than uploaded to a ConvertImageNow conversion server.
  */
 export function convertImage(
   file: File,

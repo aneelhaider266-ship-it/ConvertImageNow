@@ -3,7 +3,6 @@ import ImageConverter from "@/components/ImageConverter";
 import {
   ShieldCheck,
   WifiOff,
-  Infinity as InfinityIcon,
   Gauge,
   Zap,
   Layers,
@@ -16,39 +15,39 @@ const PAGE_URL = `${SITE_URL}/jpg-to-webp`;
 export const metadata: Metadata = {
   title: "JPG to WebP Converter – Convert JPG to WebP Online Free",
   description:
-    "Convert JPG to WebP online for free. Reduce image file size by 25-35% for faster websites — private, browser-based, no upload, no signup, no watermark.",
+    "Convert JPG images to WebP in your browser. Batch convert files and adjust output quality; file size depends on the source image and settings.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "JPG to WebP Converter – Convert JPG to WebP Online Free",
     description:
-      "Convert JPG to WebP online for free. Reduce image file size by 25-35% for faster websites.",
+      "Convert JPG images to WebP in your browser. Compare output file size and visual quality for your images.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "JPG to WebP Converter – Free & Private",
+    title: "JPG to WebP Converter – Browser-Based",
     description:
-      "Batch convert JPGs to WebP instantly in your browser to improve Core Web Vitals.",
+      "Batch convert JPG images to WebP in your browser. Test the resulting images on your website to assess performance.",
   },
 };
 
 const POINTS = [
   {
     icon: ShieldCheck,
-    title: "Truly Private",
-    desc: "Your images never touch a server. Conversion happens directly in your browser using the HTML5 Canvas API.",
+    title: "Browser-Based Conversion",
+    desc: "The selected JPG image is processed in your browser using Canvas APIs rather than uploaded to a conversion server.",
   },
   {
     icon: WifiOff,
-    title: "Works Offline",
+    title: "Browser-Based Processing",
     desc: "Once the page has loaded, conversion happens entirely on your device's local memory.",
   },
   {
-    icon: InfinityIcon,
-    title: "No Artificial Limits",
-    desc: "No daily quota, no watermark, and no server-side upload bottlenecks for bulk batches.",
+    icon: Layers,
+    title: "Batch ZIP Downloads",
+    desc: "Add multiple JPG files and download WebP results individually or as a ZIP. Practical capacity depends on your device and browser memory.",
   },
 ];
 
@@ -59,15 +58,15 @@ const FAQS = [
   },
   {
     q: "How much smaller will my file be after converting to WebP?",
-    a: "WebP files are typically 25 to 35 percent smaller than an equivalent JPEG at a similar visual quality, though the exact reduction depends on the image complexity and the quality setting you choose.",
+    a: "WebP can produce smaller files than JPEG in some cases, but the result depends on the source image, encoder, and quality setting. Compare the output file size and visual quality before choosing a format.",
   },
   {
     q: "Will converting JPG to WebP reduce image quality?",
-    a: "Because both JPG and WebP use lossy compression, converting between them involves a re-encoding step that can introduce minor additional artifacts. At high quality settings (80-95%), this difference is usually imperceptible.",
+    a: "Because both JPG and WebP use lossy compression, converting between them involves re-encoding and may introduce additional artifacts. The amount of visible change depends on the source image and quality setting, so review the converted result before downloading.",
   },
   {
     q: "Is WebP supported by all browsers?",
-    a: "WebP is natively supported by over 96% of modern browsers, including Chrome, Firefox, Safari, and Edge. Some older image editors and specialized workflows, such as print production using CMYK color, may still expect JPG or PNG instead.",
+    a: "WebP is supported by major modern browsers, including current versions of Chrome, Firefox, Safari, and Edge. Older browser versions and some image-editing or print workflows may still require JPG or PNG.",
   },
   {
     q: "Why should I use WebP instead of JPG for my website?",
@@ -79,7 +78,7 @@ const FAQS = [
   },
   {
     q: "Are my images uploaded to a server?",
-    a: "No. Conversion happens completely locally. Unlike standard cloud converters, your files never leave your device, ensuring maximum privacy and zero upload wait times.",
+    a: "The selected image data is processed locally in your browser rather than uploaded to a conversion server. Normal website requests may still contact the site.",
   },
 ];
 
@@ -108,13 +107,6 @@ const SOFTWARE_SCHEMA = {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "135",
-    bestRating: "5",
-    worstRating: "1",
   },
   description:
     "Free, browser-based utility to bulk convert JPG images to WebP format locally without server uploads to improve website load times.",
@@ -160,14 +152,13 @@ export default function JpgToWebpPage() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 sm:text-xl">
-          Convert JPG images to WebP instantly to create smaller files and faster
-          websites. No uploads, no waiting, no signup — everything runs locally
-          in your browser.
+          Convert JPG images to WebP in your browser. Resulting file size and
+          visual quality depend on the source image and selected settings.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-5 text-sm font-medium text-slate-600 dark:text-slate-400">
           <span className="flex items-center gap-1.5">
-            <Zap className="h-4.5 w-4.5 text-brand-primary" /> Instant Results
+            <Zap className="h-4.5 w-4.5 text-brand-primary" /> Browser-Based
           </span>
           <span className="hidden h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700 sm:block" />
           <span className="flex items-center gap-1.5">
@@ -175,7 +166,7 @@ export default function JpgToWebpPage() {
           </span>
           <span className="hidden h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700 sm:block" />
           <span className="flex items-center gap-1.5">
-            <ShieldCheck className="h-4.5 w-4.5 text-emerald-500" /> 100% Private
+            <ShieldCheck className="h-4.5 w-4.5 text-emerald-500" /> Local Processing
           </span>
         </div>
       </section>
@@ -199,10 +190,10 @@ export default function JpgToWebpPage() {
           {POINTS.map(({ icon: Icon, title, desc }) => (
             <article
               key={title}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/70 p-7 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/70 p-7 shadow-sm backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/60"
             >
               <div
-                className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-slate-800/30"
+                className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-[#263956]/30"
                 aria-hidden="true"
               />
 
@@ -210,9 +201,9 @@ export default function JpgToWebpPage() {
                 <Icon className="h-6 w-6" aria-hidden="true" />
               </div>
 
-              <h3 className="relative text-lg font-bold text-slate-900 dark:text-white">
+              <h2 className="relative text-lg font-bold text-slate-900 dark:text-white">
                 {title}
-              </h3>
+              </h2>
 
               <p className="relative mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                 {desc}
@@ -228,8 +219,8 @@ export default function JpgToWebpPage() {
           <p>
             WebP is a modern image format built specifically for the web by
             Google. Converting JPG images to WebP typically{" "}
-            <strong>reduces file size by 25 to 35 percent</strong> at an
-            identical visual quality. For web developers and site owners, this
+            can change file size and visual quality depending on the image and
+            selected quality setting. For web developers and site owners, this
             translates directly to faster page loads, lower bandwidth
             consumption, and massive improvements to{" "}
             <strong>Core Web Vitals</strong> (specifically the LCP—Largest
@@ -240,16 +231,15 @@ export default function JpgToWebpPage() {
             Why ConvertImageNow Is Different
           </h2>
           <p>
-            Traditional online image converters require you to upload your files
-            to a cloud server, wait in a queue, and download them back.
-            ConvertImageNow processes your JPG images{" "}
-            <strong>directly in your browser</strong> using HTML5 and your
-            device&apos;s native hardware.
+            Some image-conversion services process files on remote servers.
+            ConvertImageNow processes supported JPG images{" "}
+            <strong>directly in your browser</strong> using image decoding and
+            Canvas APIs, rather than uploading selected image files to a
+            ConvertImageNow conversion server.
           </p>
           <p>
-            Nothing is ever uploaded. This means zero wait times for bulk
-            processing, no artificial daily file limits, and absolute privacy for
-            your personal or client photos.
+            Selected image data is processed in your browser rather than uploaded to a
+            conversion server. Batch capacity depends on your device and browser memory.
           </p>
 
           {/* Info Callout */}
@@ -272,7 +262,7 @@ export default function JpgToWebpPage() {
                   at high quality settings (80-95%), this difference is
                   imperceptible to the human eye.
                 </strong>{" "}
-                Use the quality slider in the tool above to instantly preview
+                Use the quality slider in the tool above to adjust the output quality
                 and perfectly balance file size against visual sharpness.
               </p>
             </div>
@@ -292,7 +282,7 @@ export default function JpgToWebpPage() {
                   "Download your new WebP images (or click Download ZIP for batches).",
                 ].map((step, idx) => (
                   <li key={idx} className="flex gap-3">
-                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                    <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-sm font-bold text-slate-700 dark:bg-[#263956] dark:text-slate-300">
                       {idx + 1}
                     </span>
                     <span className="leading-relaxed">{step}</span>
@@ -330,9 +320,9 @@ export default function JpgToWebpPage() {
           </p>
 
           {/* Comparison Table */}
-          <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900/50">
+          <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-[#314969] dark:bg-[#172642]/50">
             <table className="w-full text-left text-sm sm:text-base">
-              <thead className="border-b border-slate-200 bg-slate-50/80 backdrop-blur-sm dark:border-slate-800 dark:bg-slate-900/80">
+              <thead className="border-b border-slate-200 bg-slate-50/80 backdrop-blur-sm dark:border-[#314969] dark:bg-[#172642]/80">
                 <tr>
                   <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">
                     Feature
@@ -345,8 +335,8 @@ export default function JpgToWebpPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+              <tbody className="divide-y divide-slate-200 dark:divide-[#314969]">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Web File Size
                   </td>
@@ -354,10 +344,10 @@ export default function JpgToWebpPage() {
                     Baseline / Standard
                   </td>
                   <td className="px-6 py-4 font-bold text-emerald-600 dark:text-emerald-400">
-                    25–35% Smaller
+                    Variable File Size
                   </td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Compression Type
                   </td>
@@ -368,7 +358,7 @@ export default function JpgToWebpPage() {
                     Lossy & Lossless
                   </td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Transparency (Alpha)
                   </td>
@@ -379,7 +369,7 @@ export default function JpgToWebpPage() {
                     Supported
                   </td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Best Used For
                   </td>
@@ -402,11 +392,11 @@ export default function JpgToWebpPage() {
             {FAQS.map(({ q, a }) => (
               <details
                 key={q}
-                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900/40 dark:hover:border-slate-700"
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-[#314969] dark:bg-[#172642]/40 dark:hover:border-slate-700"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-5 text-lg font-semibold text-slate-900 outline-none dark:text-slate-100 [&::-webkit-details-marker]:hidden">
                   {q}
-                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-slate-800 dark:text-slate-400">
+                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-[#263956] dark:text-slate-400">
                     +
                   </span>
                 </summary>

@@ -1,15 +1,40 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import Footer from '@/components/Footer'; // 👉 YEH IMPORT CHECK KARO
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://convertimagenow.com'),
   title: {
     default: 'ConvertImageNow — Free Online Image Converter & Compressor',
-    template: '%s | ConvertImageNow',
+    template: '%s',
   },
   description:
-    'Convert JPG, PNG, WebP, and AVIF images instantly in your browser. 100% private, free batch processing, no file uploads to servers.',
+    'Convert JPG, PNG, WebP, and supported AVIF images in your browser. Batch processing and no conversion-server upload for supported image files.',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    siteName: 'ConvertImageNow',
+    title: 'ConvertImageNow — Free Online Image Converter & Compressor',
+    description:
+      'Convert supported image formats in your browser. Adjust quality, resize, and download JPG, PNG, or WebP files.',
+    url: 'https://convertimagenow.com',
+    images: [
+      {
+        url: '/opengraph-image',
+        width: 1200,
+        height: 630,
+        alt: 'ConvertImageNow — Free browser-based image converter',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'ConvertImageNow — Free Online Image Converter',
+    description:
+      'Convert supported image formats in your browser. Adjust quality, resize, and download.',
+    images: ['/twitter-image'],
+  },
   alternates: {
     canonical: './',
   },
@@ -25,12 +50,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="antialiased min-h-screen bg-slate-50 text-slate-900 flex flex-col justify-between">
+    <html lang="en" className="dark">
+      <body className="antialiased min-h-screen bg-[#101B33] text-slate-100 flex flex-col justify-between">
+        <Header />
         <main className="flex-grow">
           {children}
         </main>
-        <Footer /> {/* 👉 YEH FOOTER ADD HO JAYEGA */}
+        <Footer />
       </body>
     </html>
   );

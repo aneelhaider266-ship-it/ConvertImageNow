@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ci-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref }}
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22.23.4
+          cache: npm
+
+      - name: Sync lockfile with package manifest
+        run: |
+          rm -f package-lock.json
+          npm install --package-lock-only --no-audit --no-fund
+
+      - name: Apply compatible dependency security fixes
+        run: npm audit fix --audit-level=high
+
+      - name: Commit synchronized lockfile
+        id: lockfile
+        if: github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository
+        run: |
+          if git diff --quiet -- package-lock.json; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add package-lock.json
+            git commit -m "chore: sync npm lockfile and security fixes"
+            git fetch origin "$GITHUB_HEAD_REF"
+            git rebase "origin/$GITHUB_HEAD_REF"
+            git push origin "HEAD:${GITHUB_HEAD_REF}"
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Summarize dependency advisories
+        run: |
+          npm audit --json > npm-audit.json || true
+          node -e "const report = require('./npm-audit.json'); for (const [name, item] of Object.entries(report.vulnerabilities || {})) console.log(name + ': ' + item.severity + '; direct=' + item.isDirect + '; range=' + item.range + '; via=' + JSON.stringify(item.via.filter(v => typeof v === 'object').map(v => ({title:v.title,url:v.url,range:v.range,cwe:v.cwe,cvss:v.cvss}))) + '; fix=' + JSON.stringify(item.fixAvailable));"
+          npm audit --omit=dev --json > npm-audit-production.json || true
+          node -e "const report = require('./npm-audit-production.json'); for (const [name, item] of Object.entries(report.vulnerabilities || {})) console.log('PRODUCTION ' + name + ': ' + item.severity + '; direct=' + item.isDirect + '; range=' + item.range + '; via=' + JSON.stringify(item.via.filter(v => typeof v === 'object').map(v => ({title:v.title,url:v.url,range:v.range,cwe:v.cwe,cvss:v.cvss}))) + '; fix=' + JSON.stringify(item.fixAvailable));"
+
+      - name: Build Next.js application
+        run: npm run build
+        env:
+          NEXT_TELEMETRY_DISABLED: 1

@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Menu, X, Moon, Sun, ImageIcon } from "lucide-react";
+import { useState } from "react";
+import { Menu, X, ImageIcon } from "lucide-react";
 
 const NAV_LINKS = [
   { href: "/", label: "Home" },
@@ -16,36 +16,16 @@ const NAV_LINKS = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [dark, setDark] = useState(false);
 
-  useEffect(() => {
-    const stored = window.localStorage.getItem("cin-theme");
-
-    const prefersDark =
-      window.matchMedia?.("(prefers-color-scheme: dark)").matches ?? false;
-
-    const isDark = stored === "dark" || (!stored && prefersDark);
-
-    setDark(isDark);
-    document.documentElement.classList.toggle("dark", isDark);
-  }, []);
-
-  const toggleDark = () => {
-    const nextDark = !dark;
-
-    setDark(nextDark);
-    document.documentElement.classList.toggle("dark", nextDark);
-    window.localStorage.setItem("cin-theme", nextDark ? "dark" : "light");
-  };
 
   return (
-    <header className="sticky top-0 z-50 h-16 shrink-0 border-b border-slate-200 bg-white/80 backdrop-blur dark:border-slate-800 dark:bg-slate-950/80">
-      <div className="container-page flex h-16 items-center justify-between">
+    <header className="sticky top-0 z-50 h-14 shrink-0 border-b border-[#263956] bg-[#101B33]/95 backdrop-blur sm:h-16">
+      <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-2 px-3 sm:h-16 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link
           href="/"
           aria-label="ConvertImageNow home"
-          className="flex h-10 items-center gap-2 font-semibold"
+          className="flex min-w-0 shrink items-center gap-1.5 font-semibold sm:gap-2"
         >
           <span
             aria-hidden="true"
@@ -54,7 +34,7 @@ export default function Header() {
             <ImageIcon size={18} />
           </span>
 
-          <span className="whitespace-nowrap text-lg tracking-tight">
+          <span className="whitespace-nowrap text-[14px] tracking-tight sm:text-lg">
             Convert<span className="text-brand-primary">ImageNow</span>
           </span>
         </Link>
@@ -68,7 +48,7 @@ export default function Header() {
             <Link
               key={link.href}
               href={link.href}
-              className="flex h-16 items-center text-sm font-medium text-slate-600 transition-colors hover:text-brand-primary dark:text-slate-300"
+              className="flex h-16 items-center text-sm font-medium text-slate-300 transition-colors hover:text-white"
             >
               {link.label}
             </Link>
@@ -76,26 +56,12 @@ export default function Header() {
         </nav>
 
         {/* Actions */}
-        <div className="flex h-16 items-center gap-2">
-          <button
-            type="button"
-            aria-label={dark ? "Switch to light mode" : "Switch to dark mode"}
-            aria-pressed={dark}
-            onClick={toggleDark}
-            className="flex h-10 w-10 items-center justify-center rounded-full text-slate-600 transition-colors hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800"
-          >
-            {dark ? (
-              <Sun size={18} aria-hidden="true" />
-            ) : (
-              <Moon size={18} aria-hidden="true" />
-            )}
-          </button>
-
+        <div className="flex h-14 shrink-0 items-center gap-1 sm:h-16 sm:gap-2">
           <Link
             href="/converter"
-            className="hidden h-10 items-center rounded-full bg-brand-primary px-4 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 sm:inline-flex"
+            className="inline-flex h-9 shrink-0 items-center whitespace-nowrap rounded-full bg-[#398BFF] px-2.5 text-[11px] font-semibold text-white transition-transform hover:-translate-y-0.5 sm:h-10 sm:px-4 sm:text-sm"
           >
-            Start Converting
+            <span className="sm:hidden">Convert</span><span className="hidden sm:inline">Start Converting</span>
           </Link>
 
           {/* Mobile menu button */}
@@ -104,7 +70,7 @@ export default function Header() {
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
-            className="flex h-10 w-10 items-center justify-center rounded-full text-slate-600 hover:bg-slate-100 dark:text-slate-300 dark:hover:bg-slate-800 lg:hidden"
+            className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-slate-300 hover:bg-[#263956] hover:text-white lg:hidden"
             onClick={() => setMenuOpen((open) => !open)}
           >
             {menuOpen ? (
@@ -121,7 +87,7 @@ export default function Header() {
         <nav
           id="mobile-navigation"
           aria-label="Mobile navigation"
-          className="border-t border-slate-200 bg-white px-4 pb-4 dark:border-slate-800 dark:bg-slate-950 lg:hidden"
+          className="border-t border-[#314969] bg-[#172642] px-4 pb-4 text-white lg:hidden"
         >
           <ul className="flex flex-col gap-1 pt-2">
             {NAV_LINKS.map((link) => (
@@ -129,7 +95,7 @@ export default function Header() {
                 <Link
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
+                  className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-[#263956] hover:text-white"
                 >
                   {link.label}
                 </Link>

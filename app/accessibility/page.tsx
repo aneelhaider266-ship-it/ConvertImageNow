@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Accessibility Statement | ConvertImageNow Web Converter",
   description:
-    "ConvertImageNow accessibility standards: WCAG compliance, screen reader support, keyboard navigation, and high-contrast color choices for all visitors.",
+    "Learn about accessibility practices used on ConvertImageNow and how to report a barrier with keyboard navigation, page content, or image tools.",
   alternates: {
     canonical: "https://convertimagenow.com/accessibility",
   },
@@ -24,13 +24,14 @@ export default function AccessibilityPage() {
         </p>
         <section>
           <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-            What we&apos;ve done
+            Accessibility practices
           </h2>
+          <p className="mt-2">We work to improve accessibility as the site evolves. These practices are not a claim of full WCAG conformance; some parts of the site may still present barriers.</p>
           <ul className="mt-2 list-disc space-y-1 pl-5">
-            <li>Visible keyboard focus states on all interactive elements</li>
-            <li>Semantic HTML and ARIA labels on controls like buttons and sliders</li>
+            <li>Visible keyboard focus styles for links, buttons, and form controls</li>
+            <li>Semantic page structure and accessible names on key interactive controls</li>
             <li>Support for reduced-motion preferences</li>
-            <li>Color contrast chosen to remain readable in both light and dark mode</li>
+            <li>Color choices intended to support readable text in the site&apos;s dark interface</li>
           </ul>
         </section>
         <section>

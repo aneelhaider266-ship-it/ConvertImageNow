@@ -19,12 +19,12 @@ const OG_IMAGE = `${SITE_URL}/png-to-jpg/og-image.webp`;
 export const metadata: Metadata = {
   title: "PNG to JPG Converter – Convert PNG to JPG Online Free",
   description:
-    "Convert PNG to JPG (JPEG) online for free. Private, browser-based conversion — no upload, no signup, no watermark. Batch convert multiple PNG files at once.",
+    "Convert PNG to JPG (JPEG) online for free. Browser-based conversion with JPG quality controls, multiple-file selection, and ZIP downloads.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "PNG to JPG Converter – Convert PNG to JPG Online Free",
     description:
-      "Convert PNG to JPG (JPEG) online for free. Private, browser-based conversion — no upload, no signup, no watermark.",
+      "Convert PNG to JPG (JPEG) online for free. Browser-based conversion with adjustable JPG output quality.",
     type: "website",
     url: PAGE_URL,
     images: [{ url: OG_IMAGE }],
@@ -41,18 +41,18 @@ export const metadata: Metadata = {
 const POINTS = [
   {
     icon: ShieldCheck,
-    title: "Truly private",
-    desc: "Your images never touch a server. Conversion happens directly in your browser.",
+    title: "Browser-Based Processing",
+    desc: "Selected image files are processed in your browser rather than sent to a conversion server.",
   },
   {
     icon: WifiOff,
-    title: "Works offline",
-    desc: "Once the page has loaded, conversion happens entirely on your device.",
+    title: "No Conversion-Server Upload",
+    desc: "The selected image data is processed by your browser Canvas API. An internet connection may still be needed to load the website and its resources.",
   },
   {
     icon: InfinityIcon,
-    title: "No artificial limits",
-    desc: "No daily quota, no watermark, and no server upload limit.",
+    title: "Batch Downloads",
+    desc: "Add multiple supported PNG files and download JPG results individually or together as a ZIP. Practical capacity depends on your device and browser memory.",
   },
 ];
 
@@ -86,7 +86,7 @@ const DEVICES = [
       "Open ConvertImageNow in your mobile browser.",
       "Tap to upload a PNG from your gallery.",
       "Select JPG format.",
-      "Tap convert to process instantly.",
+      "Tap convert to process the selected images in your browser.",
       "Save the JPG directly to your photos.",
     ],
   },
@@ -107,11 +107,11 @@ const FAQS = [
   },
   {
     q: "Can I convert multiple PNG files at once?",
-    a: "Yes. You can select multiple PNG images, convert them together, and download the results individually or as a ZIP archive — no limit on how many files you batch convert.",
+    a: "Yes. You can select multiple PNG images, convert them together, and download the results individually or as a ZIP archive — Batch capacity depends on your device and available browser memory.",
   },
   {
     q: "Are my images uploaded to a server?",
-    a: "No. Conversion happens locally in your browser using the HTML5 Canvas API. Your files never leave your device — unlike most other online converters, which require uploading your images first.",
+    a: "The selected image data is processed locally in your browser using the HTML5 Canvas API rather than uploaded to a conversion server.",
   },
   {
     q: "Does converting PNG to JPG reduce image quality?",
@@ -119,7 +119,7 @@ const FAQS = [
   },
   {
     q: "Why is my JPG file so much smaller than the original PNG?",
-    a: "PNG uses lossless compression, which keeps files large, especially for photos — often 4 to 10 times larger than an equivalent JPG. JPG's lossy compression reduces file size significantly while remaining visually similar at a good quality setting.",
+    a: "PNG is lossless and supports transparency. JPG uses lossy compression and may create smaller files for photographs, but the size difference depends on the image and quality setting.",
   },
   {
     q: "Can I change PNG to JPG on my phone or tablet?",
@@ -151,13 +151,6 @@ const SOFTWARE_SCHEMA = {
     "@type": "Offer",
     price: "0",
     priceCurrency: "USD",
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "148",
-    bestRating: "5",
-    worstRating: "1",
   },
   description:
     "Free, browser-based utility to convert PNG images to JPG format locally without server uploads.",
@@ -191,7 +184,7 @@ export default function PngToJpgPage() {
         <div className="mb-6 flex justify-center">
           <span className="inline-flex items-center gap-2 rounded-full border border-brand-primary/20 bg-brand-primary/5 px-4 py-1.5 text-sm font-medium text-brand-primary backdrop-blur-sm dark:border-brand-primary/30 dark:bg-brand-primary/10 dark:text-brand-primary/90">
             <Zap className="h-4 w-4" aria-hidden="true" />
-            100% Free & Browser-Based
+            Free Browser-Based Conversion
           </span>
         </div>
 
@@ -200,9 +193,7 @@ export default function PngToJpgPage() {
         </h1>
 
         <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600 dark:text-slate-300 sm:text-xl">
-          Convert PNG images to JPG (JPEG) instantly — no uploads, no signup,
-          and no waiting. Drop your files below and batch convert them directly in
-          your browser.
+          Convert PNG images to JPG (JPEG) in your browser. Select multiple PNG files, adjust JPG output quality, and download the converted files individually or as a ZIP archive.
         </p>
 
         <div className="mt-8 flex flex-wrap items-center justify-center gap-4 text-sm font-medium text-slate-600 dark:text-slate-400">
@@ -215,7 +206,7 @@ export default function PngToJpgPage() {
           </span>
           <span className="hidden h-1 w-1 rounded-full bg-slate-300 dark:bg-slate-700 sm:block" />
           <span className="flex items-center gap-1.5">
-            <WifiOff className="h-4 w-4 text-purple-500" /> Works Offline
+            <ShieldCheck className="h-4 w-4 text-emerald-500" /> No Added Watermark
           </span>
         </div>
       </section>
@@ -236,10 +227,10 @@ export default function PngToJpgPage() {
           {POINTS.map(({ icon: Icon, title, desc }) => (
             <article
               key={title}
-              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/60 p-6 shadow-sm backdrop-blur-xl transition-all hover:-translate-y-1 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50"
+              className="group relative flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/60 p-6 shadow-sm backdrop-blur-xl transition-all hover:-translate-y-1 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/50"
             >
               <div
-                className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-slate-800/30"
+                className="absolute -right-6 -top-6 h-24 w-24 rounded-full bg-slate-50 opacity-50 transition-transform duration-500 group-hover:scale-150 dark:bg-[#263956]/30"
                 aria-hidden="true"
               />
 
@@ -247,9 +238,9 @@ export default function PngToJpgPage() {
                 <Icon className="h-6 w-6" aria-hidden="true" />
               </div>
 
-              <h3 className="relative text-lg font-bold text-slate-900 dark:text-white">
+              <h2 className="relative text-lg font-bold text-slate-900 dark:text-white">
                 {title}
-              </h3>
+              </h2>
 
               <p className="relative mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-400">
                 {desc}
@@ -264,10 +255,10 @@ export default function PngToJpgPage() {
           </h2>
           <p>
             PNG is a lossless format that preserves transparency and sharp
-            detail, which makes files larger — often 4 to 10 times bigger than
-            an equivalent JPG. Converting PNG to JPEG is useful when you need
-            smaller files for email attachments, faster website loading, or
-            uploading to platforms that don&apos;t accept PNG.
+            detail. A JPG copy may be smaller for some photographs, but the
+            result depends on image content and quality settings. Converting
+            PNG to JPEG is useful when you need a widely supported format for
+            email attachments, websites, or platforms that do not accept PNG.
           </p>
 
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
@@ -301,8 +292,7 @@ export default function PngToJpgPage() {
                 JPG does not support transparent backgrounds. When you convert a
                 PNG with transparency to JPG, the transparent areas are filled with
                 a solid background (usually white). If you need to keep transparency, consider
-                converting to <strong>WebP</strong> instead, which supports both transparency and
-                smaller file sizes.
+                converting to <strong>WebP</strong> instead, which supports transparency. Compare the resulting file size and appearance with the original.
               </p>
             </div>
           </div>
@@ -311,17 +301,17 @@ export default function PngToJpgPage() {
             How to Convert PNG to JPG Across Devices
           </h2>
           <p>
-            Because our tool runs entirely in your browser, the process is identical whether you are on a desktop, phone, or tablet. No app installation is required.
+            Selected image data is processed in your browser. The steps and available format support can vary by browser and device; no separate app installation is required.
           </p>
 
           <div className="not-prose my-10 grid gap-6 sm:grid-cols-3">
             {DEVICES.map(({ icon: Icon, name, steps }) => (
               <div
                 key={name}
-                className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md dark:border-slate-800 dark:bg-slate-900/50"
+                className="flex flex-col rounded-3xl border border-slate-200 bg-white p-6 shadow-sm transition-all hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/50"
               >
                 <div className="mb-4 flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-100 text-slate-700 dark:bg-[#263956] dark:text-slate-300">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
@@ -343,7 +333,7 @@ export default function PngToJpgPage() {
           <p>
             Need to convert several screenshots or images at once? Select
             multiple PNG files, batch convert them together in one go, and
-            download the results as a single ZIP file. There is no artificial batch limit—it relies entirely on your device&apos;s memory.
+            download the results as a single ZIP file. The practical batch size depends on your device, browser, image dimensions, and available memory.
           </p>
 
           <h2 className="text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
@@ -357,9 +347,9 @@ export default function PngToJpgPage() {
             matters more than pixel-perfect transparency.
           </p>
 
-          <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900/50">
+          <div className="not-prose my-10 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-[#314969] dark:bg-[#172642]/50">
             <table className="w-full border-collapse text-left text-sm sm:text-base">
-              <thead className="bg-slate-50/80 backdrop-blur-sm dark:bg-slate-900/80">
+              <thead className="bg-slate-50/80 backdrop-blur-sm dark:bg-[#172642]/80">
                 <tr>
                   <th className="px-6 py-4 font-semibold text-slate-900 dark:text-slate-100">
                     Feature
@@ -372,8 +362,8 @@ export default function PngToJpgPage() {
                   </th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-200 dark:divide-slate-800">
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+              <tbody className="divide-y divide-slate-200 dark:divide-[#314969]">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Compression
                   </td>
@@ -384,7 +374,7 @@ export default function PngToJpgPage() {
                     Lossy (smaller files)
                   </td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Transparency
                   </td>
@@ -395,7 +385,7 @@ export default function PngToJpgPage() {
                     Not supported
                   </td>
                 </tr>
-                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                <tr className="transition-colors hover:bg-slate-50 dark:hover:bg-[#263956]/40">
                   <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-200">
                     Best used for
                   </td>
@@ -418,11 +408,11 @@ export default function PngToJpgPage() {
             {FAQS.map(({ q, a }) => (
               <details
                 key={q}
-                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-slate-800 dark:bg-slate-900/40 dark:hover:border-slate-700"
+                className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all hover:border-slate-300 dark:border-[#314969] dark:bg-[#172642]/40 dark:hover:border-slate-700"
               >
                 <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-5 text-lg font-semibold text-slate-900 outline-none dark:text-slate-100 [&::-webkit-details-marker]:hidden">
                   {q}
-                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-slate-800 dark:text-slate-400">
+                  <span className="ml-4 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-300 group-open:rotate-45 dark:bg-[#263956] dark:text-slate-400">
                     +
                   </span>
                 </summary>

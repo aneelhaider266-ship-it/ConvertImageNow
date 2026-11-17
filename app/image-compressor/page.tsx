@@ -9,7 +9,6 @@ import {
   Cpu,
   Sparkles,
   ChevronRight,
-  TrendingDown,
   Monitor,
   Smartphone,
   Gauge,
@@ -22,7 +21,7 @@ const PAGE_URL = `${SITE_URL}/image-compressor`;
 export const metadata: Metadata = {
   title: "Free Online Image Compressor – Reduce Image Size in KB",
   description:
-    "Compress JPG, PNG, WebP, and AVIF images online for free without server uploads. Reduce image file sizes by up to 80% without visible loss in quality.",
+    "Process JPG, PNG, WebP, and supported AVIF inputs in your browser. Export as JPG, PNG, or WebP and compare file size and appearance.",
   keywords: [
     "image compressor",
     "compress image online",
@@ -36,18 +35,18 @@ export const metadata: Metadata = {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Free Online Image Compressor – Reduce Image Size Instantly",
+    title: "Free Online Image Compressor – Adjust Image Quality",
     description:
-      "Compress JPEG, PNG, WebP, and AVIF images directly in your browser. 100% private, zero server uploads, no file size limits, and instant ZIP downloads.",
+      "Compress supported images in your browser. Batch sizes depend on your device and available browser memory; download converted files individually or as a ZIP.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online Image Compressor – Private & Client-Side",
+    title: "Free Browser-Based Image Compressor",
     description:
-      "Shrink image file size in KB without quality loss. Unlimited batch image compression powered by your browser's local GPU and CPU.",
+      "Adjust output quality to reduce image file size. Results vary by source image and settings; lossy compression can affect visual quality.",
   },
 };
 
@@ -89,52 +88,45 @@ const SOFTWARE_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "172",
-    bestRating: "5",
-    worstRating: "1",
-  },
   featureList: [
-    "100% client-side image compression via HTML5 Canvas and Blob APIs",
-    "No server uploads ensures full privacy for personal and corporate files",
-    "Batch image compression for JPG, PNG, WebP, and AVIF",
-    "Precision lossy and lossless file size reduction",
+    "Browser-based image processing via Canvas and Blob APIs",
+    "Selected image files are processed in the browser rather than sent to a conversion server",
+    "Batch processing for JPG, PNG, WebP, and supported AVIF inputs",
+    "Adjustable output quality for supported lossy formats",
     "One-click batch ZIP file download",
-    "Offline capability after initial page load",
-    "No watermark, registration, or file size limits",
+
+    "Individual downloads and ZIP export for multiple converted files",
   ],
 };
 
 const FAQS = [
   {
-    q: "How do I compress an image to under 100KB or 50KB?",
-    a: "To compress an image to meet strict upload limits (such as government portals, job applications, or visa forms), drop your JPG or PNG image into the tool above. Select JPG or WebP as the target format and adjust the quality slider down to between 60% and 75%. If the file remains over your target size, scale down its dimensions using our Image Resizer before re-compressing.",
+    q: "How can I reduce an image to a target size such as 100KB or 50KB?",
+    a: "Choose JPG or WebP as the output format and lower the quality setting gradually, checking the resulting file size after each conversion. If the file is still too large, reduce its pixel dimensions with the Image Resizer and try again. A particular target size cannot be guaranteed because results depend on the image.",
   },
   {
     q: "Will compressing an image reduce its visual quality?",
-    a: "When using lossy compression (JPG and WebP) at a 75% to 85% quality threshold, the file size drops by 50% to 80% while remaining visually indistinguishable to the human eye at standard viewing distance. For PNG images, compression is lossless, preserving 100% of pixel detail and alpha transparency while optimizing the underlying DEFLATE data stream.",
+    a: "JPG and WebP use lossy encoding, so lower quality settings can reduce detail or introduce visible artifacts. Compare the preview and resulting file size before downloading. PNG output does not use the quality slider; it is encoded as PNG by the browser.",
   },
   {
-    q: "Are my images uploaded to any remote server or stored in the cloud?",
-    a: "No. ConvertImageNow runs 100% locally within your browser using the HTML5 Canvas API and Web Workers. Your files are never transferred across the internet, never stored on a database, and never seen by anyone else, making it completely compliant for confidential documents, IDs, and private photos.",
+    q: "Are my selected images uploaded to a conversion server?",
+    a: "The conversion workflow uses your browser's image decoding and Canvas APIs to create the output. Selected image files are processed in the browser rather than uploaded to a ConvertImageNow conversion server. General website requests and analytics are covered by the Privacy Policy.",
   },
   {
-    q: "What is the difference between lossy and lossless image compression?",
-    a: "Lossy compression (used in JPG and WebP) permanently discards non-critical color frequencies that the human visual cortex cannot readily perceive, yielding massive reductions in file size. Lossless compression (used in PNG) reorganizes and indexes image data without altering a single pixel, guaranteeing byte-for-byte visual accuracy at the cost of a larger file footprint.",
+    q: "What is the difference between lossy and lossless image formats?",
+    a: "Lossy formats such as JPG and lossy WebP can discard image information to reduce file size. PNG uses lossless encoding, which preserves the pixel data supplied to the PNG encoder. Converting an already-compressed image to PNG cannot restore detail that was lost earlier.",
   },
   {
-    q: "Can I compress PNG images without losing transparent backgrounds?",
-    a: "Yes. Compressing PNG files retains full 8-bit alpha transparency. You can also convert and compress PNG graphics into WebP, which supports lossless alpha channels while generating files up to 26% smaller than traditional PNGs.",
+    q: "Can I keep a transparent background when converting PNG images?",
+    a: "PNG supports transparency. If you choose JPG as the output, transparent areas are flattened against a solid background. Choose PNG or a transparency-supporting WebP output when you need transparency.",
   },
   {
-    q: "How many images can I compress simultaneously?",
-    a: "There are no artificial batch limits. Because compression runs on your device's local CPU and GPU, you can drag and drop dozens of images at once, compress them in parallel, and export them as a single packaged ZIP archive.",
+    q: "Can I compress multiple images at once?",
+    a: "You can add multiple supported images to the queue and download converted files individually or together as a ZIP archive. The practical batch size depends on your device, browser, image dimensions, and available memory.",
   },
   {
-    q: "Which image format delivers the smallest file size?",
-    a: "AVIF and WebP offer the highest compression efficiency on the web today. WebP files are typically 25% to 35% smaller than comparable JPEGs at identical perceived quality, while AVIF can reduce sizes by up to 50%, dramatically improving site speed and Google Core Web Vitals.",
+    q: "Which image format creates the smallest file?",
+    a: "There is no single smallest format for every image. Compare JPG and WebP outputs using the same source and inspect both file size and visual quality. AVIF is accepted as an input format here, not an output format. PNG is useful when transparency or lossless encoding of the decoded pixels matters.",
   },
 ];
 
@@ -154,27 +146,27 @@ const FAQ_SCHEMA = {
 const STATS_CARDS = [
   {
     format: "JPEG / JPG",
-    typicalSavings: "50% – 80%",
-    technique: "Lossy Discrete Cosine Transform (DCT)",
-    bestFor: "Real-world photography, blog hero images, social media",
+    typicalSavings: "Output varies",
+    technique: "Lossy browser encoding",
+    bestFor: "Photographs and general-purpose image sharing",
   },
   {
     format: "PNG",
-    typicalSavings: "20% – 50%",
-    technique: "Lossless DEFLATE & Palette Optimization",
-    bestFor: "Screenshots, vector logos, transparent UI graphics",
+    typicalSavings: "Output varies",
+    technique: "Lossless PNG encoding",
+    bestFor: "Screenshots, logos, and images that need transparency",
   },
   {
     format: "WebP",
-    typicalSavings: "65% – 88%",
-    technique: "Predictive Block Coding (Lossy & Lossless)",
-    bestFor: "Modern websites, e-commerce storefronts, mobile apps",
+    typicalSavings: "Output varies",
+    technique: "Lossy browser encoding",
+    bestFor: "Modern websites and general web graphics",
   },
   {
-    format: "AVIF",
-    typicalSavings: "70% – 90%",
-    technique: "AV1 Intra-Frame Compression",
-    bestFor: "Next-gen web graphics with high dynamic range",
+    format: "AVIF input",
+    typicalSavings: "Output varies",
+    technique: "Browser decoding; no AVIF export",
+    bestFor: "Convert supported AVIF inputs to JPG, PNG, or WebP",
   },
 ];
 
@@ -183,19 +175,19 @@ const USE_CASES = [
     icon: Gauge,
     target: "Web & Core Web Vitals",
     recommendation: "Target < 150 KB",
-    desc: "Speed up Largest Contentful Paint (LCP) and cut bandwidth costs by compressing desktop hero images and product thumbnails.",
+    desc: "Reducing the dimensions or file size of oversized hero images and product thumbnails can lower transfer size and may help LCP. Measure page performance after changes.",
   },
   {
     icon: FileCheck,
     target: "Government & Job Portals",
     recommendation: "Target 20 KB – 100 KB",
-    desc: "Meet strict upload size limits for passport photos, signatures, college admissions, and national ID document portals.",
+    desc: "Work toward upload limits for passport photos, signatures, college admissions, and document portals. Check the actual output size against the portal requirement.",
   },
   {
     icon: Sparkles,
     target: "Email Attachments & Newsletters",
     recommendation: "Target < 500 KB",
-    desc: "Prevent inbox delivery bounces and slow mobile download times by optimizing newsletter graphics and pitch deck slides.",
+    desc: "Reduce the size of newsletter graphics and presentation slides, then check attachment limits and image quality before sending.",
   },
 ];
 
@@ -204,36 +196,36 @@ const TECHNICAL_COMPARISON = [
     attribute: "Compression Mode",
     jpeg: "Lossy",
     png: "Lossless",
-    webp: "Lossy & Lossless",
-    avif: "Lossy & Lossless",
+    webp: "Lossy output in this tool",
+    avif: "Input only; no AVIF export",
   },
   {
     attribute: "Visual Quality Retention",
-    jpeg: "High (at 75-85% slider)",
-    png: "100% Exact Pixel Match",
-    webp: "Superior visual fidelity",
-    avif: "Maximum fidelity per byte",
+    jpeg: "Depends on selected quality setting",
+    png: "Lossless PNG encoding",
+    webp: "Depends on selected quality setting",
+    avif: "Converted to a supported output format",
   },
   {
     attribute: "Alpha Transparency",
     jpeg: "No",
     png: "Yes (Full 8-bit alpha)",
     webp: "Yes (Full 8-bit alpha)",
-    avif: "Yes (Full 8-bit alpha)",
+    avif: "May contain transparency",
   },
   {
     attribute: "Browser Compatibility",
-    jpeg: "100% Universal",
-    png: "100% Universal",
-    webp: "97%+ (All modern browsers)",
-    avif: "93%+ (Modern engines)",
+    jpeg: "Very broad browser and device support",
+    png: "Very broad browser and device support",
+    webp: "Supported by modern browsers",
+    avif: "Browser support varies",
   },
   {
     attribute: "Ideal Use Case",
     jpeg: "Digital camera photos",
     png: "Icons, UI, screenshots",
-    jpegFallback: "General web graphics",
-    avif: "High-efficiency web assets",
+    webp: "Modern web graphics",
+    avif: "Input format only; export as JPG, PNG, or WebP",
   },
 ];
 
@@ -255,13 +247,13 @@ const RELATED_TOOLS = [
   },
   {
     name: "JPG to PNG Converter",
-    desc: "Wrap JPG images into lossless PNG containers for safe multi-pass editing.",
+    desc: "Save a JPG as PNG before further edits to avoid additional lossy JPEG saves; this does not restore detail already lost in the original JPG.",
     href: "/jpg-to-png",
   },
   {
-    name: "HEIC to JPG Converter",
-    desc: "Convert Apple iPhone HEIC pictures to standard compressible JPEGs.",
-    href: "/heic-to-jpg",
+    name: "HEIC to JPG Guide",
+    desc: "Learn about HEIC compatibility and ways to create JPG copies on supported devices.",
+    href: "/blog/heic-to-jpg-guide",
   },
   {
     name: "AVIF to JPG Converter",
@@ -272,7 +264,7 @@ const RELATED_TOOLS = [
 
 export default function ImageCompressorPage() {
   return (
-    <div className="relative min-h-screen bg-slate-50/70 font-sans text-slate-900 antialiased selection:bg-indigo-500 selection:text-white dark:bg-slate-950 dark:text-slate-100">
+    <div className="relative min-h-screen bg-slate-50/70 font-sans text-slate-900 antialiased selection:bg-indigo-500 selection:text-white dark:bg-[#101B33] dark:text-slate-100">
       {/* Structured Data Embeds */}
       <script
         type="application/ld+json"
@@ -292,7 +284,7 @@ export default function ImageCompressorPage() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[580px] overflow-hidden"
       >
-        <div className="absolute left-1/2 top-0 h-[500px] w-[1050px] -translate-x-1/2 bg-gradient-to-b from-indigo-100/70 via-sky-50/40 to-transparent blur-3xl dark:from-indigo-950/25 dark:via-slate-900/10 dark:to-transparent" />
+        <div className="absolute left-1/2 top-0 h-[500px] w-[1050px] -translate-x-1/2 bg-gradient-to-b from-indigo-100/70 via-sky-50/40 to-transparent blur-3xl dark:from-indigo-950/25 dark:via-[#172642]/10 dark:to-transparent" />
       </div>
 
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -327,7 +319,7 @@ export default function ImageCompressorPage() {
         <header className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/80 px-3.5 py-1 text-xs font-medium tracking-wide text-indigo-700 shadow-sm backdrop-blur dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
             <Sparkles className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
-            <span>100% Client-Side Engine • Unlimited Free Compression</span>
+            <span>Browser-Based Compression • No Conversion-Server Upload</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
@@ -335,23 +327,22 @@ export default function ImageCompressorPage() {
           </h1>
 
           <p className="mt-3.5 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-            Compress JPG, PNG, WebP, and AVIF images online in seconds. Reduce
-            file size by up to 80% without visible loss in sharpness. No server
-            uploads, no wait queues, and no watermark.
+            Adjust output quality for supported image formats to help reduce file size.
+            Results depend on the source image and selected settings. No conversion-server upload or added watermark.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs font-medium text-slate-500 dark:text-slate-400">
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Zero cloud
-              storage or uploads
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Local browser
+              processing
             </span>
             <span className="flex items-center gap-1.5">
               <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Batch compress
               with ZIP export
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Works offline
-              in modern browsers
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> Adjustable output
+              quality
             </span>
           </div>
         </header>
@@ -359,7 +350,7 @@ export default function ImageCompressorPage() {
         {/* Image Compressor Tool Component Card */}
         <section
           aria-label="Image Compressor Tool"
-          className="mx-auto mt-8 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-md sm:p-7 dark:border-slate-800/80 dark:bg-slate-900/95 dark:shadow-black/40"
+          className="mx-auto mt-8 max-w-4xl rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-md sm:p-7 dark:border-[#314969]/80 dark:bg-[#172642]/95 dark:shadow-black/40"
         >
           <ImageConverter />
         </section>
@@ -374,11 +365,10 @@ export default function ImageCompressorPage() {
               id="benchmark-heading"
               className="text-2xl font-bold tracking-tight sm:text-3xl"
             >
-              Compression Benchmarks Across File Formats
+              Supported Input Formats and Output Options
             </h2>
             <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
-              Different file types respond differently to compression algorithms.
-              Here is what you can realistically expect using our browser compressor:
+              The tool accepts JPG, PNG, WebP, and supported AVIF inputs. Converted files can be exported as JPG, PNG, or WebP; size and appearance depend on the source and settings.
             </p>
           </div>
 
@@ -386,14 +376,13 @@ export default function ImageCompressorPage() {
             {STATS_CARDS.map((card) => (
               <div
                 key={card.format}
-                className="group relative rounded-xl border border-slate-200/80 bg-white/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-indigo-800"
+                className="group relative rounded-xl border border-slate-200/80 bg-white/80 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/60 dark:hover:border-indigo-800"
               >
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400">
                     {card.format}
                   </span>
                   <span className="inline-flex items-center gap-1 rounded-md bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300">
-                    <TrendingDown className="h-3 w-3" />
                     {card.typicalSavings}
                   </span>
                 </div>
@@ -411,7 +400,7 @@ export default function ImageCompressorPage() {
         {/* Step-by-Step Practical Workflow */}
         <section
           aria-labelledby="how-to-heading"
-          className="mx-auto mt-16 max-w-4xl rounded-2xl border border-slate-200/80 bg-white/60 p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-slate-900/40"
+          className="mx-auto mt-16 max-w-4xl rounded-2xl border border-slate-200/80 bg-white/60 p-6 shadow-sm sm:p-8 dark:border-[#314969] dark:bg-[#172642]/40"
         >
           <div className="max-w-2xl">
             <h2
@@ -427,40 +416,37 @@ export default function ImageCompressorPage() {
           </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 1
               </span>
               <h3 className="mt-3 text-sm font-semibold">Select or Drop Files</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                Drag your JPG, PNG, WebP, or AVIF images onto the tool area. Batch
-                selection is supported for dozens of photos at once.
+                Select JPG, PNG, WebP, or AVIF images. You can add multiple files; practical batch capacity depends on your device and browser memory.
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 2
               </span>
               <h3 className="mt-3 text-sm font-semibold">Set Quality & Format</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                Keep the original format or switch to WebP. Adjust the quality slider
-                (80% is recommended for near-perfect visual balance).
+                Choose JPG, PNG, or WebP as the output format. Adjust quality for JPG and WebP; PNG output does not use the quality slider. Compare the result before downloading.
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 3
               </span>
-              <h3 className="mt-3 text-sm font-semibold">Instant Local Process</h3>
+              <h3 className="mt-3 text-sm font-semibold">Local Processing</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                Click Convert/Compress. Your device&apos;s internal browser engine
-                encodes the binary streams without transmitting any data over the internet.
+                Start conversion. Your browser decodes the selected images and uses Canvas APIs to create output files without sending the selected image data to a conversion server.
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 4
               </span>
@@ -495,7 +481,7 @@ export default function ImageCompressorPage() {
             {USE_CASES.map(({ icon: Icon, target, recommendation, desc }) => (
               <div
                 key={target}
-                className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900"
+                className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]"
               >
                 <div className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
                   <Icon className="h-5 w-5" />
@@ -517,7 +503,7 @@ export default function ImageCompressorPage() {
         {/* Technical Deep Dive: Lossy vs Lossless & Privacy */}
         <section className="mx-auto mt-16 max-w-4xl space-y-10">
           <div className="grid gap-8 lg:grid-cols-2">
-            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
                 Lossy vs. Lossless Compression Explained
               </h2>
@@ -525,45 +511,45 @@ export default function ImageCompressorPage() {
                 Understanding how compression algorithms handle your image pixels allows you to pick the ideal format:
               </p>
               <div className="mt-4 space-y-3 text-xs text-slate-600 dark:text-slate-300">
-                <div className="rounded-lg bg-slate-50 p-3 dark:bg-slate-800/60">
+                <div className="rounded-lg bg-slate-50 p-3 dark:bg-[#263956]/60">
                   <strong className="text-slate-900 dark:text-slate-100">
                     Lossy (JPG & WebP):
                   </strong>{" "}
-                  Removes subtle color variations that human eyes rarely distinguish. Compressing a 4MB photo at 80% quality typically cuts 70% of the byte size without noticeable blur.
+                  Removes subtle color variations that human eyes rarely distinguish. The resulting file size and appearance depend on the source image, output format, and quality setting.
                 </div>
-                <div className="rounded-lg bg-slate-50 p-3 dark:bg-slate-800/60">
+                <div className="rounded-lg bg-slate-50 p-3 dark:bg-[#263956]/60">
                   <strong className="text-slate-900 dark:text-slate-100">
                     Lossless (PNG):
                   </strong>{" "}
-                  Eliminates redundant data through statistical tokenization (similar to a ZIP archive). Maintains 100% pixel fidelity, making it essential for logos, icons, and diagrams with sharp text.
+                  PNG uses lossless encoding and preserves the pixel data supplied to the encoder. It is often suitable for logos, icons, and graphics with sharp edges.
                 </div>
               </div>
             </article>
 
-            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
-                Client-Side Security: Why Zero Uploads Matter
+                How Browser Processing Handles Selected Images
               </h2>
               <p className="mt-3 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
-                Traditional cloud-based compressors send your images to third-party web servers. ConvertImageNow takes a modern, decentralized approach:
+                The converter uses browser image decoding and Canvas APIs to create output files. Selected image files are processed in the browser rather than sent to a conversion server:
               </p>
               <ul className="mt-4 space-y-2.5 text-xs text-slate-600 dark:text-slate-300">
                 <li className="flex items-start gap-2">
                   <Lock className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>Complete Privacy:</strong> Medical documents, invoices, legal contracts, and personal photos remain exclusively in your local device memory.
+                    <strong>Selected File Handling:</strong> Selected image files are processed in the browser rather than sent to a conversion server. Review the Privacy Policy for details about general website data.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <Cpu className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>Hardware Acceleration:</strong> Uses your device&apos;s multi-core CPU and GPU to decode and re-encode images via the HTML5 Canvas API.
+                    <strong>Browser Processing:</strong> The converter uses browser image decoding and Canvas APIs to create output files.
                   </span>
                 </li>
                 <li className="flex items-start gap-2">
                   <WifiOff className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>No Internet Bandwidth Drain:</strong> Once the page is loaded, you can compress files without uploading large megabyte payloads over metered connections.
+                    <strong>No Conversion Upload Queue:</strong> The selected image data is not sent to a conversion server for processing.
                   </span>
                 </li>
               </ul>
@@ -571,8 +557,8 @@ export default function ImageCompressorPage() {
           </div>
 
           {/* Technical Comparison Table */}
-          <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <div className="border-b border-slate-200/90 bg-slate-100/60 px-6 py-4 dark:border-slate-800 dark:bg-slate-800/50">
+          <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm dark:border-[#314969] dark:bg-[#172642]">
+            <div className="border-b border-slate-200/90 bg-slate-100/60 px-6 py-4 dark:border-[#314969] dark:bg-[#263956]/50">
               <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                 Format Compression Matrix
               </h2>
@@ -583,7 +569,7 @@ export default function ImageCompressorPage() {
 
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm text-slate-700 dark:text-slate-300">
-                <thead className="border-b border-slate-200/80 bg-slate-50 text-xs uppercase font-semibold text-slate-600 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-400">
+                <thead className="border-b border-slate-200/80 bg-slate-50 text-xs uppercase font-semibold text-slate-600 dark:border-[#314969] dark:bg-[#101B33]/40 dark:text-slate-400">
                   <tr>
                     <th scope="col" className="px-5 py-3.5">
                       Specification
@@ -602,11 +588,11 @@ export default function ImageCompressorPage() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200/70 dark:divide-slate-800">
+                <tbody className="divide-y divide-slate-200/70 dark:divide-[#314969]">
                   {TECHNICAL_COMPARISON.map((row) => (
                     <tr
                       key={row.attribute}
-                      className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40"
+                      className="hover:bg-slate-50/50 dark:hover:bg-[#263956]/40"
                     >
                       <td className="px-5 py-3.5 font-medium text-slate-900 dark:text-slate-100 text-xs sm:text-sm">
                         {row.attribute}
@@ -640,7 +626,7 @@ export default function ImageCompressorPage() {
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
                 <div className="flex items-center gap-3">
                   <div className="rounded-lg bg-indigo-50 p-2 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
                     <Monitor className="h-5 w-5" />
@@ -650,11 +636,11 @@ export default function ImageCompressorPage() {
                   </h3>
                 </div>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                  Select and drag entire folders of high-resolution camera RAW exports, PNG mockups, or JPEG assets. Take advantage of multi-threaded browser rendering to compress batches in seconds and download them as a ZIP archive.
+                  Select supported JPG, PNG, WebP, or AVIF images. Add multiple files to the queue and download the results as a ZIP; practical capacity depends on your device and browser memory.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
                 <div className="flex items-center gap-3">
                   <div className="rounded-lg bg-emerald-50 p-2 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400">
                     <Smartphone className="h-5 w-5" />
@@ -664,14 +650,14 @@ export default function ImageCompressorPage() {
                   </h3>
                 </div>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                  Upload photos directly from your Camera Roll or Files app. Compress large mobile phone photos to under 100KB or 200KB directly on your handset before submitting them to job boards or university portals.
+                  Upload photos directly from your Camera Roll or Files app. Adjust output quality and dimensions on your device, then check the resulting file size against the upload requirements.
                 </p>
               </div>
             </div>
           </div>
 
           {/* Related Tools Topical Cluster */}
-          <div className="rounded-2xl border border-slate-200/80 bg-slate-100/50 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <div className="rounded-2xl border border-slate-200/80 bg-slate-100/50 p-6 sm:p-8 dark:border-[#314969] dark:bg-[#172642]/50">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
@@ -694,7 +680,7 @@ export default function ImageCompressorPage() {
                 <Link
                   key={tool.name}
                   href={tool.href}
-                  className="group rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:border-indigo-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-700"
+                  className="group rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:border-indigo-300 hover:shadow-md dark:border-[#314969] dark:bg-[#172642] dark:hover:border-indigo-700"
                 >
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-semibold text-slate-900 group-hover:text-indigo-600 dark:text-slate-100 dark:group-hover:text-indigo-400">
@@ -745,11 +731,11 @@ export default function ImageCompressorPage() {
               {FAQS.map(({ q, a }) => (
                 <details
                   key={q}
-                  className="group rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm transition open:shadow-md dark:border-slate-800 dark:bg-slate-900"
+                  className="group rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm transition open:shadow-md dark:border-[#314969] dark:bg-[#172642]"
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-slate-900 focus:outline-none dark:text-slate-100">
                     <span>{q}</span>
-                    <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-200 group-open:rotate-180 dark:bg-slate-800 dark:text-slate-400">
+                    <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-200 group-open:rotate-180 dark:bg-[#263956] dark:text-slate-400">
                       <ChevronRight className="h-3.5 w-3.5 rotate-90" />
                     </span>
                   </summary>

@@ -70,7 +70,7 @@ export default function ContactPage() {
         </div>
 
         <div className="space-y-6">
-          <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
+          <div className="rounded-2xl border border-slate-200 bg-white/70 p-6 dark:border-[#314969] dark:bg-[#172642]/70">
             <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">
               <Mail size={18} className="text-brand-primary" />
               Direct Email
@@ -89,19 +89,17 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
+          <div className="rounded-2xl border border-slate-200 p-6 dark:border-[#314969]">
             <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">
               <Clock size={18} className="text-brand-primary" />
               Response Time & Hours
             </h2>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-              We operate Monday through Friday and aim to reply to all user
-              inquiries within 24 to 48 business hours. Emails receive highest
-              priority.
+              We review support inquiries on business days. Response times vary depending on the request and current workload.
             </p>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 p-6 dark:border-slate-800">
+          <div className="rounded-2xl border border-slate-200 p-6 dark:border-[#314969]">
             <h2 className="flex items-center gap-2 font-semibold text-slate-900 dark:text-white">
               <ShieldCheck size={18} className="text-emerald-500" />
               Privacy Assurance

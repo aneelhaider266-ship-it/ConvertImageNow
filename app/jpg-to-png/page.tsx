@@ -21,25 +21,25 @@ const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/jpg-to-png`;
 
 export const metadata: Metadata = {
-  title: "Convert JPG to PNG Online Free – Instant Browser Tool",
+  title: "Convert JPG to PNG Online Free – Browser-Based Tool",
   description:
-    "Convert JPG to PNG online for free without uploading files to servers. Fast, lossless JPEG to PNG conversion right in your browser with batch processing.",
+    "Convert JPG to PNG online in your browser. Create PNG files from JPG images with batch processing and ZIP downloads.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
     title: "Convert JPG to PNG Online Free – Private & Browser-Based",
     description:
-      "Transform JPG images into lossless PNG files directly in your browser. No file uploads, zero wait times, no watermarks, and complete privacy.",
+      "Convert JPG images to PNG in your browser. PNG uses lossless encoding, but converting a JPG cannot restore detail already lost during JPEG compression.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "JPG to PNG Converter – Free, Fast & Private",
+    title: "JPG to PNG Converter – Free Browser-Based Tool",
     description:
-      "Convert JPG images to PNG locally in your browser. Batch conversion, no server uploads, and no quality compromise.",
+      "Convert JPG images to PNG locally in your browser with batch conversion and ZIP downloads.",
   },
 };
 
@@ -81,20 +81,13 @@ const SOFTWARE_SCHEMA = {
     price: "0",
     priceCurrency: "USD",
   },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.9",
-    ratingCount: "136",
-    bestRating: "5",
-    worstRating: "1",
-  },
   featureList: [
-    "100% Client-side conversion via HTML5 Canvas API",
-    "Zero server uploads for maximum privacy",
+    "Browser-based conversion using Canvas and Blob APIs",
+    "Selected image files are processed in the browser rather than sent to a conversion server",
     "Batch JPG to PNG processing",
-    "No watermark and no file size quotas",
-    "Offline conversion capability after initial page load",
-    "Instant ZIP archive download for multi-file conversions",
+    "Batch conversion with individual downloads and ZIP export",
+    
+    "ZIP archive download for multiple converted files",
   ],
 };
 
@@ -109,19 +102,19 @@ const FAQS = [
   },
   {
     q: "Will converting a JPG to PNG improve its image quality?",
-    a: "No. Converting an existing JPG to PNG cannot restore image detail, sharpness, or clarity that was discarded during the original lossy JPEG compression. However, saving the file as a PNG stops generational quality loss—meaning any future edits, crops, or re-saves will not introduce further compression artifacts.",
+    a: "No. Converting an existing JPG to PNG cannot restore image detail, sharpness, or clarity discarded during the original lossy JPEG compression. Saving the current image as PNG avoids another lossy JPEG encoding step at this stage, but later edits or exports to a lossy format can still change image quality.",
   },
   {
     q: "Why is the converted PNG file larger in file size than the original JPG?",
-    a: "PNG uses lossless DEFLATE compression, which retains every single pixel without approximations, whereas JPG uses lossy Discrete Cosine Transform (DCT) compression that discards subtle color nuances. Because PNG preserves the full uncompressed raster data of the decoded JPG, the resulting file is usually 2x to 5x larger than the original JPG.",
+    a: "PNG uses lossless DEFLATE compression, while JPG uses lossy compression. Converting a JPG to PNG does not restore details already lost in the JPG. The resulting PNG may be larger, depending on the image.",
   },
   {
     q: "Are my photos uploaded to your server during conversion?",
-    a: "No. ConvertImageNow executes the entire conversion locally on your device using the browser's native HTML5 Canvas and Blob APIs. Your image files never leave your computer or phone, are never uploaded across the internet, and are never saved to an external database.",
+    a: "The selected image data is processed locally in your browser using the Canvas and Blob APIs rather than uploaded to a conversion server. See the privacy policy for details about general website data.",
   },
   {
     q: "Can I convert multiple JPG files to PNG at the same time?",
-    a: "Yes. You can select or drag dozens of JPG files simultaneously. ConvertImageNow processes the queue in parallel within your browser memory and provides a one-click ZIP download option to retrieve all your converted PNG images instantly.",
+    a: "Yes. Add multiple JPG files to the queue, convert them in your browser, and download the results individually or together as a ZIP archive.",
   },
   {
     q: "What is the difference between JPG and JPEG?",
@@ -145,26 +138,26 @@ const FAQ_SCHEMA = {
 const FEATURE_CARDS = [
   {
     icon: ShieldCheck,
-    title: "100% Client-Side Privacy",
-    desc: "Files are rendered locally in your browser through HTML5 Canvas. No bytes are transmitted to any remote cloud or external storage.",
+    title: "Browser-Based Processing",
+    desc: "Selected image files are processed in your browser using Canvas and Blob APIs rather than uploaded to a conversion server.",
     accent: "from-emerald-500/10 to-teal-500/10 text-emerald-600 dark:text-emerald-400",
   },
   {
     icon: Zap,
-    title: "Zero Server Wait Times",
-    desc: "Skip slow upload queues and download lags. Browser-level execution processes photos at the raw speed of your local CPU and GPU.",
+    title: "No Conversion-Server Upload",
+    desc: "The selected JPG image is processed in your browser using Canvas and Blob APIs rather than uploaded to a conversion server.",
     accent: "from-blue-500/10 to-cyan-500/10 text-blue-600 dark:text-blue-400",
   },
   {
     icon: WifiOff,
-    title: "Offline-Ready Architecture",
-    desc: "Because the processing scripts cache in your browser runtime, you can keep converting images even if your connection drops.",
+    title: "Local Image Processing",
+    desc: "The conversion workflow uses your browser Canvas API. An active internet connection may still be needed to load the website and its resources.",
     accent: "from-violet-500/10 to-purple-500/10 text-violet-600 dark:text-violet-400",
   },
   {
     icon: InfinityIcon,
-    title: "Uncapped Batch Conversion",
-    desc: "Convert multiple JPG files simultaneously without arbitrary paywalls, conversion limits, mandatory accounts, or watermarks.",
+    title: "Batch Conversion",
+    desc: "Add multiple JPG files to the queue and download the PNG results individually or together as a ZIP. Practical batch capacity depends on your device and browser memory.",
     accent: "from-amber-500/10 to-orange-500/10 text-amber-600 dark:text-amber-400",
   },
 ];
@@ -188,7 +181,7 @@ const COMPARISON_ROWS = [
   {
     feature: "Re-saving & Editing",
     jpg: "Degrades quality each save (compression artifacts)",
-    png: "Zero quality loss over repeated saves",
+    png: "Lossless PNG encoding after conversion",
   },
   {
     feature: "Relative File Size",
@@ -210,13 +203,13 @@ const RELATED_TOOLS = [
   },
   {
     name: "JPG to WebP Converter",
-    desc: "Shrink JPG file sizes by an extra 25-35% using next-gen WebP compression.",
+    desc: "Convert JPG images to WebP; file size and visual quality depend on the source and selected quality setting.",
     href: "/jpg-to-webp",
   },
   {
-    name: "HEIC to JPG Converter",
-    desc: "Convert Apple iPhone HEIC/HEIF camera photos into universally compatible JPGs.",
-    href: "/heic-to-jpg",
+    name: "HEIC to JPG Guide",
+    desc: "Learn about HEIC compatibility and ways to create JPG copies on supported devices.",
+    href: "/blog/heic-to-jpg-guide",
   },
   {
     name: "AVIF to JPG Converter",
@@ -225,7 +218,7 @@ const RELATED_TOOLS = [
   },
   {
     name: "Free Image Compressor",
-    desc: "Reduce image file sizes instantly without perceptible loss in visual clarity.",
+    desc: "Adjust output quality and compare the resulting file size and appearance.",
     href: "/image-compressor",
   },
   {
@@ -237,7 +230,7 @@ const RELATED_TOOLS = [
 
 export default function JpgToPngPage() {
   return (
-    <div className="relative min-h-screen bg-slate-50/60 font-sans text-slate-900 antialiased selection:bg-indigo-500 selection:text-white dark:bg-slate-950 dark:text-slate-100">
+    <div className="relative min-h-screen bg-slate-50/60 font-sans text-slate-900 antialiased selection:bg-indigo-500 selection:text-white dark:bg-[#101B33] dark:text-slate-100">
       {/* Structured Data Scripts */}
       <script
         type="application/ld+json"
@@ -257,7 +250,7 @@ export default function JpgToPngPage() {
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-[560px] overflow-hidden"
       >
-        <div className="absolute left-1/2 top-0 h-[480px] w-[1000px] -translate-x-1/2 bg-gradient-to-b from-indigo-100/70 via-sky-50/40 to-transparent blur-3xl dark:from-indigo-950/20 dark:via-slate-900/10 dark:to-transparent" />
+        <div className="absolute left-1/2 top-0 h-[480px] w-[1000px] -translate-x-1/2 bg-gradient-to-b from-indigo-100/70 via-sky-50/40 to-transparent blur-3xl dark:from-indigo-950/20 dark:via-[#172642]/10 dark:to-transparent" />
       </div>
 
       <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8">
@@ -292,7 +285,7 @@ export default function JpgToPngPage() {
         <header className="mx-auto max-w-3xl text-center">
           <div className="inline-flex items-center gap-2 rounded-full border border-indigo-200/80 bg-indigo-50/80 px-3.5 py-1 text-xs font-medium tracking-wide text-indigo-700 shadow-sm backdrop-blur dark:border-indigo-900/60 dark:bg-indigo-950/40 dark:text-indigo-300">
             <Sparkles className="h-3.5 w-3.5 text-indigo-600 dark:text-indigo-400" />
-            <span>100% Client-Side Processing • Zero Uploads</span>
+            <span>Browser-Based Processing • No Conversion-Server Upload</span>
           </div>
 
           <h1 className="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl lg:text-5xl">
@@ -300,10 +293,9 @@ export default function JpgToPngPage() {
           </h1>
 
           <p className="mt-3.5 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
-            Transform JPEG images into lossless Portable Network Graphics (PNG)
-            format instantly in your browser. Maintain crystal-clear visual
-            fidelity with zero server uploads, no signups, and unlimited batch
-            processing.
+            Convert JPEG images to PNG format in your browser. PNG uses lossless
+            encoding, but it cannot restore detail already lost in the original
+            JPG. Add multiple files and download the converted results together.
           </p>
 
           <div className="mt-5 flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs font-medium text-slate-500 dark:text-slate-400">
@@ -316,8 +308,7 @@ export default function JpgToPngPage() {
               ZIP downloads
             </span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> No watermarks
-              or quality limits
+              <CheckCircle2 className="h-4 w-4 text-emerald-500" /> No added watermark
             </span>
           </div>
         </header>
@@ -325,7 +316,7 @@ export default function JpgToPngPage() {
         {/* Converter Tool Area */}
         <section
           aria-label="Image Converter Tool"
-          className="mx-auto mt-8 max-w-3xl rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-md transition-all sm:p-7 dark:border-slate-800/80 dark:bg-slate-900/95 dark:shadow-black/40"
+          className="mx-auto mt-8 max-w-3xl rounded-2xl border border-slate-200/90 bg-white/95 p-4 shadow-xl shadow-slate-200/40 backdrop-blur-md transition-all sm:p-7 dark:border-[#314969]/80 dark:bg-[#172642]/95 dark:shadow-black/40"
         >
           <ImageConverter initialFormat="png" />
         </section>
@@ -340,12 +331,12 @@ export default function JpgToPngPage() {
               id="features-heading"
               className="text-2xl font-bold tracking-tight sm:text-3xl"
             >
-              Engineered for Speed, Privacy, and Precision
+              Browser-Based Image Conversion
             </h2>
             <p className="mx-auto mt-2 max-w-2xl text-sm leading-relaxed text-slate-600 dark:text-slate-400">
               Most online converters upload your files to remote web servers.
               ConvertImageNow relies on modern client-side browser technology to
-              deliver superior privacy and instantaneous conversions.
+              processes supported images locally in your browser.
             </p>
           </div>
 
@@ -353,7 +344,7 @@ export default function JpgToPngPage() {
             {FEATURE_CARDS.map(({ icon: Icon, title, desc, accent }) => (
               <div
                 key={title}
-                className="group relative rounded-xl border border-slate-200/80 bg-white/70 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900/60 dark:hover:border-indigo-800"
+                className="group relative rounded-xl border border-slate-200/80 bg-white/70 p-5 shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md dark:border-[#314969] dark:bg-[#172642]/60 dark:hover:border-indigo-800"
               >
                 <div
                   className={`inline-flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${accent}`}
@@ -374,7 +365,7 @@ export default function JpgToPngPage() {
         {/* Step-by-Step Guide Section */}
         <section
           aria-labelledby="how-to-heading"
-          className="mx-auto mt-16 max-w-4xl rounded-2xl border border-slate-200/80 bg-white/60 p-6 shadow-sm sm:p-8 dark:border-slate-800 dark:bg-slate-900/40"
+          className="mx-auto mt-16 max-w-4xl rounded-2xl border border-slate-200/80 bg-white/60 p-6 shadow-sm sm:p-8 dark:border-[#314969] dark:bg-[#172642]/40"
         >
           <div className="max-w-2xl">
             <h2
@@ -390,7 +381,7 @@ export default function JpgToPngPage() {
           </div>
 
           <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 1
               </span>
@@ -400,7 +391,7 @@ export default function JpgToPngPage() {
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 2
               </span>
@@ -410,21 +401,21 @@ export default function JpgToPngPage() {
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 3
               </span>
               <h3 className="mt-3 text-sm font-semibold">Execute Conversion</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
-                Click Convert. The browser hardware draws and decodes the pixels into raw PNG binary streams instantaneously.
+                Click Convert. Your browser decodes the image and exports a PNG file using the Canvas API.
               </p>
             </div>
 
-            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <div className="relative flex flex-col rounded-lg border border-slate-200/70 bg-white p-4 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <span className="flex h-7 w-7 items-center justify-center rounded-full bg-indigo-100 text-xs font-bold text-indigo-700 dark:bg-indigo-950 dark:text-indigo-300">
                 4
               </span>
-              <h3 className="mt-3 text-sm font-semibold">Instant Download</h3>
+              <h3 className="mt-3 text-sm font-semibold">Download PNG Files</h3>
               <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
                 Save individual PNG files directly to your device or click Download All to retrieve a tidy ZIP archive.
               </p>
@@ -455,7 +446,7 @@ export default function JpgToPngPage() {
           </div>
 
           <div className="grid gap-8 lg:grid-cols-2">
-            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
                 Why Convert from JPG to PNG?
               </h2>
@@ -463,7 +454,7 @@ export default function JpgToPngPage() {
                 <li className="flex items-start gap-2.5">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-indigo-600 dark:text-indigo-400" />
                   <span>
-                    <strong>Halt Generational Quality Loss:</strong> Re-saving a JPG compresses it again, creating &quot;mosquito noise&quot; and pixelation. PNG uses lossless DEFLATE encoding, safeguarding crisp lines forever.
+                    <strong>Understand format conversion:</strong> PNG encoding is lossless, but converting an already-compressed JPG to PNG does not recover detail lost in the original JPG.
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
@@ -481,7 +472,7 @@ export default function JpgToPngPage() {
               </ul>
             </article>
 
-            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+            <article className="rounded-xl border border-slate-200/80 bg-white p-6 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
               <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
                 How ConvertImageNow Protects Your Files
               </h2>
@@ -489,27 +480,27 @@ export default function JpgToPngPage() {
                 <li className="flex items-start gap-2.5">
                   <Lock className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>Zero Network Exposure:</strong> Your medical scans, financial records, contract screenshots, and private photos are never uploaded to our servers or third-party cloud infrastructure.
+                    <strong>Browser Processing:</strong> The selected image data is processed in your browser rather than uploaded to a conversion server. General website requests and analytics are covered by the Privacy Policy.
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Cpu className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>Canvas API Processing:</strong> The browser draws your image into an in-memory bitmap canvas element and serializes it to a PNG Blob via hardware-accelerated local execution.
+                    <strong>Canvas API Processing:</strong> The browser draws your image into an in-memory bitmap canvas element and serializes it to a PNG Blob using the browser Canvas API.
                   </span>
                 </li>
                 <li className="flex items-start gap-2.5">
                   <Zap className="mt-0.5 h-4 w-4 shrink-0 text-emerald-600 dark:text-emerald-400" />
                   <span>
-                    <strong>Instant Memory Clearing:</strong> When you finish downloading or close the browser tab, the temporary blob URLs and image memory are immediately collected by your browser garbage collector.
+                    <strong>Temporary browser data:</strong> The browser manages temporary image data and object URLs used during conversion.
                   </span>
                 </li>
               </ul>
             </article>
           </div>
 
-          <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm dark:border-slate-800 dark:bg-slate-900">
-            <div className="border-b border-slate-200/90 bg-slate-100/60 px-6 py-4 dark:border-slate-800 dark:bg-slate-800/50">
+          <div className="overflow-hidden rounded-2xl border border-slate-200/90 bg-white shadow-sm dark:border-[#314969] dark:bg-[#172642]">
+            <div className="border-b border-slate-200/90 bg-slate-100/60 px-6 py-4 dark:border-[#314969] dark:bg-[#263956]/50">
               <h2 className="text-lg font-bold text-slate-900 dark:text-slate-100">
                 Technical Comparison: JPG (JPEG) vs. PNG
               </h2>
@@ -520,7 +511,7 @@ export default function JpgToPngPage() {
 
             <div className="overflow-x-auto">
               <table className="w-full text-left text-sm text-slate-700 dark:text-slate-300">
-                <thead className="border-b border-slate-200/80 bg-slate-50 text-xs uppercase font-semibold text-slate-600 dark:border-slate-800 dark:bg-slate-950/40 dark:text-slate-400">
+                <thead className="border-b border-slate-200/80 bg-slate-50 text-xs uppercase font-semibold text-slate-600 dark:border-[#314969] dark:bg-[#101B33]/40 dark:text-slate-400">
                   <tr>
                     <th scope="col" className="px-6 py-3.5">
                       Specification
@@ -533,11 +524,11 @@ export default function JpgToPngPage() {
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-slate-200/70 dark:divide-slate-800">
+                <tbody className="divide-y divide-slate-200/70 dark:divide-[#314969]">
                   {COMPARISON_ROWS.map((row) => (
                     <tr
                       key={row.feature}
-                      className="hover:bg-slate-50/50 dark:hover:bg-slate-800/40"
+                      className="hover:bg-slate-50/50 dark:hover:bg-[#263956]/40"
                     >
                       <td className="px-6 py-4 font-medium text-slate-900 dark:text-slate-100">
                         {row.feature}
@@ -564,7 +555,7 @@ export default function JpgToPngPage() {
             </p>
 
             <div className="mt-6 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
                 <div className="flex items-center gap-3">
                   <div className="rounded-lg bg-indigo-50 p-2 text-indigo-600 dark:bg-indigo-950 dark:text-indigo-400">
                     <Monitor className="h-5 w-5" />
@@ -574,11 +565,11 @@ export default function JpgToPngPage() {
                   </h3>
                 </div>
                 <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-400">
-                  Open Chrome, Safari, Edge, or Firefox. Drag and drop dozens of JPG images from your File Explorer or Finder directly into the page drop zone for instantaneous batch conversion with ZIP packaging.
+                  Open a supported browser, add multiple JPG images to the queue, and convert them to PNG. Download the results individually or together as a ZIP archive.
                 </p>
               </div>
 
-              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+              <div className="rounded-xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-[#314969] dark:bg-[#172642]">
                 <div className="flex items-center gap-3">
                   <div className="rounded-lg bg-emerald-50 p-2 text-emerald-600 dark:bg-emerald-950 dark:text-emerald-400">
                     <Smartphone className="h-5 w-5" />
@@ -594,7 +585,7 @@ export default function JpgToPngPage() {
             </div>
           </div>
 
-          <div className="rounded-2xl border border-slate-200/80 bg-slate-100/50 p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900/50">
+          <div className="rounded-2xl border border-slate-200/80 bg-slate-100/50 p-6 sm:p-8 dark:border-[#314969] dark:bg-[#172642]/50">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="text-xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
@@ -617,7 +608,7 @@ export default function JpgToPngPage() {
                 <Link
                   key={tool.name}
                   href={tool.href}
-                  className="group rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:border-indigo-300 hover:shadow-md dark:border-slate-800 dark:bg-slate-900 dark:hover:border-indigo-700"
+                  className="group rounded-xl border border-slate-200/80 bg-white p-4 shadow-sm transition hover:border-indigo-300 hover:shadow-md dark:border-[#314969] dark:bg-[#172642] dark:hover:border-indigo-700"
                 >
                   <div className="flex items-center justify-between">
                     <h3 className="text-sm font-semibold text-slate-900 group-hover:text-indigo-600 dark:text-slate-100 dark:group-hover:text-indigo-400">
@@ -656,11 +647,11 @@ export default function JpgToPngPage() {
               {FAQS.map(({ q, a }) => (
                 <details
                   key={q}
-                  className="group rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm transition open:shadow-md dark:border-slate-800 dark:bg-slate-900"
+                  className="group rounded-xl border border-slate-200/90 bg-white p-4 shadow-sm transition open:shadow-md dark:border-[#314969] dark:bg-[#172642]"
                 >
                   <summary className="flex cursor-pointer list-none items-center justify-between text-sm font-semibold text-slate-900 focus:outline-none dark:text-slate-100">
                     <span>{q}</span>
-                    <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-200 group-open:rotate-180 dark:bg-slate-800 dark:text-slate-400">
+                    <span className="ml-4 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition-transform duration-200 group-open:rotate-180 dark:bg-[#263956] dark:text-slate-400">
                       <ChevronRight className="h-3.5 w-3.5 rotate-90" />
                     </span>
                   </summary>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { CheckCircle2, Clock, Zap, ShieldCheck } from "lucide-react";
+import { CheckCircle2, Clock } from "lucide-react";
 
 const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/tools`;
@@ -8,7 +8,7 @@ const PAGE_URL = `${SITE_URL}/tools`;
 export const metadata: Metadata = {
   title: "Free Online Image Tools | ConvertImageNow",
   description:
-    "Explore ConvertImageNow free online image tools. Fast, private browser-based utilities to convert, compress, and resize JPG, PNG, WebP, and AVIF photos.",
+    "Explore ConvertImageNow free online image tools. Browser-based utilities to convert, compress, and resize supported JPG, PNG, WebP, and AVIF images.",
   alternates: {
     canonical: PAGE_URL,
   },
@@ -24,20 +24,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Online Image Tools | ConvertImageNow",
     description:
-      "Convert, compress, and resize images locally in your browser with zero server uploads.",
+      "Convert, compress, and resize supported images in your browser. Selected image files are processed locally.",
   },
 };
 
 const LIVE_TOOLS = [
   {
     title: "Image Converter",
-    desc: "Convert between JPG, PNG, WebP, and AVIF",
+    desc: "Convert JPG, PNG, WebP, and supported AVIF inputs to JPG, PNG, or WebP",
     href: "/converter",
-  },
-  {
-    title: "HEIC to JPG Converter",
-    desc: "Convert iPhone HEIC photos to JPG",
-    href: "/heic-to-jpg",
   },
   {
     title: "AVIF to JPG Converter",
@@ -61,7 +56,7 @@ const LIVE_TOOLS = [
   },
   {
     title: "Image Compressor",
-    desc: "Compress JPG, PNG, and WebP without losing quality",
+    desc: "Adjust output quality for JPG and WebP; compare results before downloading",
     href: "/image-compressor",
   },
   {
@@ -113,9 +108,7 @@ export default function ToolsPage() {
           Free Online Image Tools
         </h1>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Eight professional image utilities are live today, with more active
-          features in development. All tools execute locally on your device with
-          zero file uploads and complete data privacy.
+          Browse the available tools for converting, compressing, and resizing supported image formats. Selected image files are processed in your browser rather than sent to a conversion server.
         </p>
       </div>
 
@@ -167,17 +160,10 @@ export default function ToolsPage() {
             government upload caps, and slow-loading websites.
           </p>
           <p>
-            Every utility on this platform is powered by modern HTML5 Canvas, Web
-            Workers, and WebAssembly decoders. Unlike legacy cloud converters that
-            force you to wait in server queues, our conversions process
-            instantaneously using your device&apos;s own CPU and GPU memory.
+            Supported conversions use your browser's image decoding and Canvas APIs. The exact formats and controls available depend on the selected tool.
           </p>
           <p>
-            Whether you are batch-converting dozens of camera snapshots into
-            compact WebP files for better Google Core Web Vitals, or flattening
-            transparent PNG graphics into standard JPG images, your photos never
-            leave your browser. No registration is required, no subscriptions
-            exist, and no watermarks are ever stamped on your downloads.
+            Whether you are converting a supported image to another format, adjusting output quality, or changing pixel dimensions, check the result before using it. Batch tools provide individual downloads and ZIP export where available.
           </p>
           <p>
             Have a feature request or need a specialized conversion preset? Feel
