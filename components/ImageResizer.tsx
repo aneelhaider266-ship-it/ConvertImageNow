@@ -493,7 +493,6 @@ export default function ImageResizer() {
               <input
                 type="number"
                 min={1}
-                disabled={isResizing}
                 value={heightPx}
                 onChange={(event) =>
                   handleHeightChange(
