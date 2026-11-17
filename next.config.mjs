@@ -27,7 +27,7 @@ const nextConfig = {
       },
       {
         source: '/blog/avif-vs-webp',
-        destination: '/blog/what-is-avif',
+        destination: '/blog/best-image-formats-compared',
         permanent: true,
       },
       // 3. Purane moved URLs
