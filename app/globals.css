@@ -40,6 +40,7 @@ canvas {
 
 /* Visible keyboard focus for interactive controls. */
 a:focus-visible,
+[role="button"]:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible,
