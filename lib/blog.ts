@@ -382,7 +382,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "Choose the right image format for each image type. Use JPG for photographs, PNG for graphics and screenshots, and WebP for modern web delivery.",
 
-      "Read [Best Image Format for Web](/blog/best-image-formats-compared) for a detailed comparison.",
+      "Read [JPG, PNG, WebP, and AVIF Comparison](/blog/best-image-formats-compared) for a detailed comparison.",
 
       "## Responsive Images",
 
@@ -491,7 +491,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "- **Encoding:** AVIF encoding can take longer than WebP in many workflows; measure the time on your own tools and devices.",
       "- **Color and transparency:** AVIF supports alpha transparency, high bit-depth images, and HDR workflows when the encoder and playback environment support them.",
 
-      "For a broader side-by-side overview, read our [image format comparison guide](/blog/best-image-formats-explained).",
+      "For a broader side-by-side overview, read our [image format comparison guide](/blog/best-image-formats-compared).",
 
       "## AVIF Browser Support in 2026",
 
@@ -532,7 +532,7 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
     author: "ConvertImageNow Team",
     content: [
-      "There is no single best image format for every website image. The right choice depends on what the image shows, whether it needs transparency, how much detail must be preserved, and where the file will be used. Use this guide to choose a format by image type; for a technical side-by-side breakdown, see our [JPG, PNG, WebP, and AVIF comparison](/blog/best-image-formats-explained).",
+      "There is no single best image format for every website image. The right choice depends on what the image shows, whether it needs transparency, how much detail must be preserved, and where the file will be used. Use this guide to choose a format by image type; for a technical side-by-side breakdown, see our [JPG, PNG, WebP, and AVIF comparison](/blog/best-image-formats-compared).",
       "## Quick answer: choose by image type",
       "| Image type | Good starting format | Why |\n|---|---|---|\n| Photographs on modern websites | WebP; test AVIF | Good compression with modern browser support; compare actual output |\n| Screenshots and text-heavy graphics | PNG or lossless WebP | Keeps small text and sharp edges clear |\n| Logos and icons | SVG | Vector artwork scales without pixelation |\n| Transparent graphics | PNG, WebP, or AVIF | These formats support transparency; JPEG does not |\n| Photos sent to people or older apps | JPEG | Very broad compatibility |\n| Long animation | Video | Usually more efficient than an animated image |",
       "## Best image format for website photos",
@@ -561,7 +561,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "3. Export two or more suitable formats at the dimensions where the image will be displayed.",
       "4. Compare visual quality and actual file sizes; quality settings are not directly comparable between encoders.",
       "5. Test the file in the browsers, apps, or publishing system your audience uses.",
-      "For a detailed feature table covering compression, transparency, animation, and compatibility, read our [image format comparison guide](/blog/best-image-formats-explained). You can also prepare files with the [online image compressor](/image-compressor), [image resizer](/image-resizer), or [free online image converter](/converter).",
+      "For a detailed feature table covering compression, transparency, animation, and compatibility, read our [image format comparison guide](/blog/best-image-formats-compared). You can also prepare files with the [online image compressor](/image-compressor), [image resizer](/image-resizer), or [free online image converter](/converter).",
       "## Frequently asked questions",
       "### What is the best image format for web pages?",
       "WebP is a practical starting point for many website photos and graphics. AVIF may produce smaller files for some images. Use PNG or lossless WebP for screenshots and sharp graphics, SVG for vector logos, and a fallback where older software support matters.",
