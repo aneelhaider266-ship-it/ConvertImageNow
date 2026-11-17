@@ -18,7 +18,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Learn how to reduce image file size in KB while preserving as much visual quality as possible. A practical guide to compression, resizing, and format conversion.",
     date: "2026-08-11",
-    updatedDate: "2026-10-01",
+    updatedDate: "2026-11-17",
     canonical:
       "https://convertimagenow.com/blog/how-to-make-image-file-smaller",
     image: "/how-to-make-image-file-smaller.jpg",
@@ -40,17 +40,17 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "Image compression eliminates redundant digital data within a photo. Photographs taken on modern smartphones contain subtle color gradations that human eyes cannot readily perceive. Using a lower quality setting can reduce file size, but the amount varies with image content, dimensions, format, and encoder settings. Inspect the result for visible artifacts before using it.",
 
-      "To compress images without installing third-party apps: open our [Free Image Compressor](/image-compressor), **upload your image** from your computer or phone gallery, set your preferred quality threshold, and download the resulting **compressed image** individually or as a single ZIP archive.",
+      "To compress images without installing a separate app: open our [Free Image Compressor](/image-compressor), select an image from your computer or phone, choose an output quality, and download the compressed result individually or as a ZIP archive. The selected image data is processed in your browser rather than uploaded to a conversion server.",
 
       "## 2. Reduce Image Dimensions (Scale Down Megapixels)",
 
       "A 12-megapixel phone camera captures photos at 4000 × 3000 pixels. If you only need to display the image at 1200 pixels wide, resizing it can reduce the amount of image data. The resulting file size depends on the original image, output format, and quality settings.",
 
-      "When you **upload your image** to our [Online Image Resizer](/image-resizer), make sure the aspect ratio lock remains enabled so your image scales proportionally without stretching or blur.",
+      "Select your image in our [Online Image Resizer](/image-resizer), keep the aspect-ratio lock enabled, and enter the target width or height. This keeps the image proportional instead of stretching it.",
 
       "## 3. Convert to Modern Web Formats (WebP & AVIF)",
 
-      "Legacy formats like standard JPG and PNG were invented in the 1990s. Modern web formats developed by Google and AOMedia provide dramatically superior compression algorithms:",
+      "WebP and AVIF are modern formats that can reduce file size compared with JPG or PNG for some images. Neither format guarantees a smaller result for every file, so compare the exported size and visual quality before replacing the original:",
 
       "- **Switch JPG to WebP:** Convert the image to WebP and compare its file size and appearance with the original. Results vary by image and quality setting. Use our [JPG to WebP Converter](/jpg-to-webp).",
       "- **Flatten PNG to JPG:** If a PNG photograph has no transparency requirement, compare a JPG export for file size and visual quality. Use our [PNG to JPG Converter](/png-to-jpg).",
@@ -459,7 +459,8 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "What is AVIF, how does it compare to JPG and WebP, and when should you use it? Learn about format support, image quality, and browser-based conversion options.",
     date: "2026-03-01",
-    // FIX 1: Removed 'www' - canonical matches metadataBase exactly
+    updatedDate: "2026-11-17",
+    // Canonical matches the site metadata base.
     canonical: "https://convertimagenow.com/blog/what-is-avif",
     keywords: [
       "what is AVIF",
@@ -495,22 +496,21 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## AVIF Browser Support in 2026",
 
-      "AVIF is supported by many current desktop and mobile browsers, but support depends on browser version and device.",
+      "Current versions of major desktop and mobile browsers generally support AVIF, but older browsers, embedded webviews, and some image viewers may not. Check the software your audience uses before making AVIF the only available format.",
 
-      "- **Google Chrome:** Supported since version 85.",
-      "- **Mozilla Firefox:** Supported since version 93.",
-      "- **Apple Safari:** Fully supported on iOS 16+, iPadOS 16+, and macOS Ventura (Safari 16+).",
-      "- **Microsoft Edge & Opera:** Supported across all current releases.",
+      "- **Modern browsers:** AVIF is supported in current mainstream browser releases.",
+      "- **Older devices and apps:** Support can vary by operating-system version, browser engine, and installed image components.",
+      "- **Publishing workflows:** Check that your CMS, image editor, email client, and recipients can handle AVIF before using it as the only copy.",
 
       "For websites serving older browsers or devices, consider the HTML `<picture>` element with an appropriate fallback format. You can convert supported source files using our [Free Online Image Converter](https://convertimagenow.com/converter).",
 
       "## Frequently Asked Questions (FAQ)",
 
-      "### Can Windows and Mac open AVIF files natively?",
-      "Yes. Windows 10 and 11 support AVIF through the AV1 Video Extension from the Microsoft Store, while macOS supports AVIF natively starting from macOS Ventura.",
+      "### Why will an AVIF file not open on my computer or phone?",
+      "The app or operating-system version you are using may not support AVIF decoding. Try a current browser or image viewer that supports AVIF, update the relevant software, or convert the file to JPG for broader compatibility. Keep the original AVIF in case you need it later.",
 
-      "### Why does converting to AVIF take longer than JPG?",
-      "AVIF uses complex prediction models from the AV1 video codec to analyze image data. This heavy algorithmic processing requires significantly more CPU power during export, but results in industry-leading compression ratios.",
+      "### Why can AVIF encoding take longer than JPG or WebP?",
+      "AVIF encoding can require more processing time than JPG or WebP, depending on the encoder, speed setting, image dimensions, and device. A slower encode does not guarantee a smaller file, so compare both output size and visual quality.",
 
       "### How can I convert AVIF images to JPG for free?",
       "You can select an AVIF file in our [AVIF to JPG tool](https://convertimagenow.com/avif-to-jpg) if your browser supports decoding that file. Conversion uses browser image decoding and Canvas APIs; selected image data is processed locally rather than sent to a conversion server."
@@ -535,7 +535,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "There is no single best image format for every website image. The right choice depends on what the image shows, whether it needs transparency, how much detail must be preserved, and where the file will be used. Use this guide to choose a format by image type; for a technical side-by-side breakdown, see our [JPG, PNG, WebP, and AVIF comparison](/blog/best-image-formats-compared).",
       "## Quick answer: choose by image type",
       "| Image type | Good starting format | Why |\n|---|---|---|\n| Photographs on modern websites | WebP; test AVIF | Good compression with modern browser support; compare actual output |\n| Screenshots and text-heavy graphics | PNG or lossless WebP | Keeps small text and sharp edges clear |\n| Logos and icons | SVG | Vector artwork scales without pixelation |\n| Transparent graphics | PNG, WebP, or AVIF | These formats support transparency; JPEG does not |\n| Photos sent to people or older apps | JPEG | Very broad compatibility |\n| Long animation | Video | Usually more efficient than an animated image |",
-      "## Best image format for website photos",
+      "## Best photo format for web pages",
       "For photographs displayed on a modern website, start by testing WebP. It supports lossy and lossless compression and is supported by current major browsers. AVIF is also worth testing because it can produce compact files for some images, but results vary with the source and encoder. Keep a JPEG or WebP fallback if your audience includes older apps, browsers, or embedded webviews.",
       "Do not assume one format always creates the smallest file. A detailed photo, a flat illustration, and a screenshot respond differently to compression. Compare the actual exports at the size they will appear on the page.",
       "## Best format for screenshots, diagrams, and text",
