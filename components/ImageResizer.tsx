@@ -64,6 +64,17 @@ function uniqueZipName(fileName: string, usedNames: Set<string>): string {
   return candidate;
 }
 
+function clearResizedResults(items: QueueItem[]): QueueItem[] {
+  return items.map((item) => ({
+    ...item,
+    status: "pending",
+    resizedBlob: undefined,
+    resizedWidth: undefined,
+    resizedHeight: undefined,
+    errorMessage: undefined,
+  }));
+}
+
 function loadImageDimensions(
   file: File
 ): Promise<{ width: number; height: number }> {
@@ -208,6 +219,7 @@ export default function ImageResizer() {
 
   const handleWidthChange = (value: number | "") => {
     setWidthPx(value);
+    setQueue((prev) => clearResizedResults(prev));
     if (lockAspect && value !== "" && queue[0]?.originalWidth) {
       const ratio = queue[0].originalHeight / queue[0].originalWidth;
       setHeightPx(Math.round(Number(value) * ratio));
@@ -216,6 +228,7 @@ export default function ImageResizer() {
 
   const handleHeightChange = (value: number | "") => {
     setHeightPx(value);
+    setQueue((prev) => clearResizedResults(prev));
     if (lockAspect && value !== "" && queue[0]?.originalHeight) {
       const ratio = queue[0].originalWidth / queue[0].originalHeight;
       setWidthPx(Math.round(Number(value) * ratio));
@@ -409,7 +422,10 @@ export default function ImageResizer() {
             <button
               type="button"
               disabled={isResizing}
-              onClick={() => setMode("pixels")}
+              onClick={() => {
+                setMode("pixels");
+                setQueue((prev) => clearResizedResults(prev));
+              }}
               className={`h-7 rounded-md px-4 text-sm font-medium transition-colors ${
                 mode === "pixels"
                   ? "bg-brand-primary text-white"
@@ -421,7 +437,10 @@ export default function ImageResizer() {
             <button
               type="button"
               disabled={isResizing}
-              onClick={() => setMode("percent")}
+              onClick={() => {
+                setMode("percent");
+                setQueue((prev) => clearResizedResults(prev));
+              }}
               className={`h-7 rounded-md px-4 text-sm font-medium transition-colors ${
                 mode === "percent"
                   ? "bg-brand-primary text-white"
@@ -436,7 +455,10 @@ export default function ImageResizer() {
             <button
               type="button"
               disabled={isResizing}
-              onClick={() => setLockAspect((prev) => !prev)}
+              onClick={() => {
+                setLockAspect((prev) => !prev);
+                setQueue((prev) => clearResizedResults(prev));
+              }}
               className="ml-auto inline-flex h-9 items-center gap-2 rounded-lg border border-slate-200 px-3 text-sm font-medium text-slate-600 dark:border-[#314969] dark:text-slate-300"
             >
               {lockAspect ? <Lock size={16} /> : <Unlock size={16} />}
@@ -468,6 +490,7 @@ export default function ImageResizer() {
               <input
                 type="number"
                 min={1}
+                disabled={isResizing}
                 value={heightPx}
                 onChange={(event) =>
                   handleHeightChange(
@@ -492,7 +515,10 @@ export default function ImageResizer() {
               disabled={isResizing}
               max={200}
               value={percentage}
-              onChange={(event) => setPercentage(Number(event.target.value))}
+              onChange={(event) => {
+                setPercentage(Number(event.target.value));
+                setQueue((prev) => clearResizedResults(prev));
+              }}
               className="block h-5 w-full accent-brand-primary"
               aria-label="Resize percentage"
             />
