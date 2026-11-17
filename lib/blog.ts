@@ -250,7 +250,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "WebP can support transparency, making it useful for some graphics that would traditionally be saved as PNG. The best option depends on the image and the software or platforms involved.",
 
-      "For a complete comparison, read [Best Image Formats Explained](/blog/best-image-formats-compared).",
+      "For a complete comparison, read [Best Image Format for Web](/blog/best-image-formats-compared).",
 
       "## WebP and Website Performance",
 
@@ -382,7 +382,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "Choose the right image format for each image type. Use JPG for photographs, PNG for graphics and screenshots, and WebP for modern web delivery.",
 
-      "Read [Best Image Formats Explained](/blog/best-image-formats-compared) for a detailed comparison.",
+      "Read [Best Image Format for Web](/blog/best-image-formats-compared) for a detailed comparison.",
 
       "## Responsive Images",
 
@@ -542,7 +542,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "- **Transparent images:** Use PNG, WebP, or AVIF. JPEG does not support transparency.",
       "- **Files that must open almost anywhere:** Use JPEG for photos and PNG for graphics.",
       "## Image format comparison: JPG, PNG, WebP, AVIF, and SVG",
-      "| Format | Best use | Compression | Transparency | Main trade-off |\\n|---|---|---|---|---|\\n| JPG / JPEG | Photographs and broad compatibility | Lossy | No | Small photo files, but repeated re-encoding can reduce quality |\\n| PNG | Screenshots, logos, diagrams, and exact pixels | Lossless | Yes | Preserves detail, but can be large for photographs |\\n| WebP | Modern website photos and graphics | Lossy or lossless | Yes | Broad modern-browser support; check older software workflows |\\n| AVIF | Modern web images where efficient compression matters | Lossy or lossless | Yes | Can compress very efficiently, but encoding and fallback needs vary |\\n| SVG | Logos, icons, diagrams, and scalable illustrations | Vector | Yes | Stays sharp at different sizes; not intended for ordinary photographs |",
+      "| Format | Best use | Compression | Transparency | Main trade-off |\n|---|---|---|---|---|\n| JPG / JPEG | Photographs and broad compatibility | Lossy | No | Small photo files, but repeated re-encoding can reduce quality |\n| PNG | Screenshots, logos, diagrams, and exact pixels | Lossless | Yes | Preserves detail, but can be large for photographs |\n| WebP | Modern website photos and graphics | Lossy or lossless | Yes | Broad modern-browser support; check older software workflows |\n| AVIF | Modern web images where efficient compression matters | Lossy or lossless | Yes | Can compress very efficiently, but encoding and fallback needs vary |\n| SVG | Logos, icons, diagrams, and scalable illustrations | Vector | Yes | Stays sharp at different sizes; not intended for ordinary photographs |",
       "## What is the best image format for web pages?",
       "For most photos and general-purpose raster images on a site you control, start with WebP. It supports lossy and lossless compression, transparency, and animation, and it is supported by modern browsers. AVIF can produce smaller files for some images, but the result depends on the source, encoder, and settings. Use the HTML `picture` element or another delivery method to provide a fallback when required.",
       "The best choice is not decided by file extension alone. Compare the actual output at the dimensions where it will appear, then check that important details, gradients, and edges still look acceptable.",
