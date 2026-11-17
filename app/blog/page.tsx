@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { BLOG_POSTS } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Image Conversion Guides & Tutorials | ConvertImageNow",
   description:
     "Guides and explainers on image formats, compression, and getting the most out of your images on the web.",
   alternates: { canonical: "/blog" },
