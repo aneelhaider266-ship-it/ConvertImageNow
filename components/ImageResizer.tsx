@@ -48,6 +48,22 @@ function extensionForBlob(blob: Blob): string {
   }
 }
 
+function uniqueZipName(fileName: string, usedNames: Set<string>): string {
+  const dotIndex = fileName.lastIndexOf(".");
+  const baseName = dotIndex > 0 ? fileName.slice(0, dotIndex) : fileName;
+  const extension = dotIndex > 0 ? fileName.slice(dotIndex) : "";
+  let candidate = fileName;
+  let suffix = 2;
+
+  while (usedNames.has(candidate.toLowerCase())) {
+    candidate = `${baseName} (${suffix})${extension}`;
+    suffix += 1;
+  }
+
+  usedNames.add(candidate.toLowerCase());
+  return candidate;
+}
+
 function loadImageDimensions(
   file: File
 ): Promise<{ width: number; height: number }> {
@@ -304,16 +320,19 @@ export default function ImageResizer() {
 
     const zip = new JSZip();
 
+    const usedNames = new Set<string>();
+
     doneItems.forEach((item) => {
       const dotIndex = item.file.name.lastIndexOf(".");
       const baseName =
         dotIndex > -1 ? item.file.name.slice(0, dotIndex) : item.file.name;
       const ext = extensionForBlob(item.resizedBlob as Blob);
-
-      zip.file(
+      const fileName = uniqueZipName(
         `${baseName}-${item.resizedWidth}x${item.resizedHeight}.${ext}`,
-        item.resizedBlob as Blob
+        usedNames
       );
+
+      zip.file(fileName, item.resizedBlob as Blob);
     });
 
     const zipBlob = await zip.generateAsync({ type: "blob" });
