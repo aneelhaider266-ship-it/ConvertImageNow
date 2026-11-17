@@ -65,14 +65,17 @@ function uniqueZipName(fileName: string, usedNames: Set<string>): string {
 }
 
 function clearResizedResults(items: QueueItem[]): QueueItem[] {
-  return items.map((item) => ({
-    ...item,
-    status: "pending",
-    resizedBlob: undefined,
-    resizedWidth: undefined,
-    resizedHeight: undefined,
-    errorMessage: undefined,
-  }));
+  return items.map((item) => {
+    const dimensionsAvailable = item.originalWidth > 0 && item.originalHeight > 0;
+    return {
+      ...item,
+      status: dimensionsAvailable ? "pending" : item.status,
+      resizedBlob: undefined,
+      resizedWidth: undefined,
+      resizedHeight: undefined,
+      errorMessage: dimensionsAvailable ? undefined : item.errorMessage,
+    };
+  });
 }
 
 function loadImageDimensions(
