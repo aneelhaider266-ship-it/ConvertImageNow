@@ -21,7 +21,7 @@ const PAGE_URL = `${SITE_URL}/image-resizer`;
 export const metadata: Metadata = {
   title: "Free Online Image Resizer – Change Dimensions",
   description:
-    "Resize JPG, PNG, WebP, and AVIF images by exact pixels or percentage. Batch resize photos in your browser without uploading selected image files to a conversion server.",
+    "Resize JPG, PNG, WebP, and supported AVIF images by pixel dimensions or percentage. Batch process files in your browser.",
   keywords: [
     "image resizer",
     "resize image online",
