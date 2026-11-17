@@ -94,8 +94,6 @@ const SOFTWARE_SCHEMA = {
     "Proportional percentage scaling with aspect ratio lock",
     "Browser-based image rendering via HTML5 Canvas",
     "Batch image resizing with one-click ZIP packaging",
-    "Format preservation for JPG, PNG, WebP, and AVIF",
-
     "Batch resizing with ZIP downloads; practical capacity depends on your device and browser memory",
   ],
 };
@@ -103,7 +101,7 @@ const SOFTWARE_SCHEMA = {
 const FAQS = [
   {
     q: "How do I resize an image without losing quality or making it blurry?",
-    a: "Downscaling (reducing pixel width and height) preserves sharpness because pixel density is condensed. However, upscaling (enlarging a small image to higher pixel counts) forces the browser to interpolate missing pixels, causing softness. To avoid blur, always resize from the highest-resolution original file and maintain the locked aspect ratio.",
+    a: "Downscaling usually retains perceived sharpness better than upscaling, but any resampling can alter fine detail. Upscaling asks the browser to interpolate pixels that are not present in the source and can look soft. Start with the highest-resolution original available, preview the result, and keep the aspect ratio locked when distortion is not intended.",
   },
   {
     q: "What is the difference between resizing an image and compressing it?",
