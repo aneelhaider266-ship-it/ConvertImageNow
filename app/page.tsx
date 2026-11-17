@@ -20,7 +20,7 @@ const SITE_URL = "https://convertimagenow.com";
 export const metadata: Metadata = {
   title: "Free Online Image Converter – Convert JPG, PNG & WebP",
   description:
-    "Convert images online directly in your browser. Browser-based image conversion for JPG, PNG, WebP, and supported AVIF files, with batch processing and no conversion-server upload.",
+    "Convert JPG, PNG, WebP, and supported AVIF images in your browser. Batch convert files with no conversion-server upload.",
   alternates: {
     canonical: `${SITE_URL}/`,
   },
