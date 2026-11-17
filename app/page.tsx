@@ -863,7 +863,7 @@ export default function HomePage() {
                 title: "Best Image Format for Web: JPG, PNG, WebP & AVIF",
                 excerpt:
                   "Choose a format by image type, transparency, quality, and browser support. Compare the trade-offs before publishing.",
-                href: "/blog/best-image-formats-compared",
+                href: "/blog/best-image-formats-explained",
                 category: "Format Guide",
               },
             ].map((post) => (
