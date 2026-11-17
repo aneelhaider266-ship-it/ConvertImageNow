@@ -19,7 +19,12 @@ const nextConfig = {
         destination: '/converter',
         permanent: true,
       },
-      // 2. Broken 404 post ko live post par redirect karo (39 Errors Fix!)
+      // 2. Retain the indexed legacy story URL and send visitors to the relevant About page.
+      {
+        source: '/blog/why-i-built-convertimagenow',
+        destination: '/about',
+        permanent: true,
+      },
       {
         source: '/blog/avif-vs-webp',
         destination: '/blog/what-is-avif',
