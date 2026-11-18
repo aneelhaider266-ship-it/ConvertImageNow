@@ -52,7 +52,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="dark">
-      <head>
+      <body className="antialiased min-h-screen bg-[#101B33] text-slate-100 flex flex-col justify-between">
         <Script
           id="google-adsense"
           async
@@ -60,8 +60,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
           strategy="beforeInteractive"
         />
-      </head>
-      <body className="antialiased min-h-screen bg-[#101B33] text-slate-100 flex flex-col justify-between">
         <Header />
         <main className="flex-grow">
           {children}
