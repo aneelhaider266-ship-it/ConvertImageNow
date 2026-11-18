@@ -10,6 +10,17 @@ const nextConfig = {
         destination: 'https://convertimagenow.com/:path*',
         permanent: true,
       },
+      // Consolidate legacy blog URLs with their current relevant destinations.
+      {
+        source: '/blog/convert-avif-to-jpg',
+        destination: '/avif-to-jpg',
+        permanent: true,
+      },
+      {
+        source: '/blog/how-to-reduce-image-size',
+        destination: '/blog/how-to-make-image-file-smaller',
+        permanent: true,
+      },
       // 1. Broken tools redirects
       {
         source: '/png-to-webp',
