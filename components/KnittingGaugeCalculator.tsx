@@ -22,6 +22,8 @@ const number = (value: string, fallback = 0) => {
 };
 const clean = (value: number) => Number.isFinite(value) ? Number(value.toFixed(2)) : 0;
 const whole = (value: number) => Math.max(0, Math.round(value));
+const positive = (...values: number[]) => values.every((value) => Number.isFinite(value) && value > 0);
+const integerCounts = (...values: number[]) => values.every((value) => Number.isInteger(value) && value > 0);
 
 function Field({ label, value, onChange, min = "0.1", step = "0.1", suffix, help }: {
   label: string; value: string; onChange: (value: string) => void;
@@ -86,7 +88,7 @@ export default function KnittingGaugeCalculator() {
     const rawStitches = pSt > 0 ? number(patternCount) * aSt / pSt : 0;
     const rawRows = pRw > 0 ? number(patternRowCount) * aRw / pRw : 0;
     const rounded = Math.max(step, Math.round(rawStitches / step) * step);
-    return { rawStitches, rawRows, rounded, stitchDelta: rounded - number(patternCount), width: aSt > 0 ? rounded / (aSt / standard) : 0 };
+    return { rawStitches, rawRows, rounded, stitchDelta: rounded - number(patternCount), width: aSt > 0 ? rounded / (aSt / standard) : 0, height: aRw > 0 ? Math.round(rawRows) / (aRw / standard) : 0 };
   }, [patternStitches, actualStitches, patternRows, actualRows, patternCount, patternRowCount, repeat, standard]);
 
   const target = useMemo(() => {
@@ -95,11 +97,16 @@ export default function KnittingGaugeCalculator() {
     const rawStitches = number(targetWidth) * stitchGauge / standard;
     const rawRows = number(targetHeight) * rowGauge / standard;
     return {
-      stitches: Math.round(rawStitches / step) * step,
+      stitches: Math.max(step, Math.round(rawStitches / step) * step),
       rows: whole(rawRows),
-      actualWidth: stitchGauge > 0 ? Math.round(rawStitches / step) * step / (stitchGauge / standard) : 0,
+      actualWidth: stitchGauge > 0 ? Math.max(step, Math.round(rawStitches / step) * step) / (stitchGauge / standard) : 0,
+      actualHeight: rowGauge > 0 ? whole(rawRows) / (rowGauge / standard) : 0,
     };
   }, [targetWidth, targetHeight, targetStitchGauge, targetRowGauge, targetRepeat, standard]);
+
+  const swatchValid = positive(number(swatchStitches), number(swatchRows), number(swatchWidth), number(swatchHeight)) && integerCounts(number(swatchStitches), number(swatchRows));
+  const adjustValid = positive(number(patternStitches), number(actualStitches), number(patternRows), number(actualRows), number(patternCount), number(patternRowCount), number(repeat)) && integerCounts(number(patternCount), number(patternRowCount), number(repeat));
+  const targetValid = positive(number(targetWidth), number(targetHeight), number(targetStitchGauge), number(targetRowGauge), number(targetRepeat)) && integerCounts(number(targetRepeat));
 
   const tabs: { id: Mode; label: string; icon: typeof Calculator }[] = [
     { id: "swatch", label: "Measure swatch", icon: Ruler },
@@ -151,10 +158,12 @@ export default function KnittingGaugeCalculator() {
             </div>
             <div className="space-y-3">
               <h3 className="text-lg font-bold text-white">Your calculated gauge</h3>
-              <Result label={`Stitches per ${standard} ${unit}`} value={clean(gauge.stitches).toFixed(2)} detail="Stitch gauge" />
-              <Result label={`Rows per ${standard} ${unit}`} value={clean(gauge.rows).toFixed(2)} detail="Row gauge" />
+              {!swatchValid ? <div role="alert" className="rounded-xl border border-amber-300/30 bg-amber-300/10 p-3 text-sm text-amber-100">Enter positive measurements and whole-number stitch and row counts to calculate a valid gauge.</div> : <>
+                <Result label={`Stitches per ${standard} ${unit}`} value={clean(gauge.stitches).toFixed(2)} detail="Stitch gauge" />
+                <Result label={`Rows per ${standard} ${unit}`} value={clean(gauge.rows).toFixed(2)} detail="Row gauge" />
+              </>}
               <p className="text-xs leading-relaxed text-slate-400">Gauge = stitches (or rows) counted ÷ measured length × {standard} {unit}. Use these values in the pattern adjustment tab.</p>
-              <button type="button" onClick={() => { setActualStitches(clean(gauge.stitches).toString()); setActualRows(clean(gauge.rows).toString()); setMode("adjust"); }}
+              <button type="button" disabled={!swatchValid} onClick={() => { setActualStitches(clean(gauge.stitches).toString()); setActualRows(clean(gauge.rows).toString()); setMode("adjust"); }}
                 className="inline-flex min-h-11 w-full items-center justify-center gap-2 rounded-xl bg-blue-500 px-4 py-3 text-sm font-bold text-white transition hover:bg-blue-400">Use this gauge to adjust a pattern <RefreshCw size={16} /></button>
             </div>
           </>}
@@ -174,9 +183,13 @@ export default function KnittingGaugeCalculator() {
             </div>
             <div className="space-y-3">
               <h3 className="text-lg font-bold text-white">Adjusted pattern counts</h3>
-              <Result label="Adjusted stitches" value={String(adjusted.rounded)} detail={`Raw calculation: ${clean(adjusted.rawStitches)} stitches`} />
-              <Result label="Adjusted rows" value={String(whole(adjusted.rawRows))} detail={`Raw calculation: ${clean(adjusted.rawRows)} rows`} />
-              <Result label="Stitch count change" value={`${adjusted.stitchDelta > 0 ? "+" : ""}${adjusted.stitchDelta}`} detail="After repeat rounding" />
+              {!adjustValid ? <div role="alert" className="rounded-xl border border-amber-300/30 bg-amber-300/10 p-3 text-sm text-amber-100">Enter positive gauge values and whole-number pattern counts and repeat multiples. Zero or blank values cannot produce a reliable adjustment.</div> : <>
+                <Result label="Adjusted stitches" value={String(adjusted.rounded)} detail={`Raw calculation: ${clean(adjusted.rawStitches)} stitches`} />
+                <Result label="Adjusted rows" value={String(whole(adjusted.rawRows))} detail={`Raw calculation: ${clean(adjusted.rawRows)} rows`} />
+                <Result label="Stitch count change" value={`${adjusted.stitchDelta > 0 ? "+" : ""}${adjusted.stitchDelta}`} detail="After repeat rounding" />
+                <Result label="Estimated finished width" value={`${clean(adjusted.width)} ${unit}`} detail="Based on adjusted stitches and your gauge" />
+                <Result label="Estimated finished height" value={`${clean(adjusted.height)} ${unit}`} detail="Based on adjusted rows and your row gauge" />
+              </>}
               <p className="text-xs leading-relaxed text-slate-400">The adjusted stitch count is rounded to your chosen repeat multiple. Always check shaping, neckline, sleeve, and pattern instructions before substituting counts.</p>
             </div>
           </>}
@@ -194,9 +207,12 @@ export default function KnittingGaugeCalculator() {
             </div>
             <div className="space-y-3">
               <h3 className="text-lg font-bold text-white">Estimated stitch and row counts</h3>
-              <Result label="Stitches to cast on" value={String(target.stitches)} detail={`Rounded to a multiple of ${Math.max(1, whole(number(targetRepeat, 1)))}`} />
-              <Result label="Rows for target height" value={String(target.rows)} detail="Rounded to the nearest whole row" />
-              <Result label="Estimated width after rounding" value={`${clean(target.actualWidth)} ${unit}`} />
+              {!targetValid ? <div role="alert" className="rounded-xl border border-amber-300/30 bg-amber-300/10 p-3 text-sm text-amber-100">Enter positive dimensions and gauge values. The repeat multiple must be a positive whole number.</div> : <>
+                <Result label="Stitches to cast on" value={String(target.stitches)} detail={`Rounded to a multiple of ${Math.max(1, whole(number(targetRepeat, 1)))}`} />
+                <Result label="Rows for target height" value={String(target.rows)} detail="Rounded to the nearest whole row" />
+                <Result label="Estimated width after rounding" value={`${clean(target.actualWidth)} ${unit}`} />
+                <Result label="Estimated height after rounding" value={`${clean(target.actualHeight)} ${unit}`} />
+              </>}
               <p className="text-xs leading-relaxed text-slate-400">This is a gauge-based estimate. Real patterns may require extra stitches for seams, borders, ease, shaping, or stitch-pattern repeats.</p>
             </div>
           </>}
