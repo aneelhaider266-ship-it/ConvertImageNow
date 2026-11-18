@@ -21,29 +21,83 @@ export default function CookiePolicyPage() {
 
       <div className="mt-8 space-y-6 text-slate-700 dark:text-slate-300">
         <p>
-          Cookies are small text files stored on your device by your
-          browser. Depending on the website features and third-party services
-          enabled, cookies or similar technologies may be used for essential
-          functions, security, analytics, or advertising. The categories below
-          describe possible uses and do not mean every category is active on
-          every visit.
+          Cookies are small text files stored on your device by your browser.
+          Depending on the website features and third-party services enabled,
+          cookies or similar technologies may be used for essential functions,
+          security, analytics, or advertising. The categories below describe
+          possible uses and do not mean every category is active on every visit.
         </p>
 
         <section>
           <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
-            Types of cookies we use
+            Types of cookies and similar technologies
           </h2>
           <ul className="mt-2 list-disc space-y-1 pl-5">
             <li>
-              <strong>Essential cookies</strong> — may support basic site
+              <strong>Essential technologies</strong> — may support basic site
               functions, security, or service delivery where required.
             </li>
             <li>
-              <strong>Analytics or advertising cookies</strong> — may be set
-              by services integrated with the site to measure usage or deliver
-              advertising, if those services are enabled.
+              <strong>Analytics technologies</strong> — may help us understand
+              page usage, browser types, and general site performance when an
+              analytics service is enabled.
+            </li>
+            <li>
+              <strong>Advertising technologies</strong> — if advertising
+              services such as Google AdSense are enabled, Google and its
+              advertising partners may use cookies or similar technologies to
+              deliver, measure, and personalize ads, subject to your choices
+              and applicable requirements.
             </li>
           </ul>
+        </section>
+
+        <section>
+          <h2 className="text-lg font-semibold text-slate-900 dark:text-white">
+            Google advertising and privacy controls
+          </h2>
+          <p className="mt-2">
+            When Google advertising services are active, Google may use
+            information collected through cookies or similar technologies in
+            accordance with its policies and your advertising settings. Learn
+            more in{" "}
+            <a
+              href="https://policies.google.com/technologies/partner-sites"
+              className="text-brand-primary hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              how Google uses information from sites or apps that use its services
+            </a>
+            . You can review or change personalized advertising choices in{" "}
+            <a
+              href="https://www.google.com/settings/ads"
+              className="text-brand-primary hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google Ads Settings
+            </a>
+            .
+          </p>
+          <p className="mt-2">
+            Where required for personalized advertising in the European
+            Economic Area, the United Kingdom, or Switzerland, Google requires
+            publishers to use a Google-certified consent management platform
+            that integrates with the IAB Transparency and Consent Framework.
+            Any consent message and settings offered on this site will depend
+            on the advertising services enabled and the regions served. See
+            Google's{" "}
+            <a
+              href="https://support.google.com/adsense/answer/13554116"
+              className="text-brand-primary hover:underline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              publisher consent requirements
+            </a>
+            .
+          </p>
         </section>
 
         <section>
@@ -53,8 +107,10 @@ export default function CookiePolicyPage() {
           <p className="mt-2">
             Most browsers let you block or delete cookies through their
             settings. Blocking cookies may affect features that rely on them.
-            Third-party services may also have their own cookie and privacy
-            controls; review the relevant provider policies for details.
+            Browser controls do not necessarily provide the same choices as a
+            site's consent message. Third-party services may also provide their
+            own privacy and advertising controls; review the relevant provider
+            policies for details.
           </p>
         </section>
 
