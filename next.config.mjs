@@ -3,6 +3,13 @@ const nextConfig = {
   reactStrictMode: true,
   async redirects() {
     return [
+      // Enforce the declared non-www canonical host for every route.
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.convertimagenow.com' }],
+        destination: 'https://convertimagenow.com/:path*',
+        permanent: true,
+      },
       // 1. Broken tools redirects
       {
         source: '/png-to-webp',
