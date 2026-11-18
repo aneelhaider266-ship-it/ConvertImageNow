@@ -12,6 +12,7 @@ const COLUMNS = [
       { href: "/avif-to-jpg", label: "AVIF to JPG" },
       { href: "/image-compressor", label: "Image Compressor" },
       { href: "/image-resizer", label: "Image Resizer" },
+      { href: "/knitting-gauge-calculator", label: "Knitting Gauge Calculator" },
     ],
   },
   {
