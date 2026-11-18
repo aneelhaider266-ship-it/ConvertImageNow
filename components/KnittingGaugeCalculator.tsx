@@ -56,6 +56,19 @@ export default function KnittingGaugeCalculator() {
   const [unit, setUnit] = useState<Unit>("in");
   const standard = unit === "in" ? 4 : 10;
   const unitLabel = unit === "in" ? "inches" : "cm";
+  const changeUnit = (nextUnit: Unit) => {
+    if (nextUnit === unit) return;
+    const factor = nextUnit === "cm" ? 2.54 : 1 / 2.54;
+    const convert = (value: string) => {
+      const parsed = Number(value);
+      return Number.isFinite(parsed) && parsed > 0 ? (parsed * factor).toFixed(2).replace(/\\.?0+$/, "") : value;
+    };
+    setSwatchWidth((value) => convert(value));
+    setSwatchHeight((value) => convert(value));
+    setTargetWidth((value) => convert(value));
+    setTargetHeight((value) => convert(value));
+    setUnit(nextUnit);
+  };
 
   const [swatchStitches, setSwatchStitches] = useState("24");
   const [swatchRows, setSwatchRows] = useState("32");
@@ -127,7 +140,7 @@ export default function KnittingGaugeCalculator() {
             </div>
             <label className="flex items-center gap-2 rounded-xl border border-[#405777] bg-[#101b33] px-3 py-2 text-sm text-slate-200">
               <span>Units</span>
-              <select value={unit} onChange={(e) => setUnit(e.target.value as Unit)} className="bg-transparent font-semibold text-white outline-none">
+              <select value={unit} onChange={(e) => changeUnit(e.target.value as Unit)} className="bg-transparent font-semibold text-white outline-none">
                 <option value="in" className="bg-[#172642]">Inches</option>
                 <option value="cm" className="bg-[#172642]">Centimeters</option>
               </select>
