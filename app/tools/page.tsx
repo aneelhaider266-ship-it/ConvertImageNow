@@ -66,6 +66,14 @@ const LIVE_TOOLS = [
   },
 ];
 
+const SPECIALIZED_TOOLS = [
+  {
+    title: "Knitting Gauge Calculator",
+    desc: "Measure stitch and row gauge, compare your pattern tension, and calculate adjusted stitch counts.",
+    href: "/knitting-gauge-calculator",
+  },
+];
+
 const UPCOMING = [
   "Crop Image",
   "Rotate Image",
@@ -134,6 +142,19 @@ export default function ToolsPage() {
               >
                 Open
               </Link>
+            </div>
+          ))}
+        </div>
+
+        <h2 className="mt-12 text-xl font-semibold text-slate-900 dark:text-white">Specialized Calculators</h2>
+        <div className="mt-4 space-y-3">
+          {SPECIALIZED_TOOLS.map((tool) => (
+            <div key={tool.href} className="flex items-center justify-between rounded-2xl border border-blue-400/30 bg-blue-400/5 p-5">
+              <div className="flex items-center gap-3">
+                <CheckCircle2 className="shrink-0 text-blue-400" size={22} />
+                <div><p className="font-semibold text-slate-900 dark:text-white">{tool.title}</p><p className="text-sm text-slate-600 dark:text-slate-400">{tool.desc}</p></div>
+              </div>
+              <Link href={tool.href} className="rounded-full bg-brand-primary px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90">Open</Link>
             </div>
           ))}
         </div>
