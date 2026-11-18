@@ -82,6 +82,7 @@ export default function KnittingGaugeCalculator() {
   const [patternCount, setPatternCount] = useState("120");
   const [patternRowCount, setPatternRowCount] = useState("160");
   const [repeat, setRepeat] = useState("1");
+  const [edgeStitches, setEdgeStitches] = useState("0");
 
   const [targetWidth, setTargetWidth] = useState("20");
   const [targetHeight, setTargetHeight] = useState("24");
@@ -98,11 +99,15 @@ export default function KnittingGaugeCalculator() {
     const pSt = number(patternStitches), aSt = number(actualStitches);
     const pRw = number(patternRows), aRw = number(actualRows);
     const step = Math.max(1, whole(number(repeat, 1)));
+    const edges = whole(number(edgeStitches));
     const rawStitches = pSt > 0 ? number(patternCount) * aSt / pSt : 0;
     const rawRows = pRw > 0 ? number(patternRowCount) * aRw / pRw : 0;
-    const rounded = Math.max(step, Math.round(rawStitches / step) * step);
-    return { rawStitches, rawRows, rounded, stitchDelta: rounded - number(patternCount), width: aSt > 0 ? rounded / (aSt / standard) : 0, height: aRw > 0 ? Math.round(rawRows) / (aRw / standard) : 0 };
-  }, [patternStitches, actualStitches, patternRows, actualRows, patternCount, patternRowCount, repeat, standard]);
+    const repeatUnits = Math.max(1, Math.round(Math.max(0, rawStitches - edges) / step));
+    const rounded = repeatUnits * step + edges;
+    const stitchDiffPct = pSt > 0 ? ((aSt - pSt) / pSt) * 100 : 0;
+    const rowDiffPct = pRw > 0 ? ((aRw - pRw) / pRw) * 100 : 0;
+    return { rawStitches, rawRows, rounded, stitchDelta: rounded - number(patternCount), width: aSt > 0 ? rounded / (aSt / standard) : 0, height: aRw > 0 ? Math.round(rawRows) / (aRw / standard) : 0, stitchDiffPct, rowDiffPct };
+  }, [patternStitches, actualStitches, patternRows, actualRows, patternCount, patternRowCount, repeat, edgeStitches, standard]);
 
   const target = useMemo(() => {
     const stitchGauge = number(targetStitchGauge), rowGauge = number(targetRowGauge);
@@ -118,7 +123,7 @@ export default function KnittingGaugeCalculator() {
   }, [targetWidth, targetHeight, targetStitchGauge, targetRowGauge, targetRepeat, standard]);
 
   const swatchValid = positive(number(swatchStitches), number(swatchRows), number(swatchWidth), number(swatchHeight)) && integerCounts(number(swatchStitches), number(swatchRows));
-  const adjustValid = positive(number(patternStitches), number(actualStitches), number(patternRows), number(actualRows), number(patternCount), number(patternRowCount), number(repeat)) && integerCounts(number(patternCount), number(patternRowCount), number(repeat));
+  const adjustValid = positive(number(patternStitches), number(actualStitches), number(patternRows), number(actualRows), number(patternCount), number(patternRowCount), number(repeat)) && integerCounts(number(patternCount), number(patternRowCount), number(repeat), number(edgeStitches)) && number(edgeStitches) < number(patternCount);
   const targetValid = positive(number(targetWidth), number(targetHeight), number(targetStitchGauge), number(targetRowGauge), number(targetRepeat)) && integerCounts(number(targetRepeat));
 
   const tabs: { id: Mode; label: string; icon: typeof Calculator }[] = [
@@ -192,6 +197,7 @@ export default function KnittingGaugeCalculator() {
                 <Field label="Pattern stitch count" value={patternCount} onChange={setPatternCount} min="1" step="1" />
                 <Field label="Pattern row count" value={patternRowCount} onChange={setPatternRowCount} min="1" step="1" />
                 <Field label="Stitch repeat multiple" value={repeat} onChange={setRepeat} min="1" step="1" help="Use 1 if there is no repeat." />
+                <Field label="Edge / non-repeat stitches" value={edgeStitches} onChange={setEdgeStitches} min="0" step="1" help="Stitches outside the repeating section, such as borders." />
               </div>
             </div>
             <div className="space-y-3">
@@ -199,11 +205,13 @@ export default function KnittingGaugeCalculator() {
               {!adjustValid ? <div role="alert" className="rounded-xl border border-amber-300/30 bg-amber-300/10 p-3 text-sm text-amber-100">Enter positive gauge values and whole-number pattern counts and repeat multiples. Zero or blank values cannot produce a reliable adjustment.</div> : <>
                 <Result label="Adjusted stitches" value={String(adjusted.rounded)} detail={`Raw calculation: ${clean(adjusted.rawStitches)} stitches`} />
                 <Result label="Adjusted rows" value={String(whole(adjusted.rawRows))} detail={`Raw calculation: ${clean(adjusted.rawRows)} rows`} />
-                <Result label="Stitch count change" value={`${adjusted.stitchDelta > 0 ? "+" : ""}${adjusted.stitchDelta}`} detail="After repeat rounding" />
+                <Result label="Stitch gauge difference" value={`${adjusted.stitchDiffPct > 0 ? "+" : ""}${clean(adjusted.stitchDiffPct)}%`} detail={adjusted.stitchDiffPct > 0 ? "More stitches than pattern gauge: fabric may be narrower" : adjusted.stitchDiffPct < 0 ? "Fewer stitches than pattern gauge: fabric may be wider" : "Matches pattern stitch gauge"} />
+                <Result label="Row gauge difference" value={`${adjusted.rowDiffPct > 0 ? "+" : ""}${clean(adjusted.rowDiffPct)}%`} detail={adjusted.rowDiffPct > 0 ? "More rows than pattern gauge: length may build faster" : adjusted.rowDiffPct < 0 ? "Fewer rows than pattern gauge: length may build slower" : "Matches pattern row gauge"} />
+                <Result label="Stitch count change" value={`${adjusted.stitchDelta > 0 ? "+" : ""}${adjusted.stitchDelta}`} detail="After repeat rounding and edge stitches" />
                 <Result label="Estimated finished width" value={`${clean(adjusted.width)} ${unit}`} detail="Based on adjusted stitches and your gauge" />
                 <Result label="Estimated finished height" value={`${clean(adjusted.height)} ${unit}`} detail="Based on adjusted rows and your row gauge" />
               </>}
-              <p className="text-xs leading-relaxed text-slate-400">The adjusted stitch count is rounded to your chosen repeat multiple. Always check shaping, neckline, sleeve, and pattern instructions before substituting counts.</p>
+              <p className="text-xs leading-relaxed text-slate-400">The repeating section is rounded to your chosen multiple, then edge/non-repeat stitches are added. Gauge difference compares your stitches or rows per standard measurement with the pattern gauge. Always check shaping, neckline, sleeve, and pattern instructions before substituting counts.</p>
             </div>
           </>}
 
