@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import {
-  Zap,
   Lock,
   Gift,
-  Infinity as InfinityIcon,
   Layers,
   ArrowRight,
   ShieldCheck,
   Image as ImageIcon,
-  Cpu,
   SlidersHorizontal,
   CheckCircle2,
 } from "lucide-react";
@@ -17,16 +14,16 @@ import {
 const SITE_URL = "https://convertimagenow.com";
 
 export const metadata: Metadata = {
-  title: "Free Online Image Tools | ConvertImageNow",
+  title: "Free Online Image Converter & Tools | ConvertImageNow",
   description:
-    "Convert images, compress files, and resize photos with free browser-based tools. Batch processing, quality controls, and no conversion-server upload.",
+    "Convert, compress, and resize images online with free browser-based tools. Batch ZIP downloads, adjustable quality, and no conversion-server upload.",
   alternates: {
     canonical: `${SITE_URL}/`,
   },
   openGraph: {
-    title: "Free Online Image Tools | ConvertImageNow",
+    title: "Free Online Image Converter & Tools | ConvertImageNow",
     description:
-      "Explore free browser-based image converters, compression, and resizing tools. Select the right utility for your task.",
+      "Convert, compress, and resize supported images with free browser-based tools. Choose a dedicated converter for your files.",
     url: `${SITE_URL}/`,
     siteName: "ConvertImageNow",
     locale: "en_US",
@@ -34,9 +31,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online Image Tools | ConvertImageNow",
+    title: "Free Online Image Converter & Tools | ConvertImageNow",
     description:
-      "Explore free image converters, compression, and resizing tools that process supported files in your browser.",
+      "Convert, compress, and resize supported images in your browser with free online tools.",
   },
   robots: {
     index: true,
@@ -120,42 +117,37 @@ const CONVERTER_TOOLS = [
   },
 ];
 
+const SPECIALIZED_TOOLS = [
+  { name: "SVG to STL Converter", href: "/svg-to-stl", description: "Turn supported flat SVG shapes into extruded STL models for 3D printing." },
+  { name: "STL to SVG Converter", href: "/stl-to-svg", description: "Create 2D SVG section outlines from supported binary or ASCII STL meshes." },
+  { name: "Knitting Gauge Calculator", href: "/knitting-gauge-calculator", description: "Compare swatch tension with a pattern and calculate adjusted stitch counts." },
+  { name: "FMLA Leave Calculator", href: "/fmla-calculator", description: "Estimate federal FMLA eligibility and track leave usage with clear assumptions." },
+];
+
 const CORE_BENEFITS = [
   {
     icon: Lock,
-    title: "Private Browser Processing",
-    desc: "Supported image conversions are processed locally in your browser. The converter does not send those image files to a conversion server.",
+    title: "Local Processing for Supported Files",
+    desc: "Selected image files are processed in your browser. The conversion workflow does not upload them to a conversion server.",
     highlight: "Browser-Based",
   },
   {
-    icon: Zap,
-    title: "Local Browser Processing",
-    desc: "Supported conversions run in your browser using the Canvas API. Processing speed depends on your device, image dimensions, and browser.",
-    highlight: "Canvas Processing",
-  },
-  {
     icon: Layers,
-    title: "Batch Conversion",
-    desc: "Add multiple supported images to the queue, convert them, and download files individually or together as a ZIP archive.",
+    title: "Batch Conversion & ZIP Downloads",
+    desc: "Add multiple supported images to the queue, convert them, and download files individually or together in one ZIP archive.",
     highlight: "Batch Ready",
   },
   {
     icon: SlidersHorizontal,
-    title: "Output Quality Control",
-    desc: "Adjust output quality for JPG and WebP. PNG output does not use the lossy quality slider.",
-    highlight: "Precise Control",
-  },
-  {
-    icon: InfinityIcon,
-    title: "Free to Use",
-    desc: "Use the browser-based converter without creating an account. Practical file limits depend on your device and available browser memory.",
-    highlight: "No Account Needed",
+    title: "Control Output Quality",
+    desc: "Choose the quality setting for JPG and WebP output. PNG uses lossless encoding and does not use the lossy quality slider.",
+    highlight: "Quality Settings",
   },
   {
     icon: Gift,
-    title: "Watermark-Free Downloads",
-    desc: "Converted files are exported without an added ConvertImageNow watermark. Canvas-based conversion may not preserve all original metadata.",
-    highlight: "No Added Watermark",
+    title: "Free, With No Added Watermark",
+    desc: "Use the tools without creating an account. Converted downloads have no added ConvertImageNow watermark; some original metadata may not be preserved.",
+    highlight: "No Registration",
   },
 ];
 
@@ -173,7 +165,7 @@ const HOW_IT_WORKS_STEPS = [
   {
     step: "03",
     title: "Browser-Based Conversion",
-    desc: "The browser decodes supported images and converts them with the Canvas API. The image data is processed locally rather than sent to a conversion server.",
+    desc: "Your browser decodes each supported image and creates the selected output format using its built-in image and Canvas capabilities.",
   },
   {
     step: "04",
@@ -403,7 +395,7 @@ export default function HomePage() {
             </div>
 
             <h1 className="mt-5 text-[2rem] font-extrabold leading-[1.12] tracking-tight text-white sm:text-5xl sm:leading-tight lg:text-6xl">
-              Free Online Image Tools
+              Free Online Image Converter &amp; Tools
             </h1>
 
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
@@ -464,7 +456,7 @@ export default function HomePage() {
             id="converters-heading"
             className="mt-2 text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl"
           >
-            Explore All Online Image Converters & Tools
+            Choose the Right Image Tool
           </h2>
           <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
             Choose a tool for common format conversions, image compression, or resizing.
@@ -488,7 +480,7 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {group.tools.map((tool) => (
                   <Link
                     key={tool.slug}
@@ -532,6 +524,42 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Specialized Tools: secondary to the image converter suite */}
+      <section className="border-y border-slate-200/80 bg-slate-50/50 py-14 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-18">
+        <div className="container-page">
+          <div className="mx-auto max-w-2xl text-center">
+            <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
+              More from ConvertImageNow
+            </span>
+            <h2 className="mt-2 text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
+              Specialized Tools for Other Tasks
+            </h2>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+              Need something beyond image conversion? Explore these separate tools and calculators.
+            </p>
+          </div>
+          <div className="mt-9 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {SPECIALIZED_TOOLS.map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="group rounded-xl border border-slate-200/80 bg-white p-5 transition-colors hover:border-brand-primary/60 dark:border-[#314969] dark:bg-[#172642]"
+              >
+                <h3 className="text-sm font-bold text-slate-900 transition-colors group-hover:text-brand-primary dark:text-white">
+                  {tool.name}
+                </h3>
+                <p className="mt-2 text-xs leading-relaxed text-slate-600 dark:text-slate-300">
+                  {tool.description}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold text-brand-primary">
+                  Explore tool <ArrowRight className="h-3.5 w-3.5" />
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-24">
         <div className="container-page">
@@ -543,9 +571,7 @@ export default function HomePage() {
               Why Convert Images with ConvertImageNow?
             </h2>
             <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-              For supported formats, image conversion runs in your browser using its
-              image decoding and Canvas APIs. Selected image files are not sent
-              to a conversion server.
+              Convert supported image files without sending them to a conversion server. Choose your format, quality, and download options.
             </p>
           </div>
 
@@ -628,8 +654,8 @@ export default function HomePage() {
               Supported Image Formats & Codec Characteristics
             </h2>
             <p className="mt-3 text-base text-slate-600 dark:text-slate-300">
-              Compare compression algorithms, transparency support, and platform
-              compatibility to pick the ideal target file type.
+              Compare transparency, compression, and compatibility before choosing
+              a format for your image.
             </p>
           </div>
 
@@ -651,7 +677,7 @@ export default function HomePage() {
                       Platform Support
                     </th>
                     <th scope="col" className="px-6 py-4">
-                      Recommended Application
+                      Best For
                     </th>
                   </tr>
                 </thead>
@@ -677,7 +703,7 @@ export default function HomePage() {
                         {row.compatibility}
                       </td>
                       <td className="px-6 py-4 text-xs leading-relaxed text-slate-500 dark:text-slate-300">
-                        {row.verdict}
+                        {row.bestFor}
                       </td>
                     </tr>
                   ))}
@@ -720,65 +746,6 @@ export default function HomePage() {
               </p>
             </div>
           ))}
-        </div>
-      </section>
-
-      {/* In-Browser Security Deep Dive */}
-      <section className="border-y border-slate-200/80 bg-slate-50/50 py-16 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-24">
-        <div className="container-page">
-          <div className="mx-auto max-w-4xl rounded-3xl border border-slate-200/90 bg-white p-8 shadow-sm dark:border-[#314969] dark:bg-[#172642] sm:p-12">
-            <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
-              <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-brand-primary/10 text-brand-primary">
-                <Cpu className="h-7 w-7" />
-              </div>
-              <div>
-                <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
-                  Technical Architecture & Data Safety
-                </span>
-                <h2 className="mt-1 text-2xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
-                  How Client-Side Image Processing Protects Your Files
-                </h2>
-              </div>
-            </div>
-
-            <div className="mt-8 space-y-5 text-sm leading-relaxed text-slate-600 dark:text-slate-300 sm:text-base">
-              <p>
-                For supported formats, ConvertImageNow processes image data locally in your browser rather than uploading the selected image to a conversion server.
-              </p>
-
-              <p>
-                <strong>ConvertImageNow works fundamentally differently.</strong>{" "}
-                The converter uses the browser’s image decoding and Canvas capabilities to create the selected output format. The conversion workflow does not upload the selected image to a conversion server.
-              </p>
-
-              <div className="grid gap-4 pt-4 sm:grid-cols-3">
-                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-[#314969]">
-                  <p className="font-mono text-xl font-bold text-brand-primary">
-                    Local
-                  </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-300">
-                    Image conversion runs in your browser
-                  </p>
-                </div>
-                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-[#314969]">
-                  <p className="font-mono text-xl font-bold text-brand-primary">
-                    Canvas API
-                  </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-300">
-                    Uses browser image processing capabilities
-                  </p>
-                </div>
-                <div className="rounded-xl border border-slate-200/70 p-4 dark:border-[#314969]">
-                  <p className="font-mono text-xl font-bold text-brand-primary">
-                    Your Device
-                  </p>
-                  <p className="mt-1 text-xs text-slate-500 dark:text-slate-300">
-                    Keep your original files under your control
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
