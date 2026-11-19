@@ -6,14 +6,35 @@ const PAGE_URL = `${SITE_URL}/fmla-calculator`;
 
 export const metadata: Metadata = {
   title: "FMLA Calculator – Check Eligibility & Remaining Leave",
-  description: "Use this free FMLA calculator to estimate federal Family and Medical Leave Act eligibility, 12- or 26-week leave entitlement, and remaining hours based on your leave-year method.",
+  description: "Estimate federal FMLA eligibility, 12- or 26-week leave entitlement, and remaining hours using your employer’s leave-year method.",
   alternates: { canonical: PAGE_URL },
   openGraph: { title: "FMLA Calculator – Check Eligibility & Remaining Leave", description: "Estimate federal FMLA eligibility and remaining job-protected leave hours with a free interactive calculator.", url: PAGE_URL, siteName: "ConvertImageNow", type: "website" },
   twitter: { card: "summary", title: "FMLA Calculator – Eligibility & Leave Balance", description: "Estimate federal FMLA eligibility and remaining leave." },
 };
 
+const SOFTWARE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "FMLA Calculator",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Any modern web browser",
+  url: PAGE_URL,
+  description: "Educational estimator for general federal FMLA eligibility and remaining leave based on entered work and leave information.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+};
+
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+    { "@type": "ListItem", position: 2, name: "Tools", item: SITE_URL + "/tools" },
+    { "@type": "ListItem", position: 3, name: "FMLA Calculator", item: PAGE_URL },
+  ],
+};
+
 export default function FMLACalculatorPage() {
-  return <div className="container-page py-10 sm:py-14">
+  return <div className="container-page py-10 sm:py-14">\n    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SOFTWARE_SCHEMA) }} />\n    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
     <div className="mx-auto max-w-4xl">
       <nav aria-label="Breadcrumb" className="mb-5 text-sm text-slate-400"><a href="/" className="hover:text-white">Home</a><span className="mx-2">/</span><a href="/tools" className="hover:text-white">Tools</a><span className="mx-2">/</span><span className="text-slate-200">FMLA Calculator</span></nav>
       <header className="mb-8"><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-300">Free federal leave estimator</p><h1 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">FMLA Calculator</h1><p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-300">Check the general federal FMLA eligibility requirements and estimate how much job-protected leave may remain. Enter your employment details, normal workweek, leave reason, and leave already used.</p><div className="mt-4 flex flex-wrap gap-2 text-xs text-slate-300"><span className="rounded-full border border-[#405777] px-3 py-1">Eligibility estimate</span><span className="rounded-full border border-[#405777] px-3 py-1">12- and 26-week limits</span><span className="rounded-full border border-[#405777] px-3 py-1">Leave-year methods</span></div></header>
