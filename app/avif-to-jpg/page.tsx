@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ToolBreadcrumbs from "@/components/ToolBreadcrumbs";
 import Link from "next/link";
 import ImageConverter from "@/components/ImageConverter";
 import {
@@ -169,6 +170,7 @@ const FAQ_SCHEMA = {
 export default function AvifToJpgPage() {
   return (
     <main className="container-page relative overflow-hidden pb-24 pt-16 sm:pb-32 sm:pt-24">
+      <ToolBreadcrumbs label="AVIF to JPG Converter" href="/avif-to-jpg" />
       {/* Background Decorators */}
       <div
         className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:linear-gradient(to_bottom,white_5%,transparent_90%)] dark:bg-[radial-gradient(#1f2937_1px,transparent_1px)]"
