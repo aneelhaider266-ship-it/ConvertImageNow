@@ -645,6 +645,11 @@ export default function ImageResizer() {
                     </>
                   )}
                 </div>
+                {item.status === "error" && item.errorMessage && (
+                  <p role="alert" className="mt-1 text-xs leading-5 text-red-500">
+                    {item.errorMessage}
+                  </p>
+                )}
               </div>
 
               <div className="flex min-h-10 min-w-[72px] items-center justify-end gap-2">
