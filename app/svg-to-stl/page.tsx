@@ -35,7 +35,10 @@ const BREADCRUMB_SCHEMA = {
 };
 
 export default function SVGToSTLPage() {
-  return <div className="container-page py-10 sm:py-14">\n    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SOFTWARE_SCHEMA) }} />\n    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />\n    <div className="mx-auto max-w-5xl">
+  return <div className="container-page py-10 sm:py-14">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SOFTWARE_SCHEMA) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
+    <div className="mx-auto max-w-5xl">
     <nav aria-label="Breadcrumb" className="mb-5 text-sm text-slate-400"><a href="/" className="hover:text-white">Home</a><span className="mx-2">/</span><a href="/tools" className="hover:text-white">Tools</a><span className="mx-2">/</span><span className="text-slate-200">SVG to STL Converter</span></nav>
     <header className="mb-8"><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-300">Free online vector converter</p><h1 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">SVG to STL Converter</h1><p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-300">Convert supported 2D SVG shapes into extruded 3D STL models for 3D printing. Set a precise width in millimeters, choose the extrusion height, and export a binary STL file without uploading your design.</p><div className="mt-4 flex flex-wrap gap-2 text-xs text-slate-300"><span className="rounded-full border border-[#405777] px-3 py-1">Millimeter sizing</span><span className="rounded-full border border-[#405777] px-3 py-1">Extrusion depth</span><span className="rounded-full border border-[#405777] px-3 py-1">Local processing</span></div></header>
     <SVGToSTLConverter />
