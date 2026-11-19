@@ -285,7 +285,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "how-to-convert-heic-to-jpg",
     title: "How to Convert HEIC to JPG on iPhone, Android, and Windows",
     excerpt:
-      "Learn how to convert HEIC photos to JPG for easier sharing, uploading, and compatibility across iPhone, Android, and Windows devices today.",
+      "Learn practical ways to export HEIC photos as JPG on iPhone and Windows, and understand compatibility when a website does not accept HEIC.",
     date: "2026-03-23",
     updatedDate: "2026-09-01",
     canonical:
@@ -398,128 +398,9 @@ export const BLOG_POSTS: BlogPost[] = [
     ],
   },
   {
-    slug: "heic-to-jpg-guide",
-    title: "HEIC to JPG: Compatibility and Conversion Options",
-    excerpt:
-      "Learn when a JPG copy may be useful, how HEIC compatibility varies, and which device tools can export HEIC photos.",
-    date: "2026-05-03",
-    canonical: "https://convertimagenow.com/blog/heic-to-jpg-guide",
-    keywords: [
-      "HEIC to JPG",
-      "convert HEIC to JPG",
-      "HEIC format iPhone",
-      "HEIC JPG conversion",
-    ],
-    author: "ConvertImageNow",
-    content: [
-      "HEIC is an efficient image format that Apple uses on newer iPhones. But if you need to share iPhone photos with people using older phones, older cameras, or older computers, converting to JPG can make sharing easier.",
-
-      "## What Is HEIC?",
-
-      "HEIC (High Efficiency Image Container) is a modern image format that Apple chose as the default for iPhone cameras. It can store photos with high quality in a smaller file size than JPG.",
-
-      "## When Should You Convert HEIC to JPG?",
-
-      "Convert HEIC to JPG when you need to share photos with people using older devices, when you need compatibility with older software, or when a website or service doesn't accept HEIC files.",
-
-      "## Online HEIC to JPG Conversion",
-
-      "ConvertImageNow does not currently accept HEIC input. Use an application or service that explicitly supports HEIC decoding, or use the export options available on your device.",
-
-      "## Quality After Conversion",
-
-      "Both HEIC and JPG can store high-quality photos. The final quality depends on the compression settings used during the original capture and during conversion.",
-
-      "## Keep Your Original HEIC File",
-
-      "Always keep the original HEIC file as a backup. The JPG version can be used for sharing and compatibility while the original preserves your source file.",
-
-      "## File Size Comparison",
-
-      "HEIC files can be smaller than JPG versions of the same photo, but the result depends on image content, encoder settings, and quality. A JPG export may be larger or smaller, so compare the actual files when size matters.",
-
-      "## HEIC vs JPG: Quality and Compression",
-
-      "HEIC and JPG use different compression methods, and neither format guarantees a fixed file-size advantage for every image. The result depends on the encoder, image content, and quality settings. HEIC support varies across devices and software, while JPG remains widely compatible with browsers, apps, and operating systems.",
-
-      "## Common Tools for Converting HEIC Files",
-
-      "Besides browser-based converters, you have a few other options depending on your device. On iPhone, changing Settings > Camera > Formats to 'Most Compatible' will save new photos as JPG automatically going forward, though it won't convert photos you already have. On a Mac, Preview can open and export HEIC files. On Windows, you may need to install the HEIF extension from the Microsoft Store before File Explorer can even preview HEIC thumbnails.",
-
-      "For one-off conversions, choose an application or service that explicitly supports HEIC input and check that it works on your device.",
-
-      "## Final Thoughts",
-
-      "HEIC is an efficient format, but JPG is more widely compatible. Converting when necessary provides a practical solution for sharing iPhone photos across different devices and platforms.",
-    ],
-  },
-{
-    slug: "what-is-avif",
-    title: "What Is AVIF? A Modern Image Format Guide",
-    excerpt:
-      "What is AVIF, how does it compare to JPG and WebP, and when should you use it? Learn about format support, image quality, and browser-based conversion options.",
-    date: "2026-03-01",
-    updatedDate: "2026-11-17",
-    // Canonical matches the site metadata base.
-    canonical: "https://convertimagenow.com/blog/what-is-avif",
-    keywords: [
-      "what is AVIF",
-      "AVIF image format",
-      "AVIF vs WebP",
-      "AVIF vs JPG",
-      "convert avif to jpg",
-      "avif browser support"
-    ],
-    author: "ConvertImageNow Team",
-    content: [
-      "AVIF (AV1 Image File Format) is an open image format developed by the Alliance for Open Media (AOMedia). It uses image coding based on the AV1 video codec and can produce compact files for some images. File size and visual quality depend on the source image, encoder, and settings.",
-
-      "## Why Was AVIF Created?",
-
-      "Images can make up a substantial part of page weight, especially on image-heavy sites. JPG, PNG, WebP, and AVIF use different compression methods and have different transparency and compatibility trade-offs. AVIF uses image coding based on the AV1 video codec and can produce compact files for some images, but results vary by source and settings.",
-
-      "## AVIF vs JPG: How Much File Size Do You Save?",
-
-      "AVIF can produce smaller files than JPG or WebP at comparable visual quality for some images. There is no fixed percentage reduction that applies to every source; results depend on image content, encoder settings, and the quality target. Compare actual output files before choosing a format.",
-
-      "If a photo viewer cannot open an AVIF file, you can try our browser-based [AVIF to JPG Converter](https://convertimagenow.com/avif-to-jpg), provided your browser can decode the AVIF input. JPG uses lossy encoding, so compare the output with the original and keep a copy of the source file.",
-
-      "## AVIF vs WebP: Which Should You Use?",
-
-      "Both formats are excellent choices for modern web development, but they serve slightly different priorities:",
-
-      "- **Compression:** AVIF can achieve smaller files than WebP for some images at a comparable visual quality, but results depend on the encoder and settings.",
-      "- **Encoding:** AVIF encoding can take longer than WebP in many workflows; measure the time on your own tools and devices.",
-      "- **Color and transparency:** AVIF supports alpha transparency, high bit-depth images, and HDR workflows when the encoder and playback environment support them.",
-
-      "For a broader side-by-side overview, read our [image format comparison guide](/blog/best-image-formats-compared).",
-
-      "## AVIF Browser Support in 2026",
-
-      "Current versions of major desktop and mobile browsers generally support AVIF, but older browsers, embedded webviews, and some image viewers may not. Check the software your audience uses before making AVIF the only available format.",
-
-      "- **Modern browsers:** AVIF is supported in current mainstream browser releases.",
-      "- **Older devices and apps:** Support can vary by operating-system version, browser engine, and installed image components.",
-      "- **Publishing workflows:** Check that your CMS, image editor, email client, and recipients can handle AVIF before using it as the only copy.",
-
-      "For websites serving older browsers or devices, consider the HTML `<picture>` element with an appropriate fallback format. You can convert supported source files using our [Free Online Image Converter](https://convertimagenow.com/converter).",
-
-      "## Frequently Asked Questions (FAQ)",
-
-      "### Why will an AVIF file not open on my computer or phone?",
-      "The app or operating-system version you are using may not support AVIF decoding. Try a current browser or image viewer that supports AVIF, update the relevant software, or convert the file to JPG for broader compatibility. Keep the original AVIF in case you need it later.",
-
-      "### Why can AVIF encoding take longer than JPG or WebP?",
-      "AVIF encoding can require more processing time than JPG or WebP, depending on the encoder, speed setting, image dimensions, and device. A slower encode does not guarantee a smaller file, so compare both output size and visual quality.",
-
-      "### How can I convert AVIF images to JPG for free?",
-      "You can select an AVIF file in our [AVIF to JPG tool](https://convertimagenow.com/avif-to-jpg) if your browser supports decoding that file. Conversion uses browser image decoding and Canvas APIs; selected image data is processed locally rather than sent to a conversion server."
-    ],
-  },
-  {
     slug: "best-image-formats-explained",
-    title: "Best Image Format for Web: JPG, PNG, WebP & AVIF",
-    excerpt: "Choose the best image format for web pages by image type, transparency, quality, and browser support. Practical recommendations for photos, logos, screenshots, and graphics.",
+    title: "Best Image Format for Websites: Choose by Image Type",
+    excerpt: "Choose an image format for photos, screenshots, logos, and transparent graphics. Practical website recommendations based on image type and compatibility.",
     date: "2026-01-12",
     updatedDate: "2026-11-17",
     canonical: "https://convertimagenow.com/blog/best-image-formats-explained",
@@ -577,8 +458,8 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "best-image-formats-compared",
-    title: "JPG vs PNG vs WebP vs AVIF: Image Format Comparison",
-    excerpt: "Compare JPG, PNG, WebP, and AVIF by compression, transparency, animation, browser support, and typical use before choosing an image format.",
+    title: "JPG vs PNG vs WebP vs AVIF: Technical Comparison",
+    excerpt: "Compare JPG, PNG, WebP, and AVIF by compression, transparency, animation, browser support, and technical trade-offs using the same source image.",
     date: "2026-02-28",
     updatedDate: "2026-11-17",
     canonical: "https://convertimagenow.com/blog/best-image-formats-compared",
