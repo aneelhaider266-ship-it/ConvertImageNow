@@ -62,9 +62,9 @@ export default function RootLayout({
       <body className="antialiased min-h-screen bg-[#101B33] text-slate-100 flex flex-col justify-between">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HVE3DZHGFR"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="beforeInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){window.dataLayer.push(arguments);}
 gtag('js', new Date());
