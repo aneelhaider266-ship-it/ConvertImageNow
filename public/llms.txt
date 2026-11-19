@@ -1,19 +1,31 @@
 # ConvertImageNow
 
-> Free, browser-based image converter. Convert JPG, PNG, WebP, and AVIF images instantly — no uploads, no sign-up, no watermarks. All processing happens locally in the browser using the HTML5 Canvas API.
+> Free browser-based image tools for converting, compressing, and resizing supported image files. Supported image processing runs locally in the browser; selected image files are not uploaded to a ConvertImageNow conversion server.
 
-ConvertImageNow lets anyone convert images between common web formats without installing software or uploading files to a server. It is free, has no usage limits, and supports batch conversion.
+ConvertImageNow provides JPG, PNG, WebP, and AVIF image input where browser decoding is supported, with JPG, PNG, and WebP output in the main converter. No account is required. The site may display third-party advertising and uses normal website resources and requests.
 
 ## Key pages
 
-- [Image Converter](https://www.convertimagenow.com/converter): The main tool. Convert JPG, PNG, WebP, and AVIF images with adjustable quality and batch support.
-- [Features](https://www.convertimagenow.com/features): Details on speed, privacy, and how the browser-based conversion works.
-- [Tools](https://www.convertimagenow.com/tools): Current and upcoming free image tools.
-- [Blog](https://www.convertimagenow.com/blog): Guides on image formats, compression, and file size optimization.
-- [FAQ](https://www.convertimagenow.com/faq): Answers to common questions about privacy, formats, and usage limits.
-- [About](https://www.convertimagenow.com/about): Why ConvertImageNow was built.
+- [Image Converter](https://convertimagenow.com/converter): Main converter with batch processing, output format selection, and quality controls.
+- [PNG to JPG](https://convertimagenow.com/png-to-jpg): Convert supported PNG images to JPG.
+- [JPG to PNG](https://convertimagenow.com/jpg-to-png): Convert supported JPG images to PNG.
+- [JPG to WebP](https://convertimagenow.com/jpg-to-webp): Convert supported JPG images to WebP.
+- [AVIF to JPG](https://convertimagenow.com/avif-to-jpg): Convert AVIF images when the browser can decode them.
+- [Image Compressor](https://convertimagenow.com/image-compressor): Adjust lossy output quality.
+- [Image Resizer](https://convertimagenow.com/image-resizer): Resize by pixels or percentage.
+- [Tools](https://convertimagenow.com/tools): Image utilities and specialized tools.
+- [Features](https://convertimagenow.com/features): Processing and product details.
+- [Blog](https://convertimagenow.com/blog): Image format and optimization guides.
+- [FAQ](https://convertimagenow.com/faq): Usage and compatibility answers.
+- [About](https://convertimagenow.com/about): About the project.
+- [Contact](https://convertimagenow.com/contact): Support and feedback.
 
-## Notes
+## Technical notes
 
-- All image conversion happens client-side in the user's browser. No images are ever uploaded to or stored on a server.
-- The tool is free with no account, sign-up, or payment required.
+- Main converter input: JPG/JPEG, PNG, WebP, and AVIF where supported by the browser.
+- Main converter output: JPG, PNG, and WebP.
+- Conversion and resizing use browser image decoding and Canvas APIs.
+- Selected image files are processed locally for supported workflows; normal page, script, hosting, analytics, and advertising requests may still occur.
+- Browser/device memory and image dimensions limit practical batch size. The converter and resizer reject images or requested output dimensions above 40 megapixels.
+- Browser support varies, especially for AVIF decoding and Canvas encoding.
+- The service is free to use and does not require account registration. Third-party ads may be shown.
