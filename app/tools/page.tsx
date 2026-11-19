@@ -6,23 +6,23 @@ const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/tools`;
 
 export const metadata: Metadata = {
-  title: "Free Online Image Tools | ConvertImageNow",
+  title: "Free Online Tools & Converters | ConvertImageNow",
   description:
-    "Explore ConvertImageNow free online image tools. Browser-based utilities to convert, compress, and resize supported JPG, PNG, WebP, and AVIF images.",
+    "Explore free browser-based converters, image utilities, and specialized tools including STL to SVG and SVG to STL.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Free Online Image Tools | ConvertImageNow",
+    title: "Free Online Tools & Converters | ConvertImageNow",
     description:
-      "Explore our complete suite of browser-based image converters, compressors, and resizers.",
+      "Explore browser-based image converters, 3D file tools, calculators, compressors, and resizers.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online Image Tools | ConvertImageNow",
+    title: "Free Online Tools & Converters | ConvertImageNow",
     description:
       "Convert, compress, and resize supported images in your browser. Selected image files are processed locally.",
   },
@@ -82,6 +82,11 @@ const SPECIALIZED_TOOLS = [
     desc: "Extrude supported SVG vector shapes into millimeter-sized STL models in your browser.",
     href: "/svg-to-stl",
   },
+  {
+    title: "STL to SVG Converter",
+    desc: "Create 2D section contours from binary or ASCII STL models and export SVG paths in your browser.",
+    href: "/stl-to-svg",
+  },
 ];
 
 const UPCOMING = [
@@ -98,7 +103,7 @@ const TOOLS_SCHEMA = {
   name: "ConvertImageNow Image Tools Suite",
   url: PAGE_URL,
   description:
-    "Directory of free online image utilities including converters, compressors, and resizers.",
+    "Directory of free browser-based converters, specialized utilities and calculators.",
   mainEntity: {
     "@type": "ItemList",
     itemListElement: [...LIVE_TOOLS, ...SPECIALIZED_TOOLS].map((tool, index) => ({
@@ -123,10 +128,10 @@ export default function ToolsPage() {
 
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Free Online Image Tools
+          Free Online Tools &amp; Converters
         </h1>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Browse the available tools for converting, compressing, and resizing supported image formats. Selected image files are processed in your browser rather than sent to a conversion server.
+          Browse our browser-based image converters, 3D file tools, and specialized calculators. Supported files are processed locally in your browser.
         </p>
       </div>
 
@@ -156,7 +161,7 @@ export default function ToolsPage() {
           ))}
         </div>
 
-        <h2 className="mt-12 text-xl font-semibold text-slate-900 dark:text-white">Specialized Calculators</h2>
+        <h2 className="mt-12 text-xl font-semibold text-slate-900 dark:text-white">Specialized Tools &amp; Calculators</h2>
         <div className="mt-4 space-y-3">
           {SPECIALIZED_TOOLS.map((tool) => (
             <div key={tool.href} className="flex items-center justify-between rounded-2xl border border-blue-400/30 bg-blue-400/5 p-5">
