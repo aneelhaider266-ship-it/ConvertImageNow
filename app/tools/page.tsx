@@ -6,23 +6,23 @@ const SITE_URL = "https://convertimagenow.com";
 const PAGE_URL = `${SITE_URL}/tools`;
 
 export const metadata: Metadata = {
-  title: "Free Online Image Tools | ConvertImageNow",
+  title: "Free Online Tools & Converters | ConvertImageNow",
   description:
-    "Explore ConvertImageNow free online image tools. Browser-based utilities to convert, compress, and resize supported JPG, PNG, WebP, and AVIF images.",
+    "Explore free browser-based converters, image utilities, and specialized tools including STL to SVG and SVG to STL.",
   alternates: {
     canonical: PAGE_URL,
   },
   openGraph: {
-    title: "Free Online Image Tools | ConvertImageNow",
+    title: "Free Online Tools & Converters | ConvertImageNow",
     description:
-      "Explore our complete suite of browser-based image converters, compressors, and resizers.",
+      "Explore browser-based image converters, 3D file tools, calculators, compressors, and resizers.",
     url: PAGE_URL,
     siteName: "ConvertImageNow",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online Image Tools | ConvertImageNow",
+    title: "Free Online Tools & Converters | ConvertImageNow",
     description:
       "Convert, compress, and resize supported images in your browser. Selected image files are processed locally.",
   },
@@ -82,6 +82,11 @@ const SPECIALIZED_TOOLS = [
     desc: "Extrude supported SVG vector shapes into millimeter-sized STL models in your browser.",
     href: "/svg-to-stl",
   },
+  {
+    title: "STL to SVG Converter",
+    desc: "Create 2D section contours from binary or ASCII STL models and export SVG paths in your browser.",
+    href: "/stl-to-svg",
+  },
 ];
 
 const UPCOMING = [
@@ -98,7 +103,7 @@ const TOOLS_SCHEMA = {
   name: "ConvertImageNow Image Tools Suite",
   url: PAGE_URL,
   description:
-    "Directory of free online image utilities including converters, compressors, and resizers.",
+    "Directory of free browser-based converters, specialized utilities and calculators.",
   mainEntity: {
     "@type": "ItemList",
     itemListElement: [...LIVE_TOOLS, ...SPECIALIZED_TOOLS].map((tool, index) => ({
