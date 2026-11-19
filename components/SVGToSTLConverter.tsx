@@ -32,6 +32,7 @@ function triangulate(input: Point[]): Triangle[] {
   return out;
 }
 function parsePath(d: string): Point[] {
+  if (/[AaCcSsQqTt]/.test(d)) throw new Error("Curved SVG path commands are not supported yet. Convert curves to straight segments in your vector editor, then try again.");
   const tokens = d.match(/[MLHVZmlhvz]|[-+]?(?:\d*\.\d+|\d+\.?\d*)(?:e[-+]?\d+)?/gi) || [];
   const points: Point[] = []; let i = 0, cmd = "", x = 0, y = 0, sx = 0, sy = 0;
   while (i < tokens.length) {
@@ -51,14 +52,15 @@ function readShapes(svg: string) {
   const doc = new DOMParser().parseFromString(svg, "image/svg+xml");
   if (doc.querySelector("parsererror")) throw new Error("This file is not valid SVG XML.");
   const root = doc.documentElement;
+  if (doc.querySelector("[transform], text, use, image, foreignObject, clipPath, mask, filter")) throw new Error("This SVG contains text, transforms, images, clipping, masks, or filters that are not supported. Simplify or outline the design before converting.");
   const viewBox = (root.getAttribute("viewBox") || "").trim().split(/[ ,]+/).map(Number);
   const width = parseFloat(root.getAttribute("width") || "") || (viewBox.length === 4 ? viewBox[2] : 100);
   const height = parseFloat(root.getAttribute("height") || "") || (viewBox.length === 4 ? viewBox[3] : 100);
   const shapes: Point[][] = [];
   const add = (pts: Point[]) => { if (pts.length >= 3 && pts.every(p => Number.isFinite(p.x) && Number.isFinite(p.y))) shapes.push(pts); };
-  doc.querySelectorAll("polygon, polyline, rect, circle, ellipse, path").forEach(el => {
+  doc.querySelectorAll("polygon, rect, circle, ellipse, path").forEach(el => {
     const tag = el.tagName.toLowerCase();
-    if (tag === "polygon" || tag === "polyline") {
+    if (tag === "polygon") {
       const nums = (el.getAttribute("points") || "").trim().split(/[ ,]+/).map(Number); const pts: Point[] = [];
       for (let i = 0; i + 1 < nums.length; i += 2) pts.push({ x: nums[i], y: nums[i + 1] }); add(pts);
     } else if (tag === "rect") {
@@ -122,7 +124,7 @@ export default function SVGToSTLConverter() {
         <div className="space-y-3">
           <div className="flex items-center justify-between"><h3 className="font-bold text-white">SVG preview</h3>{svg&&<span className="text-xs text-slate-400">{shapeCount} shapes detected</span>}</div>
           <div className="flex min-h-64 items-center justify-center overflow-hidden rounded-2xl border border-[#405777] bg-[#101b33] p-4"><div className="text-center text-slate-300"><Layers3 className="mx-auto text-blue-300" size={32}/><p className="mt-3 text-sm font-semibold">{svg ? "SVG file parsed successfully" : "Your vector file details will appear here."}</p><p className="mt-1 text-xs text-slate-400">{svg ? `${shapeCount} supported shape(s) detected. Export to create your STL model.` : "Upload a supported SVG to begin."}</p></div></div>
-          <div className="rounded-xl border border-[#405777] bg-[#101b33] p-4 text-xs leading-relaxed text-slate-300"><Info size={15} className="mr-1 inline text-blue-300"/> Supported: polygons, polylines, rectangles, circles, ellipses, and closed paths using straight M/L/H/V/Z commands. Curves, holes, text, strokes, clipping, masks, and complex transforms are not converted in this first version.</div>
+          <div className="rounded-xl border border-[#405777] bg-[#101b33] p-4 text-xs leading-relaxed text-slate-300"><Info size={15} className="mr-1 inline text-blue-300"/> Supported: polygons, rectangles, circles, ellipses, and closed paths using straight M/L/H/V/Z commands. Curves, holes, text, strokes, clipping, masks, and complex transforms are not converted in this first version.</div>
           <div className="rounded-xl border border-amber-300/20 bg-amber-300/[0.05] p-4 text-xs leading-relaxed text-amber-100"><TriangleAlert size={15} className="mr-1 inline"/> Overlapping or self-intersecting paths may create non-manifold geometry. Inspect the exported STL in your slicer before printing.</div>
         </div>
       </div>
