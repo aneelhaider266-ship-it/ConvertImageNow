@@ -128,10 +128,10 @@ export default function ToolsPage() {
 
       <div className="mx-auto max-w-2xl text-center">
         <h1 className="text-3xl font-bold tracking-tight sm:text-4xl">
-          Free Online Image Tools
+          Free Online Tools &amp; Converters
         </h1>
         <p className="mt-3 text-slate-600 dark:text-slate-300">
-          Browse the available tools for converting, compressing, and resizing supported image formats. Selected image files are processed in your browser rather than sent to a conversion server.
+          Browse our browser-based image converters, 3D file tools, and specialized calculators. Supported files are processed locally in your browser.
         </p>
       </div>
 
@@ -161,7 +161,7 @@ export default function ToolsPage() {
           ))}
         </div>
 
-        <h2 className="mt-12 text-xl font-semibold text-slate-900 dark:text-white">Specialized Calculators</h2>
+        <h2 className="mt-12 text-xl font-semibold text-slate-900 dark:text-white">Specialized Tools &amp; Calculators</h2>
         <div className="mt-4 space-y-3">
           {SPECIALIZED_TOOLS.map((tool) => (
             <div key={tool.href} className="flex items-center justify-between rounded-2xl border border-blue-400/30 bg-blue-400/5 p-5">
