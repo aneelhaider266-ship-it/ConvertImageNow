@@ -61,14 +61,14 @@ export default function RootLayout({
       </head>
       <body className="antialiased min-h-screen bg-[#101B33] text-slate-100 flex flex-col justify-between">
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-HZ0NXP679X"
+          src="https://www.googletagmanager.com/gtag/js?id=G-HVE3DZHGFR"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
           {`window.dataLayer = window.dataLayer || [];
 function gtag(){window.dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-HZ0NXP679X', { send_page_view: true });`}
+gtag('config', 'G-HVE3DZHGFR', { send_page_view: true });`}
         </Script>
 
         <Header />
