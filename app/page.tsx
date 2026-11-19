@@ -181,7 +181,6 @@ const FORMAT_COMPARISON = [
     transparency: "No",
     compression: "Lossy; quality and file size depend on encoder settings",
     compatibility: "Very broad support; confirm requirements for specialist workflows",
-    verdict: "Essential fallback when broad compatibility is paramount.",
   },
   {
     format: "PNG",
@@ -189,7 +188,6 @@ const FORMAT_COMPARISON = [
     transparency: "Yes",
     compression: "Lossless (DEFLATE)",
     compatibility: "Very broad support across browsers and operating systems",
-    verdict: "Standard for crisp transparent graphics where artifacts are unacceptable.",
   },
   {
     format: "WebP",
@@ -197,7 +195,6 @@ const FORMAT_COMPARISON = [
     transparency: "Yes (Lossy & Lossless)",
     compression: "Lossy and lossless options; file size varies by image and settings",
     compatibility: "Supported by modern browsers; check older-device requirements",
-    verdict: "A practical web format when browser support and output size suit your use case.",
   },
   {
     format: "AVIF",
@@ -205,7 +202,6 @@ const FORMAT_COMPARISON = [
     transparency: "Yes",
     compression: "AV1-based compression; results vary by image and encoder",
     compatibility: "Supported by many modern browsers; check target-device compatibility",
-    verdict: "Often offers strong compression; compare output quality, encoding time, and browser support.",
   },
 ];
 
@@ -418,14 +414,14 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="mx-auto mt-7 flex max-w-2xl items-center justify-center gap-2 rounded-2xl border border-[#314969] bg-[#172642]/70 px-2 py-3 shadow-xl shadow-black/20 sm:mt-10 sm:gap-6 sm:px-8 sm:py-6" aria-label="JPG, PNG and WebP image format illustration">
-            {["JPG", "PNG", "WebP"].map((format, index) => (
+          <div className="mx-auto mt-7 flex max-w-2xl items-center justify-center gap-2 rounded-2xl border border-[#314969] bg-[#172642]/70 px-2 py-3 shadow-xl shadow-black/20 sm:mt-10 sm:gap-6 sm:px-8 sm:py-6" aria-label="JPG, PNG, WebP and AVIF image format illustration">
+            {["JPG", "PNG", "WebP", "AVIF"].map((format, index) => (
               <div key={format} className="flex items-center gap-3 sm:gap-6">
                 <div className="flex h-14 w-14 flex-col items-center justify-center rounded-xl border border-[#398BFF]/35 bg-[#101B33] text-[#9CC5FF] shadow-lg shadow-[#398BFF]/10 sm:h-20 sm:w-20">
                   <ImageIcon aria-hidden="true" className="h-7 w-7 sm:h-9 sm:w-9" />
                   <span className="text-[10px] font-bold tracking-wider sm:text-xs">{format}</span>
                 </div>
-                {index < 2 && <ArrowRight className="h-5 w-5 shrink-0 text-[#398BFF] sm:h-7 sm:w-7" aria-hidden="true" />}
+                {index < 3 && <ArrowRight className="h-5 w-5 shrink-0 text-[#398BFF] sm:h-7 sm:w-7" aria-hidden="true" />}
               </div>
             ))}
           </div>
@@ -525,7 +521,7 @@ export default function HomePage() {
       </section>
 
       {/* Specialized Tools: secondary to the image converter suite */}
-      <section className="border-y border-slate-200/80 bg-slate-50/50 py-14 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-18">
+      <section className="border-y border-slate-200/80 bg-slate-50/50 py-14 dark:border-[#314969] dark:bg-[#101B33]/60 sm:py-16">
         <div className="container-page">
           <div className="mx-auto max-w-2xl text-center">
             <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
@@ -575,7 +571,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {CORE_BENEFITS.map((b) => {
               const Icon = b.icon;
               return (
@@ -885,28 +881,28 @@ export default function HomePage() {
           />
 
           <span className="text-xs font-bold uppercase tracking-wider text-brand-primary">
-            Browser-Based Image Utility
+            More Tools & Guides
           </span>
           <h2 className="mt-2 text-3xl font-extrabold sm:text-4xl">
-            Start Converting Your Images Today
+            Explore More Image Tools & Guides
           </h2>
           <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-slate-300 sm:text-base">
-            No registration or added watermarks. Supported image conversions process selected image files in your browser.
+            Browse the full tool directory or read practical guides on image formats, compression, and web optimization.
           </p>
 
           <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="#converters"
+              href="/tools"
               className="inline-flex min-h-[44px] items-center gap-2 rounded-full bg-brand-primary px-7 py-3 text-sm font-bold text-white shadow-lg shadow-brand-primary/25 transition-transform hover:-translate-y-0.5 hover:bg-brand-primary/90"
             >
-              Browse All Converters
+              Browse All Tools
               <ArrowRight className="h-4 w-4" />
             </a>
             <Link
-              href="/converter"
+              href="/blog"
               className="inline-flex min-h-[44px] items-center gap-2 rounded-full border border-slate-700 bg-slate-800/80 px-7 py-3 text-sm font-semibold text-slate-200 transition-colors hover:bg-slate-800 hover:text-white"
             >
-              Launch Universal Converter
+              Read Image Guides
             </Link>
           </div>
         </div>
