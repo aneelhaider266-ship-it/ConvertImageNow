@@ -704,6 +704,7 @@ export const BLOG_POSTS: BlogPost[] = [
     excerpt:
       "Learn how to convert and resize images while preserving visual quality, avoiding compression artifacts, and keeping your file sizes small.",
     date: "2026-07-15",
+    updatedDate: "2026-11-19",
     canonical:
       "https://convertimagenow.com/blog/convert-images-without-losing-quality",
     keywords: [
@@ -711,6 +712,8 @@ export const BLOG_POSTS: BlogPost[] = [
       "preserve image quality",
       "image compression quality",
       "lossless image conversion",
+      "convert 48-bit scan to 24-bit",
+      "48-bit to 24-bit image conversion",
     ],
     author: "ConvertImageNow",
     content: [
@@ -743,6 +746,14 @@ export const BLOG_POSTS: BlogPost[] = [
       "## Compare File Sizes",
 
       "Check file size after conversion. If the output is only slightly smaller than the input, the conversion may not be worth the effort. There is no universal target reduction. Choose settings based on the actual output size and visual quality you need.",
+
+      "## Convert a 48-Bit Scan to 24-Bit RGB (or Lower)",
+
+      "A 48-bit RGB scan usually stores 16 bits for each red, green, and blue channel. A standard 24-bit RGB image stores 8 bits per channel. Converting from 48-bit to 24-bit reduces tonal precision, so it is not a lossless change. If you only need a smaller everyday image, 24-bit RGB is usually sufficient; use 8-bit grayscale only when the image is genuinely black and white and color is not needed.",
+
+      "First check the scanner output format and keep an untouched 48-bit original. Many high-bit-depth scans are saved as TIFF, while this website currently accepts JPG, PNG, WebP, and AVIF rather than TIFF. Convert the scan with image-editing or scanner software that explicitly supports 16-bit-per-channel input and lets you choose 8-bit-per-channel RGB output. Export to PNG when you want to avoid another lossy compression step, or JPG when a smaller photographic file matters more than exact pixel preservation. Reopen the exported file and check its bit depth and appearance before deleting the original.",
+
+      "ConvertImageNow does not currently offer a selectable 48-bit, 24-bit, or 8-bit output setting. Its browser converter re-encodes supported input formats through the browser Canvas API, so it should not be used when you need a guaranteed, explicitly selected bit depth.",
 
       "## Final Thoughts",
 
