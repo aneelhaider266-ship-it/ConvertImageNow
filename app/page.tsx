@@ -289,9 +289,16 @@ export default function HomePage() {
         inLanguage: "en-US",
       },
       {
+        "@type": "Organization",
+        "@id": `${SITE_URL}/#organization`,
+        name: "ConvertImageNow",
+        url: `${SITE_URL}/`,
+        description: "Provider of free browser-based image conversion and image utility tools.",
+      },
+      {
         "@type": "WebApplication",
         "@id": `${SITE_URL}/#webapp`,
-        name: "ConvertImageNow Universal Image Converter",
+        name: "ConvertImageNow Browser-Based Image Tools",
         url: `${SITE_URL}/`,
         applicationCategory: "MultimediaApplication",
         operatingSystem: "All (Web Browser)",
@@ -315,7 +322,7 @@ export default function HomePage() {
         "@id": `${SITE_URL}/#tool-directory`,
         name: "ConvertImageNow Image Conversion Suite",
         description:
-          "Directory of specialized image conversion tools and utilities available on ConvertImageNow.",
+          "Directory of free browser-based image converters and utilities available on ConvertImageNow.",
         itemListElement: [
           {
             "@type": "ListItem",
