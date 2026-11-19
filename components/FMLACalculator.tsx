@@ -36,7 +36,9 @@ export default function FMLACalculator() {
     const weekly = Number(weeklyHours);
     const headcount = whole(employeeCount);
     const employedDays = hire && start ? Math.floor((start.getTime() - hire.getTime()) / DAY) : -1;
-    const monthsMet = !!hire && !!start && employedDays >= 365;
+    const anniversary = hire ? new Date(hire) : null;
+    if (anniversary) anniversary.setFullYear(anniversary.getFullYear() + 1);
+    const monthsMet = !!anniversary && !!start && start >= anniversary;
     const hoursMet = worked >= 1250;
     const employerMet = headcount >= 50;
     const eligible = monthsMet && hoursMet && employerMet;
