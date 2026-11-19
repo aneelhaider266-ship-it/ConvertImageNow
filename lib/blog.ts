@@ -350,7 +350,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "Keep the original HEIC image as a backup. The JPG copy can be used for compatibility while the original preserves the source file for future use.",
 
-      "For a shorter overview, read [How to Convert HEIC to JPG](/blog/heic-to-jpg-guide).",
+      "For a shorter overview, read [How to Convert HEIC to JPG](/blog/how-to-convert-heic-to-jpg).",
 
       "## Converting HEIC on Android",
 
