@@ -199,7 +199,7 @@ export default function ImageResizer() {
           setWidthPx((current) => (current === "" ? width : current));
           setHeightPx((current) => (current === "" ? height : current));
         })
-        .catch(() => {
+        .catch((error) => {
           setQueue((prev) =>
             prev.map((queueItem) =>
               queueItem.id === item.id
