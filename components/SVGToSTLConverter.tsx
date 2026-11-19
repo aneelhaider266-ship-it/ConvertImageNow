@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Download, FileUp, Info, Layers3, RefreshCw, TriangleAlert } from "lucide-react";
 
 type Point = { x: number; y: number };
@@ -102,7 +102,6 @@ function makeSTL(shapes: Point[][], sourceW: number, sourceH: number, targetW: n
 export default function SVGToSTLConverter() {
   const [file,setFile]=useState<File|null>(null), [svg,setSvg]=useState(""), [width,setWidth]=useState("50"), [depth,setDepth]=useState("3"), [base,setBase]=useState("0"), [error,setError]=useState(""), [info,setInfo]=useState(""), [busy,setBusy]=useState(false);
   const [shapeCount,setShapeCount]=useState(0);
-  const preview = useMemo(()=>svg ? svg.slice(0,100000) : "",[svg]);
   async function load(f: File) { setError("");setInfo("");setFile(f);try {if(f.size>10*1024*1024) throw new Error("Please use an SVG smaller than 10 MB.");const text=await f.text();const parsed=readShapes(text);setSvg(text);setShapeCount(parsed.shapes.length);setInfo(`Loaded ${parsed.shapes.length} vector shape(s). Source viewBox: ${parsed.width} × ${parsed.height} units.`);}catch(e){setSvg("");setError(e instanceof Error?e.message:"Could not read this SVG.");}}
   async function convert() {setError("");setBusy(true);try {const parsed=readShapes(svg);const w=Number(width),d=Number(depth),b=Number(base);if(!(w>0&&w<=10000&&d>0&&d<=1000&&b>=0&&b<=1000))throw new Error("Enter a width up to 10,000 mm, extrusion height up to 1,000 mm, and base plate height from 0 to 1,000 mm.");const blob=makeSTL(parsed.shapes,parsed.width,parsed.height,w,d,b);const url=URL.createObjectURL(blob);const a=document.createElement("a");a.href=url;a.download=(file?.name.replace(/\.svg$/i,"")||"converted-model")+".stl";a.click();URL.revokeObjectURL(url);setInfo(`STL exported: ${parsed.shapes.length} shape(s), ${w} mm wide, ${d} mm extrusion.`);}catch(e){setError(e instanceof Error?e.message:"Conversion failed.");}finally{setBusy(false);}}
   return <div className="space-y-6">
@@ -122,7 +121,7 @@ export default function SVGToSTLConverter() {
         </div>
         <div className="space-y-3">
           <div className="flex items-center justify-between"><h3 className="font-bold text-white">SVG preview</h3>{svg&&<span className="text-xs text-slate-400">{shapeCount} shapes detected</span>}</div>
-          <div className="flex min-h-64 items-center justify-center overflow-hidden rounded-2xl border border-[#405777] bg-white p-4">{preview?<div className="max-h-80 max-w-full [&>svg]:max-h-72 [&>svg]:max-w-full" dangerouslySetInnerHTML={{__html:preview}}/>:<div className="text-center text-slate-500"><Layers3 className="mx-auto" size={32}/><p className="mt-2 text-sm">Your vector preview will appear here.</p></div>}</div>
+          <div className="flex min-h-64 items-center justify-center overflow-hidden rounded-2xl border border-[#405777] bg-[#101b33] p-4"><div className="text-center text-slate-300"><Layers3 className="mx-auto text-blue-300" size={32}/><p className="mt-3 text-sm font-semibold">{svg ? "SVG file parsed successfully" : "Your vector file details will appear here."}</p><p className="mt-1 text-xs text-slate-400">{svg ? `${shapeCount} supported shape(s) detected. Export to create your STL model.` : "Upload a supported SVG to begin."}</p></div></div>
           <div className="rounded-xl border border-[#405777] bg-[#101b33] p-4 text-xs leading-relaxed text-slate-300"><Info size={15} className="mr-1 inline text-blue-300"/> Supported: polygons, polylines, rectangles, circles, ellipses, and closed paths using straight M/L/H/V/Z commands. Curves, holes, text, strokes, clipping, masks, and complex transforms are not converted in this first version.</div>
           <div className="rounded-xl border border-amber-300/20 bg-amber-300/[0.05] p-4 text-xs leading-relaxed text-amber-100"><TriangleAlert size={15} className="mr-1 inline"/> Overlapping or self-intersecting paths may create non-manifold geometry. Inspect the exported STL in your slicer before printing.</div>
         </div>
