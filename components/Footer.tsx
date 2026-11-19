@@ -15,6 +15,7 @@ const COLUMNS = [
       { href: "/knitting-gauge-calculator", label: "Knitting Gauge Calculator" },
       { href: "/fmla-calculator", label: "FMLA Calculator" },
       { href: "/svg-to-stl", label: "SVG to STL Converter" },
+      { href: "/stl-to-svg", label: "STL to SVG Converter" },
     ],
   },
   {
