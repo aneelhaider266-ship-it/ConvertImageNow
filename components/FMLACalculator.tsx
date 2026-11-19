@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CalendarDays, CheckCircle2, Info, ShieldAlert } from "lucide-react";
+import { CheckCircle2, Info, ShieldAlert } from "lucide-react";
 
 type LeaveReason = "standard" | "military";
 type LeaveMethod = "rolling" | "calendar" | "fixed" | "forward";
@@ -28,9 +28,6 @@ export default function FMLACalculator() {
   const [reason, setReason] = useState<LeaveReason>("standard");
   const [method, setMethod] = useState<LeaveMethod>("rolling");
   const [usedHours, setUsedHours] = useState("0");
-  const [priorStart, setPriorStart] = useState("");
-  const [priorEnd, setPriorEnd] = useState("");
-  const [priorHours, setPriorHours] = useState("0");
 
   const result = useMemo(() => {
     const hire = dateValue(hireDate);
@@ -48,19 +45,9 @@ export default function FMLACalculator() {
     let used = whole(usedHours);
     let periodLabel = "Selected leave-year period";
     if (method === "rolling" && start) {
-      const windowStart = new Date(start.getTime() - 365 * DAY);
+      const windowStart = new Date(start);
+      windowStart.setFullYear(windowStart.getFullYear() - 1);
       periodLabel = `Rolling look-back: ${fmtDate(windowStart)} – ${fmtDate(start)}`;
-      const pStart = dateValue(priorStart);
-      const pEnd = dateValue(priorEnd);
-      if (pStart && pEnd && pEnd >= pStart) {
-        const overlapStart = new Date(Math.max(pStart.getTime(), windowStart.getTime()));
-        const overlapEnd = new Date(Math.min(pEnd.getTime(), start.getTime()));
-        if (overlapEnd >= overlapStart) {
-          const overlapDays = Math.floor((overlapEnd.getTime() - overlapStart.getTime()) / DAY) + 1;
-          const totalDays = Math.floor((pEnd.getTime() - pStart.getTime()) / DAY) + 1;
-          used += whole(priorHours) * Math.min(1, overlapDays / totalDays);
-        }
-      }
     } else if (method === "calendar" && start) {
       periodLabel = `Calendar year: Jan 1 – Dec 31, ${start.getFullYear()}`;
     } else if (method === "fixed" && start) {
@@ -71,7 +58,7 @@ export default function FMLACalculator() {
     const totalHours = entitlementWeeks * (weeklyValid ? weekly : 0);
     const remainingHours = Math.max(0, totalHours - used);
     return { eligible, monthsMet, hoursMet, employerMet, employedDays, entitlementWeeks, weeklyValid, used, totalHours, remainingHours, remainingWeeks: weeklyValid ? remainingHours / weekly : 0, periodLabel, start };
-  }, [hireDate, leaveDate, hoursWorked, weeklyHours, employeeCount, reason, method, usedHours, priorStart, priorEnd, priorHours]);
+  }, [hireDate, leaveDate, hoursWorked, weeklyHours, employeeCount, reason, method, usedHours]);
 
   const inputClass = "min-h-11 rounded-xl border border-[#405777] bg-[#101b33] px-3 text-white";
   return <div className="space-y-6">
@@ -99,8 +86,8 @@ export default function FMLACalculator() {
         <div className="space-y-4">
           <h3 className="font-bold text-white">Leave balance estimate</h3>
           <label className="block"><span className="text-sm font-semibold text-slate-200">Employer's 12-month leave-year method</span><select value={method} onChange={e => setMethod(e.target.value as LeaveMethod)} className={`${inputClass} mt-2 w-full`}><option value="rolling">Rolling backward from leave start</option><option value="calendar">Calendar year</option><option value="fixed">Fixed 12-month year</option><option value="forward">12 months forward from first use</option></select></label>
-          <Field label="FMLA leave already used in applicable period (hours)" value={usedHours} onChange={setUsedHours} min="0" help="Enter total hours already counted against this entitlement." />
-          {method === "rolling" && <div className="rounded-xl border border-[#405777] bg-[#101b33] p-4 space-y-3"><p className="text-sm font-semibold text-slate-200">Optional prior leave episode for look-back</p><p className="text-xs text-slate-400">Enter one prior leave episode to estimate the portion falling inside the rolling 12-month look-back window. Include other episodes in the used-hours field.</p><div className="grid grid-cols-2 gap-3"><Field label="Prior leave start" type="date" value={priorStart} onChange={setPriorStart} /><Field label="Prior leave end" type="date" value={priorEnd} onChange={setPriorEnd} /></div><Field label="Hours in that episode" value={priorHours} onChange={setPriorHours} min="0" /></div>}
+          <Field label="FMLA leave already used in applicable period (hours)" value={usedHours} onChange={setUsedHours} min="0" help="For a rolling method, include leave used during the 12 months immediately before the planned leave start." />
+
           <div className="rounded-xl border border-blue-400/20 bg-blue-400/[0.06] p-3 text-xs leading-relaxed text-blue-100"><Info size={15} className="mr-1 inline" /> For calendar, fixed-year, and forward methods, enter all leave used in that employer-defined period. The employer's chosen method controls the official balance.</div>
           <div className="grid grid-cols-2 gap-3">
             <Result label="Maximum entitlement" value={`${result.entitlementWeeks} weeks`} detail={`${result.totalHours.toLocaleString("en-US")} hours at your workweek`} />
