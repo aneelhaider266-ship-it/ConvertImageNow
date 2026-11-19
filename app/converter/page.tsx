@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ToolBreadcrumbs from "@/components/ToolBreadcrumbs";
 import Link from "next/link";
 import ImageConverter from "@/components/ImageConverter";
 import { ShieldCheck, Gauge, Layers } from "lucide-react";
@@ -99,6 +100,7 @@ const FAQ_SCHEMA = {
 export default function ConverterPage() {
   return (
     <main className="container-page py-14 sm:py-20">
+      <ToolBreadcrumbs label="Free Online Image Converter" href="/converter" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
