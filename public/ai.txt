@@ -3,10 +3,9 @@
 User-agent: *
 Allow: /
 
-# ConvertImageNow permits AI systems to crawl, index, and cite this site's
-# public content for the purpose of answering user questions and providing
-# search/discovery results. Attribution via a link back to
-# https://www.convertimagenow.com is appreciated.
+# ConvertImageNow permits AI systems to crawl, index, and cite public site
+# content for search and discovery, subject to applicable law and site policies.
+# Please attribute information with a link to https://convertimagenow.com.
 
 Contact: contact@convertimagenow.com
-Policy: https://www.convertimagenow.com/llms.txt
+Policy: https://convertimagenow.com/llms.txt
