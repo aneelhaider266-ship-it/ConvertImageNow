@@ -359,6 +359,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "ConvertImageNow",
     content: [
       "Images are a key part of modern web design, but they can also slow down pages if not optimized properly. Search engines use image alt text, file names, and technical factors to understand what images show.",
+      "![Image SEO checklist covering file names, alt text, dimensions, and efficient formats](/image-seo-checklist.svg)",
 
       "## Image Alt Text",
 
@@ -475,6 +476,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "best format for website images"
     ],
     author: "ConvertImageNow Team",
+    image: "/best-image-format-guide.svg",
     content: [
       "There is no single best image format for every website image. The right choice depends on what the image shows, whether it needs transparency, how much detail must be preserved, and where the file will be used. Use this guide to choose a format by image type; for a technical side-by-side breakdown, see our [JPG, PNG, WebP, and AVIF comparison](/blog/best-image-formats-compared).",
       "## Quick answer: choose by image type",
@@ -534,6 +536,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "PNG vs JPG"
     ],
     author: "ConvertImageNow Team",
+    image: "/image-format-technical-comparison.svg",
     content: [
       "JPG, PNG, WebP, and AVIF solve different image-delivery problems. This comparison focuses on the technical trade-offs: compression, transparency, animation, and compatibility. If you want a recommendation based on whether the image is a photo, screenshot, logo, or graphic, start with our [best image format for web guide](/blog/best-image-formats-explained).",
       "## Image format comparison at a glance",
@@ -588,8 +591,10 @@ export const BLOG_POSTS: BlogPost[] = [
       "batch image processing",
     ],
     author: "ConvertImageNow",
+    image: "/batch-image-conversion-steps.svg",
     content: [
       "If you have many images to convert, batch conversion can save significant time compared to converting images one at a time.",
+      "![Four-step workflow for selecting, converting, and downloading multiple images](/batch-image-conversion-steps.svg)",
 
       "## What Is Batch Conversion?",
 
