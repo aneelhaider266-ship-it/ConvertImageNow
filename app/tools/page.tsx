@@ -72,6 +72,16 @@ const SPECIALIZED_TOOLS = [
     desc: "Measure stitch and row gauge, compare your pattern tension, and calculate adjusted stitch counts.",
     href: "/knitting-gauge-calculator",
   },
+  {
+    title: "FMLA Calculator",
+    desc: "Estimate federal FMLA eligibility, leave entitlement, and remaining hours.",
+    href: "/fmla-calculator",
+  },
+  {
+    title: "SVG to STL Converter",
+    desc: "Extrude supported SVG vector shapes into millimeter-sized STL models in your browser.",
+    href: "/svg-to-stl",
+  },
 ];
 
 const UPCOMING = [
@@ -91,7 +101,7 @@ const TOOLS_SCHEMA = {
     "Directory of free online image utilities including converters, compressors, and resizers.",
   mainEntity: {
     "@type": "ItemList",
-    itemListElement: LIVE_TOOLS.map((tool, index) => ({
+    itemListElement: [...LIVE_TOOLS, ...SPECIALIZED_TOOLS].map((tool, index) => ({
       "@type": "ListItem",
       position: index + 1,
       name: tool.title,

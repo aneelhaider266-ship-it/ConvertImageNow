@@ -13,6 +13,8 @@ const COLUMNS = [
       { href: "/image-compressor", label: "Image Compressor" },
       { href: "/image-resizer", label: "Image Resizer" },
       { href: "/knitting-gauge-calculator", label: "Knitting Gauge Calculator" },
+      { href: "/fmla-calculator", label: "FMLA Calculator" },
+      { href: "/svg-to-stl", label: "SVG to STL Converter" },
     ],
   },
   {
