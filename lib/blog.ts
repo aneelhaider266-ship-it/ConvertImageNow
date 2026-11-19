@@ -211,6 +211,30 @@ export const BLOG_POSTS: BlogPost[] = [
       "JPG to WebP conversion can help modernize a website image library. Use sensible quality settings, compare the results, preserve your originals, and test the final images on the pages where they will appear.",
 
       "Try our [free JPG to WebP converter](/jpg-to-webp): no signup, no watermark, everything runs in your browser.",
+      "## Convert JPG to WebP step by step",
+      "1. Open the [JPG to WebP converter](/jpg-to-webp).",
+      "2. Select one or more JPG images from your device.",
+      "3. Choose WebP output and start with a quality setting that keeps important details clear.",
+      "4. Download the WebP files and compare them with the original JPGs at the intended display size.",
+      "5. Upload the files to your website and update the image references and responsive variants where required.",
+      "## Compare file size and visual quality fairly",
+      "Use the same source image and keep the output dimensions identical. Compare the resulting file sizes, then inspect fine detail, gradients, text, and edges. Quality slider values are not directly comparable between encoders, so do not assume WebP quality 80 is visually identical to JPG quality 80. Results vary with image content and browser implementation.",
+      "## Keep a fallback when compatibility matters",
+      "Current mainstream browsers support WebP, but older software, embedded webviews, and some downstream workflows may have different requirements. If your audience or CMS needs a fallback, use a delivery approach such as the HTML picture element with WebP first and a JPEG fallback. Test the actual page in the browsers that matter to your visitors.",
+      "## Update website references after conversion",
+      "Converting a file does not automatically update the image URL in your website, CSS, CMS, or product feed. Upload the new WebP asset, update the page reference, and verify that the server returns an image/webp content type. Keep the original JPG until the new image has been checked on desktop and mobile.",
+      "## Common JPG to WebP problems",
+      "- **The WebP file is larger:** The source may already be highly optimized, or the selected quality may be too high. Compare settings and inspect the image rather than assuming WebP must be smaller.",
+      "- **The image looks soft:** Raise the quality setting or use a different source. Fine text and sharp UI edges may need PNG or lossless WebP instead.",
+      "- **A website still shows the JPG:** Check cached HTML, CDN caches, CSS references, and the image URL actually requested by the browser.",
+      "- **An older app cannot open WebP:** Keep a JPG copy for workflows that do not support the format.",
+      "## Frequently asked questions",
+      "### Does converting JPG to WebP always reduce file size?",
+      "No. WebP can be smaller for many images, but the result depends on the source, encoder, dimensions, and quality settings. Compare the actual exported files.",
+      "### Will converting JPG to WebP improve Core Web Vitals?",
+      "It may reduce image transfer size, but page performance also depends on image dimensions, loading priority, caching, layout stability, server response, and other page resources. Measure the page after replacing images.",
+      "### Should I delete the original JPG after conversion?",
+      "Keep the original until the WebP file has been checked and all website references have been updated. Retaining a source copy also makes future exports easier."
     ],
   },
 
@@ -285,7 +309,7 @@ export const BLOG_POSTS: BlogPost[] = [
     slug: "how-to-convert-heic-to-jpg",
     title: "How to Convert HEIC to JPG on iPhone, Android, and Windows",
     excerpt:
-      "Learn how to convert HEIC photos to JPG for easier sharing, uploading, and compatibility across iPhone, Android, and Windows devices today.",
+      "Learn practical ways to export HEIC photos as JPG on iPhone and Windows, and understand compatibility when a website does not accept HEIC.",
     date: "2026-03-23",
     updatedDate: "2026-09-01",
     canonical:
@@ -359,6 +383,7 @@ export const BLOG_POSTS: BlogPost[] = [
     author: "ConvertImageNow",
     content: [
       "Images are a key part of modern web design, but they can also slow down pages if not optimized properly. Search engines use image alt text, file names, and technical factors to understand what images show.",
+      "![Image SEO checklist covering file names, alt text, dimensions, and efficient formats](/image-seo-checklist.svg)",
 
       "## Image Alt Text",
 
@@ -395,62 +420,33 @@ export const BLOG_POSTS: BlogPost[] = [
       "## Final Thoughts",
 
       "Image optimization is an often-overlooked part of SEO. Good alt text, descriptive file names, appropriate formats, and responsive delivery all contribute to a better user experience and better search visibility.",
-    ],
-  },
-  {
-    slug: "heic-to-jpg-guide",
-    title: "HEIC to JPG: Compatibility and Conversion Options",
-    excerpt:
-      "Learn when a JPG copy may be useful, how HEIC compatibility varies, and which device tools can export HEIC photos.",
-    date: "2026-05-03",
-    canonical: "https://convertimagenow.com/blog/heic-to-jpg-guide",
-    keywords: [
-      "HEIC to JPG",
-      "convert HEIC to JPG",
-      "HEIC format iPhone",
-      "HEIC JPG conversion",
-    ],
-    author: "ConvertImageNow",
-    content: [
-      "HEIC is an efficient image format that Apple uses on newer iPhones. But if you need to share iPhone photos with people using older phones, older cameras, or older computers, converting to JPG can make sharing easier.",
-
-      "## What Is HEIC?",
-
-      "HEIC (High Efficiency Image Container) is a modern image format that Apple chose as the default for iPhone cameras. It can store photos with high quality in a smaller file size than JPG.",
-
-      "## When Should You Convert HEIC to JPG?",
-
-      "Convert HEIC to JPG when you need to share photos with people using older devices, when you need compatibility with older software, or when a website or service doesn't accept HEIC files.",
-
-      "## Online HEIC to JPG Conversion",
-
-      "ConvertImageNow does not currently accept HEIC input. Use an application or service that explicitly supports HEIC decoding, or use the export options available on your device.",
-
-      "## Quality After Conversion",
-
-      "Both HEIC and JPG can store high-quality photos. The final quality depends on the compression settings used during the original capture and during conversion.",
-
-      "## Keep Your Original HEIC File",
-
-      "Always keep the original HEIC file as a backup. The JPG version can be used for sharing and compatibility while the original preserves your source file.",
-
-      "## File Size Comparison",
-
-      "HEIC files can be smaller than JPG versions of the same photo, but the result depends on image content, encoder settings, and quality. A JPG export may be larger or smaller, so compare the actual files when size matters.",
-
-      "## HEIC vs JPG: Quality and Compression",
-
-      "HEIC and JPG use different compression methods, and neither format guarantees a fixed file-size advantage for every image. The result depends on the encoder, image content, and quality settings. HEIC support varies across devices and software, while JPG remains widely compatible with browsers, apps, and operating systems.",
-
-      "## Common Tools for Converting HEIC Files",
-
-      "Besides browser-based converters, you have a few other options depending on your device. On iPhone, changing Settings > Camera > Formats to 'Most Compatible' will save new photos as JPG automatically going forward, though it won't convert photos you already have. On a Mac, Preview can open and export HEIC files. On Windows, you may need to install the HEIF extension from the Microsoft Store before File Explorer can even preview HEIC thumbnails.",
-
-      "For one-off conversions, choose an application or service that explicitly supports HEIC input and check that it works on your device.",
-
-      "## Final Thoughts",
-
-      "HEIC is an efficient format, but JPG is more widely compatible. Converting when necessary provides a practical solution for sharing iPhone photos across different devices and platforms.",
+      "## Write alt text for people first",
+      "Describe the useful information in the image in the context of the page. For example, a chart comparing JPG and WebP file sizes should say what the chart compares, not repeat a list of target keywords. If an image is purely decorative and adds no information, use an empty alt attribute so screen readers can skip it. Avoid stuffing multiple search phrases into one description.",
+      "## Use descriptive image file names",
+      "Name files before uploading them. A filename such as blue-running-shoe-side-view.webp gives more context than IMG_0042.webp when it accurately describes the image. Keep names concise, use hyphens between words, and do not rename an unrelated image just to include a keyword.",
+      "## Choose dimensions and responsive delivery",
+      "Export an image close to the largest size at which it will appear. A 4000-pixel-wide source is often unnecessary for a small card thumbnail. Use responsive image markup such as srcset and sizes when a page serves different image widths to different screens. Include width and height attributes or an aspect ratio so the browser can reserve space and reduce layout shifts.",
+      "## Compress without damaging the content",
+      "Use JPG or WebP for many photographs, PNG or lossless WebP for screenshots and sharp graphics, and SVG for suitable vector artwork. Compare the exported file size and visual result because compression savings vary by image and encoder. Our [image compressor](/image-compressor) and [image resizer](/image-resizer) can help prepare supported files before publishing.",
+      "## Load images at the right time",
+      "Lazy-load images that start below the initial viewport so the browser can defer work until they are near the screen. Do not automatically lazy-load the main hero or other image likely to be the page's largest content element; delaying that image can make the page appear slower. Set sensible dimensions and use modern formats where they fit the audience and workflow.",
+      "## Give important images useful page context",
+      "Place an image near the paragraph that explains it. Add a caption when readers need to understand a chart, diagram, or source. Make sure important images are reachable through normal HTML links and page content; do not rely on a CSS background image for information that readers need.",
+      "## Image SEO publishing checklist",
+      "- The file name describes the actual image.",
+      "- Alt text explains meaningful image content without keyword stuffing.",
+      "- Decorative images have empty alt text.",
+      "- Pixel dimensions fit the displayed size and responsive layout.",
+      "- The chosen format balances quality, transparency, and compatibility.",
+      "- Below-the-fold images can load lazily; the main hero image is not unnecessarily delayed.",
+      "- The image is relevant to the surrounding page and has a useful caption when needed.",
+      "## Frequently asked questions",
+      "### Does alt text directly improve rankings?",
+      "Alt text helps search engines understand image content and makes images accessible to people using screen readers. Write it primarily to describe the image accurately; it is not a place to repeat keywords.",
+      "### Should every image be lazy-loaded?",
+      "No. Lazy loading is useful for images below the initial viewport. The main hero image or another image needed immediately should generally load promptly.",
+      "### Which image format is best for SEO?",
+      "There is no single best format for every image. Choose a format that provides suitable quality, file size, transparency, and compatibility, then make sure the page delivers it at appropriate dimensions."
     ],
   },
 {
@@ -518,8 +514,8 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "best-image-formats-explained",
-    title: "Best Image Format for Web: JPG, PNG, WebP & AVIF",
-    excerpt: "Choose the best image format for web pages by image type, transparency, quality, and browser support. Practical recommendations for photos, logos, screenshots, and graphics.",
+    title: "Best Image Format for Websites: Choose by Image Type",
+    excerpt: "Choose an image format for photos, screenshots, logos, and transparent graphics. Practical website recommendations based on image type and compatibility.",
     date: "2026-01-12",
     updatedDate: "2026-11-17",
     canonical: "https://convertimagenow.com/blog/best-image-formats-explained",
@@ -531,6 +527,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "best format for website images"
     ],
     author: "ConvertImageNow Team",
+    image: "/best-image-format-guide.svg",
     content: [
       "There is no single best image format for every website image. The right choice depends on what the image shows, whether it needs transparency, how much detail must be preserved, and where the file will be used. Use this guide to choose a format by image type; for a technical side-by-side breakdown, see our [JPG, PNG, WebP, and AVIF comparison](/blog/best-image-formats-compared).",
       "## Quick answer: choose by image type",
@@ -577,8 +574,8 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     slug: "best-image-formats-compared",
-    title: "JPG vs PNG vs WebP vs AVIF: Image Format Comparison",
-    excerpt: "Compare JPG, PNG, WebP, and AVIF by compression, transparency, animation, browser support, and typical use before choosing an image format.",
+    title: "JPG vs PNG vs WebP vs AVIF: Technical Comparison",
+    excerpt: "Compare JPG, PNG, WebP, and AVIF by compression, transparency, animation, browser support, and technical trade-offs using the same source image.",
     date: "2026-02-28",
     updatedDate: "2026-11-17",
     canonical: "https://convertimagenow.com/blog/best-image-formats-compared",
@@ -590,6 +587,7 @@ export const BLOG_POSTS: BlogPost[] = [
       "PNG vs JPG"
     ],
     author: "ConvertImageNow Team",
+    image: "/image-format-technical-comparison.svg",
     content: [
       "JPG, PNG, WebP, and AVIF solve different image-delivery problems. This comparison focuses on the technical trade-offs: compression, transparency, animation, and compatibility. If you want a recommendation based on whether the image is a photo, screenshot, logo, or graphic, start with our [best image format for web guide](/blog/best-image-formats-explained).",
       "## Image format comparison at a glance",
@@ -644,8 +642,10 @@ export const BLOG_POSTS: BlogPost[] = [
       "batch image processing",
     ],
     author: "ConvertImageNow",
+    image: "/batch-image-conversion-steps.svg",
     content: [
       "If you have many images to convert, batch conversion can save significant time compared to converting images one at a time.",
+      "![Four-step workflow for selecting, converting, and downloading multiple images](/batch-image-conversion-steps.svg)",
 
       "## What Is Batch Conversion?",
 
@@ -674,6 +674,28 @@ export const BLOG_POSTS: BlogPost[] = [
       "## Final Thoughts",
 
       "Batch conversion is one of the fastest ways to optimize large image libraries for the web. Use it to convert formats, reduce file sizes, and prepare images for publishing.",
+      "## Prepare your files before converting",
+      "Put the images for one task in a folder and keep a copy of the originals. Check that the selected files are the correct versions, especially when filenames contain dates or numbered revisions. Batch conversion changes the output format; it does not replace the need to review each result.",
+      "## Choose one output format for the batch",
+      "For photographs, JPG is a broadly compatible option and WebP may produce a smaller web-ready file. For logos, screenshots, and graphics that need transparency or crisp edges, PNG may be more suitable. Choose the format based on the files' purpose rather than selecting the smallest extension for every image.",
+      "## Batch convert with ConvertImageNow",
+      "1. Open the [online image converter](/converter).",
+      "2. Select several JPG, PNG, WebP, or browser-decodable AVIF files from your device.",
+      "3. Choose JPG, PNG, or WebP as the output format. Adjust quality for JPG or WebP when needed.",
+      "4. Start conversion and review the status of each file.",
+      "5. Download individual results or use the ZIP option for completed files.",
+      "Selected image data is processed in your browser rather than sent to a conversion server. The tool processes files sequentially, and the practical batch size depends on the memory available to your browser and device.",
+      "## Why might a file fail during batch conversion?",
+      "A file may be damaged, use an unsupported encoding, or be too large for the available browser memory. AVIF decoding also depends on browser support. Try opening the file in a current browser, converting it separately, or reducing the number of files in the queue. Keep the original unchanged until you have checked the exported copy.",
+      "## Does batch conversion change image quality?",
+      "Changing formats can change image data. JPG and lossy WebP use lossy compression, while PNG output is lossless. The selected quality setting affects JPG and WebP output; it does not restore detail already lost in the source image. Inspect important images at their intended display size before publishing.",
+      "## Frequently asked questions",
+      "### Can I convert 100 images at once?",
+      "The site does not promise a fixed maximum batch count. Browser memory, file dimensions, file formats, and device performance affect how many files can be processed comfortably. If the browser slows down, split the folder into smaller batches.",
+      "### Can I download all converted images together?",
+      "Yes. After files finish converting, use the ZIP download option for the completed results. Check the archive before deleting your original files.",
+      "### Are my files uploaded during batch conversion?",
+      "The conversion workflow processes selected image data locally in your browser. General site requests and any analytics or cookies are described in the Privacy Policy."
     ],
   },
   {
@@ -725,6 +747,28 @@ export const BLOG_POSTS: BlogPost[] = [
       "## Final Thoughts",
 
       "Preserving quality during conversion is about choosing the right format, using appropriate settings, and starting with good source material. The right approach can reduce file size while keeping the result suitable for its intended use, but any lossy conversion can change image data.",
+      "## Understand what conversion can and cannot preserve",
+      "Lossless conversion can preserve decoded pixel values when the destination format and workflow support it. A conversion to a lossy format such as JPG or lossy WebP re-encodes image data and can introduce changes. No converter can recreate details that were already discarded in an earlier lossy export.",
+      "## A practical workflow for better results",
+      "1. Start with the highest-quality original available, not a copy that has already been compressed several times.",
+      "2. Keep the original pixel dimensions unless the image is larger than the actual display requirement.",
+      "3. Choose PNG for graphics that need exact edges or transparency; choose JPG or WebP for photographs when a smaller file is more important than preserving every pixel.",
+      "4. When using JPG or lossy WebP, begin with a high quality setting and lower it gradually while checking the result.",
+      "5. Compare the output with the source at the size people will actually view it. Inspect fine text, hair, gradients, edges, and transparent areas.",
+      "Use the [online image converter](/converter) to export supported formats, or the [image compressor](/image-compressor) when your main goal is reducing file size.",
+      "## Avoid repeated lossy exports",
+      "Every new lossy JPEG export can discard additional information. Keep a master copy and make each new export from that original rather than repeatedly opening and saving the previous compressed version. The same principle applies when testing different lossy quality settings: return to the source for each comparison.",
+      "## Resizing without unnecessary quality loss",
+      "Downscaling removes pixels, so choose dimensions that match the final placement. Enlarging a small image does not add real detail and can make edges look soft. Preserve the aspect ratio to avoid stretching, and use the [image resizer](/image-resizer) to set the intended width and height.",
+      "## Check transparency and color",
+      "JPG does not support transparent pixels. If the source contains transparency, choose PNG or a format that supports alpha rather than exporting to JPG without checking the background. Also compare the result in the application or browser where it will be used, because color profiles and rendering can affect appearance.",
+      "## Frequently asked questions",
+      "### Can I convert JPG to PNG without losing quality?",
+      "PNG output avoids adding another lossy compression step, but it cannot restore image details that were already lost when the source JPG was created. The PNG file may also be much larger.",
+      "### Is 100% quality always the best setting?",
+      "A higher quality setting usually retains more detail but can create a larger file. The best setting depends on the image, encoder, and intended display size. Compare actual exports instead of assuming one number is ideal for every image.",
+      "### Which format preserves image quality best?",
+      "PNG is a common choice for lossless raster graphics. For photographs, a high-quality JPG or WebP may be a more practical size-quality balance. Choose based on the content and whether exact pixel preservation is required."
     ],
   },
   {

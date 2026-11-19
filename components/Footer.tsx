@@ -12,10 +12,15 @@ const COLUMNS = [
       { href: "/avif-to-jpg", label: "AVIF to JPG" },
       { href: "/image-compressor", label: "Image Compressor" },
       { href: "/image-resizer", label: "Image Resizer" },
-      { href: "/knitting-gauge-calculator", label: "Knitting Gauge Calculator" },
-      { href: "/fmla-calculator", label: "FMLA Calculator" },
+    ],
+  },
+  {
+    title: "Specialized Tools",
+    links: [
       { href: "/svg-to-stl", label: "SVG to STL Converter" },
       { href: "/stl-to-svg", label: "STL to SVG Converter" },
+      { href: "/knitting-gauge-calculator", label: "Knitting Gauge Calculator" },
+      { href: "/fmla-calculator", label: "FMLA Calculator" },
     ],
   },
   {
@@ -58,7 +63,7 @@ export default function Footer() {
   return (
     <footer className="border-t border-[#263956] bg-[#101B33] text-slate-100">
       <div className="container-page mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 gap-8 md:grid-cols-5">
+        <div className="grid grid-cols-2 gap-8 md:grid-cols-6">
           {/* Brand Col */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center gap-2 font-semibold">

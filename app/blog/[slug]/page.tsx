@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { notFound } from 'next/navigation';
+import Link from 'next/link';
 import { BLOG_POSTS } from '@/lib/blog';
 import BlogContent from '@/components/BlogContent';
 
@@ -105,15 +106,28 @@ export default async function BlogPostPage({ params }: PageProps) {
     },
   };
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://convertimagenow.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Guides', item: 'https://convertimagenow.com/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: canonicalUrl },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-[#101B33] text-slate-100">
-      {/* Article Schema JSON-LD */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      {/* Article and breadcrumb structured data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <article className="mx-auto max-w-3xl px-4 py-12 sm:px-6 sm:py-16">
+        <nav aria-label="Breadcrumb" className="mb-6 text-sm text-slate-400">
+          <Link href="/" className="hover:text-white">Home</Link><span className="mx-2">/</span>
+          <Link href="/blog" className="hover:text-white">Guides</Link><span className="mx-2">/</span>
+          <span className="text-slate-200" aria-current="page">{post.title}</span>
+        </nav>
         <header className="mb-10 border-b border-[#314969] pb-8">
           <h1 className="mb-4 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">
             {post.title}

@@ -7,7 +7,7 @@ const PAGE_URL = SITE_URL + "/stl-to-svg";
 
 export const metadata: Metadata = {
   title: "STL to SVG Converter – Free Online 3D to 2D Section Tool",
-  description: "Slice an STL 3D mesh at a selected position and export 2D section contours as an SVG. Choose top, front or side planes and process files locally in your browser.",
+  description: "Slice an STL mesh into 2D SVG section contours. Choose top, front or side planes, set the position, and process your model locally.",
   alternates: { canonical: PAGE_URL },
   openGraph: {
     title: "STL to SVG Converter – Free Online 3D to 2D Section Tool",
@@ -59,6 +59,15 @@ const SOFTWARE_SCHEMA = {
 };
 
 export default function STLToSVGPage() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+      { "@type": "ListItem", position: 2, name: "Tools", item: SITE_URL + "/tools" },
+      { "@type": "ListItem", position: 3, name: "STL to SVG Converter", item: PAGE_URL },
+    ],
+  };
   const faqSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -72,6 +81,7 @@ export default function STLToSVGPage() {
   return (
     <div className="container-page py-10 sm:py-14">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SOFTWARE_SCHEMA) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <div className="mx-auto max-w-5xl">
         <nav aria-label="Breadcrumb" className="mb-5 text-sm text-slate-400">

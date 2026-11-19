@@ -10,6 +10,12 @@ const nextConfig = {
         destination: 'https://convertimagenow.com/:path*',
         permanent: true,
       },
+      // Consolidate overlapping HEIC guidance into the more complete device-specific guide.
+      {
+        source: '/blog/heic-to-jpg-guide',
+        destination: '/blog/how-to-convert-heic-to-jpg',
+        permanent: true,
+      },
       // Consolidate legacy blog URLs with their current relevant destinations.
       {
         source: '/blog/convert-avif-to-jpg',

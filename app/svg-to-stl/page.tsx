@@ -6,14 +6,39 @@ const PAGE_URL = `${SITE_URL}/svg-to-stl`;
 
 export const metadata: Metadata = {
   title: "SVG to STL Converter – Free Online SVG to 3D STL",
-  description: "Convert SVG vector shapes to 3D STL models online. Set model width in millimeters, choose extrusion height and base offset, then export a binary STL locally in your browser.",
+  description: "Extrude supported SVG shapes into 3D STL models. Set width in millimeters and extrusion height, then export locally in your browser.",
   alternates: { canonical: PAGE_URL },
   openGraph: { title: "SVG to STL Converter – Free Online SVG to 3D STL", description: "Extrude supported SVG shapes into printable STL models with millimeter sizing. Browser-based conversion.", url: PAGE_URL, siteName: "ConvertImageNow", type: "website" },
   twitter: { card: "summary", title: "SVG to STL Converter", description: "Turn supported SVG vector shapes into 3D STL models in your browser." },
 };
 
+const SOFTWARE_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "SVG to STL Converter",
+  applicationCategory: "DesignApplication",
+  operatingSystem: "Any modern web browser",
+  url: PAGE_URL,
+  description: "Browser-based tool that extrudes supported closed SVG shapes into binary STL models.",
+  offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  featureList: ["SVG polygon and basic shape input", "Millimeter sizing", "Extrusion height control", "Binary STL export", "Local browser processing"],
+};
+
+const BREADCRUMB_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL + "/" },
+    { "@type": "ListItem", position: 2, name: "Tools", item: SITE_URL + "/tools" },
+    { "@type": "ListItem", position: 3, name: "SVG to STL Converter", item: PAGE_URL },
+  ],
+};
+
 export default function SVGToSTLPage() {
-  return <div className="container-page py-10 sm:py-14"><div className="mx-auto max-w-5xl">
+  return <div className="container-page py-10 sm:py-14">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SOFTWARE_SCHEMA) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
+    <div className="mx-auto max-w-5xl">
     <nav aria-label="Breadcrumb" className="mb-5 text-sm text-slate-400"><a href="/" className="hover:text-white">Home</a><span className="mx-2">/</span><a href="/tools" className="hover:text-white">Tools</a><span className="mx-2">/</span><span className="text-slate-200">SVG to STL Converter</span></nav>
     <header className="mb-8"><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-300">Free online vector converter</p><h1 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">SVG to STL Converter</h1><p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-300">Convert supported 2D SVG shapes into extruded 3D STL models for 3D printing. Set a precise width in millimeters, choose the extrusion height, and export a binary STL file without uploading your design.</p><div className="mt-4 flex flex-wrap gap-2 text-xs text-slate-300"><span className="rounded-full border border-[#405777] px-3 py-1">Millimeter sizing</span><span className="rounded-full border border-[#405777] px-3 py-1">Extrusion depth</span><span className="rounded-full border border-[#405777] px-3 py-1">Local processing</span></div></header>
     <SVGToSTLConverter />

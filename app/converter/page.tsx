@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ToolBreadcrumbs from "@/components/ToolBreadcrumbs";
 import Link from "next/link";
 import ImageConverter from "@/components/ImageConverter";
 import { ShieldCheck, Gauge, Layers } from "lucide-react";
@@ -99,6 +100,7 @@ const FAQ_SCHEMA = {
 export default function ConverterPage() {
   return (
     <main className="container-page py-14 sm:py-20">
+      <ToolBreadcrumbs label="Free Online Image Converter" href="/converter" />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -129,6 +131,31 @@ export default function ConverterPage() {
         aria-label="Image conversion tool"
       >
         <ImageConverter />
+      </section>
+
+      <section className="mx-auto mt-12 max-w-4xl text-left">
+        <h2 className="text-2xl font-bold">Supported Input and Output Formats</h2>
+        <div className="mt-5 overflow-x-auto rounded-xl border border-slate-200 dark:border-[#314969]">
+          <table className="w-full min-w-[520px] border-collapse text-left text-sm">
+            <thead className="bg-slate-100 dark:bg-[#172642]">
+              <tr>
+                <th className="px-4 py-3 font-semibold">Format</th>
+                <th className="px-4 py-3 font-semibold">Input</th>
+                <th className="px-4 py-3 font-semibold">Output</th>
+                <th className="px-4 py-3 font-semibold">Quality control</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-slate-200 dark:divide-[#314969]">
+              <tr><td className="px-4 py-3 font-medium">JPG / JPEG</td><td className="px-4 py-3">Yes</td><td className="px-4 py-3">Yes</td><td className="px-4 py-3">Adjustable</td></tr>
+              <tr><td className="px-4 py-3 font-medium">PNG</td><td className="px-4 py-3">Yes</td><td className="px-4 py-3">Yes</td><td className="px-4 py-3">Lossless; slider disabled</td></tr>
+              <tr><td className="px-4 py-3 font-medium">WebP</td><td className="px-4 py-3">Yes</td><td className="px-4 py-3">Yes</td><td className="px-4 py-3">Adjustable</td></tr>
+              <tr><td className="px-4 py-3 font-medium">AVIF</td><td className="px-4 py-3">Where browser decoding is supported</td><td className="px-4 py-3">No</td><td className="px-4 py-3">Convert to JPG, PNG or WebP</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4 text-sm leading-6 text-slate-600 dark:text-slate-300">
+          AVIF input depends on your browser’s ability to decode the file. JPG and WebP use the quality control; PNG uses lossless output. Large images and large batches require more device memory, so reduce the batch size if your browser slows down or runs out of memory.
+        </p>
       </section>
 
       <section className="mx-auto mt-16 max-w-4xl">
