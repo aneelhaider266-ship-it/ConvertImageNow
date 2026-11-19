@@ -86,7 +86,7 @@ export default function FMLACalculator() {
           <p className="text-xs text-slate-400">{result.periodLabel}</p>
           <p className="text-xs text-slate-400">{result.counted.length} dated leave entr{result.counted.length===1?"y":"ies"} counted · {result.usedHours.toLocaleString("en-US")} hours used in this period.</p>
           {reason === "military" && <p className="text-xs text-slate-300">{result.otherReasonHours.toLocaleString("en-US")} hours of other FMLA leave counted toward the combined 26-week limit. Other qualifying reasons remain capped at 12 weeks in this period.</p>}
-          {reason === "military" && result.weeklyValid && result.otherReasonHours > 12 * weekly && <p className="text-xs font-semibold text-amber-200">Warning: entered leave for other FMLA reasons exceeds the 12-week limit for those reasons during this military caregiver period. Verify the entries and employer records.</p>}
+          {reason === "military" && result.weeklyValid && result.otherReasonHours > 12 * Number(weeklyHours) && <p className="text-xs font-semibold text-amber-200">Warning: entered leave for other FMLA reasons exceeds the 12-week limit for those reasons during this military caregiver period. Verify the entries and employer records.</p>}
         </div>
       </div>
       <div className="border-t border-[#314969] p-5 sm:p-7"><div className="flex flex-wrap items-center justify-between gap-3"><h3 className="font-bold text-white">Leave already used</h3><button type="button" onClick={addEntry} className="inline-flex items-center gap-2 rounded-lg bg-blue-500 px-3 py-2 text-sm font-bold text-white hover:bg-blue-400"><Plus size={16}/> Add leave entry</button></div>
