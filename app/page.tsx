@@ -18,14 +18,14 @@ import ImageConverter from "@/components/ImageConverter";
 const SITE_URL = "https://convertimagenow.com";
 
 export const metadata: Metadata = {
-  title: "Free Online Image Converter – Convert JPG, PNG & WebP",
+  title: "Free Online Image Tools | ConvertImageNow",
   description:
-    "Convert JPG, PNG, WebP, and supported AVIF images in your browser. Batch convert files with no conversion-server upload.",
+    "Convert images, compress files, and resize photos with free browser-based tools. Batch processing, quality controls, and no conversion-server upload.",
   alternates: {
     canonical: `${SITE_URL}/`,
   },
   openGraph: {
-    title: "Free Online Image Converter – Browser-Based Conversion",
+    title: "Free Online Image Tools | ConvertImageNow",
     description:
       "Convert supported image formats in your browser. Batch processing, adjustable output quality, and ZIP downloads.",
     url: `${SITE_URL}/`,
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Free Online Image Converter | ConvertImageNow",
+    title: "Free Online Image Tools | ConvertImageNow",
     description:
       "Convert supported image formats in your browser with batch processing and adjustable output quality.",
   },
@@ -286,7 +286,7 @@ export default function HomePage() {
         url: `${SITE_URL}/`,
         name: "ConvertImageNow",
         description:
-          "Free online image converter for browser-based batch conversion of supported JPG, PNG, WebP, and AVIF images.",
+          "Free online browser-based tools for image conversion, compression, and resizing.",
         inLanguage: "en-US",
       },
       {
@@ -397,7 +397,7 @@ export default function HomePage() {
             </div>
 
             <h1 className="mt-5 text-[2rem] font-extrabold leading-[1.12] tracking-tight text-white sm:text-5xl sm:leading-tight lg:text-6xl">
-              Free Online Image Converter
+              Free Online Image Tools
             </h1>
 
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
