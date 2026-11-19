@@ -186,8 +186,6 @@ function sectionModel(triangles: Triangle[], bounds: Bounds, axis: Axis, percent
     if (contour.closed) commands.push("Z");
     return { d: commands.join(" "), closed: contour.closed };
   });
-  const svgWidth = rawWidth * factor;
-  const svgHeight = rawHeight * factor;
   return {
     paths,
     viewBox: "0 0 " + fmt(width) + " " + fmt(height),
