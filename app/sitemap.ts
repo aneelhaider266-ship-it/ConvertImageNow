@@ -27,6 +27,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/knitting-gauge-calculator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/fmla-calculator`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
     { url: `${baseUrl}/svg-to-stl`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
+    { url: `${baseUrl}/stl-to-svg`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.85 },
   ];
 
   // 3. Blog Articles — use each post's real publication/update date.
