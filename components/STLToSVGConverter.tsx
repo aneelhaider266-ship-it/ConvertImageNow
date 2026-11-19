@@ -37,7 +37,7 @@ function parseSTL(buffer: ArrayBuffer): Triangle[] {
   if (buffer.byteLength >= 84) {
     const count = view.getUint32(80, true);
     const expected = 84 + count * 50;
-    if (count > 0 && count <= MAX_TRIANGLES && expected <= buffer.byteLength) {
+    if (count > 0 && count <= MAX_TRIANGLES && expected === buffer.byteLength) {
       const triangles: Triangle[] = [];
       let offset = 84;
       for (let i = 0; i < count; i++) {
@@ -165,12 +165,13 @@ function sectionModel(triangles: Triangle[], bounds: Bounds, axis: Axis, percent
   }
 
   const allPoints = contours.flatMap((c) => c.points);
-  const minX = Math.min(...allPoints.map((p) => p[0]));
-  const maxX = Math.max(...allPoints.map((p) => p[0]));
-  const minY = Math.min(...allPoints.map((p) => p[1]));
-  const maxY = Math.max(...allPoints.map((p) => p[1]));
+  let minX = Infinity, maxX = -Infinity, minY = Infinity, maxY = -Infinity;
+  for (const p of allPoints) {
+    minX = Math.min(minX, p[0]); maxX = Math.max(maxX, p[0]);
+    minY = Math.min(minY, p[1]); maxY = Math.max(maxY, p[1]);
+  }
   const rawWidth = maxX - minX, rawHeight = maxY - minY;
-  if (!(rawWidth > epsilon || rawHeight > epsilon)) throw new Error("The selected section has no usable 2D area.");
+  if (!(rawWidth > epsilon && rawHeight > epsilon)) throw new Error("The selected section has no usable 2D area. Move the plane or choose another direction.");
   const factor = unit === "in" ? 25.4 : 1;
   const fmt = (n: number) => Number(n.toFixed(4)).toString();
   const padding = Math.max(rawWidth, rawHeight) * 0.025;
@@ -190,8 +191,8 @@ function sectionModel(triangles: Triangle[], bounds: Bounds, axis: Axis, percent
   return {
     paths,
     viewBox: "0 0 " + fmt(width) + " " + fmt(height),
-    widthMm: svgWidth,
-    heightMm: svgHeight,
+    widthMm: width * factor,
+    heightMm: height * factor,
     segmentCount: segments.length,
     closedCount: contours.filter((c) => c.closed).length,
     openCount: contours.filter((c) => !c.closed).length,
