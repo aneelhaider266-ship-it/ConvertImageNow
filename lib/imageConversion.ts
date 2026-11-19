@@ -1,5 +1,17 @@
 export type OutputFormat = "jpg" | "png" | "webp";
 
+// Avoid browser tab crashes from exceptionally large decoded images/canvas allocations.
+export const MAX_IMAGE_PIXELS = 40_000_000;
+
+export function assertImageDimensions(width: number, height: number): void {
+  if (!Number.isFinite(width) || !Number.isFinite(height) || width < 1 || height < 1) {
+    throw new Error("This image has invalid dimensions.");
+  }
+  if (width * height > MAX_IMAGE_PIXELS) {
+    throw new Error("This image is too large to process safely in your browser. Please use an image under 40 megapixels.");
+  }
+}
+
 export const FORMAT_MIME: Record<OutputFormat, string> = {
   jpg: "image/jpeg",
   png: "image/png",
@@ -44,6 +56,14 @@ export function convertImage(
 
     img.onload = () => {
       const canvas = document.createElement("canvas");
+      try {
+        assertImageDimensions(img.naturalWidth, img.naturalHeight);
+      } catch (error) {
+        URL.revokeObjectURL(objectUrl);
+        reject(error);
+        return;
+      }
+
       canvas.width = img.naturalWidth;
       canvas.height = img.naturalHeight;
 
