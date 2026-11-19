@@ -38,9 +38,10 @@ export default function CookiePolicyPage() {
               functions, security, or service delivery where required.
             </li>
             <li>
-              <strong>Analytics technologies</strong> — may help us understand
-              page usage, browser types, and general site performance when an
-              analytics service is enabled.
+              <strong>Analytics technologies</strong> — Google Analytics 4 is
+              used to measure page views, general browser/device information,
+              and engagement. It may use cookies or similar technologies for
+              analytics and reporting.
             </li>
             <li>
               <strong>Advertising technologies</strong> — if advertising

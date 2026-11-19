@@ -34,9 +34,10 @@ export default function PrivacyPolicyPage() {
             Information we may collect
           </h2>
           <p className="mt-2">
-            Like most websites, we may collect basic analytics information
-            (such as pages visited and general device/browser type) to
-            understand how the site is used and to improve it. If you
+            We use Google Analytics 4 to measure page visits, general device
+            and browser information, and engagement so we can understand how
+            the site is used and improve it. Google Analytics may use cookies
+            or similar technologies to distinguish visits and measure usage. If you
             contact us through our Contact page, we collect the name, email
             address, and message you choose to provide, solely to respond to
             your inquiry.
