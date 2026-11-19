@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import ToolBreadcrumbs from "@/components/ToolBreadcrumbs";
 import KnittingGaugeCalculator from "@/components/KnittingGaugeCalculator";
 
 const SITE_URL = "https://convertimagenow.com";
@@ -95,6 +96,7 @@ export default function KnittingGaugeCalculatorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+      <ToolBreadcrumbs label="Knitting Gauge Calculator" href="/knitting-gauge-calculator" showNav={false} />
       <section className="border-b border-[#263956] bg-gradient-to-b from-[#172642] to-[#101B33] py-10 sm:py-14">
         <div className="container-page">
           <nav aria-label="Breadcrumb" className="text-xs text-slate-400">
