@@ -238,7 +238,7 @@ const HOMEPAGE_FAQS = [
     a: "The converter is free to use and does not require an account. The practical number and size of images you can process in a batch depend on your device and browser memory.",
   },
   {
-    q: "Are my uploaded photos kept private and secure?",
+    q: "Are my photos uploaded to a conversion server?",
     a: "The supported conversion workflow processes image data in your browser rather than uploading it to a conversion server. Normal website requests, such as loading the page, may still contact the site.",
   },
   {
@@ -401,7 +401,7 @@ export default function HomePage() {
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-300">
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 text-brand-primary" />
-                No server-side image uploads
+                JPG, PNG, WebP & AVIF input
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="h-3.5 w-3.5 text-brand-primary" />
