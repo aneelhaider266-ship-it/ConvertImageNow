@@ -289,11 +289,15 @@ export default function ImageResizer() {
 
     setQueue((prev) =>
       prev.map((item) =>
-        item.status === "done" ? item : { ...item, status: "pending" }
+        item.originalWidth > 0 && item.originalHeight > 0
+          ? { ...item, status: "pending" }
+          : item
       )
     );
 
-    const items = [...queue];
+    const items = queue.filter(
+      (item) => item.originalWidth > 0 && item.originalHeight > 0
+    );
 
     for (const item of items) {
       setQueue((prev) =>
@@ -383,6 +387,12 @@ export default function ImageResizer() {
 
   const doneCount = queue.filter((item) => item.status === "done").length;
   const hasQueue = queue.length > 0;
+  const isLoadingDimensions = queue.some(
+    (item) => item.originalWidth === 0 && item.status !== "error"
+  );
+  const resizableCount = queue.filter(
+    (item) => item.originalWidth > 0 && item.originalHeight > 0
+  ).length;
 
   return (
     <div className="w-full">
@@ -560,15 +570,17 @@ export default function ImageResizer() {
           <button
             type="button"
             onClick={resizeAll}
-            disabled={isResizing}
+            disabled={isResizing || isLoadingDimensions || resizableCount === 0}
             className="inline-flex min-h-10 items-center gap-2 rounded-full bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white disabled:opacity-60"
           >
-            {isResizing && (
+            {(isResizing || isLoadingDimensions) && (
               <Loader2 size={16} className="animate-spin" aria-hidden="true" />
             )}
             {isResizing
               ? "Resizing..."
-              : `Resize ${queue.length} image${queue.length > 1 ? "s" : ""}`}
+              : isLoadingDimensions
+                ? "Reading image dimensions..."
+                : `Resize ${resizableCount} image${resizableCount > 1 ? "s" : ""}`}
           </button>
 
           <button
