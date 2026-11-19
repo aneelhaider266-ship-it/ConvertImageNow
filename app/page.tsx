@@ -13,7 +13,6 @@ import {
   SlidersHorizontal,
   CheckCircle2,
 } from "lucide-react";
-import ImageConverter from "@/components/ImageConverter";
 
 const SITE_URL = "https://convertimagenow.com";
 
@@ -27,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Free Online Image Tools | ConvertImageNow",
     description:
-      "Convert supported image formats in your browser. Batch processing, adjustable output quality, and ZIP downloads.",
+      "Explore free browser-based image converters, compression, and resizing tools. Select the right utility for your task.",
     url: `${SITE_URL}/`,
     siteName: "ConvertImageNow",
     locale: "en_US",
@@ -37,7 +36,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Free Online Image Tools | ConvertImageNow",
     description:
-      "Convert supported image formats in your browser with batch processing and adjustable output quality.",
+      "Explore free image converters, compression, and resizing tools that process supported files in your browser.",
   },
   robots: {
     index: true,
@@ -401,7 +400,7 @@ export default function HomePage() {
             </h1>
 
             <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-slate-600 dark:text-slate-300 sm:text-lg">
-              Convert JPG, PNG, WebP, and supported AVIF files in your browser. Batch process images, choose an output format, and download converted files without uploading them to a conversion server.
+              Convert, compress, and resize supported images with free browser-based tools. Choose a dedicated converter or image utility below; selected image files are processed locally.
             </p>
 
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-xs font-medium text-slate-500 dark:text-slate-300">
@@ -432,8 +431,14 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="mx-auto mt-7 max-w-4xl rounded-2xl border border-[#314969] bg-[#172642]/95 p-2 shadow-2xl shadow-black/30 backdrop-blur-xl sm:mt-10 sm:p-4">
-            <ImageConverter />
+          <div className="mx-auto mt-7 max-w-4xl rounded-2xl border border-[#314969] bg-[#172642]/95 p-6 text-center shadow-2xl shadow-black/30 backdrop-blur-xl sm:mt-10 sm:p-9">
+            <h2 className="text-xl font-bold text-white sm:text-2xl">Need to convert an image?</h2>
+            <p className="mx-auto mt-2 max-w-xl text-sm leading-relaxed text-slate-300">
+              Open the dedicated converter to change supported JPG, PNG, WebP, and AVIF images, adjust output quality, and download files individually or as a ZIP.
+            </p>
+            <Link href="/converter" className="mt-5 inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full bg-brand-primary px-6 py-3 text-sm font-bold text-white transition-opacity hover:opacity-90">
+              Open Free Image Converter <ArrowRight className="h-4 w-4" />
+            </Link>
           </div>
         </div>
       </section>
