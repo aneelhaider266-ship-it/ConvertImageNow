@@ -34,7 +34,9 @@ const BREADCRUMB_SCHEMA = {
 };
 
 export default function FMLACalculatorPage() {
-  return <div className="container-page py-10 sm:py-14">\n    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SOFTWARE_SCHEMA) }} />\n    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
+  return <div className="container-page py-10 sm:py-14">
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(SOFTWARE_SCHEMA) }} />
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(BREADCRUMB_SCHEMA) }} />
     <div className="mx-auto max-w-4xl">
       <nav aria-label="Breadcrumb" className="mb-5 text-sm text-slate-400"><a href="/" className="hover:text-white">Home</a><span className="mx-2">/</span><a href="/tools" className="hover:text-white">Tools</a><span className="mx-2">/</span><span className="text-slate-200">FMLA Calculator</span></nav>
       <header className="mb-8"><p className="text-xs font-bold uppercase tracking-[0.16em] text-blue-300">Free federal leave estimator</p><h1 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-4xl">FMLA Calculator</h1><p className="mt-4 max-w-3xl text-base leading-relaxed text-slate-300">Check the general federal FMLA eligibility requirements and estimate how much job-protected leave may remain. Enter your employment details, normal workweek, leave reason, and leave already used.</p><div className="mt-4 flex flex-wrap gap-2 text-xs text-slate-300"><span className="rounded-full border border-[#405777] px-3 py-1">Eligibility estimate</span><span className="rounded-full border border-[#405777] px-3 py-1">12- and 26-week limits</span><span className="rounded-full border border-[#405777] px-3 py-1">Leave-year methods</span></div></header>
