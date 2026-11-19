@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import JSZip from "jszip";
 import { saveAs } from "file-saver";
-import { ACCEPTED_INPUT_TYPES, formatBytes } from "@/lib/imageConversion";
+import { ACCEPTED_INPUT_TYPES, assertImageDimensions, formatBytes } from "@/lib/imageConversion";
 
 type QueueItem = {
   id: string;
@@ -88,7 +88,12 @@ function loadImageDimensions(
       const width = img.naturalWidth;
       const height = img.naturalHeight;
       URL.revokeObjectURL(url);
-      resolve({ width, height });
+      try {
+        assertImageDimensions(width, height);
+        resolve({ width, height });
+      } catch (error) {
+        reject(error);
+      }
     };
     img.onerror = () => {
       URL.revokeObjectURL(url);
@@ -107,6 +112,13 @@ function resizeImageFile(
     const url = URL.createObjectURL(file);
     const img = new Image();
     img.onload = () => {
+      try {
+        assertImageDimensions(targetWidth, targetHeight);
+      } catch (error) {
+        URL.revokeObjectURL(url);
+        reject(error);
+        return;
+      }
       const canvas = document.createElement("canvas");
       canvas.width = targetWidth;
       canvas.height = targetHeight;
