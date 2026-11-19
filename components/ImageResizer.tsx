@@ -206,7 +206,8 @@ export default function ImageResizer() {
                 ? {
                     ...queueItem,
                     status: "error",
-                    errorMessage: "Could not read image",
+                    errorMessage:
+                      error instanceof Error ? error.message : "Could not read image",
                   }
                 : queueItem
             )
