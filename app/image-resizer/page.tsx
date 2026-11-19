@@ -232,7 +232,7 @@ const RELATED_TOOLS = [
   {
     name: "HEIC to JPG Guide",
     desc: "Convert Apple iPhone camera captures into universally editable JPG files.",
-    href: "/blog/heic-to-jpg-guide",
+    href: "/blog/how-to-convert-heic-to-jpg",
   },
   {
     name: "AVIF to JPG Converter",
