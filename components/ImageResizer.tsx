@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   UploadCloud,
   X,
@@ -150,20 +150,27 @@ export default function ImageResizer() {
   const [isResizing, setIsResizing] = useState(false);
 
   const inputRef = useRef<HTMLInputElement>(null);
+  const previewUrlsRef = useRef<Set<string>>(new Set());
+
+  useEffect(() => {
+    return () => {
+      previewUrlsRef.current.forEach((url) => URL.revokeObjectURL(url));
+      previewUrlsRef.current.clear();
+    };
+  }, []);
 
   const addFiles = useCallback((fileList: FileList | File[]) => {
     const incoming = Array.from(fileList).filter((file) =>
       ACCEPTED_INPUT_TYPES.includes(file.type)
     );
 
-    const items: QueueItem[] = incoming.map((file) => ({
-      id: nextId(),
-      file,
-      previewUrl: URL.createObjectURL(file),
-      originalWidth: 0,
-      originalHeight: 0,
-      status: "pending",
-    }));
+    const items: QueueItem[] = incoming.map((file) => {
+      const previewUrl = URL.createObjectURL(file);
+      previewUrlsRef.current.add(previewUrl);
+      return {
+        id: nextId(), file, previewUrl, originalWidth: 0, originalHeight: 0, status: "pending",
+      };
+    });
 
     setQueue((prev) => [...prev, ...items]);
 
@@ -208,14 +215,20 @@ export default function ImageResizer() {
   const removeItem = (id: string) => {
     setQueue((prev) => {
       const item = prev.find((queueItem) => queueItem.id === id);
-      if (item) URL.revokeObjectURL(item.previewUrl);
+      if (item) {
+        URL.revokeObjectURL(item.previewUrl);
+        previewUrlsRef.current.delete(item.previewUrl);
+      }
       return prev.filter((queueItem) => queueItem.id !== id);
     });
   };
 
   const clearAll = () => {
     setQueue((prev) => {
-      prev.forEach((item) => URL.revokeObjectURL(item.previewUrl));
+      prev.forEach((item) => {
+        URL.revokeObjectURL(item.previewUrl);
+        previewUrlsRef.current.delete(item.previewUrl);
+      });
       return [];
     });
   };
