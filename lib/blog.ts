@@ -210,7 +210,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "JPG to WebP conversion can help modernize a website image library. Use sensible quality settings, compare the results, preserve your originals, and test the final images on the pages where they will appear.",
 
-      "Try our [free JPG to WebP converter](/jpg-to-webp): no signup, no watermark, everything runs in your browser.",,
+      "Try our [free JPG to WebP converter](/jpg-to-webp): no signup, no watermark, everything runs in your browser.",
       "## Convert JPG to WebP step by step",
       "1. Open the [JPG to WebP converter](/jpg-to-webp).",
       "2. Select one or more JPG images from your device.",
@@ -419,7 +419,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## Final Thoughts",
 
-      "Image optimization is an often-overlooked part of SEO. Good alt text, descriptive file names, appropriate formats, and responsive delivery all contribute to a better user experience and better search visibility.",,
+      "Image optimization is an often-overlooked part of SEO. Good alt text, descriptive file names, appropriate formats, and responsive delivery all contribute to a better user experience and better search visibility.",
       "## Write alt text for people first",
       "Describe the useful information in the image in the context of the page. For example, a chart comparing JPG and WebP file sizes should say what the chart compares, not repeat a list of target keywords. If an image is purely decorative and adds no information, use an empty alt attribute so screen readers can skip it. Avoid stuffing multiple search phrases into one description.",
       "## Use descriptive image file names",
@@ -673,7 +673,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## Final Thoughts",
 
-      "Batch conversion is one of the fastest ways to optimize large image libraries for the web. Use it to convert formats, reduce file sizes, and prepare images for publishing.",,
+      "Batch conversion is one of the fastest ways to optimize large image libraries for the web. Use it to convert formats, reduce file sizes, and prepare images for publishing.",
       "## Prepare your files before converting",
       "Put the images for one task in a folder and keep a copy of the originals. Check that the selected files are the correct versions, especially when filenames contain dates or numbered revisions. Batch conversion changes the output format; it does not replace the need to review each result.",
       "## Choose one output format for the batch",
@@ -746,7 +746,7 @@ export const BLOG_POSTS: BlogPost[] = [
 
       "## Final Thoughts",
 
-      "Preserving quality during conversion is about choosing the right format, using appropriate settings, and starting with good source material. The right approach can reduce file size while keeping the result suitable for its intended use, but any lossy conversion can change image data.",,
+      "Preserving quality during conversion is about choosing the right format, using appropriate settings, and starting with good source material. The right approach can reduce file size while keeping the result suitable for its intended use, but any lossy conversion can change image data.",
       "## Understand what conversion can and cannot preserve",
       "Lossless conversion can preserve decoded pixel values when the destination format and workflow support it. A conversion to a lossy format such as JPG or lossy WebP re-encodes image data and can introduce changes. No converter can recreate details that were already discarded in an earlier lossy export.",
       "## A practical workflow for better results",
