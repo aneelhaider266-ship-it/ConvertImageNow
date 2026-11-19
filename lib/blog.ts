@@ -397,6 +397,69 @@ export const BLOG_POSTS: BlogPost[] = [
       "Image optimization is an often-overlooked part of SEO. Good alt text, descriptive file names, appropriate formats, and responsive delivery all contribute to a better user experience and better search visibility.",
     ],
   },
+{
+    slug: "what-is-avif",
+    title: "What Is AVIF? A Modern Image Format Guide",
+    excerpt:
+      "What is AVIF, how does it compare to JPG and WebP, and when should you use it? Learn about format support, image quality, and browser-based conversion options.",
+    date: "2026-03-01",
+    updatedDate: "2026-11-17",
+    // Canonical matches the site metadata base.
+    canonical: "https://convertimagenow.com/blog/what-is-avif",
+    keywords: [
+      "what is AVIF",
+      "AVIF image format",
+      "AVIF vs WebP",
+      "AVIF vs JPG",
+      "convert avif to jpg",
+      "avif browser support"
+    ],
+    author: "ConvertImageNow Team",
+    content: [
+      "AVIF (AV1 Image File Format) is an open image format developed by the Alliance for Open Media (AOMedia). It uses image coding based on the AV1 video codec and can produce compact files for some images. File size and visual quality depend on the source image, encoder, and settings.",
+
+      "## Why Was AVIF Created?",
+
+      "Images can make up a substantial part of page weight, especially on image-heavy sites. JPG, PNG, WebP, and AVIF use different compression methods and have different transparency and compatibility trade-offs. AVIF uses image coding based on the AV1 video codec and can produce compact files for some images, but results vary by source and settings.",
+
+      "## AVIF vs JPG: How Much File Size Do You Save?",
+
+      "AVIF can produce smaller files than JPG or WebP at comparable visual quality for some images. There is no fixed percentage reduction that applies to every source; results depend on image content, encoder settings, and the quality target. Compare actual output files before choosing a format.",
+
+      "If a photo viewer cannot open an AVIF file, you can try our browser-based [AVIF to JPG Converter](https://convertimagenow.com/avif-to-jpg), provided your browser can decode the AVIF input. JPG uses lossy encoding, so compare the output with the original and keep a copy of the source file.",
+
+      "## AVIF vs WebP: Which Should You Use?",
+
+      "Both formats are excellent choices for modern web development, but they serve slightly different priorities:",
+
+      "- **Compression:** AVIF can achieve smaller files than WebP for some images at a comparable visual quality, but results depend on the encoder and settings.",
+      "- **Encoding:** AVIF encoding can take longer than WebP in many workflows; measure the time on your own tools and devices.",
+      "- **Color and transparency:** AVIF supports alpha transparency, high bit-depth images, and HDR workflows when the encoder and playback environment support them.",
+
+      "For a broader side-by-side overview, read our [image format comparison guide](/blog/best-image-formats-compared).",
+
+      "## AVIF Browser Support in 2026",
+
+      "Current versions of major desktop and mobile browsers generally support AVIF, but older browsers, embedded webviews, and some image viewers may not. Check the software your audience uses before making AVIF the only available format.",
+
+      "- **Modern browsers:** AVIF is supported in current mainstream browser releases.",
+      "- **Older devices and apps:** Support can vary by operating-system version, browser engine, and installed image components.",
+      "- **Publishing workflows:** Check that your CMS, image editor, email client, and recipients can handle AVIF before using it as the only copy.",
+
+      "For websites serving older browsers or devices, consider the HTML `<picture>` element with an appropriate fallback format. You can convert supported source files using our [Free Online Image Converter](https://convertimagenow.com/converter).",
+
+      "## Frequently Asked Questions (FAQ)",
+
+      "### Why will an AVIF file not open on my computer or phone?",
+      "The app or operating-system version you are using may not support AVIF decoding. Try a current browser or image viewer that supports AVIF, update the relevant software, or convert the file to JPG for broader compatibility. Keep the original AVIF in case you need it later.",
+
+      "### Why can AVIF encoding take longer than JPG or WebP?",
+      "AVIF encoding can require more processing time than JPG or WebP, depending on the encoder, speed setting, image dimensions, and device. A slower encode does not guarantee a smaller file, so compare both output size and visual quality.",
+
+      "### How can I convert AVIF images to JPG for free?",
+      "You can select an AVIF file in our [AVIF to JPG tool](https://convertimagenow.com/avif-to-jpg) if your browser supports decoding that file. Conversion uses browser image decoding and Canvas APIs; selected image data is processed locally rather than sent to a conversion server."
+    ],
+  },
   {
     slug: "best-image-formats-explained",
     title: "Best Image Format for Websites: Choose by Image Type",
