@@ -59,6 +59,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
       </head>
+      <body className="antialiased min-h-screen bg-[#101B33] text-slate-100 flex flex-col justify-between">
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-HZ0NXP679X"
           strategy="afterInteractive"
@@ -69,7 +70,7 @@ function gtag(){window.dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-HZ0NXP679X', { send_page_view: true });`}
         </Script>
-      <body className="antialiased min-h-screen bg-[#101B33] text-slate-100 flex flex-col justify-between">
+
         <Header />
         <main className="flex-grow">
           {children}
