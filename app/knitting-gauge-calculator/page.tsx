@@ -60,7 +60,7 @@ export default function KnittingGaugeCalculatorPage() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "WebApplication",
+        "@type": "SoftwareApplication",
         "@id": `${PAGE_URL}#app`,
         name: "Knitting Gauge Calculator",
         url: PAGE_URL,
