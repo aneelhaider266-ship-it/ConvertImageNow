@@ -69,7 +69,7 @@ const FAQS = [
 
 const WEB_APP_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "SoftwareApplication",
   name: "ConvertImageNow Online Image Converter",
   url: PAGE_URL,
   applicationCategory: "MultimediaApplication",

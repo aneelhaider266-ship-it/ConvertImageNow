@@ -139,7 +139,7 @@ const FAQS = [
 
 const WEB_APP_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "SoftwareApplication",
   name: "AVIF to JPG Converter",
   url: PAGE_URL,
   applicationCategory: "MultimediaApplication",

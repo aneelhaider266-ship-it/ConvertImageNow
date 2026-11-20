@@ -70,7 +70,7 @@ const BREADCRUMB_SCHEMA = {
 
 const SOFTWARE_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "SoftwareApplication",
   name: "ConvertImageNow JPG to PNG Converter",
   url: PAGE_URL,
   applicationCategory: "MultimediaApplication",

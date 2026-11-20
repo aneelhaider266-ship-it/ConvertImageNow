@@ -98,7 +98,7 @@ const FAQ_SCHEMA = {
 
 const SOFTWARE_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "SoftwareApplication",
   name: "JPG to WebP Converter",
   operatingSystem: "All",
   applicationCategory: "MultimediaApplication",

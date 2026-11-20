@@ -77,7 +77,7 @@ const BREADCRUMB_SCHEMA = {
 
 const SOFTWARE_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "SoftwareApplication",
   name: "ConvertImageNow Free Online Image Compressor",
   url: PAGE_URL,
   applicationCategory: "MultimediaApplication",

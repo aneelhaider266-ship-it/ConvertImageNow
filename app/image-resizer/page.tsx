@@ -78,7 +78,7 @@ const BREADCRUMB_SCHEMA = {
 
 const SOFTWARE_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "SoftwareApplication",
   name: "ConvertImageNow Online Image Resizer",
   url: PAGE_URL,
   applicationCategory: "MultimediaApplication",
