@@ -143,7 +143,7 @@ const FAQ_SCHEMA = {
 
 const SOFTWARE_SCHEMA = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
+  "@type": "SoftwareApplication",
   name: "PNG to JPG Converter",
   operatingSystem: "All",
   applicationCategory: "MultimediaApplication",
